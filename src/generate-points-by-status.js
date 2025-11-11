@@ -67,6 +67,31 @@ async function getStoryPointsFieldId(client) {
   }
 }
 
+// Check if an issue was completed today
+function wasCompletedToday(changelog) {
+  if (!changelog || !changelog.histories) {
+    return false;
+  }
+  
+  const today = new Date().toISOString().split('T')[0];
+  
+  for (const history of changelog.histories) {
+    const changeDate = history.created.split('T')[0];
+    
+    if (changeDate === today) {
+      for (const item of history.items) {
+        if (item.field === 'status' && 
+            (STATUS_CATEGORIES['Completed'].includes(item.toString) ||
+             STATUS_CATEGORIES['Completed'].some(s => s.toLowerCase() === item.toString?.toLowerCase()))) {
+          return true;
+        }
+      }
+    }
+  }
+  
+  return false;
+}
+
 // Fetch all issues in the current sprint
 async function fetchSprintIssues(client, storyPointsFieldId) {
   try {
@@ -98,7 +123,8 @@ async function fetchSprintIssues(client, storyPointsFieldId) {
       try {
         const issueResponse = await client.get(`/rest/api/3/issue/${issueKey}`, {
           params: {
-            fields: `summary,status,issuetype,${storyPointsFieldId}`
+            fields: `summary,status,issuetype,${storyPointsFieldId}`,
+            expand: 'changelog'
           }
         });
         
@@ -115,13 +141,17 @@ async function fetchSprintIssues(client, storyPointsFieldId) {
           defaulted = true;
         }
         
+        // Check if completed today
+        const completedToday = wasCompletedToday(issue.changelog);
+        
         issues.push({
           key: issue.key,
           summary: fields.summary,
           status: status,
           issueType: issueType,
           storyPoints: storyPoints,
-          defaulted: defaulted
+          defaulted: defaulted,
+          completedToday: completedToday
         });
         
       } catch (issueError) {
@@ -162,6 +192,7 @@ async function generateStatusSnapshot(client, storyPointsFieldId) {
   console.log(`   Sprint: ${CURRENT_SPRINT}`);
   console.log(`   Project: ${PROJECT_KEY}`);
   console.log(`   Date: ${new Date().toISOString().split('T')[0]}`);
+  console.log(`   Note: "Completed" shows only issues completed TODAY`);
   console.log('='.repeat(60));
   
   // Fetch all issues
@@ -187,6 +218,11 @@ async function generateStatusSnapshot(client, storyPointsFieldId) {
   for (const issue of issues) {
     const category = categorizeStatus(issue.status);
     
+    // Only include completed issues if they were completed today
+    if (category === 'Completed' && !issue.completedToday) {
+      continue;
+    }
+    
     statusGroups[category].issues.push(issue);
     statusGroups[category].points += issue.storyPoints;
     statusGroups[category].count += 1;
@@ -206,7 +242,8 @@ async function generateStatusSnapshot(client, storyPointsFieldId) {
     const group = statusGroups[category];
     if (group.count > 0) {
       const percentage = ((group.points / totalPoints) * 100).toFixed(1);
-      console.log(`   ${category}:`);
+      const categoryLabel = category === 'Completed' ? `${category} Today` : category;
+      console.log(`   ${categoryLabel}:`);
       console.log(`      Issues: ${group.count}`);
       console.log(`      Story Points: ${group.points} (${percentage}%)`);
       console.log('');
@@ -223,7 +260,8 @@ async function generateStatusSnapshot(client, storyPointsFieldId) {
   for (const category of orderedCategories) {
     const group = statusGroups[category];
     if (group.count > 0) {
-      console.log(`\n${category} (${group.count} issues, ${group.points} points):`);
+      const categoryLabel = category === 'Completed' ? `${category} TODAY` : category;
+      console.log(`\n${categoryLabel} (${group.count} issues, ${group.points} points):`);
       console.log('-'.repeat(60));
       
       // Sort issues by key
