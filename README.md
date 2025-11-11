@@ -15,6 +15,7 @@ A comprehensive Node.js toolkit for managing sprint planning, tracking story poi
   - [Team Analysis Scripts](#team-analysis-scripts)
   - [Quality Assurance Scripts](#quality-assurance-scripts)
   - [Defect Management Scripts](#defect-management-scripts)
+  - [Status Tracking Scripts](#status-tracking-scripts)
 - [Output Files](#output-files)
 - [Troubleshooting](#troubleshooting)
 
@@ -28,7 +29,8 @@ This suite provides end-to-end sprint management capabilities:
 - **JIRA Integration**: Pull live data on completed work, in-progress items, and team allocation
 - **Team Analytics**: Analyze assignee workload, team performance, and capacity
 - **Quality Monitoring**: Track QA backlog and identify stale issues
-- **Defect Management**: **NEW** - Import UAT defects from CSV directly into JIRA
+- **Defect Management**: Import UAT defects from CSV directly into JIRA
+- **Status Tracking**: **NEW** - Snapshot story point distribution across workflow stages
 - **PDF Reports**: Professional PDF reports for executive stakeholders
 
 ---
@@ -735,6 +737,108 @@ Defect Name,Severity / Priority,Module / Area,Defect Description,...
 
 ---
 
+### Status Tracking Scripts
+
+#### 16. `generate-points-by-status.js`
+
+**NEW**: Provides a snapshot of story point distribution across workflow statuses for the current sprint.
+
+**Features**:
+- Shows story points in each workflow stage: In Dev, In Review, In QA, Completed
+- Includes percentage breakdown of total points per status
+- Lists all issues grouped by status with full details
+- Defaults missing points to 2 for Stories/Bugs
+- Identifies workflow bottlenecks at a glance
+- Perfect for sprint health checks and stand-ups
+
+**Usage**:
+```bash
+npm run points-by-status
+```
+
+**Configuration**:
+```javascript
+const CURRENT_SPRINT = 'NH Sprint 31'; // Update this in the script
+```
+
+**Output**: `reports/points-by-status.json`
+
+**Console Output Example**:
+```
+============================================================
+📊 STORY POINTS BY STATUS SNAPSHOT
+   Sprint: NH Sprint 31
+   Project: VER10
+   Date: 2025-11-11
+============================================================
+
+📈 SUMMARY BY STATUS:
+
+   In Dev:
+      Issues: 11
+      Story Points: 20 (15.2%)
+
+   In Review:
+      Issues: 17
+      Story Points: 32 (24.4%)
+
+   In QA:
+      Issues: 6
+      Story Points: 10 (7.6%)
+
+   Completed:
+      Issues: 25
+      Story Points: 69 (52.7%)
+
+------------------------------------------------------------
+   TOTAL: 59 issues, 131 story points
+============================================================
+
+📋 DETAILED BREAKDOWN:
+
+In Dev (11 issues, 20 points):
+------------------------------------------------------------
+   VER10-7561: 2 points - Edit Sub Item Resource Quantities...
+   VER10-8336: 2 points (defaulted) - Managing Values for Estimator...
+   VER10-8501: 5 points - Epic 9- Fallback Mech- Auto allocate...
+   ...
+```
+
+**Output Format**:
+```json
+{
+  "date": "2025-11-11",
+  "sprint": "NH Sprint 31",
+  "project": "VER10",
+  "summary": {
+    "totalIssues": 59,
+    "totalStoryPoints": 131,
+    "byStatus": {
+      "inDev": { "count": 11, "points": 20 },
+      "inReview": { "count": 17, "points": 32 },
+      "inQA": { "count": 6, "points": 10 },
+      "completed": { "count": 25, "points": 69 },
+      "other": { "count": 0, "points": 0 }
+    }
+  },
+  "details": {
+    "inDev": [ ... ],
+    "inReview": [ ... ],
+    "inQA": [ ... ],
+    "completed": [ ... ]
+  }
+}
+```
+
+**Use Cases**:
+- Daily stand-up status overview
+- Quick sprint health check
+- Identifying workflow stage bottlenecks
+- Tracking work distribution across statuses
+- Sprint velocity analysis
+
+---
+
 ## Output Files
 
 All generated files are saved in the `reports/` directory:
@@ -745,11 +849,12 @@ All generated files are saved in the `reports/` directory:
 - `moved-to-qa-<date>.json` - Issues entered QA today
 - `moved-to-dev-<date>.json` - Issues entered Dev today
 - `work-done-today-<date>.json` - Combined daily activity with sprint totals
-- `dev-review-by-assignee.json` - **NEW**: Active Dev/Review work by assignee
+- `dev-review-by-assignee.json` - Active Dev/Review work by assignee
 - `assignee-report-sprint-<number>.json` - Assignee/team analysis
 - `assignee-allocation-<date>.json` - Historical allocations
 - `issues-in-qa-sprint-<number>.json` - Current QA backlog
 - `time-in-status-sprint-<number>.json` - Stale issues analysis
+- `points-by-status.json` - **NEW**: Story point distribution by workflow status
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report
@@ -784,6 +889,9 @@ npm run generate-report 31
 
 ### Sprint Health Check
 ```bash
+# Get status distribution overview
+npm run points-by-status
+
 # Check current QA backlog
 npm run issues-in-qa
 

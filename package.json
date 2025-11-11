@@ -18,7 +18,8 @@
     "issues-in-qa": "node src/generate-issues-currently-in-qa.js",
     "time-in-status": "node src/generate-time-in-status.js",
     "nh-defect-upload": "node src/nh-defect-upload.js",
-    "dev-review": "node src/generate-dev-review-by-assignee.js"
+    "dev-review": "node src/generate-dev-review-by-assignee.js",
+    "points-by-status": "node src/generate-points-by-status.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",
