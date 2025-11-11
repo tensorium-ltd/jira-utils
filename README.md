@@ -14,6 +14,7 @@ A comprehensive Node.js toolkit for managing sprint planning, tracking story poi
   - [Daily Reporting Scripts](#daily-reporting-scripts)
   - [Team Analysis Scripts](#team-analysis-scripts)
   - [Quality Assurance Scripts](#quality-assurance-scripts)
+  - [Defect Management Scripts](#defect-management-scripts)
 - [Output Files](#output-files)
 - [Troubleshooting](#troubleshooting)
 
@@ -27,6 +28,7 @@ This suite provides end-to-end sprint management capabilities:
 - **JIRA Integration**: Pull live data on completed work, in-progress items, and team allocation
 - **Team Analytics**: Analyze assignee workload, team performance, and capacity
 - **Quality Monitoring**: Track QA backlog and identify stale issues
+- **Defect Management**: **NEW** - Import UAT defects from CSV directly into JIRA
 - **PDF Reports**: Professional PDF reports for executive stakeholders
 
 ---
@@ -50,6 +52,7 @@ npm install
 - `pdfkit` - PDF generation
 - `axios` - HTTP client for JIRA API
 - `xlsx` - Excel file parsing
+- `csv-parse` - **NEW**: CSV file parsing for defect imports
 
 ---
 
@@ -328,13 +331,15 @@ npm run jira-dev
 
 #### 7. `generate-work-done-today-report.js`
 
-Combines completed work, QA entries, and dev starts into a single daily report.
+Combines completed work, QA entries, and dev starts into a single daily report with sprint context.
 
 **Features**:
 - Aggregates data from completed, in-QA, and in-dev scripts
 - Shows total story points worked on across all activities
+- **NEW**: Includes sprint-to-date totals (completed issues and points)
 - Optimized JQL queries (only fetches issues updated today)
 - Detailed breakdown by activity type
+- Provides both today's velocity and cumulative sprint progress
 
 **Usage**:
 ```bash
@@ -347,11 +352,20 @@ npm run work-today
 ```json
 {
   "date": "2025-11-10",
+  "sprint": "NH Sprint 31",
   "summary": {
-    "completed": { "issues": 8, "storyPoints": 18 },
-    "movedToQA": { "issues": 5, "storyPoints": 10 },
-    "movedToDev": { "issues": 4, "storyPoints": 8 },
-    "totalStoryPointsWorked": 36
+    "today": {
+      "totalIssues": 9,
+      "totalStoryPoints": 20,
+      "completed": { "issues": 8, "storyPoints": 18 },
+      "movedToQA": { "issues": 5, "storyPoints": 10 },
+      "movedToDev": { "issues": 4, "storyPoints": 8 }
+    },
+    "sprintTotal": {
+      "completedIssues": 32,
+      "completedStoryPoints": 68,
+      "breakdown": { ... }
+    }
   },
   "details": { ... }
 }
@@ -489,9 +503,85 @@ const SPRINTS = ['NH Sprint 28', 'NH Sprint 29', 'NH Sprint 30', 'NH Sprint 31']
 
 ---
 
+#### 12. `generate-dev-review-by-assignee.js`
+
+**NEW**: Shows current sprint tickets in "In Dev" and "In Review/Ready for Review" grouped by status and assignee.
+
+**Features**:
+- Focuses on active development work (In Dev and In Review/Ready for Review)
+- Groups first by status, then by assignee within each status
+- Shows story point totals per assignee in each status
+- Case-insensitive status matching
+- Defaults missing points to 2 for Stories/Bugs
+- Provides complete sprint activity snapshot for standups
+
+**Usage**:
+```bash
+npm run dev-review
+```
+
+**Configuration**:
+```javascript
+const CURRENT_SPRINT = 'NH Sprint 31'; // Update this in the script
+const TARGET_STATUSES = ['In Dev', 'In Review', 'Ready for Review', 'READY FOR REVIEW'];
+```
+
+**Output**: `reports/dev-review-by-assignee.json`
+
+**Console Output Example**:
+```
+============================================================
+💻 IN DEV
+============================================================
+   Total: 11 issues, 20 points
+
+👤 Sushil Shinde - 1 issues (5 pts)
+   - VER10-8501: Epic 9- Fallback Mech... (5 pts)
+
+👤 Yash Dangi - 1 issues (3 pts)
+   - VER10-9139: Dashboard - Displaying... (3 pts)
+...
+
+============================================================
+🔍 IN REVIEW / READY FOR REVIEW
+============================================================
+   Total: 17 issues, 32 points
+
+👤 Yash Dangi - 5 issues (11 pts)
+   - VER10-9075: Regression : An invalid... (1 pts)
+   - VER10-8641: Validating Custom Field... (2 pts)
+...
+```
+
+**Output Format**:
+```json
+{
+  "sprint": "NH Sprint 31",
+  "summary": {
+    "totalIssues": 28,
+    "totalPoints": 52,
+    "inDev": { "issues": 11, "points": 20 },
+    "inReview": { "issues": 17, "points": 32 }
+  },
+  "byStatus": {
+    "inDev": [
+      {
+        "name": "Sushil Shinde",
+        "issues": [...],
+        "points": 5
+      }
+    ],
+    "inReview": [...]
+  },
+  "byAssignee": { ... }
+}
+```
+
+---
+
 ### Quality Assurance Scripts
 
-#### 12. `generate-issues-currently-in-qa.js`
+#### 13. `generate-issues-currently-in-qa.js`
 
 Lists all issues currently in QA for the current sprint.
 
@@ -528,7 +618,7 @@ npm run issues-in-qa
 
 ---
 
-#### 13. `generate-time-in-status.js`
+#### 14. `generate-time-in-status.js`
 
 Identifies stale issues (no status change for 24+ hours).
 
@@ -568,6 +658,83 @@ const STALE_THRESHOLD_HOURS = 24;
 
 ---
 
+### Defect Management Scripts
+
+#### 15. `nh-defect-upload.js`
+
+**NEW**: Imports UAT defects from CSV into JIRA as bugs under an Epic.
+
+**Features**:
+- Reads CSV file (`data/CCET Release 1 C UAT Defect Log.csv`)
+- Creates bugs in JIRA linked to Epic VER10-8245
+- Duplicate detection (searches by summary to avoid re-creating bugs)
+- Skips test example rows automatically
+- Auto-assigns all bugs to Caroline Wallen
+- Sets fixVersion to "Release 1C"
+- Priority mapping (P1→P1 - Critical, P2→P2 - High, etc.)
+- Formatted description with all CSV fields
+- UTF-8 BOM handling for CSV files
+
+**Usage**:
+```bash
+npm run nh-defect-upload
+```
+
+**Configuration**:
+```javascript
+const EPIC_KEY = 'VER10-8245';                    // Epic to link bugs to
+const CSV_FILE_PATH = './data/CCET Release 1 C UAT Defect Log.csv';
+```
+
+**CSV Structure Required**:
+- **Defect Name**: Used as JIRA Summary (also for duplicate checking)
+- **Severity / Priority**: Mapped to JIRA Priority (P1, P2, P3, P4)
+- **All other columns**: Formatted into JIRA Description
+
+**Console Output Example**:
+```
+🚀 NH UAT Defect Upload to JIRA
+============================================================
+
+🔍 Discovering required fields...
+   ✓ Found assignee: Caroline Wallen
+   ✓ Found fixVersion: Release 1C
+   ✓ Found Epic Link field: customfield_11151
+
+📄 Reading CSV file...
+   ✓ Found 2 rows in CSV
+
+📝 Processing defects...
+
+⏭️  Skipping test example: Defect 01 - TEST EXAMPLE - ...
+
+🔍 Processing: UAT-PPP-003 - Create Project Button is greyed out
+   ✅ Created bug: VER10-9210
+
+============================================================
+📊 SUMMARY:
+   Total Defects Processed: 2
+   ✅ Created: 1
+   ⏭️  Skipped: 1 (1 test example, 0 duplicates)
+   ❌ Errors: 0
+
+Created Bugs:
+   - VER10-9210: UAT-PPP-003 - Create Project Button is greyed out
+```
+
+**Duplicate Detection**:
+- Searches JIRA by summary text before creating
+- If found, logs the existing issue key and skips creation
+- Prevents duplicate bug entries from repeated script runs
+
+**CSV Example**:
+```csv
+Defect Name,Severity / Priority,Module / Area,Defect Description,...
+"UAT-001 - Login fails","P1","Authentication","Users cannot log in",...
+```
+
+---
+
 ## Output Files
 
 All generated files are saved in the `reports/` directory:
@@ -577,7 +744,8 @@ All generated files are saved in the `reports/` directory:
 - `sprint-estimates-<date>.json` - Sprint allocations from JIRA
 - `moved-to-qa-<date>.json` - Issues entered QA today
 - `moved-to-dev-<date>.json` - Issues entered Dev today
-- `work-done-today-<date>.json` - Combined daily activity
+- `work-done-today-<date>.json` - Combined daily activity with sprint totals
+- `dev-review-by-assignee.json` - **NEW**: Active Dev/Review work by assignee
 - `assignee-report-sprint-<number>.json` - Assignee/team analysis
 - `assignee-allocation-<date>.json` - Historical allocations
 - `issues-in-qa-sprint-<number>.json` - Current QA backlog
