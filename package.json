@@ -1,0 +1,28 @@
+{
+  "name": "sprint-story-point-distributor",
+  "version": "1.0.0",
+  "description": "Distribute story points across sprint working days",
+  "main": "src/generate-sprint-sheets.js",
+  "scripts": {
+    "generate": "node src/generate-sprint-sheets.js",
+    "report": "node src/generate-sprint-report.js",
+    "jira-points": "node src/get-jira-completed-points.js",
+    "sprint-estimates": "node src/generate-sprint-estimates.js",
+    "jira-qa": "node src/generate-jira-into-QA.js",
+    "jira-dev": "node src/generate-jira-into-dev.js",
+    "work-today": "node src/generate-work-done-today-report.js",
+    "work-today-pdf": "node src/generate-work-today-pdf.js",
+    "assignee-report": "node src/generate-assignee-report.js",
+    "assignee-pdf": "node src/generate-assignee-pdf.js",
+    "assignee-allocation": "node src/generate-assignee-allocation-report.js",
+    "issues-in-qa": "node src/generate-issues-currently-in-qa.js",
+    "time-in-status": "node src/generate-time-in-status.js"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5",
+    "exceljs": "^4.3.0",
+    "pdfkit": "^0.15.0",
+    "axios": "^1.6.0"
+  }
+}
+
