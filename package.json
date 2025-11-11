@@ -16,13 +16,16 @@
     "assignee-pdf": "node src/generate-assignee-pdf.js",
     "assignee-allocation": "node src/generate-assignee-allocation-report.js",
     "issues-in-qa": "node src/generate-issues-currently-in-qa.js",
-    "time-in-status": "node src/generate-time-in-status.js"
+    "time-in-status": "node src/generate-time-in-status.js",
+    "nh-defect-upload": "node src/nh-defect-upload.js",
+    "dev-review": "node src/generate-dev-review-by-assignee.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",
     "exceljs": "^4.3.0",
     "pdfkit": "^0.15.0",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "csv-parse": "^5.5.0"
   }
 }
 

@@ -7,6 +7,7 @@ const JIRA_BASE_URL = process.env.JIRA_BASE_URL || 'https://benchmarkestimating.
 const JIRA_EMAIL = process.env.JIRA_EMAIL;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 const PROJECT_KEY = 'VER10';
+const CURRENT_SPRINT = 'NH Sprint 31'; // Update this for each sprint
 
 // Statuses to track
 const COMPLETED_STATUSES = ['READY FOR RELEASE', 'CLOSED'];
@@ -190,6 +191,80 @@ async function fetchIssuesByStatus(client, storyPointsFieldId, statusList, label
   }
 }
 
+// Fetch sprint total completed issues (all time for the sprint)
+async function fetchSprintCompletedTotals(client, storyPointsFieldId) {
+  try {
+    console.log('\n🔎 Fetching Sprint Total (Completed)...');
+    
+    const statusList = COMPLETED_STATUSES.map(s => `"${s}"`).join(', ');
+    const jql = `project = ${PROJECT_KEY} AND sprint = "${CURRENT_SPRINT}" AND issuetype in (Story, Bug) AND status in (${statusList})`;
+    
+    console.log(`   JQL: ${jql}`);
+    
+    // Fetch all completed issues in the sprint
+    const response = await client.post('/rest/api/3/search/jql', {
+      jql: jql,
+      maxResults: 1000
+    });
+    
+    const issueRefs = response.data.issues || [];
+    console.log(`   ✓ Found ${issueRefs.length} completed issues in sprint`);
+    
+    let totalStoryPoints = 0;
+    const typeBreakdown = {};
+    
+    for (const issueRef of issueRefs) {
+      const issueKey = issueRef.key || issueRef.id;
+      
+      try {
+        const issueResponse = await client.get(`/rest/api/3/issue/${issueKey}`, {
+          params: {
+            fields: `issuetype,${storyPointsFieldId}`
+          }
+        });
+        
+        const issue = issueResponse.data;
+        const fields = issue.fields;
+        
+        const issueType = fields.issuetype?.name || 'Unknown';
+        let storyPoints = fields[storyPointsFieldId] || 0;
+        
+        // Default to 2 points for Stories/Bugs without points
+        if ((issueType === 'Story' || issueType === 'Bug') && storyPoints === 0) {
+          storyPoints = 2;
+        }
+        
+        totalStoryPoints += storyPoints;
+        
+        if (!typeBreakdown[issueType]) {
+          typeBreakdown[issueType] = { count: 0, points: 0 };
+        }
+        typeBreakdown[issueType].count++;
+        typeBreakdown[issueType].points += storyPoints;
+        
+      } catch (issueError) {
+        console.warn(`   ⚠️  Could not fetch ${issueKey}: ${issueError.message}`);
+      }
+    }
+    
+    console.log(`   → Total: ${issueRefs.length} issues (${totalStoryPoints} points)`);
+    
+    return {
+      totalIssues: issueRefs.length,
+      totalStoryPoints: totalStoryPoints,
+      typeBreakdown: typeBreakdown
+    };
+    
+  } catch (error) {
+    console.error(`   ❌ Error fetching sprint totals: ${error.message}`);
+    return {
+      totalIssues: 0,
+      totalStoryPoints: 0,
+      typeBreakdown: {}
+    };
+  }
+}
+
 // Generate work done today report
 async function generateWorkDoneReport() {
   const today = new Date();
@@ -235,7 +310,10 @@ async function generateWorkDoneReport() {
     today
   );
   
-  // Calculate totals
+  // Fetch sprint totals for context
+  const sprintTotals = await fetchSprintCompletedTotals(client, storyPointsFieldId);
+  
+  // Calculate totals for today
   const totalIssues = completed.issues.length + movedToQA.issues.length + movedToDev.issues.length;
   const totalStoryPoints = completed.totalStoryPoints + movedToQA.totalStoryPoints + movedToDev.totalStoryPoints;
   
@@ -269,16 +347,31 @@ async function generateWorkDoneReport() {
   // Display summary
   console.log('\n' + '='.repeat(60));
   console.log('📈 SUMMARY - Work Done Today:');
-  console.log(`   Total Issues: ${totalIssues}`);
-  console.log(`   Total Story Points: ${totalStoryPoints}`);
+  console.log(`   Total Issues Today: ${totalIssues}`);
+  console.log(`   Total Story Points Today: ${totalStoryPoints}`);
   console.log('');
   console.log(`   Completed Issues: ${completed.issues.length} (${completed.totalStoryPoints} points)`);
   console.log(`   Moved to QA: ${movedToQA.issues.length} (${movedToQA.totalStoryPoints} points)`);
   console.log(`   Moved to Dev: ${movedToDev.issues.length} (${movedToDev.totalStoryPoints} points)`);
   
   if (Object.keys(allTypeBreakdown).length > 0) {
-    console.log('\n   Overall Breakdown by Type:');
+    console.log('\n   Today\'s Breakdown by Type:');
     Object.entries(allTypeBreakdown)
+      .sort((a, b) => b[1].points - a[1].points)
+      .forEach(([type, data]) => {
+        console.log(`   - ${type}: ${data.count} issues, ${data.points} points`);
+      });
+  }
+  
+  // Display sprint totals
+  console.log('\n' + '-'.repeat(60));
+  console.log(`📊 SPRINT TOTALS (${CURRENT_SPRINT}):`);
+  console.log(`   Total Completed Issues: ${sprintTotals.totalIssues}`);
+  console.log(`   Total Completed Story Points: ${sprintTotals.totalStoryPoints}`);
+  
+  if (Object.keys(sprintTotals.typeBreakdown).length > 0) {
+    console.log('\n   Sprint Breakdown by Type:');
+    Object.entries(sprintTotals.typeBreakdown)
       .sort((a, b) => b[1].points - a[1].points)
       .forEach(([type, data]) => {
         console.log(`   - ${type}: ${data.count} issues, ${data.points} points`);
@@ -288,16 +381,24 @@ async function generateWorkDoneReport() {
   return {
     date: todayStr,
     project: PROJECT_KEY,
+    sprint: CURRENT_SPRINT,
     summary: {
-      totalIssues: totalIssues,
-      totalStoryPoints: totalStoryPoints,
-      completedIssues: completed.issues.length,
-      completedStoryPoints: completed.totalStoryPoints,
-      movedToQAIssues: movedToQA.issues.length,
-      movedToQAStoryPoints: movedToQA.totalStoryPoints,
-      movedToDevIssues: movedToDev.issues.length,
-      movedToDevStoryPoints: movedToDev.totalStoryPoints,
-      breakdown: allTypeBreakdown
+      today: {
+        totalIssues: totalIssues,
+        totalStoryPoints: totalStoryPoints,
+        completedIssues: completed.issues.length,
+        completedStoryPoints: completed.totalStoryPoints,
+        movedToQAIssues: movedToQA.issues.length,
+        movedToQAStoryPoints: movedToQA.totalStoryPoints,
+        movedToDevIssues: movedToDev.issues.length,
+        movedToDevStoryPoints: movedToDev.totalStoryPoints,
+        breakdown: allTypeBreakdown
+      },
+      sprintTotal: {
+        completedIssues: sprintTotals.totalIssues,
+        completedStoryPoints: sprintTotals.totalStoryPoints,
+        breakdown: sprintTotals.typeBreakdown
+      }
     },
     completed: {
       issues: completed.issues.sort((a, b) => a.key.localeCompare(b.key)),
