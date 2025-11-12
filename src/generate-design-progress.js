@@ -85,7 +85,7 @@ async function fetchDesignTasks(client) {
     console.log(`\n🔎 Fetching design tasks from ${PROJECT_KEY}...`);
     
     // Query for tasks with summary starting with "Design: "
-    const jql = `project = ${PROJECT_KEY} AND issuetype = Task AND summary ~ "Design:*"`;
+    const jql = `project = ${PROJECT_KEY} AND issuetype = Task AND summary ~ "Design"`;
     
     console.log(`   JQL: ${jql}`);
     
@@ -112,12 +112,17 @@ async function fetchDesignTasks(client) {
       try {
         const taskResponse = await client.get(`/rest/api/3/issue/${taskKey}`, {
           params: {
-            fields: 'summary,description,status,assignee,priority,created,updated'
+            fields: 'summary,description,status,assignee,priority,created,updated,fixVersions'
           }
         });
         
         const task = taskResponse.data;
         const fields = task.fields;
+        
+        // Filter: Only include tasks that start with "Design:"
+        if (!fields.summary || !fields.summary.startsWith('Design:')) {
+          continue;
+        }
         
         const progress = extractProgress(fields.description);
         const assignee = fields.assignee?.displayName || 'Unassigned';
@@ -126,6 +131,12 @@ async function fetchDesignTasks(client) {
         const created = fields.created ? new Date(fields.created).toISOString().split('T')[0] : 'Unknown';
         const updated = fields.updated ? new Date(fields.updated).toISOString().split('T')[0] : 'Unknown';
         
+        // Extract fix version
+        let fixVersion = 'No Fix Version';
+        if (fields.fixVersions && fields.fixVersions.length > 0) {
+          fixVersion = fields.fixVersions[0].name;
+        }
+        
         tasks.push({
           key: task.key,
           summary: fields.summary,
@@ -133,6 +144,7 @@ async function fetchDesignTasks(client) {
           priority: priority,
           assignee: assignee,
           progress: progress,
+          fixVersion: fixVersion,
           created: created,
           updated: updated
         });
@@ -166,6 +178,7 @@ function calculateStats(tasks) {
     averageProgress: 0,
     byStatus: {},
     byAssignee: {},
+    byFixVersion: {},
     byProgressRange: {
       '0-25%': 0,
       '26-50%': 0,
@@ -191,12 +204,20 @@ function calculateStats(tasks) {
     }
     stats.byAssignee[task.assignee].count++;
     
+    // Count by fix version
+    if (!stats.byFixVersion[task.fixVersion]) {
+      stats.byFixVersion[task.fixVersion] = { count: 0, avgProgress: 0, totalProgress: 0, tasks: [] };
+    }
+    stats.byFixVersion[task.fixVersion].count++;
+    stats.byFixVersion[task.fixVersion].tasks.push(task);
+    
     // Process progress
     if (task.progress !== null) {
       stats.withProgress++;
       totalProgress += task.progress;
       stats.byStatus[task.status].totalProgress += task.progress;
       stats.byAssignee[task.assignee].totalProgress += task.progress;
+      stats.byFixVersion[task.fixVersion].totalProgress += task.progress;
       
       // Progress ranges
       if (task.progress === 0) {
@@ -234,6 +255,13 @@ function calculateStats(tasks) {
     const assigneeData = stats.byAssignee[assignee];
     if (assigneeData.count > 0) {
       assigneeData.avgProgress = Math.round(assigneeData.totalProgress / assigneeData.count);
+    }
+  }
+  
+  for (const fixVersion in stats.byFixVersion) {
+    const fixVersionData = stats.byFixVersion[fixVersion];
+    if (fixVersionData.count > 0) {
+      fixVersionData.avgProgress = Math.round(fixVersionData.totalProgress / fixVersionData.count);
     }
   }
   
@@ -279,6 +307,16 @@ async function generateReport() {
     }
   }
   
+  // Display by fix version
+  console.log('\n📦 BY FIX VERSION:\n');
+  const fixVersionEntries = Object.entries(stats.byFixVersion).sort((a, b) => b[1].count - a[1].count);
+  for (const [fixVersion, data] of fixVersionEntries) {
+    console.log(`   ${fixVersion}:`);
+    console.log(`      Tasks: ${data.count}`);
+    console.log(`      Avg Progress: ${data.avgProgress}%`);
+    console.log('');
+  }
+  
   // Display by status
   console.log('\n📋 BY STATUS:\n');
   const statusEntries = Object.entries(stats.byStatus).sort((a, b) => b[1].count - a[1].count);
@@ -297,8 +335,29 @@ async function generateReport() {
     console.log(`      Avg Progress: ${data.avgProgress}%`);
   }
   
+  // Display tasks grouped by fix version
+  console.log('\n📝 TASKS BY FIX VERSION:\n');
+  
+  for (const [fixVersion, data] of fixVersionEntries) {
+    console.log(`\n   ${fixVersion} (${data.count} tasks, avg ${data.avgProgress}% progress):`);
+    console.log('   ' + '-'.repeat(80));
+    
+    const sortedVersionTasks = [...data.tasks].sort((a, b) => {
+      if (a.progress === null && b.progress === null) return 0;
+      if (a.progress === null) return 1;
+      if (b.progress === null) return -1;
+      return a.progress - b.progress;
+    });
+    
+    for (const task of sortedVersionTasks) {
+      const progressStr = task.progress !== null ? `${task.progress}%`.padEnd(5) : 'N/A  ';
+      const shortSummary = task.summary.replace('Design: ', '');
+      console.log(`      ${progressStr} | ${task.key} | ${task.status.padEnd(15)} | ${shortSummary}`);
+    }
+  }
+  
   // Display all tasks sorted by progress
-  console.log('\n📝 ALL DESIGN TASKS (sorted by progress):\n');
+  console.log('\n\n📝 ALL DESIGN TASKS (sorted by progress):\n');
   
   const sortedTasks = [...tasks].sort((a, b) => {
     if (a.progress === null && b.progress === null) return 0;
@@ -309,7 +368,7 @@ async function generateReport() {
   
   for (const task of sortedTasks) {
     const progressStr = task.progress !== null ? `${task.progress}%`.padEnd(5) : 'N/A  ';
-    console.log(`   ${progressStr} | ${task.key} | ${task.status.padEnd(15)} | ${task.assignee.padEnd(20)} | ${task.summary}`);
+    console.log(`   ${progressStr} | ${task.key} | ${task.fixVersion.padEnd(15)} | ${task.status.padEnd(15)} | ${task.summary}`);
   }
   
   // Prepare report data
@@ -323,6 +382,7 @@ async function generateReport() {
       averageProgress: stats.averageProgress
     },
     progressDistribution: stats.byProgressRange,
+    byFixVersion: stats.byFixVersion,
     byStatus: stats.byStatus,
     byAssignee: stats.byAssignee,
     tasks: sortedTasks
