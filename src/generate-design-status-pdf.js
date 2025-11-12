@@ -85,17 +85,19 @@ function drawTable(doc, title, tasks, startY) {
   }
   
   // Table headers
-  doc.fontSize(9)
+  doc.fontSize(8)
      .fillColor('#FFFFFF')
      .font('Helvetica-Bold');
   
   doc.rect(50, y, 495, 20)
      .fill(COLORS.primary);
   
-  doc.text('Key', 55, y + 6, { width: 60 });
-  doc.text('Progress', 120, y + 6, { width: 50 });
-  doc.text('Status', 175, y + 6, { width: 80 });
-  doc.text('Summary', 260, y + 6, { width: 280 });
+  doc.text('Key', 55, y + 6, { width: 55 });
+  doc.text('Sprint', 112, y + 6, { width: 55 });
+  doc.text('Due', 170, y + 6, { width: 45 });
+  doc.text('Prog', 218, y + 6, { width: 30 });
+  doc.text('Status', 252, y + 6, { width: 60 });
+  doc.text('Summary', 315, y + 6, { width: 225 });
   
   y += 20;
   
@@ -119,7 +121,17 @@ function drawTable(doc, title, tasks, startY) {
        .fill(bgColor);
     
     doc.fillColor(COLORS.primary)
-       .text(task.key, 55, y + 6, { width: 60 });
+       .text(task.key, 55, y + 6, { width: 55, ellipsis: true });
+    
+    // Sprint (shorten "NH Sprint" to just the number)
+    const sprintText = task.sprint ? task.sprint.replace('NH Sprint ', 'S') : '-';
+    doc.fillColor(COLORS.darkGray)
+       .text(sprintText, 112, y + 6, { width: 55, ellipsis: true });
+    
+    // Due date (format: MM/DD)
+    const dueDateText = task.dueDate ? task.dueDate.substring(5).replace('-', '/') : '-';
+    doc.fillColor(COLORS.darkGray)
+       .text(dueDateText, 170, y + 6, { width: 45 });
     
     // Color code progress
     let progressColor = COLORS.danger;
@@ -127,13 +139,13 @@ function drawTable(doc, title, tasks, startY) {
     else if (progress >= 40) progressColor = COLORS.warning;
     
     doc.fillColor(progressColor)
-       .text(`${progress}%`, 120, y + 6, { width: 50 });
+       .text(`${progress}%`, 218, y + 6, { width: 30 });
     
     doc.fillColor(COLORS.darkGray)
-       .text(task.status, 175, y + 6, { width: 80 });
+       .text(task.status, 252, y + 6, { width: 60, ellipsis: true });
     
     const shortSummary = task.summary.replace('Design: ', '');
-    doc.text(shortSummary, 260, y + 6, { width: 280, ellipsis: true });
+    doc.text(shortSummary, 315, y + 6, { width: 225, ellipsis: true });
     
     y += 20;
   }

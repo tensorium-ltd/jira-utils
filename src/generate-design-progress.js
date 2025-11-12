@@ -112,7 +112,7 @@ async function fetchDesignTasks(client) {
       try {
         const taskResponse = await client.get(`/rest/api/3/issue/${taskKey}`, {
           params: {
-            fields: 'summary,description,status,assignee,priority,created,updated,fixVersions'
+            fields: 'summary,description,status,assignee,priority,created,updated,fixVersions,duedate,customfield_10020'
           }
         });
         
@@ -137,6 +137,24 @@ async function fetchDesignTasks(client) {
           fixVersion = fields.fixVersions[0].name;
         }
         
+        // Extract sprint
+        let sprint = 'No Sprint';
+        const sprintField = fields.customfield_10020;
+        if (sprintField && Array.isArray(sprintField) && sprintField.length > 0) {
+          const lastSprint = sprintField[sprintField.length - 1];
+          if (typeof lastSprint === 'string') {
+            const sprintMatch = lastSprint.match(/name=([^,]+)/);
+            if (sprintMatch) {
+              sprint = sprintMatch[1];
+            }
+          } else if (lastSprint.name) {
+            sprint = lastSprint.name;
+          }
+        }
+        
+        // Extract due date
+        const dueDate = fields.duedate || null;
+        
         tasks.push({
           key: task.key,
           summary: fields.summary,
@@ -145,6 +163,8 @@ async function fetchDesignTasks(client) {
           assignee: assignee,
           progress: progress,
           fixVersion: fixVersion,
+          sprint: sprint,
+          dueDate: dueDate,
           created: created,
           updated: updated
         });
