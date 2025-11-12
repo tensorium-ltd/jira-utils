@@ -335,24 +335,62 @@ async function generateReport() {
     console.log(`      Avg Progress: ${data.avgProgress}%`);
   }
   
-  // Display tasks grouped by fix version
-  console.log('\n📝 TASKS BY FIX VERSION:\n');
+  // Display detailed tables by fix version
+  console.log('\n' + '='.repeat(100));
+  console.log('📋 RELEASE 1D DESIGN TASKS');
+  console.log('='.repeat(100));
   
-  for (const [fixVersion, data] of fixVersionEntries) {
-    console.log(`\n   ${fixVersion} (${data.count} tasks, avg ${data.avgProgress}% progress):`);
-    console.log('   ' + '-'.repeat(80));
+  const release1D = stats.byFixVersion['Release 1D'];
+  if (release1D && release1D.tasks.length > 0) {
+    console.log(`\nTotal: ${release1D.count} tasks | Average Progress: ${release1D.avgProgress}%\n`);
+    console.log('KEY         | PROGRESS | STATUS          | SUMMARY');
+    console.log('-'.repeat(100));
     
-    const sortedVersionTasks = [...data.tasks].sort((a, b) => {
-      if (a.progress === null && b.progress === null) return 0;
-      if (a.progress === null) return 1;
-      if (b.progress === null) return -1;
-      return a.progress - b.progress;
-    });
-    
-    for (const task of sortedVersionTasks) {
-      const progressStr = task.progress !== null ? `${task.progress}%`.padEnd(5) : 'N/A  ';
+    const sortedR1D = [...release1D.tasks].sort((a, b) => a.key.localeCompare(b.key));
+    for (const task of sortedR1D) {
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
       const shortSummary = task.summary.replace('Design: ', '');
-      console.log(`      ${progressStr} | ${task.key} | ${task.status.padEnd(15)} | ${shortSummary}`);
+      console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
+    }
+  } else {
+    console.log('\nNo tasks found for Release 1D');
+  }
+  
+  console.log('\n' + '='.repeat(100));
+  console.log('📋 RELEASE 2A DESIGN TASKS');
+  console.log('='.repeat(100));
+  
+  const release2A = stats.byFixVersion['Release 2A'];
+  if (release2A && release2A.tasks.length > 0) {
+    console.log(`\nTotal: ${release2A.count} tasks | Average Progress: ${release2A.avgProgress}%\n`);
+    console.log('KEY         | PROGRESS | STATUS          | SUMMARY');
+    console.log('-'.repeat(100));
+    
+    const sortedR2A = [...release2A.tasks].sort((a, b) => a.key.localeCompare(b.key));
+    for (const task of sortedR2A) {
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
+      const shortSummary = task.summary.replace('Design: ', '');
+      console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
+    }
+  } else {
+    console.log('\nNo tasks found for Release 2A');
+  }
+  
+  // Also show any tasks without a fix version
+  const noVersion = stats.byFixVersion['No Fix Version'];
+  if (noVersion && noVersion.tasks.length > 0) {
+    console.log('\n' + '='.repeat(100));
+    console.log('📋 DESIGN TASKS WITHOUT FIX VERSION');
+    console.log('='.repeat(100));
+    console.log(`\nTotal: ${noVersion.count} tasks | Average Progress: ${noVersion.avgProgress}%\n`);
+    console.log('KEY         | PROGRESS | STATUS          | SUMMARY');
+    console.log('-'.repeat(100));
+    
+    const sortedNoVer = [...noVersion.tasks].sort((a, b) => a.key.localeCompare(b.key));
+    for (const task of sortedNoVer) {
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
+      const shortSummary = task.summary.replace('Design: ', '');
+      console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
     }
   }
   
