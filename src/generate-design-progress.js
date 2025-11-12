@@ -348,7 +348,7 @@ async function generateReport() {
     
     const sortedR1D = [...release1D.tasks].sort((a, b) => a.key.localeCompare(b.key));
     for (const task of sortedR1D) {
-      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : '0%';
       const shortSummary = task.summary.replace('Design: ', '');
       console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
     }
@@ -368,7 +368,7 @@ async function generateReport() {
     
     const sortedR2A = [...release2A.tasks].sort((a, b) => a.key.localeCompare(b.key));
     for (const task of sortedR2A) {
-      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : '0%';
       const shortSummary = task.summary.replace('Design: ', '');
       console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
     }
@@ -388,7 +388,7 @@ async function generateReport() {
     
     const sortedNoVer = [...noVersion.tasks].sort((a, b) => a.key.localeCompare(b.key));
     for (const task of sortedNoVer) {
-      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : 'N/A';
+      const progressStr = task.progress !== null ? `${task.progress}%`.padStart(3) : '0%';
       const shortSummary = task.summary.replace('Design: ', '');
       console.log(`${task.key.padEnd(11)} | ${progressStr.padEnd(8)} | ${task.status.padEnd(15)} | ${shortSummary}`);
     }
@@ -398,14 +398,13 @@ async function generateReport() {
   console.log('\n\n📝 ALL DESIGN TASKS (sorted by progress):\n');
   
   const sortedTasks = [...tasks].sort((a, b) => {
-    if (a.progress === null && b.progress === null) return 0;
-    if (a.progress === null) return 1;
-    if (b.progress === null) return -1;
-    return a.progress - b.progress;
+    const aProgress = a.progress !== null ? a.progress : 0;
+    const bProgress = b.progress !== null ? b.progress : 0;
+    return aProgress - bProgress;
   });
   
   for (const task of sortedTasks) {
-    const progressStr = task.progress !== null ? `${task.progress}%`.padEnd(5) : 'N/A  ';
+    const progressStr = task.progress !== null ? `${task.progress}%`.padEnd(4) : '0%  ';
     console.log(`   ${progressStr} | ${task.key} | ${task.fixVersion.padEnd(15)} | ${task.status.padEnd(15)} | ${task.summary}`);
   }
   
