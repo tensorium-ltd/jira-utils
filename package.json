@@ -20,7 +20,8 @@
     "nh-defect-upload": "node src/nh-defect-upload.js",
     "dev-review": "node src/generate-dev-review-by-assignee.js",
     "points-by-status": "node src/generate-points-by-status.js",
-    "complete-epics": "node src/generate-complete-epics.js"
+    "complete-epics": "node src/generate-complete-epics.js",
+    "design-progress": "node src/generate-design-progress.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",
