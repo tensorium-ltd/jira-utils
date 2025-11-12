@@ -9,7 +9,7 @@ const JIRA_EMAIL = process.env.JIRA_EMAIL;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 const PROJECT_KEY = 'VER10';
 const EPIC_KEY = 'VER10-8245';
-const CSV_FILE_PATH = path.join(__dirname, '../data/CCET Release 1 C UAT Defect Log.csv');
+const CSV_FILE_PATH = path.join(__dirname, '../data/CCET Release 1 C UAT Defect Log .csv');
 
 // Validate environment variables
 function validateConfig() {
@@ -259,7 +259,7 @@ async function getPriorityId(client, priorityCode) {
 }
 
 // Create bug in JIRA
-async function createBug(client, defect, requiredFields) {
+async function createBug(client, defect, requiredFields, dryRun = false) {
   try {
     const summary = defect['Defect Name'];
     const priorityCode = extractPriority(defect['Severity / Priority']);
@@ -321,6 +321,17 @@ async function createBug(client, defect, requiredFields) {
       issueData.fields.fixVersions = [{ id: requiredFields.release1CVersion.id }];
     }
     
+    // In dry-run mode, return simulated data without creating the bug
+    if (dryRun) {
+      return {
+        key: 'DRY-RUN-XXXX',
+        payload: issueData,
+        priorityCode: priorityCode,
+        assignee: requiredFields.carolineAccount?.displayName || 'Caroline Wallen',
+        fixVersion: requiredFields.release1CVersion?.name || 'Release 1C'
+      };
+    }
+    
     const response = await client.post('/rest/api/3/issue', issueData);
     
     return response.data.key;
@@ -336,7 +347,7 @@ async function createBug(client, defect, requiredFields) {
 }
 
 // Process defects from CSV
-async function processDefects(client, defects, requiredFields) {
+async function processDefects(client, defects, requiredFields, dryRun = false) {
   let created = 0;
   let skipped = 0;
   let errors = 0;
@@ -374,14 +385,36 @@ async function processDefects(client, defects, requiredFields) {
       continue;
     }
     
-    // Create the bug
+    // Create the bug (or simulate in dry-run)
     try {
-      const newKey = await createBug(client, defect, requiredFields);
-      console.log(`   ✅ Created bug: ${newKey}`);
-      created++;
-      results.created.push({ name: defectName, key: newKey });
+      const result = await createBug(client, defect, requiredFields, dryRun);
+      
+      if (dryRun) {
+        console.log(`   🔍 [DRY RUN] Would create bug:`);
+        console.log(`      Summary: ${defectName}`);
+        console.log(`      Priority: ${result.priorityCode}`);
+        console.log(`      Assignee: ${result.assignee}`);
+        console.log(`      Fix Version: ${result.fixVersion}`);
+        console.log(`      Epic Link: ${EPIC_KEY}`);
+        created++;
+        results.created.push({ 
+          name: defectName, 
+          key: result.key,
+          dryRun: true,
+          details: {
+            priority: result.priorityCode,
+            assignee: result.assignee,
+            fixVersion: result.fixVersion
+          }
+        });
+      } else {
+        console.log(`   ✅ Created bug: ${result}`);
+        created++;
+        results.created.push({ name: defectName, key: result });
+      }
     } catch (error) {
       console.log(`   ❌ Failed to create bug for: ${defectName}`);
+      console.log(`      Error: ${error.message}`);
       errors++;
       results.errors.push({ name: defectName, error: error.message });
     }
@@ -392,11 +425,18 @@ async function processDefects(client, defects, requiredFields) {
 
 // Main function
 async function main() {
+  // Check for dry-run flag
+  const dryRun = process.argv.includes('--dry-run');
+  
   console.log('🚀 NH UAT Defect Upload to JIRA\n');
   console.log('============================================================');
   console.log(`   Epic: ${EPIC_KEY}`);
   console.log(`   Project: ${PROJECT_KEY}`);
-  console.log(`   JIRA Instance: ${JIRA_BASE_URL}\n`);
+  console.log(`   JIRA Instance: ${JIRA_BASE_URL}`);
+  if (dryRun) {
+    console.log(`   🔍 MODE: DRY RUN (No bugs will be created)`);
+  }
+  console.log();
   
   // Validate configuration
   validateConfig();
@@ -413,21 +453,37 @@ async function main() {
   
   // Process defects
   console.log('📝 Processing defects...\n');
-  const summary = await processDefects(client, defects, requiredFields);
+  const summary = await processDefects(client, defects, requiredFields, dryRun);
   
   // Print summary
   console.log('\n============================================================');
-  console.log('📊 SUMMARY:\n');
+  if (dryRun) {
+    console.log('📊 DRY RUN SUMMARY:\n');
+  } else {
+    console.log('📊 SUMMARY:\n');
+  }
   console.log(`   Total Defects Processed: ${defects.length}`);
-  console.log(`   ✅ Created: ${summary.created}`);
+  if (dryRun) {
+    console.log(`   🔍 Would Create: ${summary.created}`);
+  } else {
+    console.log(`   ✅ Created: ${summary.created}`);
+  }
   console.log(`   ⏭️  Skipped: ${summary.skipped}`);
   console.log(`   ❌ Errors: ${summary.errors}\n`);
   
   if (summary.results.created.length > 0) {
-    console.log('Created Bugs:');
-    summary.results.created.forEach(item => {
-      console.log(`   - ${item.key}: ${item.name}`);
-    });
+    if (dryRun) {
+      console.log('Would Create:');
+      summary.results.created.forEach(item => {
+        console.log(`   - ${item.name}`);
+        console.log(`     Priority: ${item.details.priority}, Assignee: ${item.details.assignee}, Fix Version: ${item.details.fixVersion}`);
+      });
+    } else {
+      console.log('Created Bugs:');
+      summary.results.created.forEach(item => {
+        console.log(`   - ${item.key}: ${item.name}`);
+      });
+    }
     console.log();
   }
   
@@ -447,7 +503,12 @@ async function main() {
     console.log();
   }
   
-  console.log('🎉 Done!\n');
+  if (dryRun) {
+    console.log('🔍 DRY RUN COMPLETE - No bugs were created in JIRA');
+    console.log('   To create these bugs, run without the --dry-run flag\n');
+  } else {
+    console.log('🎉 Done!\n');
+  }
 }
 
 // Run the script

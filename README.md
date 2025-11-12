@@ -678,6 +678,13 @@ const STALE_THRESHOLD_HOURS = 24;
 - UTF-8 BOM handling for CSV files
 
 **Usage**:
+
+**Dry-Run Mode** (Preview without creating bugs):
+```bash
+npm run nh-defect-upload -- --dry-run
+```
+
+**Create Bugs**:
 ```bash
 npm run nh-defect-upload
 ```
@@ -723,6 +730,13 @@ const CSV_FILE_PATH = './data/CCET Release 1 C UAT Defect Log.csv';
 Created Bugs:
    - VER10-9210: UAT-PPP-003 - Create Project Button is greyed out
 ```
+
+**Dry-Run Feature**:
+- Use `--dry-run` flag to preview what will be created without making changes
+- Shows exactly what bugs would be created with all field values
+- Validates CSV data, checks for duplicates, and maps priorities
+- Perfect for verifying data before bulk upload
+- No JIRA bugs are created in dry-run mode
 
 **Duplicate Detection**:
 - Searches JIRA by summary text before creating
