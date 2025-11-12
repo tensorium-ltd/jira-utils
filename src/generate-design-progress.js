@@ -112,7 +112,7 @@ async function fetchDesignTasks(client) {
       try {
         const taskResponse = await client.get(`/rest/api/3/issue/${taskKey}`, {
           params: {
-            fields: 'summary,description,status,assignee,priority,created,updated,fixVersions,duedate,customfield_10020'
+            fields: 'summary,description,status,assignee,priority,created,updated,fixVersions,duedate,customfield_11150'
           }
         });
         
@@ -139,21 +139,20 @@ async function fetchDesignTasks(client) {
         
         // Extract sprint
         let sprint = 'No Sprint';
-        const sprintField = fields.customfield_10020;
+        let sprintEndDate = null;
+        const sprintField = fields.customfield_11150;
         if (sprintField && Array.isArray(sprintField) && sprintField.length > 0) {
           const lastSprint = sprintField[sprintField.length - 1];
-          if (typeof lastSprint === 'string') {
-            const sprintMatch = lastSprint.match(/name=([^,]+)/);
-            if (sprintMatch) {
-              sprint = sprintMatch[1];
-            }
-          } else if (lastSprint.name) {
+          if (lastSprint.name) {
             sprint = lastSprint.name;
+          }
+          if (lastSprint.endDate) {
+            sprintEndDate = lastSprint.endDate.split('T')[0];
           }
         }
         
-        // Extract due date
-        const dueDate = fields.duedate || null;
+        // Extract due date (use explicit due date, or fall back to sprint end date)
+        let dueDate = fields.duedate || sprintEndDate;
         
         tasks.push({
           key: task.key,
