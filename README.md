@@ -853,6 +853,149 @@ In Dev (11 issues, 20 points):
 
 ---
 
+#### 17. `generate-burndown-summary.js`
+
+**NEW**: Analyzes sprint burndown with detailed scope change tracking to identify scope creep and mid-sprint additions.
+
+**Features**:
+- Tracks initial sprint scope vs. current scope
+- Identifies all issues added mid-sprint with dates
+- Detects story point increases and decreases
+- Calculates scope increase percentage
+- Time-based analysis comparing expected vs. actual progress
+- Detailed issue listing with summaries, dates, and assignees
+- Analyzes changelog to determine when issues were added to sprint
+- Perfect for understanding why burndown charts show scope increases
+
+**Usage**:
+```bash
+npm run burndown
+```
+
+**Configuration**:
+```javascript
+const CURRENT_SPRINT = 'NH Sprint 31'; // Update this in the script
+```
+
+**Output**: `reports/burndown-summary.json`
+
+**Console Output Example**:
+```
+============================================================
+📊 BURNDOWN & SCOPE SUMMARY
+============================================================
+
+📦 INITIAL SCOPE (at sprint start):
+   Issues: 119
+   Story Points: 244
+
+➕ SCOPE ADDED (mid-sprint):
+   Issues Added: 16
+   Story Points Added: 25
+
+   Detailed list of issues added mid-sprint:
+   ----------------------------------------------------------------------
+   KEY         | PTS | DATE       | TYPE   | STATUS      | SUMMARY
+   ----------------------------------------------------------------------
+   VER10-9165  |   1 | 2025-11-06 | Story  | In QA       | Configure NRVAT %
+   VER10-9172  |   2 | 2025-11-06 | Bug    | Open        | Incorrect date handling
+   VER10-9197  |   2 | 2025-11-10 | Bug    | In Dev      | External UAT issue
+   ...
+
+📈 STORY POINT INCREASES:
+   Total Increases: 83.5 points
+   Number of Changes: 56
+
+   Story point increases:
+   • VER10-8702: 1 → 2 pts (+1) - 2025-11-06 - Funsho Sanni
+   • VER10-8334: 1 → 3 pts (+2) - 2025-11-06 - Funsho Sanni
+   ...
+
+📊 CURRENT STATUS:
+   Total Sprint Scope: 352.5 points
+   Completed: 0 points (0 issues)
+   Remaining: 269 points (135 issues)
+   Progress: 0%
+
+⚠️  SCOPE CHANGE IMPACT:
+   Initial Sprint Scope: 244 points
+   Scope Added Mid-Sprint: 108.5 points (+44%)
+   Current Sprint Scope: 352.5 points
+
+⏰ TIME-BASED ANALYSIS (57% through sprint):
+   Expected Completed (if no scope change): 139 points
+   Actual Completed: 0 points
+   Variance: -139 points
+```
+
+**Output Format**:
+```json
+{
+  "sprint": "NH Sprint 31",
+  "sprintDetails": {
+    "sprintId": 2897,
+    "startDate": "2025-11-06T05:26:46.829Z",
+    "endDate": "2025-11-20T12:30:00.000Z",
+    "state": "active"
+  },
+  "scope": {
+    "initial": 244,
+    "added": 25,
+    "increased": 83.5,
+    "totalScope": 352.5,
+    "completed": 0,
+    "remaining": 269,
+    "scopeIncreasePercentage": 44
+  },
+  "addedIssues": [
+    {
+      "key": "VER10-9165",
+      "summary": "Configure NRVAT % i.e. Non Recoverable VAT -BE",
+      "storyPoints": 1,
+      "addedDate": "2025-11-06T15:30:00.000Z",
+      "issueType": "Story",
+      "status": "In QA",
+      "created": "2025-11-06T10:00:00.000Z"
+    }
+  ],
+  "storyPointIncreases": [
+    {
+      "key": "VER10-8702",
+      "summary": "UI - (Admin) Manual assignment of Tags...",
+      "from": 1,
+      "to": 2,
+      "increase": 1,
+      "changedDate": "2025-11-06T12:00:00.000Z",
+      "changedBy": "Funsho Sanni"
+    }
+  ],
+  "timeAnalysis": {
+    "percentThrough": 57,
+    "expectedCompleted": 139,
+    "actualCompleted": 0,
+    "variance": -139
+  }
+}
+```
+
+**Use Cases**:
+- Understanding scope creep in sprints
+- Identifying when and why issues were added mid-sprint
+- Tracking story point estimation changes
+- Sprint retrospective analysis
+- Explaining burndown chart anomalies
+- Planning corrective actions for scope management
+- Identifying patterns of mid-sprint additions
+
+**Key Insights**:
+- Shows exactly which issues were added after sprint start
+- Tracks who added story points and when
+- Calculates impact of scope changes on sprint velocity
+- Helps distinguish between velocity issues and scope creep
+- Provides evidence for sprint planning improvements
+
+---
+
 ## Output Files
 
 All generated files are saved in the `reports/` directory:
@@ -868,7 +1011,8 @@ All generated files are saved in the `reports/` directory:
 - `assignee-allocation-<date>.json` - Historical allocations
 - `issues-in-qa-sprint-<number>.json` - Current QA backlog
 - `time-in-status-sprint-<number>.json` - Stale issues analysis
-- `points-by-status.json` - **NEW**: Story point distribution by workflow status
+- `points-by-status.json` - Story point distribution by workflow status
+- `burndown-summary.json` - **NEW**: Sprint burndown with scope creep analysis
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report
@@ -905,6 +1049,9 @@ npm run generate-report 31
 ```bash
 # Get status distribution overview
 npm run points-by-status
+
+# Analyze burndown and scope changes
+npm run burndown
 
 # Check current QA backlog
 npm run issues-in-qa
@@ -1023,7 +1170,14 @@ if ((issueType === 'Story' || issueType === 'Bug') && storyPoints === 0) {
   "assignee-pdf": "node src/generate-assignee-pdf.js",
   "assignee-allocation": "node src/generate-assignee-allocation-report.js",
   "issues-in-qa": "node src/generate-issues-currently-in-qa.js",
-  "time-in-status": "node src/generate-time-in-status.js"
+  "time-in-status": "node src/generate-time-in-status.js",
+  "nh-defect-upload": "node src/nh-defect-upload.js",
+  "dev-review": "node src/generate-dev-review-by-assignee.js",
+  "points-by-status": "node src/generate-points-by-status.js",
+  "complete-epics": "node src/generate-complete-epics.js",
+  "design-progress": "node src/generate-design-progress.js",
+  "design-pdf": "node src/generate-design-status-pdf.js",
+  "burndown": "node src/generate-burndown-summary.js"
 }
 ```
 
@@ -1052,6 +1206,13 @@ plan-refactor/
 │   ├── generate-assignee-allocation-report.js
 │   ├── generate-issues-currently-in-qa.js
 │   ├── generate-time-in-status.js
+│   ├── nh-defect-upload.js
+│   ├── generate-dev-review-by-assignee.js
+│   ├── generate-points-by-status.js
+│   ├── generate-complete-epics.js
+│   ├── generate-design-progress.js
+│   ├── generate-design-status-pdf.js
+│   ├── generate-burndown-summary.js
 │   └── templates/
 │       └── report-template.js      # PDF layout definitions
 ├── package.json
