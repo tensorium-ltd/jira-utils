@@ -860,10 +860,11 @@ In Dev (11 issues, 20 points):
 **Features**:
 - Tracks initial sprint scope vs. current scope
 - Identifies all issues added mid-sprint with dates
+- Detailed formatted table showing all added issues with key, points, date, type, status, and summary
 - Detects story point increases and decreases
 - Calculates scope increase percentage
 - Time-based analysis comparing expected vs. actual progress
-- Detailed issue listing with summaries, dates, and assignees
+- Full issue details with summaries, dates, and assignees
 - Analyzes changelog to determine when issues were added to sprint
 - Perfect for understanding why burndown charts show scope increases
 
@@ -980,12 +981,13 @@ const CURRENT_SPRINT = 'NH Sprint 31'; // Update this in the script
 
 **Use Cases**:
 - Understanding scope creep in sprints
-- Identifying when and why issues were added mid-sprint
-- Tracking story point estimation changes
-- Sprint retrospective analysis
-- Explaining burndown chart anomalies
+- Identifying exactly which issues were added mid-sprint with complete details
+- Tracking story point estimation changes with assignee accountability
+- Sprint retrospective analysis with concrete data
+- Explaining burndown chart anomalies to stakeholders
 - Planning corrective actions for scope management
-- Identifying patterns of mid-sprint additions
+- Identifying patterns of mid-sprint additions (by date, type, assignee)
+- Generating evidence-based reports for sprint planning improvements
 
 **Key Insights**:
 - Shows exactly which issues were added after sprint start
