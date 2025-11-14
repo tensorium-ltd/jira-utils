@@ -399,9 +399,83 @@ npm run work-today-pdf 2025-11-10
 
 ---
 
+#### 9. `generate-sprint-so-far.js`
+
+Provides a day-by-day breakdown of sprint progress showing how many story points were completed each day, cumulative totals, and remaining work.
+
+**Features**:
+- Daily completion tracking from sprint start to current date
+- Total sprint scope calculation
+- Story points completed each day
+- Running cumulative totals
+- Points remaining after each day
+- Percentage complete tracking
+- Lists issues completed on current day
+
+**Usage**:
+```bash
+npm run sprint-so-far
+```
+
+**Configuration**:
+```javascript
+const PROJECT_KEY = 'VER10';
+const CURRENT_SPRINT = 'NH Sprint 31';
+```
+
+**Output**: `reports/sprint-progress-daily.json`
+
+**Sample Console Output**:
+```
+DATE           | COMPLETED | CUMULATIVE | REMAINING | % DONE
+               |   TODAY   |   TOTAL    |           |       
+----------------------------------------------------------------
+Thu Nov 6      |        13 |         13 |       259 |    4.8%
+Fri Nov 7      |        22 |         35 |       237 |   12.9%
+Sat Nov 8      |         3 |         38 |       234 |   14.0%
+Sun Nov 9      |         0 |         38 |       234 |   14.0%
+Mon Nov 10     |         9 |         47 |       225 |   17.3%
+Tue Nov 11     |        19 |         66 |       206 |   24.3%
+Wed Nov 12     |        11 |         77 |       195 |   28.3%
+Thu Nov 13     |         8 |         85 |       187 |   31.3%
+Fri Nov 14     |         4 |         89 |       183 |   32.7%
+----------------------------------------------------------------
+Total Sprint: 272 points
+Completed: 89 points (32.7%)
+Remaining: 183 points
+```
+
+**Output Format**:
+```json
+{
+  "date": "2025-11-14",
+  "project": "VER10",
+  "sprint": "NH Sprint 31",
+  "sprintStartDate": "2025-11-06",
+  "sprintEndDate": "2025-11-20",
+  "totalSprintPoints": 272,
+  "totalCompleted": 89,
+  "totalRemaining": 183,
+  "percentComplete": 32.7,
+  "dailyProgress": [
+    {
+      "date": "2025-11-06",
+      "totalSprint": 272,
+      "completedToday": 13,
+      "cumulativeCompleted": 13,
+      "remaining": 259,
+      "percentComplete": "4.8",
+      "completedIssues": [...]
+    }
+  ]
+}
+```
+
+---
+
 ### Team Analysis Scripts
 
-#### 9. `generate-assignee-report.js`
+#### 10. `generate-assignee-report.js`
 
 Analyzes work done today and current sprint workload by assignee and team.
 
@@ -1014,7 +1088,8 @@ All generated files are saved in the `reports/` directory:
 - `issues-in-qa-sprint-<number>.json` - Current QA backlog
 - `time-in-status-sprint-<number>.json` - Stale issues analysis
 - `points-by-status.json` - Story point distribution by workflow status
-- `burndown-summary.json` - **NEW**: Sprint burndown with scope creep analysis
+- `burndown-summary.json` - Sprint burndown with scope creep analysis
+- `sprint-progress-daily.json` - **NEW**: Day-by-day sprint progress tracking
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report
