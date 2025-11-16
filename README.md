@@ -825,9 +825,75 @@ Defect Name,Severity / Priority,Module / Area,Defect Description,...
 
 ---
 
+#### 16. `generate-sub-bug-summary.js`
+
+Tracks and summarizes sub-bug completions by day throughout the sprint. Sub-bugs are identified as subtasks whose parent issue is a Bug.
+
+**Features**:
+- Daily breakdown of sub-bug completions
+- Cumulative totals across the sprint
+- Shows parent bug relationships
+- Lists assignees for each sub-bug
+- Identifies recently completed sub-bugs
+
+**Usage**:
+```bash
+npm run sub-bug-summary
+```
+
+**Configuration**:
+```javascript
+const PROJECT_KEY = 'VER10';
+const CURRENT_SPRINT = 'NH Sprint 31';
+```
+
+**Output**: `reports/sub-bug-summary.json`
+
+**Sample Console Output**:
+```
+DATE           | COMPLETED | CUMULATIVE
+               |   TODAY   |   TOTAL   
+------------------------------------------------
+Thu Nov 6      |         2 |         2
+Fri Nov 7      |         5 |         7
+Sat Nov 8      |         1 |         8
+...
+------------------------------------------------
+
+Total Sub-Bugs: 25
+Completed: 18
+Remaining: 7
+
+📋 RECENTLY COMPLETED SUB-BUGS:
+Thu Nov 14: 2 sub-bug(s)
+   ✓ VER10-9234 (parent: VER10-9200) - Developer Name
+     Fix validation error in login form...
+```
+
+**Output Format**:
+```json
+{
+  "date": "2025-11-16",
+  "sprint": "NH Sprint 31",
+  "totalSubBugs": 25,
+  "totalCompleted": 18,
+  "totalRemaining": 7,
+  "dailyCompletions": [
+    {
+      "date": "2025-11-06",
+      "completedToday": 2,
+      "cumulativeCompleted": 2,
+      "subBugs": [...]
+    }
+  ]
+}
+```
+
+---
+
 ### Status Tracking Scripts
 
-#### 16. `generate-points-by-status.js`
+#### 17. `generate-points-by-status.js`
 
 **NEW**: Provides a snapshot of story point distribution across workflow statuses for the current sprint.
 
@@ -1089,7 +1155,8 @@ All generated files are saved in the `reports/` directory:
 - `time-in-status-sprint-<number>.json` - Stale issues analysis
 - `points-by-status.json` - Story point distribution by workflow status
 - `burndown-summary.json` - Sprint burndown with scope creep analysis
-- `sprint-progress-daily.json` - **NEW**: Day-by-day sprint progress tracking
+- `sprint-progress-daily.json` - Day-by-day sprint progress tracking
+- `sub-bug-summary.json` - **NEW**: Daily sub-bug completion tracking
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report

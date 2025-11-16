@@ -24,7 +24,8 @@
     "design-progress": "node src/generate-design-progress.js",
     "design-pdf": "node src/generate-design-status-pdf.js",
     "burndown": "node src/generate-burndown-summary.js",
-    "sprint-so-far": "node src/generate-sprint-so-far.js"
+    "sprint-so-far": "node src/generate-sprint-so-far.js",
+    "sub-bug-summary": "node src/generate-sub-bug-summary.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",

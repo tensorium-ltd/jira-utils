@@ -208,12 +208,53 @@ function calculateDailyProgress(issues, sprintStartDate, today, storyPointsField
   const endDate = today >= sprintStartDate ? today : sprintStartDate;
   const dates = getDateRange(sprintStartDate, endDate);
   
-  // Calculate total sprint scope
+  // Calculate total sprint scope - only count Story and Bug types
+  // Exclude issues completed before the sprint started
   let totalPoints = 0;
+  let issuesWithoutPoints = 0;
+  let countedIssues = 0;
+  let excludedCompleted = 0;
+  const issueTypeCounts = {};
+  
   for (const issue of issues) {
-    const points = issue.fields[storyPointsField] || 2; // Default 2 points
+    const issueType = issue.fields.issuetype?.name;
+    
+    // Track all issue types found
+    issueTypeCounts[issueType] = (issueTypeCounts[issueType] || 0) + 1;
+    
+    // Only process Story and Bug types
+    if (issueType !== 'Story' && issueType !== 'Bug') {
+      continue;
+    }
+    
+    // Exclude issues that were completed before the sprint started
+    const completionDate = getCompletionDate(issue);
+    if (completionDate && completionDate < sprintStartDate) {
+      excludedCompleted++;
+      continue;
+    }
+    
+    let points = issue.fields[storyPointsField];
+    
+    // Default to 2 points for Stories/Bugs without points
+    if (!points || points === 0) {
+      points = 2;
+      issuesWithoutPoints++;
+    }
+    
     totalPoints += points;
+    countedIssues++;
   }
+  
+  console.log(`   Total Sprint Scope: ${totalPoints} points from ${countedIssues} Stories/Bugs`);
+  console.log(`   (Found ${issues.length} total issues in sprint: ${Object.entries(issueTypeCounts).map(([type, count]) => `${count} ${type}`).join(', ')})`);
+  if (excludedCompleted > 0) {
+    console.log(`   (Excluded ${excludedCompleted} issues completed before sprint started)`);
+  }
+  if (issuesWithoutPoints > 0) {
+    console.log(`   (${issuesWithoutPoints} Stories/Bugs defaulted to 2 points)`);
+  }
+  console.log('');
 
   let cumulativePoints = 0;
 
@@ -226,13 +267,23 @@ function calculateDailyProgress(issues, sprintStartDate, today, storyPointsField
       const completionDate = getCompletionDate(issue);
       // Only count if completed on this date AND on or after sprint start
       if (completionDate === date && completionDate >= sprintStartDate) {
-        const points = issue.fields[storyPointsField] || 2;
+        let points = issue.fields[storyPointsField];
+        const issueType = issue.fields.issuetype?.name;
+        
+        // Only default to 2 points for Story and Bug types without points
+        if ((issueType === 'Story' || issueType === 'Bug') && (!points || points === 0)) {
+          points = 2;
+        } else if (!points || points === 0) {
+          // Skip issues without points that aren't Story or Bug
+          continue;
+        }
+        
         pointsCompletedToday += points;
         completedIssues.push({
           key: issue.key,
           summary: issue.fields.summary,
           points: points,
-          type: issue.fields.issuetype.name
+          type: issueType
         });
       }
     }
