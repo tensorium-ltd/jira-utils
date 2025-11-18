@@ -891,9 +891,130 @@ Thu Nov 14: 2 sub-bug(s)
 
 ---
 
+#### 17. `generate-work-done-date-based.js`
+
+**NEW**: Captures ALL work completed during the current sprint time window, regardless of whether issues are formally assigned to the sprint. This helps identify "hidden work" that developers complete but isn't tracked in the sprint's official scope.
+
+**Features**:
+- Analyzes ALL completed issues during the sprint window (based on completion dates)
+- Identifies "hidden work" - issues completed but not assigned to the sprint
+- Breaks down by issue type: Stories, Bugs, Tasks, Sub-tasks, Sub-bugs
+- Calculates story points for sprint-assigned vs. hidden work
+- Shows percentage of hidden work vs. official sprint work
+- Lists detailed information for all hidden work items
+- Perfect for understanding true team capacity and identifying scope management issues
+
+**Usage**:
+```bash
+npm run work-date-based
+```
+
+**Configuration**:
+```javascript
+const PROJECT_KEY = 'VER10';
+const CURRENT_SPRINT = 'NH Sprint 31';
+```
+
+**Output**: `reports/work-done-date-based.json`
+
+**Sample Console Output**:
+```
+============================================================
+📈 SUMMARY - Work Completed During Sprint Window
+============================================================
+
+   Sprint Period: 2025-11-06 to 2025-11-18
+   Total Issues Completed: 96
+   - Assigned to Sprint: 75 (78.1%)
+   - Hidden Work: 21 (21.9%)
+
+   Total Story Points: 113
+   - Assigned to Sprint: 107
+   - Hidden Work: 6
+
+------------------------------------------------------------
+📊 BREAKDOWN BY ISSUE TYPE:
+------------------------------------------------------------
+
+   Stories:
+      Total: 41 issues, 88 points
+      - In Sprint: 36 issues, 84 points
+      - Hidden: 5 issues, 4 points ⚠️
+
+   Bugs:
+      Total: 1 issues, 1 points
+      - In Sprint: 1 issues, 1 points
+      - Hidden: 0 issues, 0 points 
+
+   Tasks:
+      Total: 4 issues, 5 points
+      - In Sprint: 1 issues, 5 points
+      - Hidden: 3 issues, 0 points ⚠️
+
+============================================================
+⚠️  HIDDEN WORK DETAILS (Not Assigned to Sprint)
+============================================================
+
+   Stories (5 issues, 4 points):
+   ────────────────────────────────────────────────────────────
+   VER10-9074   | 0 pts  | 11/12  | Admin -> Estimate numbering...
+   VER10-9019   | 0 pts  | 11/07  | [API Governance] Integrate API Dog...
+   VER10-8998   | 0 pts  | 11/12  | [CI] develop_sw: Stabilize Unit Tests
+   VER10-8491   | 2 pts  | 11/06  | Configure Estimate Numbering Syntax
+   VER10-7607   | 2 pts  | 11/06  | Subitem should not be deleted...
+```
+
+**Output Format**:
+```json
+{
+  "generatedAt": "2025-11-18T10:00:00.000Z",
+  "sprint": {
+    "name": "NH Sprint 31",
+    "startDate": "2025-11-06",
+    "endDate": "2025-11-19"
+  },
+  "summary": {
+    "totalIssues": 96,
+    "totalInSprint": 75,
+    "totalHidden": 21,
+    "totalPoints": 113,
+    "totalHiddenPoints": 6,
+    "hiddenPercentage": "21.9"
+  },
+  "breakdown": {
+    "stories": {
+      "issues": [...],
+      "stats": {
+        "total": 41,
+        "inSprint": 36,
+        "hidden": 5,
+        "totalPoints": 88,
+        "hiddenPoints": 4
+      }
+    }
+  }
+}
+```
+
+**Use Cases**:
+- Identifying work that developers complete but don't formally track in sprints
+- Understanding true team capacity vs. planned capacity
+- Finding gaps in sprint planning and scope management
+- Retrospectives: analyzing why official sprint velocity differs from actual work
+- Capacity planning: accounting for "invisible" work in future sprints
+- Process improvement: identifying patterns of unplanned work
+
+**Key Insights**:
+- Shows the delta between "official" sprint work and actual completed work
+- Helps explain discrepancies in velocity calculations
+- Identifies systemic issues with sprint planning or work intake processes
+- Provides evidence for discussions about team capacity and planning accuracy
+
+---
+
 ### Status Tracking Scripts
 
-#### 17. `generate-points-by-status.js`
+#### 18. `generate-points-by-status.js`
 
 **NEW**: Provides a snapshot of story point distribution across workflow statuses for the current sprint.
 
@@ -993,7 +1114,7 @@ In Dev (11 issues, 20 points):
 
 ---
 
-#### 17. `generate-burndown-summary.js`
+#### 19. `generate-burndown-summary.js`
 
 **NEW**: Analyzes sprint burndown with detailed scope change tracking to identify scope creep and mid-sprint additions.
 
@@ -1156,7 +1277,8 @@ All generated files are saved in the `reports/` directory:
 - `points-by-status.json` - Story point distribution by workflow status
 - `burndown-summary.json` - Sprint burndown with scope creep analysis
 - `sprint-progress-daily.json` - Day-by-day sprint progress tracking
-- `sub-bug-summary.json` - **NEW**: Daily sub-bug completion tracking
+- `sub-bug-summary.json` - Daily sub-bug completion tracking
+- `work-done-date-based.json` - **NEW**: Date-based work completion including hidden work analysis
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report
@@ -1196,6 +1318,9 @@ npm run points-by-status
 
 # Analyze burndown and scope changes
 npm run burndown
+
+# Check for hidden work (not assigned to sprint)
+npm run work-date-based
 
 # Check current QA backlog
 npm run issues-in-qa

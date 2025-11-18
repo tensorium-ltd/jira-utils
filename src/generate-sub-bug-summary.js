@@ -87,17 +87,19 @@ async function getSprintDetails(sprintName) {
 }
 
 /**
- * Get all sub-tasks in the sprint
+ * Get all sub-tasks (using date range instead of sprint assignment to catch hidden work)
  */
-async function getSubBugs(sprintName) {
+async function getSubBugs(sprintStartDate, sprintEndDate) {
   try {
-    // First get all subtasks in the sprint
+    // Get all subtasks updated during or after sprint start
+    // This catches sub-bugs that were worked on but not assigned to the sprint
     const response = await client.post('/rest/api/3/search/jql', {
-      jql: `project = ${PROJECT_KEY} AND sprint = "${sprintName}" AND issuetype = Sub-task`,
+      jql: `project = ${PROJECT_KEY} AND issuetype = Sub-task AND updated >= "${sprintStartDate}"`,
       maxResults: 1000
     });
 
     const subTasks = [];
+    const parentTypeCounts = {};
     
     // Fetch each subtask with parent info and changelog
     for (const issueRef of response.data.issues || []) {
@@ -119,7 +121,10 @@ async function getSubBugs(sprintName) {
         let parentKey = null;
         if (fields.parent) {
           parentKey = fields.parent.key;
-          parentType = fields.parent.fields?.issuetype?.name;
+          parentType = fields.parent.fields?.issuetype?.name || 'Unknown';
+          
+          // Track parent types for debugging
+          parentTypeCounts[parentType] = (parentTypeCounts[parentType] || 0) + 1;
         }
         
         // Only include subtasks where parent is a Bug
@@ -138,6 +143,14 @@ async function getSubBugs(sprintName) {
       } catch (err) {
         console.warn(`⚠️  Could not fetch ${key}:`, err.message);
       }
+    }
+    
+    // Log what we found for debugging
+    const totalSubtasks = response.data.issues?.length || 0;
+    if (totalSubtasks > 0) {
+      console.log(`   Found ${totalSubtasks} total subtasks updated since sprint start`);
+      console.log(`   Parent types: ${Object.entries(parentTypeCounts).map(([type, count]) => `${count} ${type}`).join(', ')}`);
+      console.log(`   Filtering to only subtasks with Bug parents...`);
     }
 
     return subTasks;
@@ -206,25 +219,33 @@ function formatDate(dateString) {
 }
 
 /**
- * Calculate daily sub-bug completions
+ * Calculate daily sub-bug completions (only counting completions within sprint dates)
  */
-function calculateDailyCompletions(subBugs, sprintStartDate, today) {
+function calculateDailyCompletions(subBugs, sprintStartDate, sprintEndDate, today) {
   const dailyData = [];
-  const dates = getDateRange(sprintStartDate, today);
+  const endDate = today < sprintEndDate ? today : sprintEndDate;
+  const dates = getDateRange(sprintStartDate, endDate);
   
   let cumulativeCount = 0;
+  
+  // Filter to only sub-bugs completed during the sprint period
+  const sprintSubBugs = subBugs.filter(subBug => {
+    const completionDate = getCompletionDate(subBug);
+    return completionDate && completionDate >= sprintStartDate && completionDate <= endDate;
+  });
 
   for (const date of dates) {
     const completedToday = [];
 
-    for (const subBug of subBugs) {
+    for (const subBug of sprintSubBugs) {
       const completionDate = getCompletionDate(subBug);
-      if (completionDate === date && completionDate >= sprintStartDate) {
+      if (completionDate === date) {
         completedToday.push({
           key: subBug.key,
           summary: subBug.summary,
           parentKey: subBug.parentKey,
-          assignee: subBug.assignee
+          assignee: subBug.assignee,
+          status: subBug.status
         });
       }
     }
@@ -269,23 +290,33 @@ async function main() {
     // Get today's date
     const today = new Date().toISOString().split('T')[0];
     
-    // Fetch all sub-bugs
+    // Fetch all sub-bugs (using date range to catch work not assigned to sprint)
     console.log('🔎 Fetching sub-bugs (subtasks of Bug issues)...');
-    const subBugs = await getSubBugs(CURRENT_SPRINT);
-    console.log(`   ✓ Found ${subBugs.length} sub-bugs\n`);
+    console.log(`   Using date range: ${sprint.startDate} onwards`);
+    console.log('   (This catches sub-bugs completed during sprint even if not assigned to it)\n');
+    const subBugs = await getSubBugs(sprint.startDate, sprint.endDate);
+    console.log(`   ✓ Found ${subBugs.length} sub-bugs (including unassigned work)\n`);
 
     if (subBugs.length === 0) {
       console.log('⚠️  No sub-bugs found in this sprint');
       return;
     }
 
-    // Calculate daily completions
-    console.log('📊 Calculating daily sub-bug completions...\n');
-    const dailyData = calculateDailyCompletions(subBugs, sprint.startDate, today);
+    // Calculate daily completions (filtering by date, not sprint assignment)
+    console.log('📊 Calculating daily sub-bug completions...');
+    console.log(`   Counting sub-bugs completed between ${sprint.startDate} and ${today}\n`);
+    const dailyData = calculateDailyCompletions(subBugs, sprint.startDate, sprint.endDate, today);
 
-    // Count completed vs remaining
+    // Count completed vs remaining (only those completed in sprint period)
     const totalCompleted = dailyData[dailyData.length - 1].cumulativeCompleted;
-    const totalRemaining = subBugs.length - totalCompleted;
+    
+    // Count how many sub-bugs are still in progress or not yet started
+    const sprintSubBugs = subBugs.filter(subBug => {
+      const completionDate = getCompletionDate(subBug);
+      const endDate = today < sprint.endDate ? today : sprint.endDate;
+      return !completionDate || completionDate < sprint.startDate || completionDate > endDate;
+    });
+    const totalInProgress = sprintSubBugs.length;
 
     // Display results
     console.log('============================================================');
@@ -305,9 +336,11 @@ async function main() {
     }
 
     console.log('------------------------------------------------');
-    console.log(`\nTotal Sub-Bugs: ${subBugs.length}`);
-    console.log(`Completed: ${totalCompleted}`);
-    console.log(`Remaining: ${totalRemaining}`);
+    console.log(`\nTotal Sub-Bugs Found: ${subBugs.length}`);
+    console.log(`Completed in Sprint: ${totalCompleted}`);
+    console.log(`In Progress or Not Started: ${totalInProgress}`);
+    console.log(`\n(Note: Counts sub-bugs completed during sprint period,`);
+    console.log(` regardless of sprint assignment)`);
 
     // Show most recent completions
     console.log('\n============================================================');
@@ -337,9 +370,10 @@ async function main() {
       sprint: sprint.name,
       sprintStartDate: sprint.startDate,
       sprintEndDate: sprint.endDate,
-      totalSubBugs: subBugs.length,
-      totalCompleted: totalCompleted,
-      totalRemaining: totalRemaining,
+      note: 'Counts sub-bugs completed during sprint period, regardless of sprint assignment',
+      totalSubBugsFound: subBugs.length,
+      totalCompletedInSprint: totalCompleted,
+      totalInProgressOrNotStarted: totalInProgress,
       dailyCompletions: dailyData,
       allSubBugs: subBugs.map(sb => ({
         key: sb.key,
@@ -347,7 +381,11 @@ async function main() {
         status: sb.status,
         parentKey: sb.parentKey,
         assignee: sb.assignee,
-        completionDate: getCompletionDate(sb)
+        completionDate: getCompletionDate(sb),
+        completedInSprintPeriod: (() => {
+          const cd = getCompletionDate(sb);
+          return cd && cd >= sprint.startDate && cd <= (today < sprint.endDate ? today : sprint.endDate);
+        })()
       }))
     };
 
