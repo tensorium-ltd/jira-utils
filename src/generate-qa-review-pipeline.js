@@ -210,14 +210,17 @@ function displayStatusGroup(status, issues, icon) {
 
   for (const issue of issues) {
     const days = issue.daysInStatus > 1 ? `${issue.daysInStatus} days` : `${issue.daysInStatus} day`;
-    const ageIndicator = issue.daysInStatus > 3 ? '⚠️' : issue.daysInStatus > 2 ? '⏰' : '  ';
+    const ageIndicator = issue.daysInStatus > 3 ? '⚠️ ' : issue.daysInStatus > 2 ? '⏰ ' : '   ';
     const points = `${issue.storyPoints} pts`.padEnd(6);
     const priority = issue.priority.split(' ')[0].padEnd(4);
-    const type = issue.issueType.substring(0, 4).padEnd(5);
-    const team = issue.team.substring(0, 10).padEnd(11);
-    const age = days.padEnd(7);
+    const type = issue.issueType.substring(0, 5).padEnd(6);
+    const age = days.padEnd(8);
+    const assignee = issue.assignee.substring(0, 20).padEnd(21);
     
-    console.log(`${ageIndicator} ${issue.key}  ${points} ${priority} ${type} ${team} ${age} ${issue.summary.substring(0, 35)}`);
+    console.log(`${ageIndicator}${issue.key}  ${points} ${priority} ${type} ${age} ${assignee}`);
+    console.log(`   Summary: ${issue.summary}`);
+    console.log(`   Team: ${issue.team} | Updated: ${issue.updated}`);
+    console.log('');
   }
 }
 
@@ -286,19 +289,51 @@ function displayOldestIssues(grouped) {
 
   const oldest = allIssues.sort((a, b) => b.daysInStatus - a.daysInStatus).slice(0, 10);
 
-  console.log('\n   Key           Days  Points  Status           Team         Summary');
-  console.log('   ' + '─'.repeat(90));
-
-  for (const issue of oldest) {
-    const key = issue.key.padEnd(13);
-    const days = issue.daysInStatus.toString().padEnd(5);
-    const points = issue.storyPoints.toString().padEnd(7);
-    const status = issue.status.substring(0, 15).padEnd(16);
-    const team = issue.team.substring(0, 10).padEnd(12);
-    const indicator = issue.daysInStatus > 3 ? '⚠️ ' : '   ';
-
-    console.log(`${indicator}${key} ${days} ${points} ${status} ${team} ${issue.summary.substring(0, 30)}`);
+  for (let i = 0; i < oldest.length; i++) {
+    const issue = oldest[i];
+    const indicator = issue.daysInStatus > 3 ? '⚠️' : '⏰';
+    const days = issue.daysInStatus > 1 ? `${issue.daysInStatus} days` : `${issue.daysInStatus} day`;
+    
+    console.log(`\n${i + 1}. ${indicator} ${issue.key} - ${issue.storyPoints} pts - ${issue.priority} - ${issue.issueType}`);
+    console.log(`   Status: ${issue.status} (stuck for ${days})`);
+    console.log(`   Assignee: ${issue.assignee}`);
+    console.log(`   Team: ${issue.team}`);
+    console.log(`   Summary: ${issue.summary}`);
   }
+}
+
+/**
+ * Display comprehensive list of all blocked tickets
+ */
+function displayComprehensiveList(grouped) {
+  console.log('\n═'.repeat(100));
+  console.log('📋 COMPLETE LIST OF ALL BLOCKED TICKETS');
+  console.log('═'.repeat(100));
+
+  const allIssues = [];
+  for (const status in grouped) {
+    allIssues.push(...grouped[status]);
+  }
+
+  // Sort by status then by days in status
+  const statusOrder = { 'In Review': 1, 'Ready for review': 2, 'In QA': 3, 'Ready for QA': 4 };
+  allIssues.sort((a, b) => {
+    const statusCompare = statusOrder[a.status] - statusOrder[b.status];
+    if (statusCompare !== 0) return statusCompare;
+    return b.daysInStatus - a.daysInStatus;
+  });
+
+  console.log('\nKEY | POINTS | PRIORITY | DAYS | STATUS | ASSIGNEE | TEAM | SUMMARY');
+  console.log('─'.repeat(100));
+
+  for (const issue of allIssues) {
+    const ageIndicator = issue.daysInStatus > 3 ? '⚠️ ' : '   ';
+    console.log(`${ageIndicator}${issue.key} | ${issue.storyPoints} pts | ${issue.priority} | ${issue.daysInStatus}d | ${issue.status} | ${issue.assignee} | ${issue.team}`);
+    console.log(`   └─ ${issue.summary}`);
+    console.log('');
+  }
+
+  console.log(`\nTOTAL: ${allIssues.length} issues blocked in pipeline`);
 }
 
 /**
@@ -354,6 +389,9 @@ async function generateReport() {
 
     // Display oldest issues
     displayOldestIssues(grouped);
+
+    // Display comprehensive list
+    displayComprehensiveList(grouped);
 
     // Save report
     const reportData = {
