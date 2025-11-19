@@ -579,7 +579,124 @@ const SPRINTS = ['NH Sprint 28', 'NH Sprint 29', 'NH Sprint 30', 'NH Sprint 31']
 
 ---
 
-#### 12. `generate-dev-review-by-assignee.js`
+#### 12. `generate-team-performance.js`
+
+**NEW**: Analyzes completed vs committed story points per team for the current sprint, providing a clear view of team-level performance and delivery metrics.
+
+**Features**:
+- Shows committed vs. completed story points for each team
+- Calculates completion percentage per team
+- Visual progress bars with color-coding (green ≥80%, yellow ≥50%, red <50%)
+- Team rankings by completion percentage
+- Detailed breakdown of completed and remaining issues per team
+- Identifies unassigned work that needs team allocation
+- Perfect for sprint reviews and team retrospectives
+
+**Usage**:
+```bash
+npm run team-performance
+```
+
+**Configuration**:
+```javascript
+const CURRENT_SPRINT = 'NH Sprint 31'; // Update this in the script
+```
+
+**Output**: `reports/team-performance.json`
+
+**Console Output Example**:
+```
+============================================================
+📈 OVERALL SPRINT PERFORMANCE
+============================================================
+
+   Total Committed: 187.5 points (100 issues)
+   Total Completed: 60 points
+   Overall Completion: 32.0%
+   🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+
+============================================================
+👥 TEAM PERFORMANCE BREAKDOWN
+============================================================
+
+🟡 Team 1
+   ────────────────────────────────────────────────────────────
+   Committed: 34 points (13 issues)
+   Completed: 24 points (9 issues)
+   Remaining: 10 points
+   Completion: 70.6%
+   🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜⬜⬜⬜
+
+🟡 Team 4
+   Committed: 30 points (14 issues)
+   Completed: 18 points (11 issues)
+   Remaining: 12 points
+   Completion: 60.0%
+   🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+
+🔴 Team 3
+   Committed: 40.5 points (24 issues)
+   Completed: 5 points (4 issues)
+   Remaining: 35.5 points
+   Completion: 12.3%
+   🟥🟥🟥🟥⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+
+============================================================
+🏆 TEAM RANKINGS (by completion %)
+============================================================
+
+   🥇 Team 1                    70.6% (24/34 pts)
+   🥈 Team 4                    60.0% (18/30 pts)
+   🥉 Team 2                    19.4% (6/31 pts)
+   4. Unassigned                13.5% (7/52 pts)
+   5. Team 3                    12.3% (5/40.5 pts)
+```
+
+**Output Format**:
+```json
+{
+  "generatedAt": "2025-11-18T10:00:00.000Z",
+  "sprint": "NH Sprint 31",
+  "project": "VER10",
+  "overall": {
+    "committedPoints": 187.5,
+    "completedPoints": 60,
+    "completionPercentage": 32.0,
+    "totalIssues": 100
+  },
+  "teams": [
+    {
+      "name": "Team 1",
+      "committedPoints": 34,
+      "completedPoints": 24,
+      "remainingPoints": 10,
+      "committedIssues": 13,
+      "completedIssues": 9,
+      "completionPercentage": 70.6,
+      "issues": [...]
+    }
+  ]
+}
+```
+
+**Use Cases**:
+- Sprint reviews: Show stakeholders which teams are on track
+- Team retrospectives: Identify teams that need support
+- Capacity planning: Understand team-level delivery capacity
+- Resource allocation: Identify unassigned work that needs team ownership
+- Performance tracking: Monitor team delivery trends across sprints
+- Bottleneck identification: Find teams that may be overcommitted
+
+**Key Insights**:
+- Identifies high-performing teams vs. teams needing support
+- Highlights unassigned work that's falling through the cracks
+- Visual progress bars make status immediately clear
+- Detailed issue lists help teams understand what's blocking completion
+- Team rankings foster healthy competition and accountability
+
+---
+
+#### 14. `generate-dev-review-by-assignee.js`
 
 **NEW**: Shows current sprint tickets in "In Dev" and "In Review/Ready for Review" grouped by status and assignee.
 
@@ -657,7 +774,7 @@ const TARGET_STATUSES = ['In Dev', 'In Review', 'Ready for Review', 'READY FOR R
 
 ### Quality Assurance Scripts
 
-#### 13. `generate-issues-currently-in-qa.js`
+#### 15. `generate-issues-currently-in-qa.js`
 
 Lists all issues currently in QA for the current sprint.
 
@@ -694,7 +811,7 @@ npm run issues-in-qa
 
 ---
 
-#### 14. `generate-time-in-status.js`
+#### 16. `generate-time-in-status.js`
 
 Identifies stale issues (no status change for 24+ hours).
 
@@ -736,7 +853,7 @@ const STALE_THRESHOLD_HOURS = 24;
 
 ### Defect Management Scripts
 
-#### 15. `nh-defect-upload.js`
+#### 17. `nh-defect-upload.js`
 
 **NEW**: Imports UAT defects from CSV into JIRA as bugs under an Epic.
 
@@ -825,7 +942,7 @@ Defect Name,Severity / Priority,Module / Area,Defect Description,...
 
 ---
 
-#### 16. `generate-sub-bug-summary.js`
+#### 18. `generate-sub-bug-summary.js`
 
 Tracks and summarizes sub-bug completions by day throughout the sprint. Sub-bugs are identified as subtasks whose parent issue is a Bug.
 
@@ -891,7 +1008,7 @@ Thu Nov 14: 2 sub-bug(s)
 
 ---
 
-#### 17. `generate-work-done-date-based.js`
+#### 19. `generate-work-done-date-based.js`
 
 **NEW**: Captures ALL work completed during the current sprint time window, regardless of whether issues are formally assigned to the sprint. This helps identify "hidden work" that developers complete but isn't tracked in the sprint's official scope.
 
@@ -1014,7 +1131,7 @@ const CURRENT_SPRINT = 'NH Sprint 31';
 
 ### Status Tracking Scripts
 
-#### 18. `generate-points-by-status.js`
+#### 20. `generate-points-by-status.js`
 
 **NEW**: Provides a snapshot of story point distribution across workflow statuses for the current sprint.
 
@@ -1114,7 +1231,7 @@ In Dev (11 issues, 20 points):
 
 ---
 
-#### 19. `generate-burndown-summary.js`
+#### 21. `generate-burndown-summary.js`
 
 **NEW**: Analyzes sprint burndown with detailed scope change tracking to identify scope creep and mid-sprint additions.
 
@@ -1278,7 +1395,8 @@ All generated files are saved in the `reports/` directory:
 - `burndown-summary.json` - Sprint burndown with scope creep analysis
 - `sprint-progress-daily.json` - Day-by-day sprint progress tracking
 - `sub-bug-summary.json` - Daily sub-bug completion tracking
-- `work-done-date-based.json` - **NEW**: Date-based work completion including hidden work analysis
+- `work-done-date-based.json` - Date-based work completion including hidden work analysis
+- `team-performance.json` - **NEW**: Team-level committed vs completed story points analysis
 
 ### PDF Files
 - `sprint-<number>-report.pdf` - Sprint executive report
@@ -1315,6 +1433,9 @@ npm run generate-report 31
 ```bash
 # Get status distribution overview
 npm run points-by-status
+
+# Analyze team performance
+npm run team-performance
 
 # Analyze burndown and scope changes
 npm run burndown
