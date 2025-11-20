@@ -151,7 +151,7 @@ function checkCompliance(issues) {
         status,
         assignee,
         storyPoints,
-        team: 'Unassigned'
+        team: team || 'Unassigned'
       });
     } else if (missingTeam) {
       nonCompliant.missingTeam.push({
