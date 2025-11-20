@@ -29,7 +29,8 @@
     "work-date-based": "node src/generate-work-done-date-based.js",
     "team-performance": "node src/generate-team-performance.js",
     "no-team-assignment": "node src/generate-no-team-assignment.js",
-    "qa-review-pipeline": "node src/generate-qa-review-pipeline.js"
+    "qa-review-pipeline": "node src/generate-qa-review-pipeline.js",
+    "sprint-check": "node src/generate-sprint-non-compliant-list.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",

@@ -851,9 +851,145 @@ const STALE_THRESHOLD_HOURS = 24;
 
 ---
 
+#### 17. `generate-qa-review-pipeline.js`
+
+Analyzes the QA and Review pipeline to identify bottlenecks and blocked tickets.
+
+**Features**:
+- Shows all issues currently in "In Review", "Ready for review", "In QA", or "Ready for QA" statuses
+- Identifies oldest issues (stuck in pipeline for longest time)
+- Comprehensive list with key, points, priority, days stuck, status, assignee, team, and summary
+- Highlights critical issues stuck for 3+ days
+- Groups issues by status for easy identification
+
+**Usage**:
+```bash
+npm run qa-review-pipeline
+```
+
+**Configuration**:
+```javascript
+const SPRINT_NAME = 'NH Sprint 31';
+```
+
+**Output**: `reports/qa-review-pipeline.json`
+
+**Console Output Example**:
+```
+📊 QA & REVIEW PIPELINE ANALYSIS
+════════════════════════════════════════════════════════════════════
+
+📈 PIPELINE SUMMARY:
+   Stage             | Issues | Points | Avg Days in Stage
+   ──────────────────────────────────────────────────────────────
+   In Review         |     20 |     41 | 3.5 days
+   Ready for review  |     19 |     35 | 2.1 days
+   In QA             |     12 |     20 | 2.8 days
+   Ready for QA      |      9 |     19 | 1.5 days
+   ──────────────────────────────────────────────────────────────
+   TOTAL BLOCKED     |     60 |    115 | 2.8 days avg
+
+⏰ TOP 10 OLDEST ISSUES (Need Urgent Attention):
+   1. ⚠️  VER10-9138 (2 pts) - "Create SA" - 14 days in Review
+   2. ⚠️  VER10-8423 (1 pt) - "Landing Page" - 14 days in QA
+   ...
+
+📋 COMPLETE LIST OF ALL BLOCKED TICKETS:
+   KEY | POINTS | PRIORITY | DAYS | STATUS | ASSIGNEE | TEAM | SUMMARY
+   ──────────────────────────────────────────────────────────────
+   ⚠️  VER10-9138 | 2 pts | P3 - Medium | 14d | In Review | Manish Manghwani | Unassigned
+      └─ Create SA
+```
+
+**Use Cases**:
+- Daily standup: Identify which reviews/QA tasks need immediate attention
+- Sprint health check: Monitor pipeline flow and identify bottlenecks
+- Retrospectives: Analyze why issues got stuck and for how long
+- Capacity planning: Understand if review/QA resources are constrained
+
+---
+
+#### 18. `generate-sprint-non-compliant-list.js`
+
+**NEW**: Sprint quality check that identifies issues missing team assignments or story point estimates.
+
+**Features**:
+- Checks all Stories, Bugs, and Tasks in the current sprint
+- Identifies issues missing team assignments
+- Identifies issues missing story point estimates
+- Highlights critical issues missing BOTH team and points
+- Calculates sprint compliance rate
+- Helps ensure sprint is properly planned before work begins
+
+**Usage**:
+```bash
+npm run sprint-check
+```
+
+**Configuration**:
+```javascript
+const SPRINT_NAME = 'NH Sprint 32';  // Update for each sprint
+const PROJECT_KEY = 'VER10';
+```
+
+**Output**: `reports/sprint-non-compliant-NH-Sprint-32.json`
+
+**Console Output Example**:
+```
+🚨 SPRINT NON-COMPLIANCE REPORT
+═══════════════════════════════════════════════════════════════════
+
+📊 SUMMARY:
+   Total Issues in Sprint: 45
+   Compliant Issues: 32 ✅
+   Non-Compliant Issues: 13 ⚠️
+   Compliance Rate: 71.1%
+
+🔴 CRITICAL: Missing BOTH Team Assignment AND Story Points
+───────────────────────────────────────────────────────────────────
+   Count: 5 issues
+
+   KEY         | TYPE   | POINTS | TEAM       | STATUS     | ASSIGNEE    | SUMMARY
+   ─────────────────────────────────────────────────────────────────────────────
+   VER10-9320  | Story  | 0      | Unassigned | Open       | John Smith  | New feature X
+   VER10-9321  | Bug    | 0      | Unassigned | Open       | Jane Doe    | Fix issue Y
+
+🟡 WARNING: Missing Team Assignment
+───────────────────────────────────────────────────────────────────
+   Count: 5 issues
+
+   KEY         | TYPE   | POINTS | TEAM       | STATUS     | ASSIGNEE    | SUMMARY
+   ─────────────────────────────────────────────────────────────────────────────
+   VER10-9322  | Story  | 3      | Unassigned | In Dev     | John Smith  | Feature Z
+
+🟡 WARNING: Missing Story Points
+───────────────────────────────────────────────────────────────────
+   Count: 3 issues
+
+   KEY         | TYPE   | POINTS | TEAM       | STATUS     | ASSIGNEE    | SUMMARY
+   ─────────────────────────────────────────────────────────────────────────────
+   VER10-9323  | Story  | 0      | Team 1     | Open       | Jane Doe    | Task ABC
+```
+
+**Use Cases**:
+- **Sprint start**: Run at the beginning of each sprint to ensure all work is properly estimated and assigned
+- **Sprint planning**: Identify which issues need estimation or team assignment before committing to the sprint
+- **Quality gate**: Prevent starting a sprint with improperly planned work
+- **Process compliance**: Ensure team follows planning standards (all work estimated and assigned)
+- **Capacity planning**: Accurate team assignments enable proper capacity tracking
+
+**Best Practices**:
+1. **Run at sprint start**: Check compliance on Day 1 of the sprint
+2. **Target 100% compliance**: Fix all non-compliant issues before work begins
+3. **Team assignment critical**: Without team assignment, work can't be tracked properly
+4. **Story points required**: Without estimates, velocity and burndown are inaccurate
+5. **Re-run after changes**: If issues are added mid-sprint, re-check compliance
+
+---
+
 ### Defect Management Scripts
 
-#### 17. `nh-defect-upload.js`
+#### 19. `nh-defect-upload.js`
 
 **NEW**: Imports UAT defects from CSV into JIRA as bugs under an Epic.
 
