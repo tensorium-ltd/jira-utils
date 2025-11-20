@@ -71,35 +71,20 @@ async function getSprintDetails() {
 async function getSprintIssues(sprintId) {
   console.log(`\n📥 Fetching all issues in ${SPRINT_NAME}...`);
   
-  const allIssues = [];
-  let startAt = 0;
-  const maxResults = 100;
-  
   try {
-    while (true) {
-      const response = await client.post('/rest/api/3/search/jql', {
-        jql: `project = ${PROJECT_KEY} AND sprint = "${SPRINT_NAME}" AND issuetype in (Story, Bug, Task)`,
-        startAt: startAt,
-        maxResults: maxResults,
-        fields: ['summary', 'issuetype', 'status', 'assignee', 'customfield_10003', 'customfield_12700']
-      });
+    const response = await client.post('/rest/api/3/search/jql', {
+      jql: `project = ${PROJECT_KEY} AND sprint = "${SPRINT_NAME}" AND issuetype in (Story, Bug, Task)`,
+      maxResults: 1000,
+      fields: ['summary', 'issuetype', 'status', 'assignee', 'customfield_10003', 'customfield_12700']
+    });
 
-      allIssues.push(...response.data.issues);
-
-      if (response.data.issues.length < maxResults) {
-        break;
-      }
-
-      startAt += maxResults;
-    }
-
-    console.log(`   ✓ Found ${allIssues.length} Stories, Bugs, and Tasks`);
-    return allIssues;
+    console.log(`   ✓ Found ${response.data.issues.length} Stories, Bugs, and Tasks`);
+    return response.data.issues;
   } catch (error) {
-    if (error.response && error.response.status === 400) {
-      console.log(`   ⚠️  No issues found in sprint (empty sprint)`);
-    } else {
-      console.error('Error fetching sprint issues:', error.message);
+    console.error('Error fetching sprint issues:', error.message);
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response data:', JSON.stringify(error.response.data, null, 2));
     }
     return [];
   }
