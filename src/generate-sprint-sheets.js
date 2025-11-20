@@ -268,6 +268,7 @@ async function discoverStoryPointsField(client) {
 
 /**
  * Update the Progress sheet with actual daily story points
+ * Fills continuous timeline from Nov 6, 2025 onwards
  */
 async function updateProgressSheet(workbook, sprints, client, storyPointsField) {
   const progressSheet = workbook.getWorksheet('Progress');
@@ -277,8 +278,7 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
     return;
   }
 
-  console.log('\n📊 Updating Progress sheet with actual daily completions...');
-  console.log('   📅 Filling historical data from November 6, 2025 onwards\n');
+  console.log('\n📊 Updating Progress sheet with continuous timeline from Nov 6, 2025...');
 
   // Find the rows we need to update
   let actualRowNum = null;
@@ -333,16 +333,17 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
     return;
   }
 
-  console.log(`   ✓ Found ${sprintsToUpdate.length} sprint(s) to update:`);
+  console.log(`   ✓ Found ${sprintsToUpdate.length} sprint(s) to process:`);
   sprintsToUpdate.forEach(s => {
     console.log(`      - ${s.sprintName} (${formatDate(s.startDate)})`);
   });
 
-  // Update each sprint's data
+  // Build a continuous date-to-points mapping from all sprints
+  const dailyPointsMap = {};
+  
   for (const sprint of sprintsToUpdate) {
-    console.log(`\n   🔄 Processing ${sprint.sprintName}...`);
+    console.log(`\n   🔄 Fetching data for ${sprint.sprintName}...`);
     
-    // Get daily completed points from JIRA
     const sprintDates = generateSprintDates(sprint.startDate);
     const dailyCompletedPoints = await getDailyCompletedPoints(client, sprint.sprintName, sprintDates, storyPointsField);
 
@@ -351,106 +352,90 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
       continue;
     }
 
-    // Determine if this sprint's sheet exists and find the data rows
-    const sprintSheet = workbook.getWorksheet(sprint.sprintName);
-    
-    // The Progress sheet shows one sprint at a time (typically the current/most recent)
-    // Only update if this is the most recent sprint
-    const isCurrentSprint = (sprint === sprintsToUpdate[sprintsToUpdate.length - 1]);
-    
-    if (!isCurrentSprint) {
-      console.log(`      ℹ️  ${sprint.sprintName} is not the current sprint - data saved in individual sprint sheet`);
-      continue;
-    }
-    
-    console.log(`      ✓ ${sprint.sprintName} is the current sprint - updating Progress sheet`);
-    
-    // Progress sheet uses standard column offset starting at B
-    let startCol = 2; // Column B
-    
-    // Update Actual Story Points row
-    const actualRow = progressSheet.getRow(actualRowNum);
-    let updatedCells = 0;
-    let totalPointsForSprint = 0;
-    
-    for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
-      const colNum = startCol + dayIdx;
-      const points = dailyCompletedPoints[dayIdx] || 0;
-      
-      // Only fill in actual points up to today
-      const dayDate = new Date(sprint.startDate);
-      dayDate.setDate(dayDate.getDate() + dayIdx);
+    // Map each date to its points
+    for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
+      const dayDate = new Date(sprintDates[dayIdx].date);
       dayDate.setHours(0, 0, 0, 0);
       
-      if (dayDate <= today) {
-        actualRow.getCell(colNum).value = points > 0 ? points : 0;
-        updatedCells++;
-        totalPointsForSprint += points;
-        if (points > 0) {
-          const colLetter = String.fromCharCode(65 + colNum - 1);
-          console.log(`         Day ${dayIdx + 1} (${colLetter}${actualRowNum}): ${points} points`);
-        }
+      if (dayDate <= today && dayDate >= trackingStartDate) {
+        const dateKey = formatDateForJira(dayDate);
+        dailyPointsMap[dateKey] = (dailyPointsMap[dateKey] || 0) + (dailyCompletedPoints[dayIdx] || 0);
       }
-    }
-    
-    console.log(`      ✓ Updated ${updatedCells} cells with ${totalPointsForSprint} total points`);
-
-    // Update Cumulative Actual row
-    if (cumulativeActualRowNum) {
-      const cumulativeRow = progressSheet.getRow(cumulativeActualRowNum);
-      
-      for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
-        const colNum = startCol + dayIdx;
-        const colLetter = String.fromCharCode(65 + colNum - 1);
-        
-        const dayDate = new Date(sprint.startDate);
-        dayDate.setDate(dayDate.getDate() + dayIdx);
-        dayDate.setHours(0, 0, 0, 0);
-        
-        if (dayDate <= today) {
-          // Use formula to sum actual points from day 1 to current day
-          const startColLetter = String.fromCharCode(65 + startCol - 1);
-          cumulativeRow.getCell(colNum).value = {
-            formula: `SUM($${startColLetter}$${actualRowNum}:${colLetter}$${actualRowNum})`
-          };
-        }
-      }
-      
-      console.log(`      ✓ Updated Cumulative Actual formulas`);
-    }
-
-    // Update Variance row (Planned - Actual)
-    if (varianceRowNum) {
-      const varianceRow = progressSheet.getRow(varianceRowNum);
-      
-      for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
-        const colNum = startCol + dayIdx;
-        const colLetter = String.fromCharCode(65 + colNum - 1);
-        
-        const dayDate = new Date(sprint.startDate);
-        dayDate.setDate(dayDate.getDate() + dayIdx);
-        dayDate.setHours(0, 0, 0, 0);
-        
-        if (dayDate <= today) {
-          // Variance = Cumulative Planned - Cumulative Actual
-          if (cumulativePlannedRowNum && cumulativeActualRowNum) {
-            varianceRow.getCell(colNum).value = {
-              formula: `${colLetter}$${cumulativePlannedRowNum}-${colLetter}$${cumulativeActualRowNum}`
-            };
-          } else if (plannedRowNum && actualRowNum) {
-            // Fallback: Daily Planned - Daily Actual
-            varianceRow.getCell(colNum).value = {
-              formula: `${colLetter}$${plannedRowNum}-${colLetter}$${actualRowNum}`
-            };
-          }
-        }
-      }
-      
-      console.log(`      ✓ Updated Variance formulas`);
     }
   }
 
-  console.log(`\n   ✅ Progress sheet updated with historical data from Nov 6 to ${formatDate(today)}!`);
+  console.log(`\n   ✓ Built daily points map with ${Object.keys(dailyPointsMap).length} dates`);
+  
+  // Now fill the Progress sheet with continuous data
+  // Starting from column B (column 2), fill each day from Nov 6 to today
+  const actualRow = progressSheet.getRow(actualRowNum);
+  let currentDate = new Date(trackingStartDate);
+  let colNum = 2; // Start at column B
+  let totalPoints = 0;
+  let daysWithData = 0;
+  
+  console.log(`\n   📊 Writing continuous timeline to Progress sheet:`);
+  
+  while (currentDate <= today && colNum <= 100) { // Safety limit of 100 columns
+    const dateKey = formatDateForJira(currentDate);
+    const points = dailyPointsMap[dateKey] || 0;
+    
+    actualRow.getCell(colNum).value = points > 0 ? points : 0;
+    
+    if (points > 0) {
+      const colLetter = String.fromCharCode(65 + colNum - 1);
+      console.log(`      ${formatDate(currentDate)} [${colLetter}${actualRowNum}]: ${points} points`);
+      daysWithData++;
+    }
+    
+    totalPoints += points;
+    
+    // Move to next day and column
+    currentDate.setDate(currentDate.getDate() + 1);
+    colNum++;
+  }
+  
+  console.log(`   ✓ Filled ${colNum - 2} days with ${totalPoints} total points (${daysWithData} days with activity)`);
+
+  // Update Cumulative Actual row with formulas
+  if (cumulativeActualRowNum) {
+    const cumulativeRow = progressSheet.getRow(cumulativeActualRowNum);
+    const startColLetter = 'B'; // Always start from column B
+    
+    for (let col = 2; col < colNum; col++) {
+      const colLetter = String.fromCharCode(65 + col - 1);
+      cumulativeRow.getCell(col).value = {
+        formula: `SUM($${startColLetter}$${actualRowNum}:${colLetter}$${actualRowNum})`
+      };
+    }
+    
+    console.log(`   ✓ Updated Cumulative Actual formulas (${colNum - 2} columns)`);
+  }
+
+  // Update Variance row with formulas
+  if (varianceRowNum) {
+    const varianceRow = progressSheet.getRow(varianceRowNum);
+    
+    for (let col = 2; col < colNum; col++) {
+      const colLetter = String.fromCharCode(65 + col - 1);
+      
+      // Variance = Cumulative Planned - Cumulative Actual
+      if (cumulativePlannedRowNum && cumulativeActualRowNum) {
+        varianceRow.getCell(col).value = {
+          formula: `${colLetter}$${cumulativePlannedRowNum}-${colLetter}$${cumulativeActualRowNum}`
+        };
+      } else if (plannedRowNum && actualRowNum) {
+        // Fallback: Daily Planned - Daily Actual
+        varianceRow.getCell(col).value = {
+          formula: `${colLetter}$${plannedRowNum}-${colLetter}$${actualRowNum}`
+        };
+      }
+    }
+    
+    console.log(`   ✓ Updated Variance formulas (${colNum - 2} columns)`);
+  }
+
+  console.log(`\n   ✅ Progress sheet updated with continuous data from ${formatDate(trackingStartDate)} to ${formatDate(today)}!`);
 }
 
 // Main function to generate sprint sheets
@@ -771,16 +756,26 @@ async function generateSprintSheets() {
         let totalActual = 0;
         let daysWithData = 0;
         
+        console.log(`  📅 Sprint dates: ${formatDate(sprintDates[0].date)} to ${formatDate(sprintDates[13].date)}`);
+        console.log(`  📅 Today: ${formatDate(today)}`);
+        console.log(`  📊 Daily breakdown:`);
+        
         for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
           const dayDate = new Date(sprintDates[dayIdx].date);
           dayDate.setHours(0, 0, 0, 0);
           
+          const points = dailyActualPoints[dayIdx] || 0;
+          const colNum = dayIdx + 2;
+          const colLetter = String.fromCharCode(65 + colNum - 1);
+          
           // Only fill data up to today
           if (dayDate <= today) {
-            const points = dailyActualPoints[dayIdx] || 0;
-            deliveredRow.getCell(dayIdx + 2).value = points > 0 ? points : null;
+            deliveredRow.getCell(colNum).value = points > 0 ? points : 0;
             totalActual += points;
             if (points > 0) daysWithData++;
+            console.log(`     Day ${dayIdx + 1} (${formatDate(dayDate)}) [${colLetter}${deliveredRowNum}]: ${points} points`);
+          } else {
+            console.log(`     Day ${dayIdx + 1} (${formatDate(dayDate)}): FUTURE - not filled`);
           }
         }
         
