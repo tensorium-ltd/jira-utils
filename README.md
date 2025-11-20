@@ -168,10 +168,12 @@ Generates individual sprint sheets from the main Excel plan and updates the Prog
 - Excludes epics with 0 points for that sprint
 - Respects "IGNORE BELOW" marker
 - Populates Progress sheet with S-curve target velocity
-- **NEW**: Fetches actual daily completed story points from JIRA
-- **NEW**: Auto-fills "Actual Story Points" row in Progress sheet
+- **NEW**: Fetches actual daily completed story points from JIRA **for all sprints from Nov 6, 2025 onwards**
+- **NEW**: Auto-fills "Story Points Delivered" row in **each individual sprint sheet** with real JIRA data
+- **NEW**: Auto-fills "Actual Story Points" row in Progress sheet (for current sprint)
 - **NEW**: Calculates "Cumulative Actual" with formulas
 - **NEW**: Calculates "Variance" (Cumulative Planned - Cumulative Actual)
+- **NEW**: Historical sprint data preserved in individual sprint sheets
 
 **Usage**:
 ```bash
@@ -181,7 +183,10 @@ export JIRA_API_TOKEN="your_jira_api_token"
 npm run generate-sheets
 ```
 
-**Note**: If JIRA credentials are not set, the script will still generate sprint sheets but will skip the Progress sheet updates.
+**Important Notes**:
+- **Tracking Start Date**: Actual JIRA data is fetched for all sprints starting from **November 6, 2025** (Sprint 31 start date)
+- **Historical Data**: Sprint 31's actual completion data (119 points across 12 days) is fully captured in its individual sprint sheet
+- **No JIRA Credentials**: If JIRA credentials are not set, the script will still generate sprint sheets but will use distributed estimates instead of actual data
 
 **S-Curve Distribution**:
 - Days 1-2: ~15% of total (slow start)
@@ -189,12 +194,15 @@ npm run generate-sheets
 - Days 8-10: ~15% of total (slow finish)
 
 **Output**: Updates `data/NH Story Point Plan.xlsx` with:
-- Individual sprint sheets (e.g., "Sprint 30", "Sprint 31")
+- Individual sprint sheets (e.g., "Sprint 30", "Sprint 31", "Sprint 32")
+  - For sprints from **Nov 6, 2025 onwards**: "Story Points Delivered" row filled with **actual daily data from JIRA**
+  - For earlier/future sprints: "Story Points Delivered" row uses distributed estimates
+  - Example: Sprint 31 shows 119 actual points across 12 working days
 - Updated "Progress" sheet with:
   - Target velocities (S-curve distribution)
-  - Actual daily completed points (from JIRA)
-  - Cumulative actual progress
-  - Variance calculations
+  - Actual daily completed points (from JIRA) for the **current sprint**
+  - Cumulative actual progress with formulas
+  - Variance calculations (Cumulative Planned - Cumulative Actual)
 
 ---
 
