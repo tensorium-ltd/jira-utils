@@ -1,5 +1,17 @@
 const ExcelJS = require('exceljs');
 const path = require('path');
+const axios = require('axios');
+
+// Configuration for JIRA API
+const JIRA_BASE_URL = 'https://benchmarkestimating.atlassian.net';
+const PROJECT_KEY = 'VER10';
+
+// Disable SSL verification
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+// Get credentials from environment
+const JIRA_EMAIL = process.env.JIRA_EMAIL;
+const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
 // Helper function to check if a date is a weekend
 function isWeekend(date) {
@@ -90,6 +102,339 @@ function countWorkingDays(sprintDates) {
 function distributePoints(totalPoints, workingDays) {
   if (totalPoints === 0 || workingDays === 0) return 0;
   return Math.round((totalPoints / workingDays) * 100) / 100;
+}
+
+/**
+ * Create authenticated JIRA client
+ */
+function createJiraClient() {
+  if (!JIRA_EMAIL || !JIRA_API_TOKEN) {
+    console.log('⚠️  WARNING: JIRA credentials not found in environment variables');
+    console.log('   Skipping Progress sheet updates (requires JIRA_EMAIL and JIRA_API_TOKEN)');
+    return null;
+  }
+
+  const auth = Buffer.from(`${JIRA_EMAIL}:${JIRA_API_TOKEN}`).toString('base64');
+  return axios.create({
+    baseURL: JIRA_BASE_URL,
+    headers: {
+      'Authorization': `Basic ${auth}`,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
+/**
+ * Get the date when an issue was completed
+ */
+function getCompletionDate(issue) {
+  if (!issue.changelog || !issue.changelog.histories) {
+    return null;
+  }
+
+  const completedStatuses = ['READY FOR RELEASE', 'CLOSED', 'DONE', 'COMPLETED'];
+  
+  for (let i = issue.changelog.histories.length - 1; i >= 0; i--) {
+    const history = issue.changelog.histories[i];
+    for (const item of history.items) {
+      if (item.field === 'status' && 
+          completedStatuses.some(s => s === item.toString?.toUpperCase() || s === item.to)) {
+        return history.created.split('T')[0];
+      }
+    }
+  }
+
+  const currentStatus = issue.fields.status.name.toUpperCase();
+  if (completedStatuses.includes(currentStatus)) {
+    return issue.fields.updated?.split('T')[0] || null;
+  }
+
+  return null;
+}
+
+/**
+ * Get daily completed story points from JIRA for a sprint
+ */
+async function getDailyCompletedPoints(client, sprintName, sprintDates, storyPointsField) {
+  if (!client) {
+    return null;
+  }
+
+  try {
+    console.log(`\n🔍 Fetching actual completion data from JIRA for ${sprintName}...`);
+    
+    // Get all issues in the sprint with changelog
+    const searchResponse = await client.post('/rest/api/3/search/jql', {
+      jql: `project = ${PROJECT_KEY} AND sprint = "${sprintName}" AND issuetype in (Story, Bug)`,
+      maxResults: 1000
+    });
+
+    const allIssues = [];
+    for (const issueRef of searchResponse.data.issues || []) {
+      const key = issueRef.key || issueRef.id;
+      if (!key) continue;
+      
+      try {
+        const detailResponse = await client.get(`/rest/api/3/issue/${key}`, {
+          params: {
+            fields: `key,summary,status,${storyPointsField},issuetype,updated`,
+            expand: 'changelog'
+          }
+        });
+        allIssues.push(detailResponse.data);
+      } catch (err) {
+        console.warn(`   ⚠️  Could not fetch ${key}`);
+      }
+    }
+
+    console.log(`   ✓ Fetched ${allIssues.length} issues from JIRA`);
+
+    // Calculate daily completions
+    const dailyPoints = {};
+    const sprintStartDate = formatDateForJira(sprintDates[0].date);
+    
+    for (const issue of allIssues) {
+      const completionDate = getCompletionDate(issue);
+      if (!completionDate || completionDate < sprintStartDate) {
+        continue;
+      }
+
+      const issueType = issue.fields.issuetype?.name;
+      if (issueType !== 'Story' && issueType !== 'Bug') {
+        continue;
+      }
+
+      let points = issue.fields[storyPointsField];
+      if (!points || points === 0) {
+        points = 2; // Default for Stories/Bugs without points
+      }
+
+      if (!dailyPoints[completionDate]) {
+        dailyPoints[completionDate] = 0;
+      }
+      dailyPoints[completionDate] += points;
+    }
+
+    // Map to sprint days (0-13)
+    const dailyArray = [];
+    for (let i = 0; i < sprintDates.length; i++) {
+      const dateStr = formatDateForJira(sprintDates[i].date);
+      dailyArray.push(dailyPoints[dateStr] || 0);
+    }
+
+    const totalCompleted = dailyArray.reduce((sum, pts) => sum + pts, 0);
+    console.log(`   ✓ ${totalCompleted} points completed across sprint`);
+
+    return dailyArray;
+  } catch (error) {
+    console.error(`   ❌ Error fetching JIRA data: ${error.message}`);
+    return null;
+  }
+}
+
+/**
+ * Format date for JIRA queries (YYYY-MM-DD)
+ */
+function formatDateForJira(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Discover the Story Points custom field
+ */
+async function discoverStoryPointsField(client) {
+  if (!client) {
+    return 'customfield_10003'; // Default
+  }
+
+  try {
+    const response = await client.get('/rest/api/3/field');
+    const storyPointsField = response.data.find(field => 
+      field.name === 'Story Points' || 
+      field.name === 'Story point estimate' ||
+      field.key === 'customfield_10003'
+    );
+    
+    return storyPointsField ? storyPointsField.key : 'customfield_10003';
+  } catch (error) {
+    console.warn(`   ⚠️  Could not discover Story Points field, using default`);
+    return 'customfield_10003';
+  }
+}
+
+/**
+ * Update the Progress sheet with actual daily story points
+ */
+async function updateProgressSheet(workbook, sprints, client, storyPointsField) {
+  const progressSheet = workbook.getWorksheet('Progress');
+  if (!progressSheet) {
+    console.log('\n⚠️  WARNING: "Progress" sheet not found in workbook');
+    console.log('   Skipping Progress sheet updates');
+    return;
+  }
+
+  console.log('\n📊 Updating Progress sheet with actual daily completions...');
+
+  // Find the rows we need to update
+  let actualRowNum = null;
+  let cumulativeActualRowNum = null;
+  let varianceRowNum = null;
+  let plannedRowNum = null;
+  let cumulativePlannedRowNum = null;
+
+  progressSheet.eachRow((row, rowNumber) => {
+    const firstCell = row.getCell(1).value;
+    if (firstCell && typeof firstCell === 'string') {
+      const cellValue = firstCell.trim();
+      if (cellValue === 'Actual Story Points' || cellValue === 'Actual') {
+        actualRowNum = rowNumber;
+      } else if (cellValue === 'Cumulative Actual') {
+        cumulativeActualRowNum = rowNumber;
+      } else if (cellValue === 'Variance') {
+        varianceRowNum = rowNumber;
+      } else if (cellValue === 'Story Points Committed' || cellValue === 'Planned' || cellValue === 'Daily Planned') {
+        plannedRowNum = rowNumber;
+      } else if (cellValue === 'Cumulative Planned' || cellValue === 'Cumulative Committed') {
+        cumulativePlannedRowNum = rowNumber;
+      }
+    }
+  });
+
+  if (!actualRowNum) {
+    console.log('   ⚠️  Could not find "Actual Story Points" row in Progress sheet');
+    return;
+  }
+
+  console.log(`   ✓ Found Actual row at line ${actualRowNum}`);
+  if (cumulativeActualRowNum) console.log(`   ✓ Found Cumulative Actual row at line ${cumulativeActualRowNum}`);
+  if (varianceRowNum) console.log(`   ✓ Found Variance row at line ${varianceRowNum}`);
+
+  // Determine which sprint column to update (find the current or most recent sprint)
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  let targetSprint = null;
+  for (const sprint of sprints) {
+    const sprintEnd = new Date(sprint.startDate);
+    sprintEnd.setDate(sprintEnd.getDate() + 13); // Sprint is 14 days (0-13)
+    
+    if (sprint.startDate <= today && sprintEnd >= today) {
+      // Current sprint
+      targetSprint = sprint;
+      break;
+    } else if (sprintEnd < today) {
+      // Past sprint - keep track of most recent
+      targetSprint = sprint;
+    }
+  }
+
+  if (!targetSprint) {
+    console.log('   ⚠️  No current or recent sprint found to update');
+    return;
+  }
+
+  console.log(`   ✓ Updating data for ${targetSprint.sprintName}`);
+
+  // Get daily completed points from JIRA
+  const sprintDates = generateSprintDates(targetSprint.startDate);
+  const dailyCompletedPoints = await getDailyCompletedPoints(client, targetSprint.sprintName, sprintDates, storyPointsField);
+
+  if (!dailyCompletedPoints) {
+    console.log('   ⚠️  Could not fetch daily completion data from JIRA');
+    return;
+  }
+
+  // Find the column offset for this sprint (assumes Day 1, Day 2, etc. headers)
+  // Typically Progress sheet has sprint days starting at column B (column 2)
+  const startCol = 2; // Column B
+  
+  // Update Actual Story Points row
+  const actualRow = progressSheet.getRow(actualRowNum);
+  let cumulativePoints = 0;
+  
+  for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
+    const colNum = startCol + dayIdx;
+    const points = dailyCompletedPoints[dayIdx] || 0;
+    
+    // Only fill in actual points up to today
+    const dayDate = new Date(targetSprint.startDate);
+    dayDate.setDate(dayDate.getDate() + dayIdx);
+    dayDate.setHours(0, 0, 0, 0);
+    
+    if (dayDate <= today) {
+      actualRow.getCell(colNum).value = points > 0 ? points : 0;
+    }
+  }
+  
+  console.log(`   ✓ Updated Actual Story Points row`);
+
+  // Update Cumulative Actual row
+  if (cumulativeActualRowNum) {
+    const cumulativeRow = progressSheet.getRow(cumulativeActualRowNum);
+    cumulativePoints = 0;
+    
+    for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
+      const colNum = startCol + dayIdx;
+      const colLetter = String.fromCharCode(65 + colNum - 1); // Convert to Excel column letter
+      
+      const dayDate = new Date(targetSprint.startDate);
+      dayDate.setDate(dayDate.getDate() + dayIdx);
+      dayDate.setHours(0, 0, 0, 0);
+      
+      if (dayDate <= today) {
+        // Use formula to sum actual points from day 1 to current day
+        cumulativeRow.getCell(colNum).value = {
+          formula: `SUM($B$${actualRowNum}:${colLetter}$${actualRowNum})`
+        };
+      }
+    }
+    
+    console.log(`   ✓ Updated Cumulative Actual row with formulas`);
+  }
+
+  // Update Variance row (Planned - Actual)
+  if (varianceRowNum) {
+    const varianceRow = progressSheet.getRow(varianceRowNum);
+    
+    for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
+      const colNum = startCol + dayIdx;
+      const colLetter = String.fromCharCode(65 + colNum - 1);
+      
+      const dayDate = new Date(targetSprint.startDate);
+      dayDate.setDate(dayDate.getDate() + dayIdx);
+      dayDate.setHours(0, 0, 0, 0);
+      
+      if (dayDate <= today) {
+        // Variance = Cumulative Planned - Cumulative Actual
+        if (cumulativePlannedRowNum && cumulativeActualRowNum) {
+          varianceRow.getCell(colNum).value = {
+            formula: `${colLetter}$${cumulativePlannedRowNum}-${colLetter}$${cumulativeActualRowNum}`
+          };
+        } else if (plannedRowNum && actualRowNum) {
+          // Fallback: Daily Planned - Daily Actual
+          varianceRow.getCell(colNum).value = {
+            formula: `${colLetter}$${plannedRowNum}-${colLetter}$${actualRowNum}`
+          };
+        }
+      }
+    }
+    
+    if (cumulativePlannedRowNum && cumulativeActualRowNum) {
+      console.log(`   ✓ Updated Variance row with formulas (Cumulative Planned - Cumulative Actual)`);
+    } else if (plannedRowNum && actualRowNum) {
+      console.log(`   ✓ Updated Variance row with formulas (Daily Planned - Daily Actual)`);
+    } else {
+      console.log(`   ⚠️  Could not update Variance row - missing Planned row reference`);
+    }
+  } else {
+    console.log(`   ℹ️  No Variance row found - skipping variance calculations`);
+  }
+
+  console.log(`   ✅ Progress sheet updated successfully!`);
 }
 
 // Main function to generate sprint sheets
@@ -493,6 +838,14 @@ async function generateSprintSheets() {
     console.log(`  Sheet "${sprint.sprintName}" created with ${epicsWithPoints} epics (${epics.length - epicsWithPoints} skipped) + summary rows + formatting`);
   }
   
+  // Update Progress sheet with actual daily completions from JIRA
+  const client = createJiraClient();
+  if (client) {
+    const storyPointsField = await discoverStoryPointsField(client);
+    console.log(`   Using Story Points field: ${storyPointsField}`);
+    await updateProgressSheet(workbook, sprints, client, storyPointsField);
+  }
+
   // Write the updated workbook
   console.log('\nWriting updated workbook...');
   await workbook.xlsx.writeFile(filePath);
