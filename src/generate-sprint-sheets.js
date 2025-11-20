@@ -154,7 +154,8 @@ function getCompletionDate(issue) {
 }
 
 /**
- * Get daily completed story points from JIRA for a sprint
+ * Get daily completed story points from JIRA for a date range
+ * Uses same logic as work-done report: counts ALL work completed on each date, regardless of sprint
  */
 async function getDailyCompletedPoints(client, sprintName, sprintDates, storyPointsField) {
   if (!client) {
@@ -164,9 +165,13 @@ async function getDailyCompletedPoints(client, sprintName, sprintDates, storyPoi
   try {
     console.log(`\n🔍 Fetching actual completion data from JIRA for ${sprintName}...`);
     
-    // Get all issues in the sprint with changelog
+    const sprintStartDate = formatDateForJira(sprintDates[0].date);
+    const sprintEndDate = formatDateForJira(sprintDates[sprintDates.length - 1].date);
+    
+    // Get ALL issues completed during this date range, regardless of sprint assignment
+    // This matches the work-done-today report logic
     const searchResponse = await client.post('/rest/api/3/search/jql', {
-      jql: `project = ${PROJECT_KEY} AND sprint = "${sprintName}" AND issuetype in (Story, Bug)`,
+      jql: `project = ${PROJECT_KEY} AND status in ("READY FOR RELEASE", "CLOSED") AND updated >= "${sprintStartDate}" AND issuetype in (Story, Bug)`,
       maxResults: 1000
     });
 
@@ -190,13 +195,12 @@ async function getDailyCompletedPoints(client, sprintName, sprintDates, storyPoi
 
     console.log(`   ✓ Fetched ${allIssues.length} issues from JIRA`);
 
-    // Calculate daily completions
+    // Calculate daily completions based on completion date (not sprint assignment)
     const dailyPoints = {};
-    const sprintStartDate = formatDateForJira(sprintDates[0].date);
     
     for (const issue of allIssues) {
       const completionDate = getCompletionDate(issue);
-      if (!completionDate || completionDate < sprintStartDate) {
+      if (!completionDate || completionDate < sprintStartDate || completionDate > sprintEndDate) {
         continue;
       }
 
@@ -224,7 +228,7 @@ async function getDailyCompletedPoints(client, sprintName, sprintDates, storyPoi
     }
 
     const totalCompleted = dailyArray.reduce((sum, pts) => sum + pts, 0);
-    console.log(`   ✓ ${totalCompleted} points completed across sprint`);
+    console.log(`   ✓ ${totalCompleted} points completed during this period (all sprints)`);
 
     return dailyArray;
   } catch (error) {
@@ -338,30 +342,38 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
     console.log(`      - ${s.sprintName} (${formatDate(s.startDate)})`);
   });
 
-  // Build a continuous date-to-points mapping from all sprints
+  // Build a continuous date-to-points mapping
+  // Since we now fetch ALL completions by date (not by sprint), we only need to query once
   const dailyPointsMap = {};
   
-  for (const sprint of sprintsToUpdate) {
-    console.log(`\n   🔄 Fetching data for ${sprint.sprintName}...`);
+  console.log(`\n   🔄 Fetching all completion data from ${formatDate(trackingStartDate)} to ${formatDate(today)}...`);
+  
+  // Create a date range covering all sprints
+  const allDates = [];
+  let dateIterator = new Date(trackingStartDate);
+  while (dateIterator <= today) {
+    allDates.push({
+      date: new Date(dateIterator),
+      isWeekend: isWeekend(dateIterator)
+    });
+    dateIterator.setDate(dateIterator.getDate() + 1);
+  }
+  
+  // Fetch completion data for the entire range (getDailyCompletedPoints now gets ALL completions by date)
+  const dailyCompletedPoints = await getDailyCompletedPoints(client, 'All Sprints', allDates, storyPointsField);
+  
+  if (!dailyCompletedPoints) {
+    console.log(`   ⚠️  Could not fetch daily completion data`);
+    return;
+  }
+  
+  // Map each date to its points
+  for (let dayIdx = 0; dayIdx < allDates.length; dayIdx++) {
+    const dayDate = new Date(allDates[dayIdx].date);
+    dayDate.setHours(0, 0, 0, 0);
     
-    const sprintDates = generateSprintDates(sprint.startDate);
-    const dailyCompletedPoints = await getDailyCompletedPoints(client, sprint.sprintName, sprintDates, storyPointsField);
-
-    if (!dailyCompletedPoints) {
-      console.log(`      ⚠️  Could not fetch daily completion data for ${sprint.sprintName}`);
-      continue;
-    }
-
-    // Map each date to its points
-    for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
-      const dayDate = new Date(sprintDates[dayIdx].date);
-      dayDate.setHours(0, 0, 0, 0);
-      
-      if (dayDate <= today && dayDate >= trackingStartDate) {
-        const dateKey = formatDateForJira(dayDate);
-        dailyPointsMap[dateKey] = (dailyPointsMap[dateKey] || 0) + (dailyCompletedPoints[dayIdx] || 0);
-      }
-    }
+    const dateKey = formatDateForJira(dayDate);
+    dailyPointsMap[dateKey] = dailyCompletedPoints[dayIdx] || 0;
   }
 
   console.log(`\n   ✓ Built daily points map with ${Object.keys(dailyPointsMap).length} dates`);
