@@ -91,6 +91,32 @@ async function getSprintIssues(sprintId) {
 }
 
 /**
+ * Get team name from issue (handles different field formats)
+ */
+function getTeamName(issue) {
+  const teamField = issue.fields.customfield_12700;
+  
+  if (!teamField) {
+    return null;
+  }
+  
+  // Handle different field formats
+  if (typeof teamField === 'string') {
+    return teamField;
+  }
+  
+  if (teamField.value) {
+    return teamField.value;
+  }
+  
+  if (teamField.name) {
+    return teamField.name;
+  }
+  
+  return null;
+}
+
+/**
  * Check issues for compliance
  */
 function checkCompliance(issues) {
@@ -111,8 +137,8 @@ function checkCompliance(issues) {
     // Story points field: customfield_10003
     const storyPoints = fields.customfield_10003 || 0;
     
-    // Team field: customfield_12700
-    const team = fields.customfield_12700?.value || null;
+    // Team field: customfield_12700 (using helper function)
+    const team = getTeamName(issue);
 
     const missingTeam = !team;
     const missingPoints = storyPoints === 0 || storyPoints === null;
@@ -135,7 +161,7 @@ function checkCompliance(issues) {
         status,
         assignee,
         storyPoints,
-        team: 'Unassigned'
+        team: team || 'Unassigned'
       });
     } else if (missingPoints) {
       nonCompliant.missingPoints.push({
@@ -145,7 +171,7 @@ function checkCompliance(issues) {
         status,
         assignee,
         storyPoints: 0,
-        team
+        team: team || 'Unassigned'
       });
     }
   }
