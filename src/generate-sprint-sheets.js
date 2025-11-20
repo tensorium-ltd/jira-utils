@@ -278,6 +278,7 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
   }
 
   console.log('\n📊 Updating Progress sheet with actual daily completions...');
+  console.log('   📅 Filling historical data from November 6, 2025 onwards\n');
 
   // Find the rows we need to update
   let actualRowNum = null;
@@ -313,128 +314,143 @@ async function updateProgressSheet(workbook, sprints, client, storyPointsField) 
   if (cumulativeActualRowNum) console.log(`   ✓ Found Cumulative Actual row at line ${cumulativeActualRowNum}`);
   if (varianceRowNum) console.log(`   ✓ Found Variance row at line ${varianceRowNum}`);
 
-  // Determine which sprint column to update (find the current or most recent sprint)
+  // Define the tracking start date (Nov 6, 2025)
+  const trackingStartDate = new Date('2025-11-06');
+  trackingStartDate.setHours(0, 0, 0, 0);
+  
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
-  let targetSprint = null;
-  for (const sprint of sprints) {
-    const sprintEnd = new Date(sprint.startDate);
-    sprintEnd.setDate(sprintEnd.getDate() + 13); // Sprint is 14 days (0-13)
-    
-    if (sprint.startDate <= today && sprintEnd >= today) {
-      // Current sprint
-      targetSprint = sprint;
-      break;
-    } else if (sprintEnd < today) {
-      // Past sprint - keep track of most recent
-      targetSprint = sprint;
-    }
-  }
+  // Find all sprints that have occurred since Nov 6, 2025
+  const sprintsToUpdate = sprints.filter(sprint => {
+    const sprintStart = new Date(sprint.startDate);
+    sprintStart.setHours(0, 0, 0, 0);
+    return sprintStart >= trackingStartDate && sprintStart <= today;
+  });
 
-  if (!targetSprint) {
-    console.log('   ⚠️  No current or recent sprint found to update');
+  if (sprintsToUpdate.length === 0) {
+    console.log('   ⚠️  No sprints found starting from November 6, 2025');
     return;
   }
 
-  console.log(`   ✓ Updating data for ${targetSprint.sprintName}`);
+  console.log(`   ✓ Found ${sprintsToUpdate.length} sprint(s) to update:`);
+  sprintsToUpdate.forEach(s => {
+    console.log(`      - ${s.sprintName} (${formatDate(s.startDate)})`);
+  });
 
-  // Get daily completed points from JIRA
-  const sprintDates = generateSprintDates(targetSprint.startDate);
-  const dailyCompletedPoints = await getDailyCompletedPoints(client, targetSprint.sprintName, sprintDates, storyPointsField);
-
-  if (!dailyCompletedPoints) {
-    console.log('   ⚠️  Could not fetch daily completion data from JIRA');
-    return;
-  }
-
-  // Find the column offset for this sprint (assumes Day 1, Day 2, etc. headers)
-  // Typically Progress sheet has sprint days starting at column B (column 2)
-  const startCol = 2; // Column B
-  
-  // Update Actual Story Points row
-  const actualRow = progressSheet.getRow(actualRowNum);
-  let cumulativePoints = 0;
-  
-  for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
-    const colNum = startCol + dayIdx;
-    const points = dailyCompletedPoints[dayIdx] || 0;
+  // Update each sprint's data
+  for (const sprint of sprintsToUpdate) {
+    console.log(`\n   🔄 Processing ${sprint.sprintName}...`);
     
-    // Only fill in actual points up to today
-    const dayDate = new Date(targetSprint.startDate);
-    dayDate.setDate(dayDate.getDate() + dayIdx);
-    dayDate.setHours(0, 0, 0, 0);
-    
-    if (dayDate <= today) {
-      actualRow.getCell(colNum).value = points > 0 ? points : 0;
+    // Get daily completed points from JIRA
+    const sprintDates = generateSprintDates(sprint.startDate);
+    const dailyCompletedPoints = await getDailyCompletedPoints(client, sprint.sprintName, sprintDates, storyPointsField);
+
+    if (!dailyCompletedPoints) {
+      console.log(`      ⚠️  Could not fetch daily completion data for ${sprint.sprintName}`);
+      continue;
     }
-  }
-  
-  console.log(`   ✓ Updated Actual Story Points row`);
 
-  // Update Cumulative Actual row
-  if (cumulativeActualRowNum) {
-    const cumulativeRow = progressSheet.getRow(cumulativeActualRowNum);
-    cumulativePoints = 0;
+    // Determine if this sprint's sheet exists and find the data rows
+    const sprintSheet = workbook.getWorksheet(sprint.sprintName);
+    
+    // The Progress sheet shows one sprint at a time (typically the current/most recent)
+    // Only update if this is the most recent sprint
+    const isCurrentSprint = (sprint === sprintsToUpdate[sprintsToUpdate.length - 1]);
+    
+    if (!isCurrentSprint) {
+      console.log(`      ℹ️  ${sprint.sprintName} is not the current sprint - data saved in individual sprint sheet`);
+      continue;
+    }
+    
+    console.log(`      ✓ ${sprint.sprintName} is the current sprint - updating Progress sheet`);
+    
+    // Progress sheet uses standard column offset starting at B
+    let startCol = 2; // Column B
+    
+    // Update Actual Story Points row
+    const actualRow = progressSheet.getRow(actualRowNum);
+    let updatedCells = 0;
+    let totalPointsForSprint = 0;
     
     for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
       const colNum = startCol + dayIdx;
-      const colLetter = String.fromCharCode(65 + colNum - 1); // Convert to Excel column letter
+      const points = dailyCompletedPoints[dayIdx] || 0;
       
-      const dayDate = new Date(targetSprint.startDate);
+      // Only fill in actual points up to today
+      const dayDate = new Date(sprint.startDate);
       dayDate.setDate(dayDate.getDate() + dayIdx);
       dayDate.setHours(0, 0, 0, 0);
       
       if (dayDate <= today) {
-        // Use formula to sum actual points from day 1 to current day
-        cumulativeRow.getCell(colNum).value = {
-          formula: `SUM($B$${actualRowNum}:${colLetter}$${actualRowNum})`
-        };
-      }
-    }
-    
-    console.log(`   ✓ Updated Cumulative Actual row with formulas`);
-  }
-
-  // Update Variance row (Planned - Actual)
-  if (varianceRowNum) {
-    const varianceRow = progressSheet.getRow(varianceRowNum);
-    
-    for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
-      const colNum = startCol + dayIdx;
-      const colLetter = String.fromCharCode(65 + colNum - 1);
-      
-      const dayDate = new Date(targetSprint.startDate);
-      dayDate.setDate(dayDate.getDate() + dayIdx);
-      dayDate.setHours(0, 0, 0, 0);
-      
-      if (dayDate <= today) {
-        // Variance = Cumulative Planned - Cumulative Actual
-        if (cumulativePlannedRowNum && cumulativeActualRowNum) {
-          varianceRow.getCell(colNum).value = {
-            formula: `${colLetter}$${cumulativePlannedRowNum}-${colLetter}$${cumulativeActualRowNum}`
-          };
-        } else if (plannedRowNum && actualRowNum) {
-          // Fallback: Daily Planned - Daily Actual
-          varianceRow.getCell(colNum).value = {
-            formula: `${colLetter}$${plannedRowNum}-${colLetter}$${actualRowNum}`
-          };
+        actualRow.getCell(colNum).value = points > 0 ? points : 0;
+        updatedCells++;
+        totalPointsForSprint += points;
+        if (points > 0) {
+          const colLetter = String.fromCharCode(65 + colNum - 1);
+          console.log(`         Day ${dayIdx + 1} (${colLetter}${actualRowNum}): ${points} points`);
         }
       }
     }
     
-    if (cumulativePlannedRowNum && cumulativeActualRowNum) {
-      console.log(`   ✓ Updated Variance row with formulas (Cumulative Planned - Cumulative Actual)`);
-    } else if (plannedRowNum && actualRowNum) {
-      console.log(`   ✓ Updated Variance row with formulas (Daily Planned - Daily Actual)`);
-    } else {
-      console.log(`   ⚠️  Could not update Variance row - missing Planned row reference`);
+    console.log(`      ✓ Updated ${updatedCells} cells with ${totalPointsForSprint} total points`);
+
+    // Update Cumulative Actual row
+    if (cumulativeActualRowNum) {
+      const cumulativeRow = progressSheet.getRow(cumulativeActualRowNum);
+      
+      for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
+        const colNum = startCol + dayIdx;
+        const colLetter = String.fromCharCode(65 + colNum - 1);
+        
+        const dayDate = new Date(sprint.startDate);
+        dayDate.setDate(dayDate.getDate() + dayIdx);
+        dayDate.setHours(0, 0, 0, 0);
+        
+        if (dayDate <= today) {
+          // Use formula to sum actual points from day 1 to current day
+          const startColLetter = String.fromCharCode(65 + startCol - 1);
+          cumulativeRow.getCell(colNum).value = {
+            formula: `SUM($${startColLetter}$${actualRowNum}:${colLetter}$${actualRowNum})`
+          };
+        }
+      }
+      
+      console.log(`      ✓ Updated Cumulative Actual formulas`);
     }
-  } else {
-    console.log(`   ℹ️  No Variance row found - skipping variance calculations`);
+
+    // Update Variance row (Planned - Actual)
+    if (varianceRowNum) {
+      const varianceRow = progressSheet.getRow(varianceRowNum);
+      
+      for (let dayIdx = 0; dayIdx < 14; dayIdx++) {
+        const colNum = startCol + dayIdx;
+        const colLetter = String.fromCharCode(65 + colNum - 1);
+        
+        const dayDate = new Date(sprint.startDate);
+        dayDate.setDate(dayDate.getDate() + dayIdx);
+        dayDate.setHours(0, 0, 0, 0);
+        
+        if (dayDate <= today) {
+          // Variance = Cumulative Planned - Cumulative Actual
+          if (cumulativePlannedRowNum && cumulativeActualRowNum) {
+            varianceRow.getCell(colNum).value = {
+              formula: `${colLetter}$${cumulativePlannedRowNum}-${colLetter}$${cumulativeActualRowNum}`
+            };
+          } else if (plannedRowNum && actualRowNum) {
+            // Fallback: Daily Planned - Daily Actual
+            varianceRow.getCell(colNum).value = {
+              formula: `${colLetter}$${plannedRowNum}-${colLetter}$${actualRowNum}`
+            };
+          }
+        }
+      }
+      
+      console.log(`      ✓ Updated Variance formulas`);
+    }
   }
 
-  console.log(`   ✅ Progress sheet updated successfully!`);
+  console.log(`\n   ✅ Progress sheet updated with historical data from Nov 6 to ${formatDate(today)}!`);
 }
 
 // Main function to generate sprint sheets
@@ -626,6 +642,16 @@ async function generateSprintSheets() {
     }
   });
   
+  // Create JIRA client for fetching actual data (if credentials available)
+  const jiraClient = createJiraClient();
+  let storyPointsFieldForSheets = 'customfield_10003';
+  
+  if (jiraClient) {
+    storyPointsFieldForSheets = await discoverStoryPointsField(jiraClient);
+    console.log(`\n🔗 JIRA integration enabled - will fetch actual completion data`);
+    console.log(`   Using Story Points field: ${storyPointsFieldForSheets}`);
+  }
+
   // Generate a sheet for each sprint
   for (const sprint of sprints) {
     console.log(`\nGenerating sheet for ${sprint.sprintName}...`);
@@ -717,46 +743,85 @@ async function generateSprintSheets() {
       fgColor: { argb: 'FFE7E6E6' }
     };
     
-    // Add Story Points Delivered row
+    // Add Story Points Delivered row (with actual daily data from JIRA if available)
     const deliveredRowNum = currentRow + 1;
     const deliveredRow = worksheet.getRow(deliveredRowNum);
     deliveredRow.getCell(1).value = 'Story Points Delivered';
     
-    // Distribute delivered points from main sheet across days up to today
-    const totalDelivered = deliveredPoints[sprint.sprintName] || 0;
-    if (totalDelivered > 0) {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0); // Reset to start of day for comparison
+    // Define tracking start date (Nov 6, 2025)
+    const trackingStartDate = new Date('2025-11-06');
+    trackingStartDate.setHours(0, 0, 0, 0);
+    
+    const sprintStartDate = new Date(sprint.startDate);
+    sprintStartDate.setHours(0, 0, 0, 0);
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // Check if this sprint has started since tracking began and if JIRA client is available
+    const shouldFetchActualData = jiraClient && sprintStartDate >= trackingStartDate && sprintStartDate <= today;
+    
+    if (shouldFetchActualData) {
+      console.log(`  📊 Fetching actual daily completion data from JIRA...`);
       
-      // Calculate which days have passed (from sprint start to today)
-      let daysElapsed = 0;
-      let workingDaysElapsed = 0;
+      // Get actual daily completed points from JIRA
+      const dailyActualPoints = await getDailyCompletedPoints(jiraClient, sprint.sprintName, sprintDates, storyPointsFieldForSheets);
       
-      for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
-        const dayDate = new Date(sprintDates[dayIdx].date);
-        dayDate.setHours(0, 0, 0, 0);
+      if (dailyActualPoints) {
+        let totalActual = 0;
+        let daysWithData = 0;
         
-        if (dayDate <= today) {
-          daysElapsed = dayIdx + 1;
-          if (!sprintDates[dayIdx].isWeekend) {
-            workingDaysElapsed++;
+        for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
+          const dayDate = new Date(sprintDates[dayIdx].date);
+          dayDate.setHours(0, 0, 0, 0);
+          
+          // Only fill data up to today
+          if (dayDate <= today) {
+            const points = dailyActualPoints[dayIdx] || 0;
+            deliveredRow.getCell(dayIdx + 2).value = points > 0 ? points : null;
+            totalActual += points;
+            if (points > 0) daysWithData++;
           }
         }
+        
+        console.log(`  ✓ Filled ${daysWithData} days with ${totalActual} actual points from JIRA`);
+      } else {
+        console.log(`  ⚠️  Could not fetch actual data, falling back to distributed estimate`);
       }
-      
-      // Distribute delivered points across working days elapsed
-      if (workingDaysElapsed > 0) {
-        const pointsPerDay = Math.round((totalDelivered / workingDaysElapsed) * 100) / 100;
+    } else {
+      // Fallback: Distribute delivered points from main sheet across days up to today
+      const totalDelivered = deliveredPoints[sprint.sprintName] || 0;
+      if (totalDelivered > 0) {
+        // Calculate which days have passed (from sprint start to today)
+        let daysElapsed = 0;
+        let workingDaysElapsed = 0;
         
-        for (let dayIdx = 0; dayIdx < daysElapsed; dayIdx++) {
-          if (!sprintDates[dayIdx].isWeekend) {
-            deliveredRow.getCell(dayIdx + 2).value = pointsPerDay;
-          } else {
-            deliveredRow.getCell(dayIdx + 2).value = null; // Blank for weekends
+        for (let dayIdx = 0; dayIdx < sprintDates.length; dayIdx++) {
+          const dayDate = new Date(sprintDates[dayIdx].date);
+          dayDate.setHours(0, 0, 0, 0);
+          
+          if (dayDate <= today) {
+            daysElapsed = dayIdx + 1;
+            if (!sprintDates[dayIdx].isWeekend) {
+              workingDaysElapsed++;
+            }
           }
         }
         
-        console.log(`  ${totalDelivered} delivered points distributed across ${workingDaysElapsed} working days (${pointsPerDay} pts/day)`);
+        // Distribute delivered points across working days elapsed
+        if (workingDaysElapsed > 0) {
+          const pointsPerDay = Math.round((totalDelivered / workingDaysElapsed) * 100) / 100;
+          
+          for (let dayIdx = 0; dayIdx < daysElapsed; dayIdx++) {
+            if (!sprintDates[dayIdx].isWeekend) {
+              deliveredRow.getCell(dayIdx + 2).value = pointsPerDay;
+            } else {
+              deliveredRow.getCell(dayIdx + 2).value = null; // Blank for weekends
+            }
+          }
+          
+          console.log(`  ${totalDelivered} delivered points distributed across ${workingDaysElapsed} working days (${pointsPerDay} pts/day)`);
+        }
       }
     }
     
@@ -839,11 +904,8 @@ async function generateSprintSheets() {
   }
   
   // Update Progress sheet with actual daily completions from JIRA
-  const client = createJiraClient();
-  if (client) {
-    const storyPointsField = await discoverStoryPointsField(client);
-    console.log(`   Using Story Points field: ${storyPointsField}`);
-    await updateProgressSheet(workbook, sprints, client, storyPointsField);
+  if (jiraClient) {
+    await updateProgressSheet(workbook, sprints, jiraClient, storyPointsFieldForSheets);
   }
 
   // Write the updated workbook
