@@ -14,7 +14,7 @@ const path = require('path');
 // Configuration
 const JIRA_BASE_URL = 'https://benchmarkestimating.atlassian.net';
 const PROJECT_KEY = 'VER10';
-const CURRENT_SPRINT = 'NH Sprint 31';
+const CURRENT_SPRINT = 'NH Sprint 35';
 
 // Disable SSL verification (for corporate proxies)
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';

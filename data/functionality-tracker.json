@@ -1,0 +1,2789 @@
+{
+  "generatedAt": "2025-12-07T22:15:17.549Z",
+  "progressStages": [
+    {
+      "column": "I",
+      "colNum": 9,
+      "category": "Planned ",
+      "percentage": 0,
+      "stage": "Not Started"
+    },
+    {
+      "column": "J",
+      "colNum": 10,
+      "category": "Planned ",
+      "percentage": 0.05,
+      "stage": "In Design"
+    },
+    {
+      "column": "K",
+      "colNum": 11,
+      "category": "Active ",
+      "percentage": 0.1,
+      "stage": "Design Complete"
+    },
+    {
+      "column": "L",
+      "colNum": 12,
+      "category": "Active ",
+      "percentage": 0.25,
+      "stage": "In Development"
+    },
+    {
+      "column": "M",
+      "colNum": 13,
+      "category": "Active ",
+      "percentage": 0.35,
+      "stage": "Development Complete"
+    },
+    {
+      "column": "N",
+      "colNum": 14,
+      "category": "Active ",
+      "percentage": 0.45,
+      "stage": "In Internal QA / Dev Testing"
+    },
+    {
+      "column": "O",
+      "colNum": 15,
+      "category": "Active ",
+      "percentage": 0.55,
+      "stage": "Ready for UAT"
+    },
+    {
+      "column": "P",
+      "colNum": 16,
+      "category": "Active ",
+      "percentage": 0.7,
+      "stage": "In UAT"
+    },
+    {
+      "column": "Q",
+      "colNum": 17,
+      "category": "Active ",
+      "percentage": 0.8,
+      "stage": "UAT Complete"
+    },
+    {
+      "column": "R",
+      "colNum": 18,
+      "category": "Complete ",
+      "percentage": 0.9,
+      "stage": "Ready for Release"
+    },
+    {
+      "column": "S",
+      "colNum": 19,
+      "category": "Complete ",
+      "percentage": 0.95,
+      "stage": "Released / Delivered"
+    },
+    {
+      "column": "T",
+      "colNum": 20,
+      "category": "Complete ",
+      "percentage": 1,
+      "stage": "Closed Out"
+    }
+  ],
+  "items": [
+    {
+      "id": {
+        "error": "#REF!"
+      },
+      "workstream": "Administration",
+      "name": "Estimate Template/shell Config",
+      "description": "Imports estimate shell templates (15 cost/carbon/WLC templates available)",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Internal QA / Dev Testing",
+      "percentage": 0.45
+    },
+    {
+      "id": {
+        "error": "#REF!"
+      },
+      "workstream": "Administration",
+      "name": "User Access & Roles",
+      "description": "Manage users, roles, permissions.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 1,
+      "workstream": "Administration",
+      "name": "Carbon Module Setup",
+      "description": "Configure PAS 2080 carbon settings (these should algin to the estimate shell)",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 2,
+      "workstream": "Administration",
+      "name": "IFT User Access",
+      "description": "Control access to IFT functions.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 3,
+      "workstream": "Administration",
+      "name": "Report & Output Config",
+      "description": "Configure estimate reports and outputs.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 4,
+      "workstream": "Administration",
+      "name": "System Setup",
+      "description": "Configure core system settings.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 5,
+      "workstream": "Administration",
+      "name": "Commercial Visibility Control",
+      "description": "Manage visibility rules for commercial information.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 6,
+      "workstream": "Administration",
+      "name": "Library Maintenance",
+      "description": "Administrators maintain all libraries, update rates, manage item/resource build-ups, approve star rates, configure dimensions and hierarchies.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 7,
+      "workstream": "Administration",
+      "name": "Standardised Scheme & Estimate Naming",
+      "description": "Controlled naming and classification via admin libraries.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 7,
+      "workstream": "Calculators/Cost Models",
+      "name": "BOQ Import via Add-in",
+      "description": "The Add-in reads BOQ sheets (Item/Resource Code + Quantity) and publishes them into CCET Sections.",
+      "effort": 2,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 8,
+      "workstream": "Calculators/Cost Models",
+      "name": "Configuration Sheet Creation",
+      "description": "The Add-in automatically creates and validates a configuration sheet to map BOQ columns and estimate details.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 9,
+      "workstream": "Calculators/Cost Models",
+      "name": "Controlled Carbon Calculators",
+      "description": "Excel-based calculators (concrete, asphalt, steel) can be opened directly from CCET to generate carbon factors and paste them into the Resource Library. Only the latest approved calculator version is available to users.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 10,
+      "workstream": "Calculators/Cost Models",
+      "name": "Copy Carbon Factors Into Libraries",
+      "description": "Users copy/paste carbon factor outputs (for PAS2080 modules) into resource records, one resource at a time.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 11,
+      "workstream": "Calculators/Cost Models",
+      "name": "Excel Add-in for Importing Cost Models",
+      "description": "An Excel Add-in enables cost models to be imported directly into CCET from Excel via a guided workflow.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 12,
+      "workstream": "Calculators/Cost Models",
+      "name": "On-the-Fly Recalculation",
+      "description": "Users can update BOQ inputs in Excel and instantly recalculate cost & carbon impacts before publishing.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 13,
+      "workstream": "Calculators/Cost Models",
+      "name": "Open Calculators Within CCET",
+      "description": "Calculators are accessible from the Landing Page, Menu, and within the IFT, providing quick access during estimating.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 14,
+      "workstream": "Calculators/Cost Models",
+      "name": "Replace Calculator Versions",
+      "description": "Estimating Administrators can upload updated calculators; older versions are removed from user access.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 15,
+      "workstream": "Calculators/Cost Models",
+      "name": "Two-Way Connection with CCET",
+      "description": "Users authenticate from Excel and can preview cost & carbon totals in Excel using CCET libraries.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 16,
+      "workstream": "Calculators/Cost Models",
+      "name": "Upload Model to CCET",
+      "description": "The Excel model itself can be uploaded into CCET for audit and reference.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 17,
+      "workstream": "Calculators/Cost Models",
+      "name": "Validation & Error Handling",
+      "description": "Add-in checks codes, data types, library matches, and whether the estimate is editable before import.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 17,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "Estimate History",
+      "description": "Golden Thread comparing estimate versions.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 18,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "Existing Dashboards Retained",
+      "description": "All existing dashboards remain available and expanded for Operations. (Workload tracker, Cost Insights, Carbon Insights, Formal Estimates, Cost Exceutive Report, Carbon Exceutive Report, Estimating Pipeline, Analytical Tools) ",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 19,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "IFT Change Tracking",
+      "description": "Track changes in scope, risk, inflation, fees.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 20,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "IFT Comparison",
+      "description": "Compare approved estimate vs latest IFT & Compare any revision to baseline or other revisions (cost & carbon).",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 21,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "IFT Drilldown",
+      "description": "Drill to section/resource level (cost & carbon).",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 22,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "IFT Movement Narrative",
+      "description": "Narrative explaining changes across versions.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 23,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "Option Comparison",
+      "description": "Compare multiple estimate scenarios.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 24,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "PDF/CDF Curves",
+      "description": "Display cost and carbon uncertainty ranges.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 25,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "Programme Dashboards",
+      "description": "Project performance with drill-down.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 26,
+      "workstream": "Dashboards (Power BI) ",
+      "name": "Project Dashboards",
+      "description": "Detailed cost/carbon/resources by sections.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 26,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Assured/Unassured Carbon Flag",
+      "description": "Carbon factors are flagged to show whether they have been assured by National Highways.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 27,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Factors Conversion",
+      "description": "Add any miss carbon resources using cost-to-carbon factors.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 28,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Fields Setup",
+      "description": "Carbon fields auto-configured per PAS 2080.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 29,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Library Allocation",
+      "description": "System use carbon resource's to calculate carbon in KgCO2e into PAS2080 modules",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 30,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Deflation",
+      "description": "Apply carbon deflation like cost inflation.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 31,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Estimate ",
+      "description": "Apply precedence: library → cost-to-carbon → manual.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 32,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Expenditure Profiles",
+      "description": "View and apply carbon profiles over time from within the estimate.Carbon is shown monthly for the first 5 years and annually after that.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 33,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Carbon Traceability",
+      "description": "Users can see the inputs behind every carbon calculation.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 34,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Estimator Carbon Editing Permissions",
+      "description": "Control who can edit/delink carbon values.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 35,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "WBS Lock-down for Carbon Forecasts",
+      "description": "Lock WBS for carbon forecasts; allow only Item/Resource edits.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 36,
+      "workstream": "Estimate Build - Carbon ",
+      "name": "Zero Carbon for Fees",
+      "description": "Fees always have zero carbon factor.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 36,
+      "workstream": "Estimate Build - Cost",
+      "name": "Access Estimate Template/Shell",
+      "description": "Access the correct Estimate template/Shell for the type of estimate requested. ",
+      "effort": 1,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 37,
+      "workstream": "Estimate Build - Cost",
+      "name": "Add Library Items",
+      "description": "Add items from library and update quantities.",
+      "effort": 1,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 38,
+      "workstream": "Estimate Build - Cost",
+      "name": "Add Quantities",
+      "description": "Add quantities manually.",
+      "effort": 3,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 39,
+      "workstream": "Estimate Build - Cost",
+      "name": "Asset Renewal Quantity Tagging",
+      "description": "Tag quantities / activities as New, Remove, Renewed or Existing.",
+      "effort": 1,
+      "release": "Release Clarify",
+      "currentStage": null,
+      "percentage": null
+    },
+    {
+      "id": 40,
+      "workstream": "Estimate Build - Cost",
+      "name": "Auto-Allocate Libraries",
+      "description": "System assigns cost & carbon libraries.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 41,
+      "workstream": "Estimate Build - Cost",
+      "name": "Build-Up from Resources",
+      "description": "Create items by combining resources.",
+      "effort": 2,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 42,
+      "workstream": "Estimate Build - Cost",
+      "name": "Clear WBS Hierarchy Formatting",
+      "description": "Visually distinguish Section, Cost Element, Item, Resource.",
+      "effort": 2,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 43,
+      "workstream": "Estimate Build - Cost",
+      "name": "Handling Unknown Commercial Variables",
+      "description": "Allow “Unknown” selections and auto-choose a default rate.",
+      "effort": 1,
+      "release": "Release Clarify",
+      "currentStage": null,
+      "percentage": null
+    },
+    {
+      "id": 44,
+      "workstream": "Estimate Build - Cost",
+      "name": "O&M Asset Quantities",
+      "description": "Add asset quantities and intervention cycles.",
+      "effort": 1,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 45,
+      "workstream": "Estimate Build - Cost",
+      "name": "O&M Durations",
+      "description": "Auto-populate durations (13–60 months).",
+      "effort": 1,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 46,
+      "workstream": "Estimate Build - Cost",
+      "name": "On-Screen Take-Off",
+      "description": "Add quantities via on-screen take-off.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 47,
+      "workstream": "Estimate Build - Cost",
+      "name": "Regionalised Rates",
+      "description": "Vary Item and Resource rates by Region / Area.",
+      "effort": 1,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 48,
+      "workstream": "Estimate Build - Cost",
+      "name": "Resource-Level Build-ups for New Activities",
+      "description": "Build new Items from Resources where no standard Item exists.",
+      "effort": 3,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 49,
+      "workstream": "Estimate Build - Cost",
+      "name": "Scheme Commercial Variable Selection",
+      "description": "Select region / lot / supplier / season / time to drive rate choice.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 50,
+      "workstream": "Estimate Build - Cost",
+      "name": "Sectioning Estimate ",
+      "description": "Arranging the estimate into sections aligned to the scope (e.g., by junction, chainage, or drawing number",
+      "effort": 2,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": 51,
+      "workstream": "Estimate Build - Cost",
+      "name": "Star Rate Approval & Library Update",
+      "description": "Promote approved Star Rates into standard libraries.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 52,
+      "workstream": "Estimate Build - Cost",
+      "name": "Star Rate Identification",
+      "description": "Flag Items and rates as “Star Rates”.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 53,
+      "workstream": "Estimate Build - Cost",
+      "name": "XBIM Upload",
+      "description": "Import quantities via BIM model.",
+      "effort": 1,
+      "release": "Release Clarify",
+      "currentStage": null,
+      "percentage": null
+    },
+    {
+      "id": "F1",
+      "workstream": "Foundational",
+      "name": "User, Groups and Permissions",
+      "description": "Provide secure, granular access control across all application modules.",
+      "effort": 7,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F11",
+      "workstream": "Foundational",
+      "name": "Import/Export Interfaces for Uploads",
+      "description": "Underlying interfaces to allow data to be uploaded into the System",
+      "effort": 8,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F12",
+      "workstream": "Foundational",
+      "name": "Framework to Support Tagging, Dimensions",
+      "description": "Provide a flexible classification and slicing framework to breakdown estimates",
+      "effort": 9,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": "F2",
+      "workstream": "Foundational",
+      "name": "Library Management",
+      "description": "Establish a structured, scalable repository for all reusable estimating components.",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F3",
+      "workstream": "Foundational",
+      "name": "Core Admin Framework and Functions",
+      "description": "Allow the system to be configured without code changes.",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F4",
+      "workstream": "Foundational",
+      "name": "Core Data Model and APIs",
+      "description": "Define how data flows through the system and how modules communicate",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F5",
+      "workstream": "Foundational",
+      "name": "DB Sync V10->V8",
+      "description": "Allows selected data to be reused across versions of BES",
+      "effort": 9,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F6",
+      "workstream": "Foundational",
+      "name": "Core UI Components",
+      "description": "Ensure a consistent UI across all functionality and speed up development",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F7",
+      "workstream": "Foundational",
+      "name": "Custom Fields Framework",
+      "description": "Let clients extend data capture without schema changes or code releases.",
+      "effort": 8,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": "F8",
+      "workstream": "Foundational",
+      "name": "Basic WBS Structure and Hiearchy",
+      "description": "Provide the structural backbone of estimates, enabling complex breakdowns.",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F9",
+      "workstream": "Foundational",
+      "name": "Performance / Optimisation Work",
+      "description": "Ensure the system performs reliably under large datasets and multi-user loads.",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F10",
+      "workstream": "Foundational ",
+      "name": "Custom Workflow Framework for RFE",
+      "description": "Builds basic framework that can be extended and customised for different lifecycles",
+      "effort": 10,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Baseline Starting Point",
+      "description": "IFT begins with an approved estimate duplicated as locked version 1.0.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Forecast Browser",
+      "description": "Displays all IFT versions, revision status, users, and submissions.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Revision Submission",
+      "description": "Users can submit revisions for internal review.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Revision Tagging",
+      "description": "Forecast versions can be tagged (preferred, reference, etc.).",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Unlimited Revisions",
+      "description": "Create unlimited revisions (1.1, 1.2 etc.) until submitted.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Version Control Integrity",
+      "description": "Enforces structured version control for forecasts.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Audit Trail",
+      "description": "Full audit trail of all changes across IFT revisions.",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Bulk EPD / Emission Factor Approval",
+      "description": "Bulk approve proposed EPDs / emission factors.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Carbon Transparency",
+      "description": "Carbon data not is commercially sensitive and shared across suppliers.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Contractor Permissions",
+      "description": "Contractors edit their allocated items’ quantities and rates only using their own library.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Cost Visibility Controls",
+      "description": "Cost restricted to assigned users; carbon visible to all parties.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Economic & Expenditure Outputs",
+      "description": "Produce expenditure profiles and economic outputs.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Interim Forecasting Outputs",
+      "description": "Exportable cost management reports (Cost Element level) for Project User forecasts.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Movement Dashboards",
+      "description": "Dashboards compare baseline vs latest IFT revisions.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Multi-Supplier Forecasting",
+      "description": "Multiple suppliers can work in a forecast while only seeing their own rates libraries and the dynamic (low carbon products) library",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Project-Specific Libraries",
+      "description": "Forecasts use project-level supplier libraries and dynamic (low carbon products) libraries.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Reporting Levels",
+      "description": "Reports configurable at section, project, programme, portfolio.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Role Permissions",
+      "description": "Control user access to quantities, Supplier rate & dynamic (low carbon product) libraries , risk, programme dates, inflation.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Single Revision Editor",
+      "description": "Only one assigned user can edit a forecast revision.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Supplier Isolation",
+      "description": "Suppliers cannot view each other's pricing or rates libraries. ",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Supplier-Assigned Star Items",
+      "description": "Assign new Items to suppliers and add to supplier libraries.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Change Tracking",
+      "description": "Track scope, quantity, risk, programme, inflation & fee changes.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Containerised Item Groups",
+      "description": "Supplier-specific item groups isolate editable areas within the forecast.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Designer Permissions",
+      "description": "Designers/NH users can update quantities, risks, and programme dates only.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Estimate Conversion",
+      "description": "Chosen revision feeds into the RFE to generate a formal estimate.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Forecast Composition Report",
+      "description": "Generate cost, carbon, quantity compositions for a revision.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Governance Workflow",
+      "description": "Locked revisions go through governance before becoming estimates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Impact Assessment",
+      "description": "Assess overall cost and carbon impacts from updates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Library Detachment",
+      "description": "Libraries detach from IFT once a revision is locked to preserve integrity.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Live Forecasting",
+      "description": "Update cost & carbon between formal cycles without a new full estimate.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "Locked Revisions",
+      "description": "Chosen revision is locked and used to generate the next formal estimate.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Interim Forecasting Tool",
+      "name": "NH Oversight",
+      "description": "NH estimators retain oversight and review permissions.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": "F11",
+      "workstream": "Foundational ",
+      "name": "RFE and UI changes",
+      "description": "Incorporating the feedback from Release 1A",
+      "effort": 8,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": "F12",
+      "workstream": "Foundational ",
+      "name": "UI Uplift Work",
+      "description": "Revamp of the WBS and other core UI components based on R1A and R1B feedback",
+      "effort": 10,
+      "release": "Release 1C",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Bulk upload Library",
+      "description": "Bulk upload any Library data via Excel.",
+      "effort": 7,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Asset, Supplier & Location Libraries",
+      "description": "Up to 5-level hierarchies that allow items and estimate elements to be tagged for analysis, filtering and reporting.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Carbon & Cost-to-Carbon Data",
+      "description": "Library of cost-to-carbon factors by Resource Group.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Carbon Library",
+      "description": "Library Embodied Carbon values in accrordance with the PAS 2080",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Dynamic (low carbon products) Library",
+      "description": "A certified, centrally managed library of low-carbon materials, each supported by verified Environmental Product Declarations (EPDs). Users can search, compare, and apply low-carbon alternatives across all estimate types and Interim Forecasting Tool (IFT) forecasts.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Dynamic Library Carbon Search & Optimisation",
+      "description": "Search and sort Dynamic Library by cost/carbon.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Use of Libraries in Estimating",
+      "description": "Applying cost, carbon, asset and supplier libraries during estimate build-up; switching or overriding libraries if allowed.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Asset Renewal Libraries",
+      "description": "Rate Libraries of SDF & PDF contract items & resource  ",
+      "effort": 1,
+      "release": "Release 1C",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Benchmarking Metrics Library",
+      "description": "Library of benchmark metrics by scheme type and stage.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Bulk Resource Addition Requests",
+      "description": "Request bulk addition of new Resources with admin approval.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Composite Rate Library",
+      "description": "Store and use composite “all-in” Item rates.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Contractor Fees Library",
+      "description": "Store Supplier specific contractor  fees and associate a library item from the Contractor Fee Library to an item in the Item Library",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Cross-Library Carbon Factor Migration",
+      "description": "Move carbon factors between libraries in a controlled way.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Decarbonisation Factors Library",
+      "description": "Store annual decarbonisation factors (e.g. to 2050).",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Dedicated Cost & Carbon Libraries per Stage",
+      "description": "Separate cost and carbon libraries per lifecycle stage.(MP, O&M, AR, LTA).",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Estimate-Specific Resource Library View",
+      "description": "View/export estimate Resources and their cost/carbon.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Expenditure Profile Library",
+      "description": "Store and apply spend profiles by scheme type / characteristics.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Long Term Appraisal Libraries",
+      "description": "Libraries of Composite items for Cost & Carbon ",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "O&M Libraries",
+      "description": "Rate Libraries of Schedule A, B & C  items & resource & standard intervention frequencies (ADAMR).",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Reporting Hierarchy Libraries",
+      "description": "Configurable hierarchies (up to 5 levels) used to output estimates in formats such as CESS or ICMS.",
+      "effort": 1,
+      "release": "Release 1C",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Supplier Iibrary  ",
+      "description": "Store and apply supplier-specific Items and Resources.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Libraries",
+      "name": "Use of Libraries in Reporting",
+      "description": "Libraries used to drive reporting structures, alternative hierarchies and aggregated outputs across lifecycle stages.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Assessment Period Configuration",
+      "description": "Allow Estimators to select an LTA assessment period (e.g., 60–200 years).",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Asset Quantification Screen",
+      "description": "Provide a screen for entering LTA asset quantities for “with” and “without” scheme.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Auto Quantity Mapping (CapEx → LTA)",
+      "description": "Automatically transfer CapEx quantities into O&M/Renewals for LTA.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Automated Profiling",
+      "description": "Auto-profile O&M and Renewal interventions over the assessment period.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Dedicated LTA Composite Library",
+      "description": "Use a specific LTA library with combined O&M + Renewal composite Items.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Intervention Tagging",
+      "description": "Tag asset interventions as New, Renew, Remove, or No-Change.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "LTA Output Reports",
+      "description": "Generate LTA cost output reports for the full assessment period",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "LTA Profiling View",
+      "description": "Provide a screen showing yearly with-scheme vs without-scheme costs.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "LTA Rate Library Selection",
+      "description": "Select a dedicated LTA Item library containing composite rates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "LTA Shell Creation",
+      "description": "Create an LTA estimate shell automatically when whole-life costing is requested.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Manual Import/Export Option",
+      "description": "Allow export/edit/import of CapEx quantities as an MVP alternative.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Parent/Child Estimate Structure",
+      "description": "Generate a parent structure combining CapEx + O&M + Renewals + LTA.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Remaining Age Capture",
+      "description": "Record remaining life for assets in both with-scheme and without-scheme scenarios.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Segment Structure Matching",
+      "description": "Ensure the LTA estimate follows the same segmentation as the CapEx estimate.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Segment-by-Segment Entry",
+      "description": "Allow Estimators to enter LTA quantities one segment at a time.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Side-by-Side Quantity View",
+      "description": "Display CapEx, O&M, and Renewal quantities together for validation.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Use Existing Tagging Logic",
+      "description": "Reuse existing tagging and mapping logic from CapEx/O&M workflows.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Long-Term Appraisal",
+      "name": "Visibility of CapEx in LTA",
+      "description": "Allow visibility of CapEx Items within the LTA workflow.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Collapsible / Toggle-Based Screen Layout",
+      "description": "Use toggles/collapses to reduce scrolling on key screens.",
+      "effort": 7,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Consistent Lifecycle Stage Names",
+      "description": "Standard lifecycle stage names across the system.",
+      "effort": 2,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Estimate Browser & Filtering",
+      "description": "Browse and filter estimates by hierarchy and ID/name.",
+      "effort": 5,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Improved User Navigation",
+      "description": "Clear titles, context and quick “home”/browser navigation.",
+      "effort": 5,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Enhanced BoQ Load with Resource Build-ups",
+      "description": "Upload full BoQs with Resource build-ups and manage delink/relink.",
+      "effort": 8,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Data Audit Trail",
+      "description": "Tracks source, date and validation of carbon, cost, EPD and inflation data to ensure full transparency.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Estimate Review & Approval Records",
+      "description": "Enables PM reviews without a CCET licence, digital approvals, timestamping, and tracking delegated reviewers.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Benchmarking & Outturn Comparison",
+      "description": "Compare estimates with outturn costs and benchmark metrics; supports metric libraries and comparison reports.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Outturn vs Base Date Cost Handling",
+      "description": "Handle outturn prices and normalise to a base date.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Design Complete",
+      "percentage": 0.1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Analytical Assurance Support",
+      "description": "Attach assurance statements and flag plugged resources.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Authorised Estimate Forecast Reports",
+      "description": "Report base costs, inflation and inflated costs over time.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Digital Approval & Timestamping",
+      "description": "Timestamp review and authorisation with name and role.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Efficient Data Entry (Clicks)",
+      "description": "Minimise clicks while preserving data controls.",
+      "effort": 2,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Estimate vs IFT Comparison",
+      "description": "Compare estimated vs outturn costs at all WBS levels.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "External Data Currency Checks",
+      "description": "Use audit fields to check if external data is current.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Other Miscellaneous Requirements",
+      "description": "Allows input of nominal (outturn) costs, profiling expenditure after project close, and uploading full BoQ with resources.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Standards-Aligned Terminology",
+      "description": "Use terminology aligned to RICS/ICMS/PAS 2080/ISO 15686-5.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Miscellaneous",
+      "name": "Three-Point Estimating",
+      "description": "Supports min/most-likely/max estimating at cost-element level with Monte Carlo outputs and range reporting. (For all Estimate Types) ",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Profiles ",
+      "name": "Expenditure Profiles",
+      "description": "Assign annual expenditure percentages.",
+      "effort": 1,
+      "release": "Release 1D",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Profiles ",
+      "name": "Fee Calculation",
+      "description": "Apply fee % from fee library.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Profiles ",
+      "name": "Inflation Profiles",
+      "description": "Apply inflation to items, resources, R/O/U.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Estimate Comparison Reports",
+      "description": "Compare current vs last approved estimate or any two estimates; supports item-level, WBS-level and carbon comparisons.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Fixed Reports & Exports",
+      "description": "Standard National Highways reports (e.g., CESS, SAS, Economic Output) produced in set formats, exportable to PDF/Excel.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Reference Estimate & Comparator Reporting",
+      "description": "Ability to tag reference estimates and compare against multiple comparator estimates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Benchmark Reporting",
+      "description": "Ability to apply benchmark metrics and report estimate performance against benchmark values.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Carbon Reduction Target (CAP) Reporting",
+      "description": "Reports comparing latest estimate to CAP at project, programme, and portfolio levels.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Carbon Reporting",
+      "description": "Reports from Resource → Portfolio level, including PAS2080 breakdowns, risk-inclusive/exclusive values, and ICMS alignment.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Demand Forecasting Reports",
+      "description": "BI-driven resource demand forecasts at project, programme, or portfolio level.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Dynamic Reports & Exports",
+      "description": "User-configurable reports created by selecting fields, filters, hierarchies and layouts. Can be exported to PDF/Excel.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Estimate Composition Reports",
+      "description": "Cost and carbon breakdowns by WBS, asset, supplier, resource, location, and PAS2080 module.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Estimate Release Files",
+      "description": "Fixed outputs such as CE300/approval forms, summary sheets, expenditure, economic outputs, and range/P-value reports.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Evolution of Estimates (Trend Reports)",
+      "description": "Chronological cost and carbon evolution charts for any scheme.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Final Cost vs Estimate Comparison",
+      "description": "Ability to ingest actual cost and compare final outturn with historic approved estimates.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "In-App Insights",
+      "description": "On-screen graphical summaries that give instant cost/carbon analysis without exporting or leaving the estimating screen.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Item & Resource Quantity Profiles",
+      "description": "Monthly/annual profiling of Item/Resource quantities, exportable to Excel.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Management Reports",
+      "description": "Programme/portfolio views showing aggregated cost/carbon, key drivers, and progress against targets.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Project Expenditure Reports",
+      "description": "Cost and carbon expenditure profiles over time (monthly/annual), viewable by Section, Cost Element, Resource, or PAS2080.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "Risk-Inclusive/Exclusive Reporting",
+      "description": "All relevant reports can show cost/carbon with or without Programme/Portfolio risk.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Reports",
+      "name": "TOTEX Reporting",
+      "description": "Reporting of PAS2080 A–C carbon totals and ICMS3-aligned cost/carbon summaries.",
+      "effort": 1,
+      "release": "Release 2B",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "RFE",
+      "name": "Unique Estimate Identification",
+      "description": "Assign unique IDs to estimates within portfolio/programme/project.",
+      "effort": 2,
+      "release": "Release 1C",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "RFE",
+      "name": "Capture Estimate Details",
+      "description": "Enter purpose, details, contacts, project info.",
+      "effort": 1,
+      "release": "Release 1C",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Risk",
+      "name": "Add Risks via Register",
+      "description": "Import detailed NH Risk Register.",
+      "effort": 2,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Risk",
+      "name": "Section-Level Risk Entry",
+      "description": "Estimators can enter or override risk directly at Section level.",
+      "effort": 3,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Risk",
+      "name": "Top-Down Risk %",
+      "description": "Apply % risk at element/section/total.",
+      "effort": 3,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Risk",
+      "name": "Automatic Carbon Risk Calculation",
+      "description": "System converts cost risk to carbon risk using cost-to-carbon factors and allocates it across PAS2080 modules.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Archive or Delete Scenario",
+      "description": "Keep, archive, or delete scenarios once analysis is complete.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Convert Scenario to Formal Estimate",
+      "description": "Optionally convert a scenario into a formal estimate via the Request for Estimate process.",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Create Scenario",
+      "description": "Select projects and reference estimates to create a new scenario for analysis.",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Cross-Estimate Bulk Editing Tools",
+      "description": "Apply changes quickly across multiple scenario estimates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Expenditure Profile",
+      "description": "Apply different expenditure profiles to cost elements.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Inflation Assumptions",
+      "description": "Change inflation profiles using the available inflation indices.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Rates",
+      "description": "Update rates individually or in bulk, including applying percentage changes or switching libraries.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Risk / Opportunity / Uncertainty",
+      "description": "Adjust risk registers or top-down risk allowances.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Schedule",
+      "description": "Update delivery milestones and lifecycle intervention frequencies.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Edit Scope",
+      "description": "Change Sections, Items, and quantities, including using alternatives and copying changes across estimates.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Record Basis of Scenario",
+      "description": "Capture the assumptions and changes made using a simple template.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Scenario Estimate Duplication",
+      "description": "Creates an editable copy of the reference estimate with a “–SE” tag.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "Scenario Analysis",
+      "name": "Scenario Impact Reporting",
+      "description": "Produce comparison reports showing cost and carbon differences versus the baseline.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "System Access",
+      "name": "NH Landing Page",
+      "description": "Landing page showing tiles for core system areas.",
+      "effort": 2,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "System Access",
+      "name": "Estimating Tile",
+      "description": "Access and manage estimates.",
+      "effort": 5,
+      "release": "Release 1A",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "System Access",
+      "name": "Request for Estimate Tile",
+      "description": "Submit new estimate requests.",
+      "effort": 2,
+      "release": "Release 1B",
+      "currentStage": "Closed Out",
+      "percentage": 1
+    },
+    {
+      "id": {
+        "error": "#VALUE!"
+      },
+      "workstream": "System Access",
+      "name": "Interim Forecasting Tile",
+      "description": "Access IFT for forecasting updates.",
+      "effort": 2,
+      "release": "Release 1D",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 2,
+      "workstream": "System Access",
+      "name": "Single Sign-On",
+      "description": "Access system using NH single sign-on.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 3,
+      "workstream": "System Access",
+      "name": "Role-Based Access",
+      "description": "System permissions controlled by user roles.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Development Complete",
+      "percentage": 0.35
+    },
+    {
+      "id": 4,
+      "workstream": "System Access",
+      "name": "External Reviewer Access (No Licence)",
+      "description": "Send time-limited, view-only review links to non-licenced reviewers.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "Not Started",
+      "percentage": 0
+    },
+    {
+      "id": 5,
+      "workstream": "System Access",
+      "name": "Admin Tile",
+      "description": "System setup, configuration, and user management.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Development",
+      "percentage": 0.25
+    },
+    {
+      "id": 6,
+      "workstream": "System Access",
+      "name": "Dashboard Tile",
+      "description": "Open Power BI dashboards for portfolios.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": null,
+      "percentage": null
+    },
+    {
+      "id": 6,
+      "workstream": "Workflow ",
+      "name": "Approval Workflow",
+      "description": "Approvers authorise or reject the estimate; authorisation locks editing.",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 7,
+      "workstream": "Workflow ",
+      "name": "Assign Estimator & Reviewers",
+      "description": "Managers assign who will produce and review each estimate.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 8,
+      "workstream": "Workflow ",
+      "name": "Automated Release Email",
+      "description": "System sends an issue email with links to all deliverables stored in SharePoint.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 9,
+      "workstream": "Workflow ",
+      "name": "Automatic Estimate Setup",
+      "description": "System creates the project and estimate structure automatically once a request is approved.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 10,
+      "workstream": "Workflow ",
+      "name": "Create Document Folders",
+      "description": "A standard SharePoint folder structure is generated and populated with uploaded files.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 11,
+      "workstream": "Workflow ",
+      "name": "Estimate Review Workflow",
+      "description": "Reviewers add comments and record review outcomes for the estimator to address.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 12,
+      "workstream": "Workflow ",
+      "name": "Generate CE300 Forms",
+      "description": "System generates cost and carbon CE300 approval forms automatically.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 13,
+      "workstream": "Workflow ",
+      "name": "Issue Estimate",
+      "description": "Estimator uploads deliverables and uses “Issue Estimate” to release the final pack.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 14,
+      "workstream": "Workflow ",
+      "name": "Request Review & Approval",
+      "description": "Estimating Managers review, request changes, reject or approve submitted requests.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 15,
+      "workstream": "Workflow ",
+      "name": "Reviewer Access & Notifications",
+      "description": "Reviewers are notified and can complete reviews in the system or via offline forms.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 16,
+      "workstream": "Workflow ",
+      "name": "Status Tracking",
+      "description": "Users can track progress of requests, reviews, approvals, and estimate status.",
+      "effort": 2,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    },
+    {
+      "id": 17,
+      "workstream": "Workflow ",
+      "name": "Submit Estimate Request",
+      "description": "Users create and submit structured estimate requests with project details and documents.",
+      "effort": 1,
+      "release": "Release 2A",
+      "currentStage": "In Design",
+      "percentage": 0.05
+    }
+  ],
+  "summaryByRelease": {
+    "Release 1D": {
+      "total": 21,
+      "byStage": {
+        "In Internal QA / Dev Testing": 1,
+        "In Development": 16,
+        "In Design": 3,
+        "Not Started": 1
+      }
+    },
+    "Release 2A": {
+      "total": 114,
+      "byStage": {
+        "In Design": 54,
+        "In Development": 8,
+        "Not Started": 49,
+        "Design Complete": 1,
+        "Development Complete": 1,
+        "Unknown": 1
+      }
+    },
+    "Release 2B": {
+      "total": 47,
+      "byStage": {
+        "Not Started": 47
+      }
+    },
+    "Release 1A": {
+      "total": 24,
+      "byStage": {
+        "Closed Out": 24
+      }
+    },
+    "Release 1B": {
+      "total": 10,
+      "byStage": {
+        "Closed Out": 10
+      }
+    },
+    "Release Clarify": {
+      "total": 3,
+      "byStage": {
+        "Unknown": 3
+      }
+    },
+    "Release 1C": {
+      "total": 5,
+      "byStage": {
+        "Closed Out": 5
+      }
+    }
+  },
+  "summaryByWorkstream": {
+    "Administration": {
+      "total": 9,
+      "byStage": {
+        "In Internal QA / Dev Testing": 1,
+        "In Development": 4,
+        "In Design": 3,
+        "Not Started": 1
+      }
+    },
+    "Calculators/Cost Models": {
+      "total": 11,
+      "byStage": {
+        "Not Started": 11
+      }
+    },
+    "Dashboards (Power BI) ": {
+      "total": 10,
+      "byStage": {
+        "Not Started": 10
+      }
+    },
+    "Estimate Build - Carbon ": {
+      "total": 11,
+      "byStage": {
+        "In Design": 5,
+        "Not Started": 6
+      }
+    },
+    "Estimate Build - Cost": {
+      "total": 18,
+      "byStage": {
+        "Closed Out": 10,
+        "Unknown": 3,
+        "In Development": 1,
+        "Not Started": 4
+      }
+    },
+    "Foundational": {
+      "total": 11,
+      "byStage": {
+        "Closed Out": 9,
+        "In Development": 2
+      }
+    },
+    "Foundational ": {
+      "total": 3,
+      "byStage": {
+        "Closed Out": 3
+      }
+    },
+    "Interim Forecasting Tool": {
+      "total": 32,
+      "byStage": {
+        "In Development": 8,
+        "Not Started": 18,
+        "In Design": 6
+      }
+    },
+    "Libraries": {
+      "total": 22,
+      "byStage": {
+        "Closed Out": 3,
+        "In Development": 4,
+        "In Design": 4,
+        "Not Started": 11
+      }
+    },
+    "Long-Term Appraisal": {
+      "total": 18,
+      "byStage": {
+        "In Design": 18
+      }
+    },
+    "Miscellaneous": {
+      "total": 18,
+      "byStage": {
+        "Closed Out": 6,
+        "In Development": 1,
+        "In Design": 2,
+        "Design Complete": 1,
+        "Not Started": 8
+      }
+    },
+    "Profiles ": {
+      "total": 3,
+      "byStage": {
+        "In Design": 2,
+        "Not Started": 1
+      }
+    },
+    "Reports": {
+      "total": 18,
+      "byStage": {
+        "In Design": 5,
+        "Not Started": 13
+      }
+    },
+    "RFE": {
+      "total": 2,
+      "byStage": {
+        "Closed Out": 2
+      }
+    },
+    "Risk": {
+      "total": 4,
+      "byStage": {
+        "Closed Out": 3,
+        "In Development": 1
+      }
+    },
+    "Scenario Analysis": {
+      "total": 13,
+      "byStage": {
+        "Not Started": 13
+      }
+    },
+    "System Access": {
+      "total": 9,
+      "byStage": {
+        "Closed Out": 3,
+        "In Development": 3,
+        "Development Complete": 1,
+        "Not Started": 1,
+        "Unknown": 1
+      }
+    },
+    "Workflow ": {
+      "total": 12,
+      "byStage": {
+        "In Design": 12
+      }
+    }
+  }
+}

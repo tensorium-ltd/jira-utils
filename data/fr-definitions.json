@@ -1,0 +1,1871 @@
+{
+  "10": {
+    "description": "As a system administrator, I want to be able to set up a configurable cost estimate structure for each of the lifecycle stages set out in Table A of Scope.",
+    "acceptanceCriteria": "• An Administrator, following receipt of an RfE, can establish in the software a long-term assessment OMR estimate to satisfy the relevant lifecycle stages set out in Table A of the Scope\r\n\r\n• Each lifecycle stage shall have one WBS configured for that stage\r\n\r\n• Different cost plans for a scheme can be prepared by structuring an estimate by location (e.g. Segment), asset, work package/Supplier",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 51
+  },
+  "11": {
+    "description": "As an estimator, I want to be able to select the time period which is to be covered by the estimate (user-configurable period, e.g. 60 / 100 / 150 years, the \"assessment period\")",
+    "acceptanceCriteria": "• A User can produce an OMR estimate for an assessment period of 1 to 200 years. The assessment period will be specified by the Project Team in the RfE\r\n\r\n• A User can amend this assessment period if required after the estimate inception meeting",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 59
+  },
+  "13": {
+    "description": "As an Estimator, I want all estimates to follow a consistent structure as set out by the MP CESS as follows: Base Estimate, Risk / Opportunity / Uncertainty (at Project, Programme and Portfolio Levels), Expenditure Profiling and Inflation.",
+    "acceptanceCriteria": "• A CCET User can produce the estimate using the relevant shell for the O&M and Asset Renewal components of the OMR estimate\r\n\r\n• The OMR shell(s)shall be consistent with National Highways CESS, which will include Base, Risk/Opportunity (Project, Programme/Portfolio Level)\r\n\r\n• The WBS for long-term appraisal OMR estimates will be consistent with the WBS for standalone O&M and Asset Renewals estimates at the upper levels of the Work Breakdown Structure (e.g., CESS heading)\r\n\r\n• A CCET User can finalise each estimate part of a whole lifecycle cost estimate (i.e. CAPEX, OMR and combined) in Real Terms and then apply an inflation profile(s), which are stored in the software library, to produce estimates in Nominal Terms",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 54
+  },
+  "20": {
+    "description": "Assign one or more cost plans (estimate type in Table A of Scope) for each lifecycle to a Scheme - Covered by FR 10",
+    "acceptanceCriteria": "Administrators can edit a library of ‘Estimate Output Types’ that states the lifecycle stages which the Estimate Shell covers for a selected Estimate Output Type.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 431
+  },
+  "60": {
+    "description": "Request for estimate should include field for users to type in purpose of estimate.",
+    "acceptanceCriteria": "• As a CCET user, I can access the Estimate Request interface so that I can submit estimate requests.\r\n• As a CCET user, I can enter the Purpose of Estimate in a free-text field so that the reviewer knows the purpose of request.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 403
+  },
+  "70": {
+    "description": "Software should allow estimators to assign \"Project Users\" to any type of the estimates identified in FR 10 (see Scope Table A for definition of users and estimates).",
+    "acceptanceCriteria": "• As an Estimating Manager / Estimating Administrator with relevant permission, I can approve requests so that estimates are initiated in the software.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can assign estimators / reviewers to approved requests so that the estimate can be worked on and progressed.\r\n• Software notifies assigned estimator and requestor when a request is approved, and estimate is initiated.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 405
+  },
+  "80": {
+    "description": "Software should show all estimates and IFT revisions for FR 10 above to administrators, only the estimates and IFT assigned to estimators and only IFT(Cost and Carbon) / IFT(Cost and Carbon) revisions assigned to the project user(Designer/PM/Contractor). This will reduce the list to navigate and will only show what is available in the system for estimator and project user(Designer/PM/Contractor).",
+    "acceptanceCriteria": "The CCET will have an Estimate Browser that shows all National Highways estimates in the system for all lifecycle stages, subject to a user's permissions.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 628
+  },
+  "90": {
+    "description": "As a user I want to be able to identify an estimate as belonging to the \"do-something\" or the \"do-minimum\" scenario.",
+    "acceptanceCriteria": "• As a CCET user, I can select a ‘Scenario’ when submitting estimate requests so that I can specify if the request is for a ‘with scheme’ or ‘without scheme’ type estimate.\r\n• As a CCET user, I can see the ‘Scenario’ of the estimate after the estimate is initiated",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 406
+  },
+  "110": {
+    "description": "As an estimating manager, I want to have a logical coding for each item of works (MP, M&R and AR) that can be configured to a standard WBS for the lifecycle stage.",
+    "acceptanceCriteria": "Each Item library will have an editable field for Item Code.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 434
+  },
+  "120": {
+    "description": "Software to allow an estimate to be requested (submit a request) via RFE for estimate types in FR 10, which is then reviewed and confirmed by Estimating manager, similar to MP.",
+    "acceptanceCriteria": "• As a CCET user, I can access the Estimate Request interface so that I can request any estimate type covered in scope, see Table A for definition of users and estimates.\r\n• As a CCET user, I can submit requests so that they are stored in a central repository (portal).\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can access a repository / request portal so that I can review submitted estimate requests.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can ask for changes so that the requestor can action changes and re-submit the request.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can provide justification and reject requests so that the requestor understands the reason for rejection.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can approve requests so that estimates are initiated in the software.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can assign estimators / reviewers to approved requests so that the estimate initiation can proceed.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can add comments while approving requests so that the assigned estimator can view my comments/notes.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 404
+  },
+  "130": {
+    "description": "Unique identifier for estimates in FR 10",
+    "acceptanceCriteria": "Each Estimate in the CCET has a unique Estimate Identification Number.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 688
+  },
+  "140": {
+    "description": "Client estimator should be able to take the contractor's estimate and convert this to a range estimate\r\n\r\n Applies to all estimate types in FR 10 Client Estimators use the Interim cost and carbon estimate revisions(preferred nominated by project users) produced by project users(Designers, PM, Contractors, etc)",
+    "acceptanceCriteria": "For all estimate types in FR10, an NH Estimator, with permissions to access a given Project and/or Projects, can export a nominated Project User's forecast BoQ to MS Excel and import this to a NH Estimate to form the basis of a formal NH range estimate.\r\n\r\nFor all estimate types in FR10, an NH Estimator, with permissions to access a given Project and/or Projects, can export a nominated Project User's forecast risk register to MS Excel and import this to a NH Estimate to form the basis of a formal NH range estimate.\r\n\r\nFor all estimate types in FR10, an NH Estimator, with permissions to access a given Project and/or Projects, can export a nominated Project User's forecast milestone dates and expenditure profile to MS Excel and import this to a NH Estimate to form the basis of a formal NH range estimate.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 307
+  },
+  "150": {
+    "description": "Software should allow multiple price base selection across Cost elements under segments with choice allowing inflation profile to be applied or not applied (i.e. outturn)",
+    "acceptanceCriteria": "• An estimator can apply multiple rate libraries to the Items in an estimate and the libraries can be at multiple price bases. Upon allocation of the rate from the library to an estimate, the rate shall be rebased in the estimate to a common price base for the estimate that is selected by the Estimator. Therefore, an estimate can use source rates that have a different price base at Item cost element level and apply any expenditure and inflation profile from the library to that Item.\r\n\r\n• Where required at cost element level Estimator can select the Item cost element and identify/mark it as Outturn, so no inflation calculations are applied at Item cost element level, whilst still having the ability to forecast the expenditure using an expenditure profile from the library.\r\n\r\n• A User has the flexibility to produce OMR estimates in multiple configurable formats\r\n\r\n• The software will store multiple inflation, discounting and market adjustment factors within the library for use in OMR estimates\r\n\r\n• An Administrator can update the stored data in the software library\r\n\r\n• A User can apply a stored inflation profile from the software library, to the unit rate data from the software rate library, to adjust the rates to a common price base\r\n\r\n• A User can apply a stored inflation profile from the software library, to the estimated OMR costs at a common price base to produce the outturn costs (i.e. inclusive of future inflation)\r\n\r\n• For use in economic appraisal a User can produce estimated outputs in the following formats:\r\n\r\n          • In real and nominal terms\r\n\r\n          • Pre- and Post-discounting\r\n\r\n           Pre- and Post-market adjustment factors",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 71
+  },
+  "160": {
+    "description": "Software must generate an automated release email with links to the estimate outputs from data stored in estimate data base for the estimate being released. This should include, form 300, Economic output sheet, Water fall diagram, CESS, etc as per NH formal estimate release including links to IFT and Dashboards for the project.",
+    "acceptanceCriteria": "• As an Estimating Administrator, I can setup and maintain a release email template so that relevant email content is sent out with issued estimates.\r\n• As an Estimating Administrator, I can setup and maintain separate ‘mandatory’ and ‘optional’ checklists for deliverables/outputs for each estimate type so that the complete release pack is available for issued estimates.\r\n• As an estimator, I can provide custom deliverables so that issued estimates can have additional information.\r\n• As an estimator, I can modify the auto-generated release email text so that I have the required flexibility.\r\n• Release email contains SharePoint links to the documentation folder that contains the estimate outputs.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 414
+  },
+  "170": {
+    "description": "As an estimating manager, I want the system to produce an Estimate Approval Form, similar to the existing MP CE300 form for each estimate in Scope Table A.",
+    "acceptanceCriteria": "• Software generates estimate approval form (CE300) automatically on estimate approval for estimate types in FR10.\r\n• CE300 form will be specific to estimate types in FR10.\r\n• CE300 forms can be exported to PDF.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 415
+  },
+  "180": {
+    "description": "Linked to FR 160, the software should create standard folder structure in the database/cloud where respective data is stored.\r\n\r\nEMs rather than sending attachment can send links to the files stored in database/cloud specific to the estimate.",
+    "acceptanceCriteria": "• Software creates a standard documentation folder after an estimate request is approved and the estimate is initiated.\r\n\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can include links to documents in the folders stored in software database/cloud specific to the estimate.\r\n• As an Estimating Manager / Estimating Administrator with relevant permission, I can send links to documents in the folders stored in software database/cloud to project specific users.",
+    "srsChapter": 99,
+    "linkedStory": "",
+    "row": 407
+  },
+  "190": {
+    "description": "This is not created in the software, it is produced outside the software, however the AAS document needs to be included with the automated release email from software and stored in estimate database/cloud.",
+    "acceptanceCriteria": "• As an Estimating Administrator, I can setup and maintain separate ‘mandatory’ and ‘optional’ checklists for deliverables/outputs for each estimate type so that the complete release pack is available for issued estimates to release with the estimate.\r\n• As an estimator, I can provide custom deliverables such as AAS documents to be stored in the estimate database / cloud, which are included in the release email for release of approved estimates to requestors. so that rating information is available for issued estimates.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 416
+  },
+  "210": {
+    "description": "The estimate approval form for all estimate types set out in Scope Table A should allow tables and graphics to be included on the completed Estimate Approval Form.",
+    "acceptanceCriteria": "• Software generates release forms (CE300) automatically on estimate approval for estimate types in FR10.\r\n• CE300 form will be specific to estimate types in FR10 and will include the lifecycle stage - New Construction, M&R, AR.\r\n• CE300 form includes images, graphs and tables.\r\n• CE300 forms can be exported to PDF.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 417
+  },
+  "220": {
+    "description": "Generate Economic assessment report with each Forecast. This needs to be updated in real time.",
+    "acceptanceCriteria": "A CCET user can generate a report of the net present value of the forecast's costs by deflating the forecast's outturn costs for each year by a GDP deflator index stored in a library (administrator controlled). The report shall be consistent with the existing \"Adjusted Economic Output\" worksheet layout in NH file Interim Forecasting Tool v1.7 and exclude costs denoted as historic / sunk costs and taxation.\r\n\r\nIFT revision and/ or revisions in CCET for all FR10 estimate types include an Economic Output(EO) calculation within the IFT revision screen, using the same format and principles as the MP CAPEX IFT revision. This EO screen in CCET is updated in real time in IFT revision.\r\n\r\nThe Economic Output report shows the net present value of forecast costs, adjusting each year's outturn costs using a GDP deflator index managed in an admin-controlled library. It matches the layout of the \"Adjusted Economic Output\" worksheet in NH’s Interim Forecasting Tool v1.7 and excludes historic/sunk costs and taxation.\r\n\r\nThe Economic Assessment Output can be exported to a report in Excel and PDF format",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 286
+  },
+  "230": {
+    "description": "Software should produce, a CESS, RET , SAS, Form 300,ect for Asset renewal estimates in FR 10 along with the Dashboards at resource, project, Asset Class, Region and Area level, portfolio level, etc",
+    "acceptanceCriteria": "• The software produces fixed estimate outputs for each lifecycle cost stage and Whole Life cycle estimate for Asset renewals in FR 10, which include the below:\r\n• A cost estimate summary at Section level, showing base estimate at Section level, project and portfolio risk/opportunity/uncertainty allowances and inflation.\r\n• A summary of the estimated costs over time, broken down by Section level, base estimate, project risk, portfolio risk and inflation allowances for each financial year\r\n• A summary of estimated costs for net present value calculations at an administrator-controlled price base, which:\r\n• can be configured to exclude spend to date and taxation\r\n• presents costs with and without portfolio risk allowances\r\n\r\nFor Form 300 see Acceptance Criteria 170.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 361
+  },
+  "240": {
+    "description": "Software should produce a CDF/PDF for cost estimates rather than the mathematically calculated and produced graph in RET. It should do for all types of estimate in FR 10.",
+    "acceptanceCriteria": "• The software displays a cumulative distribution function (CDF) chart on screen for a probabilistic cost estimate output\r\n• The CDF chart can be exported as a PDF or Excel report with the chart and data table of percentile values\r\n• The software produces a probability distribution function (PDF) chart on screen for a probabilistic cost estimate output\r\n• The PDF chart can be exported as a PDF or Excel report with the chart and data table of percentile values\r\n• The graphs generated should be fed directly from the cached simulation data for that project where a full Monte Carlo simulation has been run\r\n• Users can identify the project name(s), estimates name(s) and estimate ID(s) within the reports\r\n• The data displays identical numbers to the estimate database\r\n• The data should be shown on one single page",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 365
+  },
+  "250": {
+    "description": "An expenditure output report (\"SAS\") should be produced, similar to the existing Forecast format, for each interim forecast produced from an estimate (for all estimate types as per Scope Table A).",
+    "acceptanceCriteria": "A CCET user can generate a report of historic costs and forecast costs by year by Section and Cost Element, similar to the existing \"Adjusted SAS Output\" worksheet layout in NH file Interim Forecasting Tool v1.7 .\r\n\r\nIFT revision and/ or revisions in CCET for all FR10 estimate types includes a SAS Output screen and output report similar to the existing \"Adjusted SAS Output\" worksheet layout in NH file Interim Forecasting Tool v1.7. The generated IFT revision screen / report includes historic costs and forecast costs by year/months by Section and Cost Element. Sections and Cost elements vary differ for each estimate type in FR10 and includes, forecast of fee, risks / opportunities / uncertainties, inflation, portfolio risks, etc",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 287
+  },
+  "260": {
+    "description": "The software should produce carbon reports at each level of the WBS (for all estimates types as per Scope Table A) from resource to portfolio level, across PAS2080 modules and by expenditure period.",
+    "acceptanceCriteria": "• A report of estimated carbon can be produced for each estimate type, displaying estimated carbon impact:\r\n   • By PAS 2080 module\r\n   • By Resource\r\n   • By Item\r\n   • By Section\r\n   • By Time period\r\n• A report of estimated carbon can be produced for a programme, displaying estimated carbon impact:\r\n   • By PAS 2080 module\r\n   •  By Project\r\n   • By Time period\r\n• A report of estimated carbon can be produced for a portfolio, displaying estimated carbon impact:\r\n   • By PAS 2080 module\r\n   • By Programme\r\n   • By Time period\r\n• The reports can be export to PDF and Excel format\r\n• Users can identify the project name(s), estimates name(s) and estimate ID(s) within the reports\r\n• The data displays identical numbers to the estimate database",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 366
+  },
+  "262": {
+    "description": "For estimates that are for standalone schemes / M&R contracts (over shorter timescales, e.g. less than 10 years) expenditure profiles should be available by month.  For longer term estimates required for whole life cost over longer assessment periods (e.g. 60 years) expenditure data should be available by year.",
+    "acceptanceCriteria": "Administrators can store and edit default expenditure profiles for Operation and Maintenance works in an Expenditure Profile library. ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 438
+  },
+  "263": {
+    "description": "As an estimator, I want to be able to see the expenditure profile for an estimate easily using the same User interface as for estimate production, i.e. not have to leave the estimate production module in order to view the estimated expenditure profile. For example, PowerBI dashboards or PDF reports are not a replacement for user interface / screens presenting this information in the estimating module itself.",
+    "acceptanceCriteria": "As an estimator or estimating manager I am able to directly access the cost and carbon expenditure profile for the estimate from the main estimate build-up screen.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 44
+  },
+  "270": {
+    "description": "Generate Cost and Carbon reports by Resource Group, Resource Category, etc.",
+    "acceptanceCriteria": "• A report of estimated carbon can be produced for each estimate type, displaying estimated carbon impact:\r\n   • By Resource Group\r\n   • By Resource Category\r\n• A report of estimated carbon can be produced at programme level, displaying estimated carbon impact:\r\n   • By Resource Group\r\n   • By Resource Category\r\n• A report of estimated carbon can be produced at portfolio level, displaying estimated carbon impact:\r\n   • By Resource Group\r\n   • By Resource Category\r\n• The reports can be export to PDF and Excel format\r\n• Users can identify the project name(s), estimates name(s) and estimate ID(s) within the reports\r\n• The data displays identical numbers to the estimate database",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 367
+  },
+  "280": {
+    "description": "As an estimator, I want to be able to see the cost and carbon outputs for an estimate easily using the same User interface as for estimate production, i.e. not have to leave the estimate production module in order to view the outputs. For example, PowerBI dashboards or PDF reports are not a replacement for user interface / screens presenting this information in the estimating module itself.",
+    "acceptanceCriteria": "• The outputs(report & dashboards) for an approved estimate are visible on screen within the same user interface screens as the estimate production.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 368
+  },
+  "290": {
+    "description": "Generate Cost and Carbon reports inclusive and exclusive of Programme and Portfolio Risk",
+    "acceptanceCriteria": "• For all reports that include programme / portfolio risk allowances, the user can generate a report with or without programme / portfolio risk allowances\r\n• All relevant reports should clearly state whether programme / portfolio risk allowances are included or excluded from the reported values",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 369
+  },
+  "300": {
+    "description": "As an estimator, I want to be able to see the cost and carbon outputs for an estimate easily using the same User interface as for estimate production, i.e. not have to leave the estimate production module in order to view the outputs. For example, PowerBI dashboards or PDF reports are not a replacement for user interface / screens presenting this information in the estimating module itself.",
+    "acceptanceCriteria": "• The outputs for an approved estimate are visible on screen within the estimating software system.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 370
+  },
+  "310": {
+    "description": "Dashboards and PDF reports should be configurable to select, resource, scheme, package, asset class, region, area or portfolio.",
+    "acceptanceCriteria": "• An interactive ‘dashboard’ or dashboards can be displayed on screen for a cost estimate, able to display estimated costs and carbon as follows:\r\n   • By Resource\r\n   • By Item\r\n   • By Section\r\n   • By Asset class\r\n   • By Location\r\n   • By Time period\r\n• Dashboards can be displayed on screen for a collection of selected cost estimates comprising a programme, with aggregated costs and carbon for each selected estimate displaying:\r\n   • Key Resources by value\r\n   • Key Items by value\r\n   • By Section\r\n   • By Project\r\n   • By Asset class\r\n   • By Location\r\n   • By Time period",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 371
+  },
+  "320": {
+    "description": "View the estimated expenditure profile and dashboards and PDF reports by cost element, by time period and see costs inclusive and exclusive of risk for each time period, similar to the existing \"SAS\" report.",
+    "acceptanceCriteria": "• For each estimate type, a user can generate a report of estimated cost and carbon expenditure over the duration of expenditure displaying the following for each year within the expenditure duration:\r\n   • Base estimate for each Section (at the base estimate price base)\r\n   • Project Risk for each Section (at the base estimate price base)\r\n   • Programme / Portfolio Risk (at the base estimate price base)\r\n   • Inflation (at the base estimate price base)\r\n• A user can generate reports including and excluding programme / portfolio risk\r\n• The reports can be displayed on screen\r\n• The reports can be exported to PDF.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 373
+  },
+  "340": {
+    "description": "The software shall produce cost and carbon reports for all estimates to ICMS, with granularity aligned with PAS 2080.",
+    "acceptanceCriteria": "The Estimator can edit a data field for each Item in an estimate and enter an ICMS code reference in this field.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 442
+  },
+  "350": {
+    "description": "Software should a) allow Carbon Reduction Targets (CAP) to be ingested into the system, it should than be used by the software to show in reports and Dashboards comparison between. Baseline and CAP, from IFT revision carbon against CAP and Baseline. This should apply for all estimate types in FR 10. Reports shall be produced for aggregated estimates /caps for Programme and Portfolio level reports.",
+    "acceptanceCriteria": "• An authorised user can enter a Carbon Reduction Targets for a project in the software\r\n• A user can see a report or dashboard that compares the Carbon Reduction Targets with an estimate for the project\r\n• I should also be able to see a reports showing the aggregated latest estimate data versus the aggregated carbon reduction targets at Programme or Portfolio Level\r\n• The data is based on approved estimates only and informed by either the preferred estimates or reference estimates (tbc by the client)\r\n• As a user I can see how a forecast submitted by a Project User compares to the Carbon Reduction Target (CAP) for that project",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 375
+  },
+  "360": {
+    "description": "Software should allow actual cost data to be incrementally ingested into the software at the estimates granularity level and allow comparison to be made between any estimate and the Actual cost(Final cost compare with all estimates on the scheme). Applies to all estimates in FR 10.",
+    "acceptanceCriteria": "• A user can upload actual cost data for a completed project, to a ‘Final Cost’ shell for the project\r\n• The ‘Final Cost’ shell structure will align with the levels of the WBS at which the estimate is produced for the corresponding estimate type in FR10.\r\n• A user can generate a comparison between the ‘Final Cost’ and an earlier estimate for the project, on screen in the software\r\n• The dashboards can be export to PDF and Excel format\r\n• Users can identify the project name, estimates names and estimate IDs within the comparison report\r\n• The data displays identical numbers to the estimate database",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 376
+  },
+  "370": {
+    "description": "The interim forecasting for all estimate types as per Scope table A, should produce a report for export to cost management software at Cost Element level.",
+    "acceptanceCriteria": "• A user can select a forecast submitted by a Project User and generate a report to MS Excel format of aggregated estimated costs for the project structured by assigned cost management codes at Cost element level.\r\n• This report will be a fixed report, controller by a system Administrator, to prevent uncontrolled change of format",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 377
+  },
+  "380": {
+    "description": "When there is an Forecast revision which is saved and approved with a set revision number, the user should be able to create a new estimate from that Forecast (even though several revisions will not evolve to an estimate)",
+    "acceptanceCriteria": "An NH Estimator, with permissions to access a given Project, can export a Project User's forecast BoQ to MS Excel and import this to a NH Estimate to form the basis of a formal NH range estimate.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 308
+  },
+  "400": {
+    "description": "Software should have functionality within the estimating/IFT screens to show to the estimator/project user which resource/item/section is driving cost and/or carbon. As an estimator, I want to be able to see what is driving the cost and carbon estimate easily using the same User interface as for estimate production, i.e. not have to leave the estimate production module in order to view this information. For example, PowerBI dashboards or PDF reports are not a replacement for user interface / screens presenting this information in the estimating module itself.",
+    "acceptanceCriteria": "• A user can open insight reporting data for an estimate directly from within the estimate production software module\r\n• A user can see a report displayed on screen for a cost estimate showing estimated costs and carbon:\r\n   • By Resource in order of value\r\n   • By Item in order of value\r\n   • By Section in order of value  ",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 378
+  },
+  "410": {
+    "description": "Flexibility to use either the Item rate derived from the resource buildup or a contractual item rate which may not have a resource level build up.   Software should allow multiple set libraries to be applied or used in producing an estimate. Example on Asset Renewal and M&R use contractor rates which may have or may not have resource buildup or use NH national TPE library or use library from other region or area.\u000bSoftware should allow the item rate buildup to be delinked from resource rate buildup to allow user to enter item rate where resource build in not available. Allow linking with the resource rate build when resource build is available.\u000bThe above feature should be available in library creation as well as plugin in an item rate or resource build in any estimate.",
+    "acceptanceCriteria": "Multiple libraries of works items can be stored in the system.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 446
+  },
+  "420": {
+    "description": "Estimator and project user must be able to see the item and resource quantity by monthly/annually across the estimate schedule when producing the estimate as well as ability to export in excel and report in PDF and Dashboard.",
+    "acceptanceCriteria": "• A user can generate a report on screen of the estimated total Item quantity profiled over the estimate expenditure duration\r\n• The Item quantity profile shall be available by month for Major Projects, Operation and Maintenance and Renewals estimates\r\n• The Item quantity profile shall be available by year for long term appraisal estimates\r\n• The Item quantity profile report can be exported to MS Excel\r\n• A user can export a total Resource profile by month to MS Excel",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 379
+  },
+  "430": {
+    "description": "When producing an estimate; estimator should be able to see comparison of last approved estimate with current estimate within the screens of the estimating module which are used by estimator to produce estimate. Additionally, software should have a Comparator which provides comparison of current or last approved with any historic estimate on scheme.\r\n\r\nSoftware should also show comparison of range (min,ml,max) for estimate from start i.e. estimate 0 to current estimate and when project is delivered Actual cost. The above applies to all estimate types in FR 10",
+    "acceptanceCriteria": "• A user can generate a comparison report of the estimate in production and the last approved estimate for that scheme, on screen in the software while producing the estimate\r\n• A user can generate a comparison report of any estimate for a scheme vs another estimate for the same scheme, on screen in the software\r\n• A user can generate a report showing the evolution of the estimated cost for a scheme, by selecting the approved estimates to include in the report. The report will display:\r\n   • The estimates in chronological order\r\n   • The estimate ID and date\r\n   • The estimate classification\r\n   • The estimated total minimum, most-likely, and maximum cost\r\n• The report shall be able to include the ‘Final Cost’ where this has been uploaded for a completed scheme",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 380
+  },
+  "470": {
+    "description": "Whole life Carbon calculated in software in accordance with PAS2080 with necessary sub modules as discussed and provided by Circular Ecology.",
+    "acceptanceCriteria": "The CCET carbon libraries hold data at the granularity of PAS 2080 modules / sub-modules set out in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 456
+  },
+  "490": {
+    "description": "For each client baseline cost estimate, the user should be able to view an identical client carbon estimate",
+    "acceptanceCriteria": "The CCET generates a carbon estimate for a cost estimate in the system by automatically applying carbon Item and Resource libraries (including cost-to-carbon factors) to the unchanged Segments, Sections and Items in the cost estimate, i.e. the basis of the cost and carbon estimates is identical from Item level upwards.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 24
+  },
+  "500": {
+    "description": "Software should allow library / user input of negative carbon factors in the modules suggested by Circular Ecology, e.g. landscaping, lands, 3rd Party income, Module D(if being delivered in scope) ",
+    "acceptanceCriteria": "The carbon libraries can hold negative carbon emission factors for each module and sub-module.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 457
+  },
+  "511": {
+    "description": "Software should flag a carbon factor which has not been assured by an assurer(different from project user).",
+    "acceptanceCriteria": "Carbon factors used in an estimate that have not been assured by National Highways are identified in the CCET by an 'Unassured' flag for the relevant Resource.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 25
+  },
+  "520": {
+    "description": "Enable results from a controlled asphalt calculator to be used in the software to produce carbon emission factors for specific design mixes to satisfy quality requirements (using existing ASPECT model and similar build to existing concrete calculator on Circular Ecology web-enabled system).",
+    "acceptanceCriteria": "• As an estimator I can download the latest version of the calculator from the landing page.\r\n• As an estimator I can open the calculator and launch the Excel Add-in to connect to CCET.\r\n• As an estimator I can change values in the calculator and with one-click get the Cost and Carbon values for the calculated BOQ Item/Resource quantities.",
+    "srsChapter": 10,
+    "linkedStory": "",
+    "row": 424
+  },
+  "530": {
+    "description": "Identify resources where carbon has been manually entered by the user",
+    "acceptanceCriteria": "The CCET identifies whether a Resource in an estimate is linked to a library or delinked.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 458
+  },
+  "540": {
+    "description": "Enable results from a controlled concrete calculator to be used in the software to produce carbon emission factors for specific design mixes to satisfy quality requirements (using similar build to existing concrete calculator on Circular Ecology web-enabled system).",
+    "acceptanceCriteria": "• As an estimator I can import the BOQ from the calculator into CCET via the Excel Add-in.\r\n• As an estimator I can also upload the calculator as a document to the estimate.\r\n• As an estimator or model administrator I can configure any model which produces a BOQ with Items and Quantities to work with the Excel Add-in.",
+    "srsChapter": 10,
+    "linkedStory": "",
+    "row": 425
+  },
+  "550": {
+    "description": "Enable results from a steel calculator to be used in the software to produce carbon emission factors for specific design mixes to satisfy quality requirements (using similar build to existing concrete calculator on Circular Ecology web-enabled system).",
+    "acceptanceCriteria": "• As a calculator/model administrator I can output just Items or Items with alternative Resource build-ups in the BOQ to support resource variations for multiple mix variations.",
+    "srsChapter": 10,
+    "linkedStory": "",
+    "row": 426
+  },
+  "560": {
+    "description": "Record C2, C3 and C4 emission factors at the Resource level, and generate calculations for all estimates as per Scope Table A.",
+    "acceptanceCriteria": "The Carbon libraries contain fields for each of modules C2, C3 and C4 at Resource level.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 33
+  },
+  "570": {
+    "description": "As an estimator I want to view the Carbon risk, opportunity and uncertainty allowances at Project, Programme and Portfolio Risk in embedded screens within the software for estimate types as per Scope Table A.",
+    "acceptanceCriteria": "An Estimator can view the following Carbon Risk Allowances side by side with the base estimate amounts on embedded screens within the estimate production interface for all Estimates:",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 3
+  },
+  "590": {
+    "description": "Outturn profile of Embodied carbon to be calculated for the assumed carbon quantities from each time period and the carbon emission factors in respective time period",
+    "acceptanceCriteria": "CCET calculates carbon profile using the resource quantities required for each time period multiplied by the associated carbon factors and provides KgCo2e for each respective PAS2080 module.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 40
+  },
+  "601": {
+    "description": "Ability to overwrite the calculated top-down carbon risk allowance. Where there is no risk register with quantified carbon, software should have the functionality to insert a top down risk allowance for carbon at cost element level.\r\n\r\nWhen producing an authority estimate (baseline), where there is no risk register software should carry out automatic cost to carbon risk calculations based on risk% age or risk allowance in risk register at cost element level with proportionate allocation across PAS 2080 modules as previous discussed and details provided to Benchmark.\r\n\r\nThis applies to all carbon estimate types as per Table A in the Scope.",
+    "acceptanceCriteria": "• A User can apply a cost risk/uncertainty allowance at Section level within the OMR cost estimate, based on either a risk register or a top-down risk approach\r\n\r\n• The software shall apply cost to carbon risk calculations based on risk allowance in risk register at Section level with proportionate allocation to the relevant PAS 2080 modules (B2—B5 for O&M estimates)\r\n\r\n• A User shall be able to edit the cost and carbon risk allowances generated by the default top-down approach",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 70
+  },
+  "610": {
+    "description": "Software should include a Benchmark template for each estimate type as per FR 10 and allow benchmark figures to be inserted into the template to allow the comparison to be made and reported for each estimate output. Nb. CERT/CESS/RET already includes this.",
+    "acceptanceCriteria": "• An administrator has the ability to enter a configure custom metric or benchmark ‘yardstick’ for an estimate type, specifying:\r\n   • The benchmark metric name\r\n   • The benchmark metric unit\r\n• An Administrator is able to enter benchmark values for each metric or ‘yardstick’ in a controlled table for an estimate type\r\n• A user is able to enter a value in an estimate-specific field for the benchmark metric name and unit and the estimated cost value to be divided by the metric\r\n• A user can generate a report on screen showing the estimate-specific values populated for the benchmark metrics, and the corresponding benchmark metric values maintained in the administrator-controlled table for that estimate type\r\n• The report can be exported to PDF and Excel format\r\n• The report states the price base of the values\r\n• The report states the project name, estimate name and estimate ID",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 382
+  },
+  "640": {
+    "description": "Produce an estimate using outturn estimate costs , that does not have a single base date across all elements and some cost elements, or all cost elements might be at outturn prices inclusive of all inflation",
+    "acceptanceCriteria": "Each Estimate in the CCET has a base date (the common price base of the estimate before application of inflation)",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 719
+  },
+  "670": {
+    "description": "Ability to overwrite the calculated top-down carbon risk allowance. Where there is no risk register with quantified carbon, software should have the functionality to insert a top down risk allowance for carbon at cost element level.",
+    "acceptanceCriteria": "An Estimator can enter Cost and Carbon Risk top-down to a Section in an Estimate, instead of importing a risk register, e.g. if no risk register is available.",
+    "srsChapter": 1,
+    "linkedStory": "",
+    "row": 12
+  },
+  "680": {
+    "description": "As a user, I want the ability to plug carbon factor at an item rate level manually, which is delinked from the resource build-up for that item.",
+    "acceptanceCriteria": "An Estimator can \"delink\" the resources in an Item from the Resource Library, so that the Resource Rate is not updated by any change in the library value and can be edited by the Estimator.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 459
+  },
+  "690": {
+    "description": "View the carbon expenditure profile over time by WBS (Work Breakdown Structure) and by Resource in embedded screens within the estimate",
+    "acceptanceCriteria": "• A user can generate a report on screen within the estimating module displays estimated carbon over time periods, e.g. Financial Year, by WBS",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 383
+  },
+  "700": {
+    "description": "For an Item/Resource, if the carbon data is not found in the carbon library then use the cost to carbon factor to  generate the impacts for all PAS2080 modules.  Software should allow this to be done in two ways - 1) allow cost to carbon factors to be included in library(baseline/project specific) for auto allocation 2) Allow plugged in resource or item level cost to carbon factors to be plugged in the estimate.",
+    "acceptanceCriteria": "The CCET holds cost-to-carbon factors in carbon data libraries at Resource level with an assigned Resource Group.  ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 461
+  },
+  "710": {
+    "description": "Record C1 at the project level using a placeholder and a configurable calculation to generate C2",
+    "acceptanceCriteria": "An Estimator can manually enter the estimated total carbon impact for PAS 2080 Module C1 for the whole project.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 463
+  },
+  "720": {
+    "description": "Record C1 emission factors at the Resource level, and generate calculations",
+    "acceptanceCriteria": "Carbon Libraries for New Construction lifecycle Stage (PAS 2080 Before Use) can store data for module C1, as well as the PAS 2080 Stage A modules.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 465
+  },
+  "730": {
+    "description": "When producing a Capex PAS2080 stage A, the library will need to populate the Stage C2-C4 emission factors",
+    "acceptanceCriteria": "Carbon Libraries for New Construction lifecycle Stage (PAS 2080 Before Use) store data for modules C2, C3, C4 as well as the PAS 2080 Stage A modules.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 466
+  },
+  "739": {
+    "description": "As an Estimator I need to be able to produce Routine Maintenance cost estimates for two purposes:\r\n\r\n1) Impact of a CAPEX scheme (MP delivered) on Routine Maintenance over a user-defined assessment period of up to 200 years.\r\n\r\n2) Detailed forecast spend on Routine Maintenance activities for a specific National Highways SRN Area (e.g. Area 10, SW, EMAD etc.)",
+    "acceptanceCriteria": "See SRS Chapter 3&4 for Standalone Detailed O&M estimate for Acceptance Criteria and Design Specifications for (up to 20 years) assessment period.\r\n\r\n• A CCET User can produce an OMR estimate for the Without and With Scheme scenarios to produce the impact on cost and carbon of a CAPEX* scheme on OMR duties over a user-configurable estimate duration from 1 to 200 years.\r\n\r\n• *CAPEX work can be either an enhancement or renewal scheme, delivered and funded by National Highways Major Projects (RIP, CIP etc.) or Operations (Area 10, Area SW etc.)\r\n\r\n• A CCET User can view and amend the OMR estimate data at an annual level of detail over the assessment period",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 48
+  },
+  "740": {
+    "description": "As an Estimator, I need to be able to calculate the Intervention Quantity for each Routine Maintenance activity, based on the Quantity of Asset x Intervention Frequency.\r\n\r\nQuantity of Asset will be based upon each Areas Network Information or Estimator specified quantity.\r\n\r\n Intervention Frequency will default to the ADAMR Baseline Frequency, or the Estimator can specify an ILM Intervention Frequency. The Intervention Frequencies can be set annually (i.e. different frequencies for each year of the assessment period)",
+    "acceptanceCriteria": "For an O&M estimate, there is:\r\n    • an editable field for each Item of work that contains the quantity of asset to which that Operation / Maintenance Item is carried out.\r\n    • an editable field for each Item of work that contains the annual intervention frequency at which that Operation / Maintenance Item is carried out.\r\n    • a calculated field containing the annual intervention quantity for each Item, i.e. the annual quantity of times that the O&M Item is carried out in a year\r\n• The CCET produces the Annual Intervention Quantities for each O&M Item through the following calculation: Asset Quantity x Annual Intervention Frequency\r\n• The O&M Item library contains a field for Default Annual Intervention Frequency for each Item, that can be populated with the default frequency, e.g. the ADAMR Baseline Frequency\r\n• An Estimator can directly enter and edit the asset quantities into the O&M estimate\r\n  • or upload the asset quantities from Excel\r\n• An Estimator can directly enter and edit annual intervention frequencies for each Item within the estimate, e.g. to provide alternative intervention frequencies from the default\r\n   • or upload the intervention frequencies for each Item from Excel\r\n• An Estimator can directly edit the total calculated intervention quantities for an Item for each year in the assessment period.\r\n   • or upload the intervention quantities from Excel",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 84
+  },
+  "750": {
+    "description": "As an Estimator I need to be able to apply the latest contractual Routine Maintenance activity unit rate for the relevant Area. This unit rate library will be stored for each Area and updated on an annual basis.",
+    "acceptanceCriteria": "The CCET can hold Item rate libraries for Operation and Maintenance lifecycle works.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 467
+  },
+  "751": {
+    "description": "As an Estimator I need a \"generic - NH level\" first principles resource build-up for each Routine Maintenance activity unit rate, which is decoupled from the contractual Routine Maintenance activity unit rate. This \"generic\" resource build-up will be used for carbon and resource forecasting.\r\n\r\nThe software will have the capability to replace these \"generic\" unit build-ups with Area specific build-ups over time and link to the Item unit rate.",
+    "acceptanceCriteria": "Multiple libraries of works items can be stored in the system.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 470
+  },
+  "760": {
+    "description": "As an Estimator, I need to be able to produce a detailed 12-60 month Routine Maintenance cost forecast. \r\n\r\nI need to be able to input actual Routine Maintenance intervention quantities, on a monthly basis, and then revise the original forecast Routine Maintenance activity quantities for the subsequent assessment period (i.e. rolling 12-month forecast). These revisions will be user input data, not autogenerated by the software.",
+    "acceptanceCriteria": "• An Estimator can create a detailed O&M estimate for up to 20-year assessment period at a monthly level of detail\r\n• An Estimator can apply to each O&M activity / item a default monthly activity profile over January- December (i.e. the percentage of annual intervention quantities to be delivered in each month)\r\n• An Estimator can edit the intervention / item quantities to be delivered in each month from the default profile’s values for each O&M activity\r\n• There is an administrator-controlled library of O&M expenditure profiles that are applied to an O&M activity / Item to profile quantities by month (January-December)\r\n\r\nSee SRS Chapter 6 for Project User forecasting vs. baseline",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 92
+  },
+  "780": {
+    "description": "I need the software to collate the forecast Routine Maintenance costs to the National Highways O&M WBS, which currently aligns with the M&R contract structure for use in the detailed Routine Maintenance spend forecast (i.e. Schedule A, C, D etc.) over the assessment period.\r\n\r\nThe estimated cost data within the WBS can then be re-organised to produce the impact of a CAPEX project (MP or Operations delivered) on Routine Maintenance over the assessment period, to satisfy the requirements of the BCR process.\r\n\r\n This will include the application of inflation, discounting and Market Adjustment Factors. This will require the software to produce multiple outputs each for specific purposes (e.g. real terms, nominal terms, post-discounting etc.)\r\n\r\nPlease note FR780 is also covered in chapter 2 – Long Term Appraisals.",
+    "acceptanceCriteria": "The CCET has an administrator-controlled Estimate Type library, that contains a configurable template for an O&M estimate (unpriced) and can be configured by NH to align with a standard WBS for an O&M.\r\n• When an O&M estimate is initiated, the Estimate Type library populates the Estimate Shell with the template structure configured in the Estimate Type library.\r\n   • See SRS Chapter 9, Estimate Workflows, Lifecycle Estimate (Output) Type Configurable Library.\r\n• The CCET stores libraries of O&M Items/activities with configurable Items/activity codes, descriptions and units, so that cost estimates using the O&M Item/activity Library collate costs aligned with the NH O&M WBS.\r\n\r\n• An Estimator can produce estimates of the impact of a Capex project on O&M costs by entering the Capex project asset quantities to the O&M estimate and applying Item/activity libraries to generate the estimated cost of the Capex project’s impact.\r\n• An Estimator can produce an O&M estimate for an identified ‘Without Scheme’ scenario and an O&M estimate for an identified ‘With Scheme’ scenario in consistent format\r\n• An Estimator can generate a report of the difference between estimates for a ‘Without Scheme’ scenario and ‘With Scheme’ scenario and see the estimated incremental impact\r\nThe CCET can apply the following to estimated costs in real terms (at the set price base of the estimate):\r\n  • Inflation factors per month to produce costs in nominal terms inclusive of inflation allowances (factors generated from a configurable library of inflation indices)\r\n  • GDP deflator factors to deflate costs for net present cost calculations (generated from a configurable library of inflation / deflation indices)\r\n  • Discount factors for economic assessment (generated from a configurable library of discount rates)\r\n  • Market adjustment factors for economic assessment (generated from a configurable library of market adjustment factors)\r\n  • The cost impact of the each of the above factors shall be clearly identified in estimate outputs\r\n\r\nPlease note FR780 is also covered in chapter 2 – Long Term Appraisals.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 97
+  },
+  "781": {
+    "description": "As an Estimator, I want to be able to associate items of work (and their underlying resources and the costs and carbon impact) with an asset class so that I can report the capex and Opex and renewals works (individually and combined) by asset class.\r\n\r\nSimilarly, I want to be able to associate items of work (and underlying resources / costs / carbon) with alternative breakdown structures' coding so that I can report the estimate by these breakdown structures, e.g. ICMS, CESMM ",
+    "acceptanceCriteria": "The CCET Item libraries (for all lifecycle stages) include a field to hold the default asset for that Item of works",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 477
+  },
+  "782": {
+    "description": "As an estimator, I want to be able to segment the Opex estimate (and MP and Renewals and therefore WLC estimate) so that I can see the quantity, cost and carbon per segment (capex, Opex, renewals, WLC)",
+    "acceptanceCriteria": "As a user I can segment estimates (for each of the FR10 outputs types) buildup and then report cost and carbon for the created segments.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 151
+  },
+  "790": {
+    "description": "Record yearly intervention frequencies for each Item (activity) undertaken to maintain an Asset - Covered by FR 1840",
+    "acceptanceCriteria": "The Item libraries in the CCET for O&M works have a field to store the default annual intervention frequency for that Item (O&M activity).",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 481
+  },
+  "800": {
+    "description": "Risk - Allow the user to directly input Risk at a section level (Top down) - See FR 1790",
+    "acceptanceCriteria": "An NH Estimator can input risk allowances for an O&M estimate for each Section of the estimate over which risk allowances that is designated as a level at which risk allowances are to be allocated.\r\n\r\nAn NH Estimator can input risk allowances for the following:\r\n▪Project cost risk / opportunity and uncertainty\r\n▪Project carbon risk / opportunity and uncertainty (see FR1080, FR1090 and FR1100)\r\n▪Programme / Portfolio cost risk / opportunity and uncertainty\r\n▪Programme / Portfolio carbon risk / opportunity and uncertainty (see FR1080, FR1090 and FR1100)\r\n\r\n",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 90
+  },
+  "810": {
+    "description": "Risk (long term goal) -Allow the user to import a risk register into the application for M&R to apply at a section level. - See FR 1790",
+    "acceptanceCriteria": "The CCET shall enable a project risk register to be imported to an O&M cost estimate and generate the risk / opportunity / uncertainty allowances at a Section level.\r\n\r\nNote: the process for calculation and allocation of cost risk / opportunity and uncertainty allowances for O&M estimates, the granularity of allocation across cost elements and by employer / supplier is to be confirmed by NH – see RFIs ref. B.16 and B.17",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 91
+  },
+  "820": {
+    "description": "As an estimator, I need to produce an estimate for M&R in accordance with the NH WBS for Routine Operation and Maintenance, covering:\u000bdedicated Cost Elements for O&M - the library would require to store the WBS for the M&R estimate to cover the below.\r\n- Cyclical Duties\r\n- Non - Cyclical Duties \r\n- Cost Reimbursable Services ",
+    "acceptanceCriteria": "The CCET holds a configurable 'Estimate Output Type' library that contains the following data for each Estimate Type:",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 483
+  },
+  "830": {
+    "description": "Dedicated Cost Elements for O&M - the library would require to store the WBS for the M&R estimate to cover the below.\r\n- Cyclical Duties\r\n- Non - Cyclical Duties \r\n- Cost Reimbursable Services \r\n- Task Orders  \r\n\r\nSee FR 820",
+    "acceptanceCriteria": "The CCET holds a configurable 'Estimate Output Type' library that contains the following data for each Estimate Type:",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 490
+  },
+  "840": {
+    "description": "As an Estimator, I need to be able to reference the Routine Maintenance cost estimate to the agreed data hierarchy structure (e.g. Portfolio - Ops, Region - NW, Area - Area 10, EIN etc.) This data hierarchy will allow the Estimator to search the estimate database for the relevant output and link to associated CAPEX outputs. The data hierarchy is to be confirmed with NH but may include: OD Portfolio - Programme - M&R/Asset Renewals and identifiers for Region, Route, Segment, Asset Classes to cost elements to activity/items to resources level coding. This coding needs to be based on a connected NH WBS, CBS, ActBS and AssBS.",
+    "acceptanceCriteria": "• An O&M estimate is assigned to the following administrator-configurable setup:\r\n• A project or scheme (which can be a defined O&M Contract or scope)\r\n• A Programme\r\n• A Portfolio\r\n• An Area and Region\r\n• A configurable location reference, such as ‘Route’\r\n• For a Whole life Cost and carbon estimate A ‘Parent’ full lifecycle costing estimate and associated capex estimate\r\n• An Estimator can assign an Asset to each Item/activity in a O&M cost estimate\r\n• CCET will have functionality to connected NH WBS, CBS, ActBS and AssBS to produce whole life cost and carbon estimates.\r\n• The O&M estimated costs can be reported by Asset\r\n• Assets are assigned to Items/activities from an administrator-controlled configurable library of Assets that is standardised across lifecycle stages\r\n• The standardised Assets assigned to capex Items, Operation and Maintenance Items (activities) and Asset Renewals Items connect Items across lifecycle stages\r\n• A CCET user can browse estimates within the agreed NH Enterprise, following the data hierarchy and open the estimates directly from the browser interface.\r\n• A CCET user can search estimates using NH-agreed data structure codes such as estimate ID, estimate title, project names, Region, Area, Programme, Portfolio, etc.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 100
+  },
+  "850": {
+    "description": "Develop hierarchy in the application - Section (e.g. Lump Sum Duties - Schedule A) > Series / Cost Element (e.g. 400 - Road Restraints) > Asset Type (e.g. Arrester beds) > Item > Resource See FR 820-840",
+    "acceptanceCriteria": "The O&M Item libraries stored in the CCET can contain configurable resource-build-ups for Items / Activities and codes assigning the Item to default Sections and Asset.\r\n\r\nThe CCET contains libraries of the O&M Resources used to populate O&M works’ Items / activities\r\n\r\nPlease refer to SRS Chapter 11, Data Libraries for details of the library of Estimate Output Types containing configurable estimate templates to populate the estimate shell for O&M estimates.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 83
+  },
+  "860": {
+    "description": "As an Estimator I need the software to be able to produce a TPE Routine Maintenance output at Cost Element level.\r\n\r\nProbabilistic estimating / TPE for Long-Term Appraisal cost estimated is not included in the CCET Phase 3 functional requirements. We propose to apply the Acceptance Criteria for FR860 and FR1260 and Feature Design for these functional requirements to NH Long-Term Appraisal cost estimates to provide this coverage.\r\n\r\nPlease see the following related Functional Requirements:\r\n▪ FR140 (SS Chapter 6, Supplier Forecasting) refers to converting a supplier forecast to a NH range estimate. (This is produced through existing CCET Phase 1 functionality for Major Projects, FR860 for Routine O&M and FR1260 for Asset Renewals.)\r\n▪FR430 (SRS Chapter 8, Reporting) refers to comparison reports of the current estimate vs. the last approved estimate / other previous estimates for a project to include showing the range of an estimate where this is in place\r\n▪ CCET Phase 1 FR30 (Delivered)\r\n▪ CCET Phase 1 FR10 (Delivered)\r\n▪ CCET Phase 1 FR21 (Partially Delivered – remaining items are PDF and CDF charts covered in FR860 and FR1260 acceptance criteria)\r\n▪CCET Phase 2 FRs bullet point 6, “Configure and upload a ‘baseline’ carbon resource library… in three-point estimating format….. – addressed by SRS Chapter 11, Data Libraries, FR410, Acceptance Criterion 8 inter alia.",
+    "acceptanceCriteria": "The CCET produces a probabilistic estimate of an Operation and Maintenance cost estimate as well as a single-point deterministic cost estimate. The probabilistic cost estimate is produced using Monte Carlo simulation of input three-point estimates for the total cost of the following: \r\n- Each cost element in the estimate build-up in real terms prior to inflation \r\n- The estimated delivery schedule for the project / contract, i.e. the estimated start and finish dates of the cost element's scope (there will no range for an O&M estimate of annual cost) \r\n- The estimated inflation forecast",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 679
+  },
+  "870": {
+    "description": "As an Estimator, I need the software to apply forecast inflation from the unit rate base date (PAFI adjusted annually) over the assessment period based on the approved NH inflation series.\r\n\r\nI also need the software to apply inflation, discounting and Market Adjustment Factors, for long term OPEX cost assessments.",
+    "acceptanceCriteria": "• An Estimator can set a common price base date for an O&M estimate by item/activity.\r\n• The price base of the O&M estimate is clearly stated in the estimate production screens and estimate reports / outputs\r\n• The CCET stores a library of approved inflation indices in an administrator-controlled library\r\n• The inflation indices are stored as monthly index values\r\n• The CCET applies inflation profile calculated using the relevant inflation index series selected from the library by an estimator to calculate an inflation allowance from the common estimate price base date to the time of expenditure of costs across the assessment period\r\n• The CCET applies inflation profile calculated using the inflation index to the estimated monthly O&M costs\r\n• The CCET inflation functionality produce outturn costs over the assessment period and summarise to show at monthly and yearly level. (max 20 years)\r\nPlease also refer to SRS Chapter 2, Long-term appraisal.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 94
+  },
+  "880": {
+    "description": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the software to apply a spend profile for each Routine Maintenance activity on a monthly basis (i.e. grass cutting only applied between April and October). \r\n\r\nFor long term CAPEX linked Routine Maintenance estimates (2) I need the spend profile to be applied at an annual level of detail.",
+    "acceptanceCriteria": "The CCET has an administrator-controlled library of default expenditure profiles for O&M estimates",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 497
+  },
+  "890": {
+    "description": "Inflation - Apply monthly inflation indices to Item rates in base estimate to generate inflated estimates for each year across the assessment period (where assessment period is 5 years or less) - then summarise at a yearly level (for longer assessment periods)\u000bSee FR 870",
+    "acceptanceCriteria": "The CCET has an administrator-controlled library of default inflation indices",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 503
+  },
+  "900": {
+    "description": "As an Estimator, I want an easy way of setting an intervention quantity (i.e. scope) for each year of a long term assessment period. Long-term projections for intervention quantities for M&R estimates - Calculate intervention quantities for a reference year (e.g. detailed year 1 or average over first 5 years) and project to apply across the assessment period.",
+    "acceptanceCriteria": "• The O&M Item library contains a field for Default Annual Intervention Frequency for each Item, that can be populated with the default frequency, e.g. the ADAMR Baseline Frequency\r\n• The library Item, including default intervention frequency, can be automatically allocated to an Item in an O&M estimate by matching Item code or Item description\r\n• The Estimator can bulk upload asset quantities from Excel for each Item in an O&M estimate\r\n• The Estimator can bulk upload annual intervention frequencies from Excel for each Item in an O&M estimate, so the CCET generates total intervention quantities for a given year of the assessment period.\r\n• The Estimator can select a reference year and copy that year’s calculated annual intervention quantities over the remaining years of an assessment period up to 20 years",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 86
+  },
+  "910": {
+    "description": "As per 7.14, the software should be able to produce multiple outputs from a data Dashboard to display the cost estimate in a format required by NH (e.g. real terms, nominal terms, assessment period, level of detail - monthly/annual etc.)",
+    "acceptanceCriteria": "• A user can view a dashboard of an Operations and Maintenance cost estimate displaying multiple data for the estimate, including:\r\n   • The estimate in real terms excluding inflation\r\n   • The estimate in nominal terms including inflation\r\n   • The period covered by the estimate\r\n   • Costs by month and by year",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 385
+  },
+  "920": {
+    "description": "See FR 910 - View the Estimate in Real Terms without Inflation",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 98
+  },
+  "930": {
+    "description": "See FR 910 - View the estimated costs in real terms at a set price based, inclusive of relative price growth.",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 99
+  },
+  "940": {
+    "description": "As an Estimator I need the software to apply carbon costs (CO2e) to the estimate Routine Maintenance activities. The carbon costs will be derived from the Routine Maintenance activity resource build-ups.\r\n\r\nThe software should have the capability to apply a carbon inflation/deflation factor to the baseline Routine Maintenance carbon costs which could be applied, following review and approval from NH. The inflation / deflation profiles should be stored and maintained in a dedicated library.",
+    "acceptanceCriteria": "The CCET calculates carbon equivalent value (CO2e) at Resource level to PAS 2080 modules / sub-modules recommended in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology.\r\n\r\nBackground carbon decarbonisation profile(s) can be stored in an administrator-controlled library within the CCET\r\n\r\nThe expected yearly rate of general background carbon decarbonisation is stored as percentages and the CCET calculates deflation coefficients for each year from an estimate baseline date\r\n\r\nThe CCET shows decarbonisation coefficients below total carbon base estimate + carbon risk allowances for each month / year shown in an estimate output.\r\n\r\nThe CCET shows the carbon deflation amount and impact separately within an estimate output.\r\n\r\nThe CCET calculates carbon equivalent values for each PAS 2080 modules / sub-modules recommended in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology, including the sequestered carbon modules recommended in this file.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 107
+  },
+  "950": {
+    "description": "As an Estimator, I need, B6/B7 to be estimated in the Routine Maintenance element of the software, for each year.\r\nThis could be estimated at the Area level or asset level.",
+    "acceptanceCriteria": "• An Item/activity can be created for each one of modules B1, B6, B7, B8 and B9 at the Estimate-level to hold carbon impacts with data organised by month for the entire estimate (e.g. a whole Area)\r\n\r\n• Individual Item/activity can be created for each one of modules B1, B6, B7, B8 and B9 at a Section-level to hold carbon impacts with data organised by month at Asset level\r\n\r\n• Modules B1, B6, B7, B8 and B9 carbon impacts can be uploaded by month\r\n\r\n• The CCET system can record and estimate B6 and B7 at the item/activity or resource level by month, organised into separate sections for B6 and B7.\r\n\r\n• CCET reports can aggregate monthly values to report yearly carbon values for modules B1, B6, B7, B8 and B9 for B8.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 109
+  },
+  "960": {
+    "description": "As an Estimator, I want to be able to record sequestered carbon within the estimate calculated in accordance with RICS 2nd Edition of WL Carbon Assessment as per the module structure provided by Circular Ecology - this may be a placeholder at estimate level.",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 108
+  },
+  "970": {
+    "description": "There may be multiple Routine Maintenance cost estimates for any project (i.e. multiple options). The Estimator should be able to select a preferred carbon estimate for any project\r\n\r\nFor detailed Routine Maintenance cost estimates (1), the software will have the capability to update the estimate on a monthly basis, with actual interventions delivered and impact on carbon costs.\r\n\r\nFor Routine Maintenance estimates associated with a CAPEX cost estimate (2), the Estimator can update any previous Routine Maintenance cost estimate to reflect the changes in the CAPEX cost estimate",
+    "acceptanceCriteria": "• Multiple O&M estimates, each with a unique estimate ID, can be produced for a project.\r\n• An Estimator can select any estimate for a project and designate that estimate as the ‘Preferred Carbon Estimate’.\r\n• There can be only one designated ‘Preferred Carbon Estimate’ for a project at any one time.\r\n\r\nPlease refer to SRS Chapter 6, Project User Forecasting functionality for updates with actual / reforecast interventions\r\n\r\n• For a completed O&M estimate, An Estimator can duplicate the O&M estimate, assign a new",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 102
+  },
+  "980": {
+    "description": "See FR 950 - An efficient way of uploading B6/B7 data for each year in the assessment period.",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 110
+  },
+  "990": {
+    "description": "As an Estimator I need the software to be capable of capturing carbon costs monthly for up to the first 5-years. I should be able to define the period I require monthly carbon cost forecasting. For the remaining assessment period, carbon should be captured at an annual level",
+    "acceptanceCriteria": "The CCET shall produce O&M estimates at a monthly level of detail and show the carbon equivalent value per month of the estimate’s assessment period.\r\nThe CCET shall be able to report carbon equivalent value for O&M estimates for each year of the estimate’s assessment period.\r\nAn Estimator can specify the assessment period of a detailed O&M estimate to cover a maximum period of 20 years.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 126
+  },
+  "1000": {
+    "description": "The software should be configured to the PAS2080 requirements to align with the RICS 2nd edition as per recommendation of modules provided by Circular Ecology.",
+    "acceptanceCriteria": "The CCET carbon libraries hold data at the granularity of PAS 2080 modules / sub-modules set out in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 509
+  },
+  "1010": {
+    "description": "Enter B8 user carbon at a project level for each year within the project (possibly by month).",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 112
+  },
+  "1020": {
+    "description": "As an Estimator, the software should have the future capability (I.e. placeholder) to include B1 (Asset in Use) carbon costs within the carbon estimate. This should be a placeholder only, not the full working solution at this stage of development",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 113
+  },
+  "1030": {
+    "description": "As an Estimator I need the software to have the capability to tag all activities within the estimate as either B2 or B3, for reporting purposes as per PAS 2080 requirements.",
+    "acceptanceCriteria": "The O&M Item library contains a field for each Operation and Maintenance Item (\"activity\") that stores a default PAS 2080 module for the Item.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 510
+  },
+  "1040": {
+    "description": "See FR 1020 - The system requires the ability to record B1 across a time series.",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 114
+  },
+  "1050": {
+    "description": "See FR 950 - Ability to estimate B6/B7 at an item and resource level, across a time series",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 111
+  },
+  "1060": {
+    "description": "Produce a detailed estimate for B2-B5 that captures data at sub module level, e.g. transportation of deconstructed materials, transport of new materials, construction and installation, wastage. They will require granular analysis of contributing factors.",
+    "acceptanceCriteria": "The CCET carbon libraries hold data at the granularity of PAS 2080 modules / sub-modules set out in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 511
+  },
+  "1070": {
+    "description": "The system should be able to store Cost to Carbon factors at a base date and apply these factors to resources in an estimate in order to plug gaps - i.e. resources with no carbon emission factor in the library ",
+    "acceptanceCriteria": "The CCET stores cost-to-carbon factors in an administrator-controlled library or libraries for application to each lifecycle costing stage.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 512
+  },
+  "1080": {
+    "description": "See FR 670 - Ability to overwrite the calculated top-down carbon risk allowance",
+    "acceptanceCriteria": "The CCET will automatically calculate a top-down carbon risk / opportunity / uncertainty allowance at Section/Cost element level, by applying the base estimate carbon/cost intensity to the cost risk / opportunity / uncertainty allowance for that Section/Cost Element. The CCET will automatically calculate top-down carbon risk / opportunity / uncertainty allowances for Project level risk and Programme / Portfolio Risk.\r\n\r\nThe software shall apply these cost to carbon risk calculations based on the risk / opportunity / uncertainty allowance at Section/Cost Element level with proportionate allocation to the relevant PAS 2080 modules (B2-B3 for O&M estimates).\r\n\r\nA User shall be able to edit and overwrite the carbon risk / opportunity / uncertainty allowances generated by the default top-down approach.",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 123
+  },
+  "1090": {
+    "description": "See FR 670 - Calculate Carbon Risk and Uncertainty Allowance at the Cost Header (Cost Element) level using the Cost to Carbon Intensity Factor",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 124
+  },
+  "1100": {
+    "description": "As an estimator, I want to include risk / opportunity / uncertainty allowances at Project, Programme, and Portfolio level",
+    "acceptanceCriteria": "",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 125
+  },
+  "1120": {
+    "description": "As an Estimator I need the software to produce detailed reports based on user queries for both cost and carbon. This will include cost/carbon spend over time and by WBS or Resource. The reports will also be able to compare cost/carbon forecasts against the baseline cost estimate(s) and across Programme and Portfolio level",
+    "acceptanceCriteria": "• A user can select what data he/she wants to see in a report via some dynamic fields, which act as user queries, including:\r\n   • The WBS level of the report\r\n   • The period covered by the report\r\n• A user can generate a report comparing a submitted cost or carbon forecast vs. a reference baseline cost or carbon estimate for a scheme\r\n• A user can generate a report comparing selected submitted cost or carbon forecasts comprising a programme vs. a reference baseline cost or carbon estimate for the programme\r\n• A user can generate a report comparing selected submitted cost or carbon forecasts comprising a portfolio vs. a reference baseline cost or carbon estimate for that portfolio",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 386
+  },
+  "1130": {
+    "description": "See 1120 - View a table with Spend Profile calculations for Item Qty (Asset Qty * Intervention Frequency) and carbon expenditure over the assessment period. This would be monthly for the first 5 years, and yearly thereafter for longer term.",
+    "acceptanceCriteria": "An Estimator can select what data he/she wants to see in a report via some dynamic fields, which act as user queries, including:\r\n     • The WBS level of the report\r\n     • The period covered by the report\r\n• The CCET produces a carbon expenditure profile table for an estimate showing the carbon equivalent value per month of the estimate assessment period.\r\n• The CCET produces a table for an estimate showing the Item Quantity per month of the estimate assessment period.\r\n• An Estimator can generate a report comparing a submitted cost or carbon forecast vs. a reference baseline cost or carbon estimate for a project\r\n• An Estimator can generate a report comparing selected submitted cost or carbon forecasts comprising a programme vs. a reference baseline cost or carbon estimate for the programme\r\n• An Estimator can generate a report comparing selected submitted cost or carbon forecasts comprising a portfolio vs. a reference baseline cost or carbon estimate for that portfolio",
+    "srsChapter": "3&4",
+    "linkedStory": "",
+    "row": 127
+  },
+  "1140": {
+    "description": "See 1120 - View the carbon expenditure profile over time by WBS (Work Breakdown Structure) and by Resource",
+    "acceptanceCriteria": "• A user can generate a report of carbon expenditure over time by WBS and by resources\r\n• The user can select the WBS level of the report so that carbon expenditure is shown in a logical format",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 387
+  },
+  "1150": {
+    "description": "See FR350 - Compare Estimated Carbon Impact with Carbon Reduction Targets at Scheme, Programme and Portfolio levels",
+    "acceptanceCriteria": "• An authorised user can enter a Carbon Reduction Target (CAP) for a project in the software\r\n• A user can see a report or dashboard that compares the Carbon Reduction Target(CAP) with an estimate for the project\r\n• I should also be able to see a reports showing the aggregated latest estimate data versus the aggregated carbon reduction targets at Programme or Portfolio Level\r\n• The data is based on approved estimates only and informed by either the preferred estimates or reference estimates\r\n• As a user I can see how a forecast submitted by a Project User compares to the Carbon Reduction Target (CAP) for that project",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 388
+  },
+  "1153": {
+    "description": "As an Estimator I need to be able to produce Asset Renewal cost estimates for two purposes:\r\n\r\n1) Impact of a CAPEX scheme (MP or Operations delivered) on Asset Renewals over a user defined assessment period of up to 120 years.\r\n\r\n2) Detailed standalone Asset Renewal cost estimate for a single scheme ",
+    "acceptanceCriteria": "As an estimator I can produce an estimate for periodic asset renewals within a long-term appraisal of a capex estimate in addition to a standalone estimate for an asset renewal project.\r\n\r\nPlease see SRS Chapter 2 for the specification of Long-Term Appraisal estimates.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 153
+  },
+  "1160": {
+    "description": "For standalone detailed Asset Renewal cost estimates (2), as an Estimator I need the software to receive an unpriced Schedule of Items from Excel (or 2D / 3D take-off feature) and apply the relevant contractual item rate (SDF or other) to price the proposed scope of work, refer to 9.13 for further details\r\n\r\nThe unpriced Schedule of Items must be produced following the NH Ops WBS and can produced either by:\r\n1) NH Direct and Indirect (including TTM) parametric models\r\n2) Estimator/Supplier produced Schedule of Items from quantity take-off",
+    "acceptanceCriteria": "• As an estimator, I can import and update a schedule of Assets / Items and quantities into an estimate.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 154
+  },
+  "1161": {
+    "description": "For assessment of Asset Renewal costs associated with the CAPEX scheme (1), as an Estimator I need the software to apply relevant renewal unit rates to the asset quantities input by the Estimator within the long term OPEX assessment .  In addition to these unit rates, there will be a top down inclusion for Prelims, TTM, Design, SU and Other costs.\r\n\r\nFor assessment of Asset Renewal costs associated with the CAPEX scheme, as an Estimator I need to be able to tag Asset Renewal quantities and associated activities as either New, Remove or Renewed within the software\r\n\r\nThe all-in composite rates shall be stored and maintained in a dedicated library.",
+    "acceptanceCriteria": "The Items within the CCET Item libraries are configurable by an administrator.  The administrator can store Item rates in the library that are composite rates (for example including allowances for indirect costs such as traffic management, utilities or other costs).",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 520
+  },
+  "1170": {
+    "description": "\"As an Estimator I need to be able to reference the Routine Maintenance cost estimate to the agreed data hierarchy structure (e.g. Portfolio - Ops, Region - NW, Area - Area 10, Route - M6, EIN, Do Something or Do Nothing scenario etc.)This data hierarchy will allow the Estimator to search the estimate database for the relevant output and link to associated OPEX outputs\"",
+    "acceptanceCriteria": "",
+    "srsChapter": 7,
+    "linkedStory": "",
+    "row": 322
+  },
+  "1180": {
+    "description": "For standalone detailed Asset Renewal cost estimates, as an Estimator I need the software to capture and display estimated costs to a admin-configurable cost element structure, as per the National Highways Asset Renewals CESS, which is reflective of the 3D Process",
+    "acceptanceCriteria": "• As an administrator I can create configurable cost elements and sections in an estimating template similar to NH Asset Renewal CESS aligned with 3D framework. This template will be configurable and controlled by an administrator.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 159
+  },
+  "1190": {
+    "description": "For standalone detailed Asset Renewal cost estimates, as an Estimator  I need to be able to specify the source of the unit rate to reflect the scheme specific commercial variables and for the software to select and apply the relevant Supplier rate, based on the Estimator selected variables.\r\n\r\nCurrently this includes: selection of Region, selection of Supplier Lot, selection of  Supplier sub-lot, selection of specific Supplier and selection of scheme specific delivery details (e.g. season, time, day)\r\n\r\nI need the ability to select any of the above scheme specific commercial variables as Unknown, and the software to select a Supplier unit rate to apply with the cost estimate. This process of supplier selection could be based on the current SDF pricing templates.",
+    "acceptanceCriteria": "The CCET can store supplier-specific Item and Resource libraries that an estimator can select to apply to an estimate.  An estimator can select the supplier-specific library to apply to the Items in an estimate.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 524
+  },
+  "1191": {
+    "description": "As an Estimator I need a \"generic - NH level\" first principles resource build-up for each Asset Renewal Item unit rate, which is decoupled from the contractual Asset Renewal Item unit rate.  Carbon calculations (and resource demand reports) may need to use the generic resource build-up; whereas cost estimates may need to use just the contractual unit rate. \r\n\r\nI need the capability for the \"generic - NH level\" resource build-ups to be superseded over time to be replaced with  Supplier specific  first principle resource build-ups for each Asset Renewal Item unit rate.",
+    "acceptanceCriteria": "Multiple libraries of works items can be stored in the system.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 529
+  },
+  "1192": {
+    "description": "As an Estimator I need to be able to produce a new first principal resource level build-up for an activity not included within the NH Asset Renewal Item library. The software should allow the user to build the new item using the NH Asset Renewal resource library. Each new Item should be able to be assigned to a specific Supplier engaged within the cost estimate.\r\n\r\nFollowing a separate NH review/approval process the software  should allow the update of the Item library with approved \"Star rates\" for use in other Asset Renewal estimates\u000b",
+    "acceptanceCriteria": "An Estimator can create an Item in an estimate using Resources from the relevant Resource library for that estimate and Item.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 536
+  },
+  "1193": {
+    "description": "For assessment of Asset Renewal costs associated with the CAPEX scheme (2), as an Estimator I need the software to apply the relevant unit rates for each renewal activity. In addition to these unit rates, the software will apply a top down adjustment for Prelims, TTM, Design, SU, Other costs and Fee.",
+    "acceptanceCriteria": "As an estimator, I can use quantities produced for a CAPEX scheme to Inform the Asset Renewals estimate within a whole lifecycle cost and carbon estimate.   ",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 183
+  },
+  "1210": {
+    "description": "Based on the value of the work packages for each Supplier the software should apply the relevant Fee. The methodology when the Supplier is Unknown could utilise the logic from the current SDF pricing workbooks.",
+    "acceptanceCriteria": "• As an estimator, I can apply relevant fees from the Supplier Fee Library to work packages based on their value.\r\n\r\n• As an estimator, I can apply fees from the Supplier Fee Library when the supplier is unknown, using configured thresholds, e.g. to align with the current SDF pricing workbooks’ logic.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 190
+  },
+  "1220": {
+    "description": "For long term (whole life) asset renewals estimates, the quantity of item works in a given year will be calculated from the quantity of assets to be renewed and the asset renewal frequency. The estimator will want the ability to overwrite these default quantities with a specific quantity.",
+    "acceptanceCriteria": "• A User can specify the OMR assessment period from 1-200 years\r\n\r\n• A User can specify the Asset Quantity, % of asset to be renewed at each intervention and Renewal Frequency (i.e. lifespan of the Asset) for each Segment within the Asset Renewal estimate\r\n\r\n• A User can specify the remaining lifespan of existing Assets (either through a % or year value input)\r\n\r\n• A User can apply either a default Renewal Frequencies or a bespoke Renewal Frequency to any Asset Renewal activity within the estimate – this will not change the default Asset Renewal Frequency stored in the software library\r\n\r\n• The Assets included within the estimate will be renewed when their age is equal to the Asset Renewal Frequency specified by the User\r\n\r\n• A User can review and amend the Asset Renewal Quantity for any year within the assessment period of the Asset Renewal estimate",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 68
+  },
+  "1230": {
+    "description": "See FR 1191 - Flexibility to use either the Item rate derived from the resource buildup or a contractual item rate which may not have a resource level build up",
+    "acceptanceCriteria": "As a user I can use Items which have a full labour, plant, materials Resource build-up, or an Item unit rate (e.g. a contractual Item rate) using only a single ‘Subcontractor’ Resource.\r\nItems can be used from different libraries to produce estimates.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 191
+  },
+  "1240": {
+    "description": "As an estimator, I want to make sure that the rate used from the library is correct where contractual rates vary with quantity bandings.   This can be addressed through correct configuration of the item library, where item descriptions identify the quantity band and library rates for that band can be auto-allocated to the item.  Each quantity banding is a separate item within the SDF Schedule of Rates , so a correctly produced SoI will account for quantity bandings.",
+    "acceptanceCriteria": "An Item library can be configured with Item descriptions that contain quantity bands.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 541
+  },
+  "1250": {
+    "description": "See FR 1192 - When there are no Items within the library, allow the estimator to use available resource buildups and create Star Items",
+    "acceptanceCriteria": "See acceptance criteria for FR1192.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 543
+  },
+  "1251": {
+    "description": "As an estimator, or estimating manager, I want to be able to identify the \"star rates\" that have been created for a specific estimate, i.e. that are not in the current item library.  Once star rates are approved and added to the contract and library, they do not need to be identified  as \"star rates\"",
+    "acceptanceCriteria": "Items in an estimate can be tagged as \"Star Rates\", i.e. not part of an original set of Items for the project /  contract. ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 544
+  },
+  "1260": {
+    "description": "As an Estimator I need the software to be able to produce a TPE Asset Renewal output at Cost Element level.\r\n\r\nProbabilistic estimating / TPE for Long-Term Appraisal cost estimated is not included in the CCET Phase 3 functional requirements. We propose to apply the Acceptance Criteria for FR860 and FR1260 and Feature Design for these functional requirements to NH Long-Term Appraisal cost estimates to provide this coverage.\r\n\r\nPlease see the following related Functional Requirements:\r\n▪ FR140 (SS Chapter 6, Supplier Forecasting) refers to converting a supplier forecast to a NH range estimate. (This is produced through existing CCET Phase 1 functionality for Major Projects, FR860 for Routine O&M and FR1260 for Asset Renewals.)\r\n▪ FR430 (SRS Chapter 8, Reporting) refers to comparison reports of the current estimate vs. the last approved estimate / other previous estimates for a project to include showing the range of an estimate where this is in place\r\n▪ CCET Phase 1 FR30 (Delivered)\r\n▪ CCET Phase 1 FR10 (Delivered)\r\n▪ CCET Phase 1 FR21 (Partially Delivered – remaining items are PDF and CDF charts covered in FR860 and FR1260 acceptance criteria)\r\n▪CCET Phase 2 FRs bullet point 6, “Configure and upload a ‘baseline’ carbon resource library… in three-point estimating format….. – addressed by SRS Chapter 11, Data Libraries, FR410, Acceptance Criterion 8 inter alia.",
+    "acceptanceCriteria": "NH Estimators can enter a minimum and maximum estimated cost for a cost element either side of the CCET calculated value for an Asset Renewals scheme's estimated cost (which forms the most-likely input value of the three-point estimate for the cost element). The three-point estimates for each cost element are input at the estimate base date, prior to inflation.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 684
+  },
+  "1270": {
+    "description": "As an Estimator I need the software to apply risk using one of two methods:\r\n1) Top down risk % allowance, based upon a risk matrix method (e.g. level of scheme design info available and scheme technical complexity) which is then applied at Section level\r\n2) Import of a risk register, which is then applied at Section level\r\n\r\n\r\n\r\nSee 1270 - Risk - Top down estimating approach",
+    "acceptanceCriteria": "As an estimator, risk can be applied at Section level using the top-down method or with an imported risk register.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 201
+  },
+  "1280": {
+    "description": "",
+    "acceptanceCriteria": "1. Automatic top-down calculation of allowances based on calculation the  Project Carbon Risk / Opportunity / Uncertainty allowance x (Base Carbon Estimate/Base Cost Estimate) - as per FR1090",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 203
+  },
+  "1290": {
+    "description": "See 1270 - Validation questions to provide a risk percentage and allow an estimator to assign Section-level Risk",
+    "acceptanceCriteria": "As an estimator, I want to assign risk to a cost or carbon estimate at section level",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 206
+  },
+  "1300": {
+    "description": "As an Estimator I require the software to store and apply relevant spend profiles (based on scheme characteristics, type etc.) to the forecast costs across each of the 3D stages.",
+    "acceptanceCriteria": "The CCET has an administrator-controlled library of default expenditure profiles for Asset Renewals estimates",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 546
+  },
+  "1310": {
+    "description": "See 1190-1193 - User-friendly way to select the time and period the works will be completed (this would need to consider Region/Contractor/Time/Season)",
+    "acceptanceCriteria": "As an estimator, I can select apply rates from a user selected library in a user-friendly way based on \r\n• The region, \r\n• Supplier lot/sub-lots, \r\n• Specific supplier \r\n• Specific delivery/commercial details such as time of day, day of week and seasons.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 208
+  },
+  "1320": {
+    "description": "There may be multiple Asset Renewal cost estimates for any scheme (i.e. multiple options). The Estimator should be able to update any previous Asset Renewal cost estimate to reflect the latest scheme details",
+    "acceptanceCriteria": "As an estimator, I can create a copy of a completed estimate or revision and modify the estimate. \r\n\r\nAs an estimator I can change the following:\r\n• Scope - items of work and/or quantities\r\n• Resources\r\n• Schedule\r\n• Risk\r\n• Expenditure profile\r\n• Inflation ",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 209
+  },
+  "1330": {
+    "description": "Compare Estimated Carbon Impact with Carbon Reduction Targets at Scheme, Programme and Portfolio levels",
+    "acceptanceCriteria": "• An authorised user can enter a Carbon Reduction Target (CAP) for a project in the software\r\n• A user can see a report or dashboard that compares the Carbon Reduction Target(CAP) with an estimate for the project\r\n• I should also be able to see a reports showing the aggregated latest estimate data versus the aggregated carbon reduction targets at Programme or Portfolio Level\r\n• The data is based on approved estimates only and informed by either the preferred estimates or reference estimates\r\n• As a user I can see how a forecast submitted by a Project User compares to the Carbon Reduction Target (CAP) for that project",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 389
+  },
+  "1340": {
+    "description": "Configure PAS2080 requirements to align with the RICS 2nd edition ",
+    "acceptanceCriteria": "The CCET carbon libraries hold data at the granularity of PAS 2080 modules / sub-modules set out in reference document \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance.xls\" provided by Circular Ecology",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 552
+  },
+  "1350": {
+    "description": "As an Estimator I can filter cost and carbon estimates for any Asset Renewal cost estimate by Portfolio, Programme, Scheme, Area, Region and EIN",
+    "acceptanceCriteria": "As an Estimator I can browse or search in the CCET for any cost and carbon estimate for Asset Renewal by Portfolio, Programme, Scheme, Area, Region and EIN.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 212
+  },
+  "1360": {
+    "description": "As an Estimator I need the software to have the capability to tag all activities within the estimate as either B4 or B5,  for reporting purposes as per PAS 2080 requirements.",
+    "acceptanceCriteria": "As an Estimator I can estimate B4 and B5 separately for purposes of reporting carbon as per PAS2080 requirements.\r\n\r\nThe Items for an Asset Renewals estimate in the CCET can be tagged as PAS 2080 module B4 or B5.",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 213
+  },
+  "1370": {
+    "description": "See FR 670 - Ability to overwrite the calculated top-down carbon risk allowance ",
+    "acceptanceCriteria": "An Estimator can enter top-down Cost and Carbon Risk allowances to a Section in an Estimate, instead of importing a risk register or automatically-calculated risk allowances (see SRS Chapter 1 for details of the automatic calculation of top-down risk allowances).",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 214
+  },
+  "1380": {
+    "description": "As an estimator, I want the ability to apply a cost to carbon factor for a specific resource group to a resource that does not have a carbon emission factor in the library or an item / composite item that does not have a first-principles build-up and therefore does not have a carbon emission factor in a library.  The cost to carbon factors should be stored in a dedicated library.",
+    "acceptanceCriteria": "The CCET stores cost-to-carbon factors in an administrator-controlled library or libraries for application to each lifecycle costing stage.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 553
+  },
+  "1390": {
+    "description": "See FRs 570, 580, 670 - Calculate Carbon Risk and Uncertainty Allowance at the Cost Header (Cost Element) level using the Cost to Carbon Intensity Factor",
+    "acceptanceCriteria": "As a user, CCET needs to automatically generate a cost to carbon intensity factor for risk and uncertainty across PAS2080 modules, derived from the base estimates of cost and carbon.\r\n\r\nThese cost to carbon intensity factors for risk and uncertainty can be applied in CCET at Section cost element level to generate carbon risk/uncertainty allowance in Carbon estimates. ",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 221
+  },
+  "1400": {
+    "description": "See FRs 570, 580, 670 - Produce a Carbon Risk and Opportunity Allowance at the Project, Programme and Portfolio levels ",
+    "acceptanceCriteria": "Please also refer to acceptance criteria for FR570, FR580 and FR670 for further details.\r\n\r\nAs a user I can produce carbon risk and opportunity allowances at the following levels\r\n\r\n•  Project level\r\n•  Programme level\r\n•  Portfolio level",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 222
+  },
+  "1410": {
+    "description": "See FR 1120 - View the carbon expenditure profile over time by WBS (Work Breakdown Structure) and by Resource ",
+    "acceptanceCriteria": "As an estimator I can view the expenditure profile over time by WBS and by Resource. ",
+    "srsChapter": 5,
+    "linkedStory": "",
+    "row": 227
+  },
+  "1420": {
+    "description": "For MP OMR estimate, administrative screens to be produced to allow configuration as per the OMR model issued to be set, these include\r\nSoftware to allow selection of user-configurable assessment period, e.g. 60 or 120 years.\r\nSoftware to allow asset renewal frequencies over assessment period to be set for various new assets.\r\nSoftware to allow setting of residual life for various existing assets on Opening to traffic based on either user input per asset or default set at x%. And then setting frequencies similar to new assets for renewed existing assets based on first renewal after opening to traffic.",
+    "acceptanceCriteria": "",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 69
+  },
+  "1430": {
+    "description": "Produce a Do-Something case estimate - with the ability to identify New, Renewed, Removed, Unchanged assets for MP and Asset renewals schemes' TOTEX",
+    "acceptanceCriteria": "As an NH Estimator, I can populate the “Scenario” field in whole lifecycle estimate to denote that the estimate is for a “With Scheme” (Do-Something) or a “Without Scheme” scenario.\r\n\r\nAs an NH Estimator, I can produce a whole lifecycle cost and carbon estimate for a specific scenario and project.\r\n\r\nPlease see SRS Chapter 2, Long Term Appraisal for TOTEX estimates for “With Scheme” and “Without Scheme” scenarios.",
+    "srsChapter": 7,
+    "linkedStory": "",
+    "row": 323
+  },
+  "1440": {
+    "description": "As an estimator, I want the ability to have a consolidated TOTEX estimate for an MP Enhancement scheme. This will show the MP Capex, it's impact on M&R and its impact on Asset Renewals within a single TOTEX estimate and report.",
+    "acceptanceCriteria": "• A User can produce a consolidated TOTEX estimate for a scheme, which comprise CAPEX, O&M and Asset Renewal estimates\r\n\r\n• A User can select the TOTEX assessment period up to 200-years",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 57
+  },
+  "1450": {
+    "description": "As an estimator, I want the ability to have a consolidated TOTEX estimate for an Asset Renewals scheme. This will show the AR Capex, it's impact on M&R and it's impact on Asset Renewals within a single TOTEX estimate and report.",
+    "acceptanceCriteria": "",
+    "srsChapter": 2,
+    "linkedStory": "",
+    "row": 58
+  },
+  "1460": {
+    "description": "Software to be configured to allow both detailed bottom up TOTEX estimates to be produced (both MP and AR) in future as well as top-down TOTEX estimates, using composite rates for both M&R and Asset Renewals works.",
+    "acceptanceCriteria": "The Items within the CCET Item libraries are configurable by an administrator.  ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 559
+  },
+  "1470": {
+    "description": "See FR 1450 - Setup a \"Long term AR\" Item Library with \"all in rates\" (Periodic Items) with the internal Resource buildup and carbon, but without the variables (uplifts)",
+    "acceptanceCriteria": "The Items within the CCET Item libraries are configurable by an administrator.  ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 562
+  },
+  "1480": {
+    "description": "See FR 1450 - Assumed renewal periods need to apply to the spend profile levels",
+    "acceptanceCriteria": "The CCET can store a library of asset renewal frequencies for long-term appraisal estimates.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 567
+  },
+  "1490": {
+    "description": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, Incremental difference",
+    "acceptanceCriteria": "• For long-term appraisal TotEx estimates, A user can assign a configurable ‘scenario’ tag to an estimate\r\n• A user can generate estimate reports for a scenario\r\n• A user can generate reports of the incremental difference between two like-for-like estimates for different scenarios for the same scheme",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 390
+  },
+  "1500": {
+    "description": "TOTEX reporting - will require the whole life cycle reporting of the Cost and Carbon stage A-C",
+    "acceptanceCriteria": "• A user can generate a TotEx carbon report showing the estimated carbon for each module within PAS 2080 Stages A, B and C\r\n• A user can generate a summary report that provides sub-totals by PAS 2080 Stage\r\n• The reports can be generated on screen in the software carbon module\r\n• The reports can be exported to PDF and Excel format.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 391
+  },
+  "1510": {
+    "description": "TOTEX reporting adhering to the ICMS3 standard",
+    "acceptanceCriteria": "• A user can generate a report showing estimated carbon emissions for each PAS 2080 module, by each ICMS category\r\n• A user can generate a report showing total annual operational energy usage for module B6 in KWh/yr\r\n• A user can generate a report showing total estimated operational water consumption for module B7 in litres",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 392
+  },
+  "1520": {
+    "description": "Use a decarbonisation deflation profile against different Cost element/resource groupings. This is so that the user can forecast the decarbonisation of an asset for e.g. 2030, 2040, 2050. (TBC, depending on definition of process)",
+    "acceptanceCriteria": "The CCET contains carbon deflation profile in an administrator-controlled library with the profile stored as an index value.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 654
+  },
+  "1530": {
+    "description": "Use a decarbonisation deflation profile against different Cost element. This is so that the user can forecast the decarbonisation of an asset for e.g. 2030, 2040, 2050. Software to be configured to allow carbon inflation calculations to be applied initially set at 0%",
+    "acceptanceCriteria": "The CCET contains carbon deflation profile in a library with the profile stored as an index value.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 659
+  },
+  "1540": {
+    "description": "NH User - Have the ability to Browse/Find an Forecast from top-level drill down Portfolio > Programme > Scheme > Estimates with Option description and associated EIN reference. Ability to navigate to the Forecast from this window. I should also be able to Search the Browser with Search feature by Description or MP Number etc..\r\nSupply Chain User - As NH User but limited to supplier's allocated schemes only",
+    "acceptanceCriteria": "An NH Estimator can select a project in the 'Forecast Browser' and see all forecasts for that project as long as the user has permissions to access that project. NH Estimator / NH estimating manager / HoCE can have access to all project estimates, IFT revisions for all portfolio and programmes under the Enterprise.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 311
+  },
+  "1550": {
+    "description": "NH User & Supply Chain User - When updating a Revision of my Forecast I want to be able to add Resources from the NH Resource Library (Code & Description only - No Rate) into my Items and add my own rate. If a Resource does not exist in the NH Resource Library, I want to be able to collect these and make a request to an NH Administrator to add these into the Resource Library for use in the Forecast. - This process would sit outside of the software - e.g. Excel template the supplier completes and formally submits to NH for NH to add to library if approved.",
+    "acceptanceCriteria": "CCET administrator can disable the ability for a Project User to add resources to an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding resources only from the assigned Resource Library. This setting can be applied by CCET administrator in IFT modules to all IFT revision settings or to a specific Project.\r\nA Project User when above settings allow, can when producing an IFT revision and/or revisions\r\n• add resources from the CCET library(code and description only, without a rate) to their items and apply their own rates.\r\n• A Project User can add resources from the assigned resource library or libraries (i.e. to which they have permission for the project) to the Items in their forecast and enter a new rate for the resource\r\n• where a required resource isn’t available in the CCET Library, they can request an NH Administrator to add them in CCET library before using the new section/cost element/item/resource. The request and approval process to add to CCET library would take place outside the software.\r\n• When producing a forecast / forecasts, a Project User, when above settings allow, can request an NH Administrator to add a Resource to a Resource Library that the Project User has permission to access before using the new resource. The request and approval process to add the Resource to this library would take place outside the software.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 262
+  },
+  "1560": {
+    "description": "NH User & Supply Chain User - I will need to be able to create a new Revision from a previous Revision and have some form of Revision referencing auto-populate. Creating a new Revision should be simple, such as a 'Create New Revision' button feature or similar.",
+    "acceptanceCriteria": "A NH Estimator or Project User can select a menu item \"generate new revision\" in an existing forecast and create a new forecast.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 232
+  },
+  "1570": {
+    "description": "NH User & Supply Chain User - I want the ability to edit and change the carbon emissions factors pre-populated in the Forecast by the \"Baseline\" scheme and carbon library, at Resource level to a bespoke value to suit my estimate.",
+    "acceptanceCriteria": "A CCET user preparing a forecast(called as Project User), can edit the carbon emissions factors of a resource in the forecast for each applicable PAS 2080 module.\r\n\r\nA Project User preparing a forecast can edit the carbon emissions factors of a resource in the forecast for each applicable PAS 2080 module.\r\n\r\nFor each IFT revision and/or revisions, Project User uses Project User Specific Library (PUSL) (this is A user specific cost and carbon library for applicable project) to produce forecast revision/ revisions.\r\n\r\nProject Users can add Resources marked as \"unassured\" to the Project Specific Library with unassured carbon values for each Resource.\r\n\r\nOnce approved through an assurance process outside CCET, these Resources are updated to \"assured\" status within the Project Specific Library.\r\n\r\nWhen creating forecasts, Project Users can copy or drag low-carbon assured resources from the Dynamic Library of Low Carbon Products (DLLCP) to the Project Specific Library (PSL) for use in Forecasts\r\n\r\nAn Administrator can copy or drag low-carbon assured resources from the PSL to the DLLCP, making them available for other projects and keeping the DLLCP up to date with the lowest carbon resources\r\nProject Users can add STAR ITEMS marked as \"unassured\" to the Project User Specific library. Once approved through an assurance process outside CCET, these items are updated to \"assured\" status within the Project User Specific library.\r\nWhen creating IFT revisions, Project Users can:\r\n• Copy or drag low-carbon assured resources from the Dynamic Library of Low Carbon Products (DLLCP) to the Project User-Specific Library (PUSL) for use IFT revision and /or revisions.\r\n• Copy or drag low-carbon assured resources from the PUSL to the DLLCP, making them available for other projects and keeping the DLLCP up to date with the lowest carbon resources.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 263
+  },
+  "1580": {
+    "description": "As a Project User, I want to be able to export the provided Forecast (cost and carbon) to MS Excel so that I can make changes to quantities, rates, carbon factors, expenditure profile, inflation profile, risk register and then upload these changes in bulk from MS Excel to the software for Forecast submission.",
+    "acceptanceCriteria": "A Project User, to which a forecast has been assigned, can export the following to MS Excel for the forecast (baseline or IFT/Forecast other) covering all Sections, Cost Elements and Items in the forecast's 'base estimate’ /IFT(Forecast): \r\n- Section codes, Section Description and Section Cost (if Section cost data is visible) \r\n- Cost Element codes, Cost Element Description and Cost Element Costs (if Cost Element cost data is visible) \r\n- the Item codes, Item descriptions, Item quantities, Item units, Item cost rates and item costs (if rate / cost data is visible) \r\n- the forecast Resources by Item (including Resource codes, Resource descriptions, Resource quantities, Resource units, Resource cost rates and Resource costs (only if rate / cost data is visible) with carbon emissions per carbon module for each resource and Item totals per module",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 244
+  },
+  "1590": {
+    "description": "As an NH reviewer of the Forecast, I want the ability to ensure that Project Users use only the item library and resource library descriptions and codes (they can change rates) so that the libraries do not get cluttered with \"similar but different\" items / resources. Therefore I want the system to validate Forecast submissions vs. the existing item and resource libraries and any non-conformances are declined. These can be added to the library through a business process (see FR 1550).",
+    "acceptanceCriteria": "A CCET administrator can disable the ability for a Project User to add items to a forecast version an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding items only from the assigned section/cost element/Item/resource Library.\r\nA CCET administrator can disable the ability for a Project User to add items to a forecast by manual entry and load spreadsheet, i.e. restrict Project Users to adding items only from the assigned Item Library. A CCET administrator can disable the ability for a Project User to add Resources to a forecast by manual entry and load spreadsheet, i.e. restrict Project Users to adding Resources only from the assigned Resource Library.\r\nThese settings can be applied to a specific Project or across IFT templates for project estimate types in FR10. These settings can be applied to specific projects or to all projects so that they apply to all forecasts across the CCET.\r\nSegments are replicated from base estimates and only after changing the base estimate the IFT version can be replicated for the required segmentation. CCET checks Project Users’ IFT revision submission and/or submissions against the CCET library (sections, cost elements, items, and resources) and the base estimate segmentation. Any non-conformances are rejected. If needed, an Estimator can re-segment the base estimate and update the IFT template, accordingly, allowing the Project User to produce IFT revision/forecast using the revised segmentation.\r\n\r\nA CCET administrator can disable the ability for a Project User to add resources to an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding resources only from the assigned Resource Library. This setting can be applied to a specific Project.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 264
+  },
+  "1600": {
+    "description": "Use specific dates over which to profile the expenditure and assign a continuous profile",
+    "acceptanceCriteria": "Project user preparing a forecast can enter specific start and finish dates for the Project's milestones. These input dates set the timeline for profiling expenditure.\r\n\r\nA Project user preparing a forecast can enter specific start and finish dates for the Project's milestones. These input dates set the timeline for profiling expenditure.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 273
+  },
+  "1610": {
+    "description": "NH User & Supply Chain User - I want to use specific dates over which to profile the expenditure and assign a continuous profile, as long as these dates match with the Project User's entered dates for the set milestones, e.g. by PCF Stage Dates, 3D Stage Dates, O&M Assessment Period etc… It will not give full freedom to the user as any non-conformity to the BES system will not allow migration back from the Forecast to BES.",
+    "acceptanceCriteria": "For each cost element within a forecast, the expenditure profile runs between a start and finish date for the cost element that exactly matches the project milestones' start and finish dates entered by a Project User.\r\n\r\nCCET include IFT/forecast build for various forecast types in FR10 that allows Project users to input dates and / or expenditure profile or import dates and / or expenditure profile via excel.\r\nThe Project User specific dates (PCF stage, 3D stages, O&M assessment periods, LTA assessment periods) gets applied to default expenditure profiles from library to produce an expenditure profile at cost element and / or Section level. Where full expenditure profile is available rather than relying on default profiles, these can be imported in CCET IFT to produce the expenditure profile.\r\nThe expenditure profile by either or both of the above approaches can be entered and produced by FY Quarters or Months (via a toggle) against section/ Cost Element levels in IFT/forecast template.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 274
+  },
+  "1620": {
+    "description": "NH User & Supply Chain User - I want to be able to enter my spend profile by FY Quarters or Months (via a toggle) against the defined Cost Elements.",
+    "acceptanceCriteria": "When preparing a forecast, a Project User can see profiled expenditure per month, per quarter or per annum by changing a setting to show costs by these time periods.\r\n\r\nWhen preparing a forecast, a Project User can see profiled expenditure per month, per quarter or per annum by changing a setting to show costs by these time periods.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 275
+  },
+  "1630": {
+    "description": "NH User - I want to be able to see one Revision alongside another Revision for the same scheme and compare the build up with tracked changes. Supply Chain User - As NH User but limited to supplier's allocated schemes only",
+    "acceptanceCriteria": "A CCET User can produce a comparison report showing side-by-side comparison of two selected forecasts (either baseline forecast and revision or two other revisions).",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 288
+  },
+  "1640": {
+    "description": "See FR 1590 - On each Forecast screen, add a toggle to view cost and carbon data or both for the baseline and live Forecast",
+    "acceptanceCriteria": "A CCET User Project User can select whether to view carbon data alongside cost data or only cost data live when working in / IFT revision / forecast viewing a forecast for baseline or IFT revision / forecast",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 315
+  },
+  "1650": {
+    "description": "NH User &Supply Chain User - On each Forecast screen, add a toggle to view cost and carbon data or both for the baseline and latest / any Forecast Revision",
+    "acceptanceCriteria": "A CCET Project User and Estimator can select whether to view carbon data alongside cost data when working in / IFT revision / forecast viewing a forecast for baseline or latest or any IFT revision / forecast",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 316
+  },
+  "1660": {
+    "description": "NH User - At a summary level, I want to be able to compare the \"Baseline\" total cost and carbon against the Supplier's forecast at Scheme Level > Region > Programme > Portfolio Default is to use the latest Revision(s) versus the Baseline(s), but the user is able to select an alternate supplier Revision if required. Supply Chain User - As NH User but limited to supplier's allocated schemes only",
+    "acceptanceCriteria": "A CCET User can produce a comparison report showing side-by-side comparison of two selected forecasts (either baseline forecast and revision or two other revisions).\r\nIn CCET a NH User (Estimator / IFT Reviewer/ Estimating manager / HOCE) can compare the \"Baseline\" total cost and carbon against IFT revision forecast at Project Level > Region > Programme > Portfolio in a project along with tracked changes for any project in CCET. Comparison uses the latest Revision(s) versus the Baseline(s) as default, but the user is able to select any alternate project IFT Revision if required. The comparison is seen of on IFT screens and can be exported as excel and PDF reports from CCET.\r\n\r\nThe above is required by each Life cycle stage and Whole Life cycle for cost and carbon for all estimate types in FR10.\r\nA CCET User can only produce reports for those projects that the user has permissions to access.\r\nIn CCET IFT revision screen Project User (Supply Chain User) can compare the \"Baseline\" total cost and carbon against IFT revision forecast at Project Level > Region > Programme > Portfolio in a project along with tracked changes only for their allocated/assigned project along with tracked changes. The comparison is seen of on IFT screens and can be exported as excel and PDF reports from CCET.\r\n\r\nThe above is required by each Life cycle stage and Whole Life cycle for cost and carbon for all estimate types in FR10.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 292
+  },
+  "1670": {
+    "description": "NH User & Supply Chain User - I want to be able to track changes made in the latest Revision against the immediate Forecast Revision it preceded. This is to allow a user/reviewer to see where alterations have been made.",
+    "acceptanceCriteria": "In CCET a NH User (Estimator / IFT Reviewer/ Estimating manager / HOCE) for any project can track changes in the latest IFT revision alongside immediate IFT revision forecast that preceded it including baseline estimate. The comparison shows tracked change comments in comparison. This allows NH users/reviewers to see what and when changes have happened on projects.\r\n\r\nIn CCET a Project User only for the assigned / allocated project can track changes in the latest IFT revision alongside immediate IFT revision forecast that preceded it including baseline estimate. The comparison shows tracked change comments in comparison. This allows Project User to see what and when changes have happened on projects.\r\n\r\nThe above comparison report for IFT revision FR10 estimate shows side-by-side comparison of, but not limited to:\r\n• Total forecast Project costs and carbon by PAS 20280 modules\r\n• Total forecast Section costs and carbon by PAS 20280 modules\r\n• Total forecast Cost Element costs and carbon by PAS 20280 modules\r\n• Item and resources quantities*\r\n• Item cost rates and carbon rates by PAS 20280 modules\r\n• Item costs and carbon by PAS 20280 modules\r\n• Resource costs and carbon by PAS 20280 modules*\r\n• Fee\r\n• Risk/Opportunity/Uncertainty – cost and carbon by PAS 20280 modules\r\n• Cost expenditure and carbon profile by PAS 20280 modules\r\n• Inflation\r\n• Portfolio risk – cost and carbon by PAS 20280 modules\r\n\r\nThe above is required by each Life cycle stage and Whole Life cycle for cost and carbon for all estimate types in FR10.\r\n\r\n*Full Resource-by-Item reports to be generated for export to Excel and PDF but may not be practical to show on screen within the CCET Phase 3 scope.\r\n\r\nA CCET User can produce a comparison report showing side-by-side comparison of two selected forecasts (including latest revision vs. pervious revision).",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 293
+  },
+  "1680": {
+    "description": "NH User & Supply Chain User - I want to be able to view the \"Baseline\" alongside any Revision (including the latest) with the tracked changes made against the \"Baseline\" in Realtime",
+    "acceptanceCriteria": "In CCET a NH User (Estimator / IFT Reviewer/ Estimating manager / HOCE) for any project can see tracked changes between current or any previous IFT revisions alongside baseline estimate along with change comments in real time. The comparison shows tracked change comments in comparison including side-by-side comparison of, but not limited to:\r\n• Total forecast Project costs and carbon by PAS 20280 modules\r\n• Total forecast Section costs and carbon by PAS 20280 modules\r\n• Total forecast Cost Element costs and carbon by PAS 20280 modules\r\n• Item and resources quantities*\r\n• Item cost rates and carbon rates by PAS 20280 modules\r\n• Item costs and carbon by PAS 20280 modules\r\n• Resource costs and carbon by PAS 20280 modules*\r\n• Fee\r\n• Risk/Opportunity/Uncertainty – cost and carbon by PAS 20280 modules\r\n• Cost expenditure and carbon profile by PAS 20280 modules\r\n• Inflation\r\n• Portfolio risk – cost and carbon by PAS 20280 modules\r\nThe above is required by each Life cycle stage and Whole Life cycle for cost and carbon for all estimate types in FR10.\r\n\r\n*Full Resource-by-Item reports to be generated for export to Excel and PDF but may not be practical to show on screen within the CCET Phase 3 scope.\r\nWhen working in a forecast, A Project User can view a screen that shows, in real-time, the baseline forecast alongside the current forecast and shows the following: \r\n- Total forecast Project costs and carbon\r\n- Total forecast Section costs and carbon \r\n- Total forecast Cost Element costs and carbon \r\n- Item quantities \r\n- Item cost rates and carbon rates \r\n- Item costs and carbon\r\n",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 296
+  },
+  "1681": {
+    "description": "NH User - When the user selects a scheme and a \"Baseline\" estimate, there should be a summary table shown with all the associated revisions, displaying the Cost and Carbon estimate values for the baseline and Forecasts with the percentage Increase or Decrease Supply Chain User - As NH User but limited to supplier's allocated schemes only",
+    "acceptanceCriteria": "An NH Estimator can select a project in the 'Forecast Browser' and see all forecasts for that project as long as the user has permissions to access that project.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 297
+  },
+  "1690": {
+    "description": "Ability to add a segment and associated cost element from a template - FR not needed. Addressed through existing functionality (FR . (Not needed as Forecast PCF0-2 only allows high-level changes and low level changes to a fixed BoQ, plus the ability to add high-level scope - just mandate them to allocate this to a current Cost Element for forecasting purposes. For Forecast PCF3-5 the Supplier data can be exported and imported as long as it aligns to the CESS Cost Elements)",
+    "acceptanceCriteria": "Not applicable - \"FR not needed“ This functionality required for MP PCF 0 to 2 stage estimates, is part of both Phase 1 and 2 and CCET Phase 3 scope requirements which is to be delivered as part of CCET phase 3.\r\n\r\nMP PCF Stage 0 to 2 and MP Stages 3 to 5 – IFT approach and process as per the excel IFTs provided to Benchmark.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 265
+  },
+  "1700": {
+    "description": "NH User - I want to be able to approximate cost impact at the top down using the PCF Stage 0-2 Forecast - the user can only change the scope, risk, schedule, schedule of other costs, they cannot edit Items or rates. This allows high-level scope changes to be made quickly based on pre-defined cost estimating relationships between the high-level levers and the associated items. Supply Chain User - Not applicable",
+    "acceptanceCriteria": "An NH Estimator can amend input variables at Project, Section, and / or Item level that make top-down changes to existing item quantities - subject to calculations for the relationships between input variable and Item quantities being set up in the forecast.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 250
+  },
+  "1710": {
+    "description": "NH User & Supply Chain User - I want to see and be able to edit input fields to cover the existing \"Change Key Data\" worksheet in the MS Excel Forecast.",
+    "acceptanceCriteria": "A CCET user, to which a forecast is assigned, can amend the following subject to administration settings for their settings:\r\n- VAT % - NRVAT Hybrid % \r\n- allocation of library Fee percentage for each Section / Cost Element \r\n- Programme Risk - Portfolio Risk",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 251
+  },
+  "1720": {
+    "description": "See FR 1690 - Flexibility to add Segments to the Estimate Structure of Sections and Cost elements when working on an Estimate as a Contractor",
+    "acceptanceCriteria": "Not applicable - \"FR not needed“\r\nIf a Project User needs a different segmentation in an IFT revision in CCET,\r\n• The Project User can request the NH Estimator to revise the baseline estimate with the desired segmentation and provide an updated IFT revision in CCET.\r\n• The NH Estimator can create the revised re-segmented baseline estimate as requested and provide the revised IFT revision in CET to the Project User.\r\nThe communication process of requesting will take place outside of CCET\r\nSegments in a Forecast are replicated from the NH baseline estimate or duplicated forecast.\r\nSegments in a Forecast can be edited to revise the segmentation, except for the locked baseline Forecast.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 266
+  },
+  "1730": {
+    "description": "As a Project User, when completing an Forecast PCF0-2, I want the ability to make changes only to the existing item quantities, schedule milestones, risks. Any bespoke items / items outside the existing bill can be added to the risk Revision register as an \"Uncertainty\" adjustment.",
+    "acceptanceCriteria": "A CCET administrator can disable the ability for a Project User to add items to an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding items only from the assigned Item Library. This setting can be applied to a specific Project.\r\n\r\nA CCET administrator can disable the ability for a Project User to add resources to an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding resources only from the assigned Resource Library. This setting can be applied to a specific Project.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 252
+  },
+  "1750": {
+    "description": "NH User & Supply Chain User - I want to see the \"Scope\" split in different windows for the Contractor's works and the NH's Schedule of Other Costs (SoOC). This will make it easier to review the NH SoOC and Contractor's scope.",
+    "acceptanceCriteria": "When preparing or reviewing a forecast, a Project User can see a summary of costs for selected and/or all Sections and cost elements (e.g. 'Schedule of Other Costs' for an MP scheme) alongside the BoQ (schedule of items) so that forecasts costs can be compared with baseline estimates.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 267
+  },
+  "1760": {
+    "description": "See FR 1840 - Capture an estimate containing actual costs and actual carbon against the resources within an M&R estimate representing/recording what occurred at a point in time of operations.",
+    "acceptanceCriteria": "An Operation and Maintenance forecast contains \"planned\" and \"actual\" columns at Item level and above for the following fields for each year of a forecast's assessment period: \r\n- Item quantity - Item cost (including resources-level data for planned / forecast items) \r\n- Item carbon (with module split): \r\n- Cost Element cost \r\n- Cost Element carbon \r\n- Section cost \r\n- Section carbon (with module split)",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 253
+  },
+  "1770": {
+    "description": "See FR 1840 - M&R Estimates - Ability to update the forecast quantities and estimated carbon for a given time period from the original estimate to actual quantities and actual carbon. Then, re-estimate the quantities for the remaining period.",
+    "acceptanceCriteria": "An Operation and Maintenance forecast contains \"planned\" and \"actual\" columns at Item/resource level and above for the following fields for each year of a forecast's assessment period: - Item/resource quantity (resources for planned only, not actuals)*; - Item/resource cost (resources for planned only, not actuals)*; - Item carbon (with module split); - Cost Element cost; - Cost Element carbon; - Section cost; - Section carbon (with module split)\r\n*For actuals resource level data(quantity and rates) may not be available however for planned data will be available at resource level.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 268
+  },
+  "1780": {
+    "description": "See FR 1840 - M&R Estimates - Ability to update the forecast quantities and estimated costs for a given time period from the original estimate to actual quantities and actual costs. Then, re-estimate the quantities for the remaining period using the library rates.",
+    "acceptanceCriteria": "An Operation and Maintenance forecast contains \"planned\" and \"actual\" columns at Item level and above for the following fields for each year or month of a forecast's assessment period:\r\n- Item quantity \r\n- Item cost \r\n- Item carbon (with module split): \r\n- Cost Element cost \r\n- Cost Element carbon\r\n - Section cost \r\n- Section carbon (with module split)\r\n\r\nA Project User producing a forecast for an Operation and Maintenance project can input actual Item quantities and Item costs in dedicated \"actual\" columns for each past year or month in the forecast's assessment period.\r\n\r\nIn an O&M forecast, the data in the \"planned\" and \"actual\" columns can be reported to show planned vs. actual totals by year or month and position on screen and in reports.\r\n\r\n[Please see FR1770 for related FR and acceptance criteria]",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 271
+  },
+  "1800": {
+    "description": "Covered by FR 1700 - Stage 0-2 there are no rate changes are to be made in the system.",
+    "acceptanceCriteria": "Not applicable - see FR1700.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 256
+  },
+  "1810": {
+    "description": "As an NH or Project User for M&R estimates, I want to have revision reporting , so I can update baseline with actuals / reforecasts and compare the changes baseline v Revision (for example, intervention quantities, costs, reforecast quantities, risk allowances). This will be for a rolling period with a c. 60 month period for viewing actual vs. predicted.",
+    "acceptanceCriteria": "For an O&M forecast, a CCET User with permissions to access the project can produce a detailed comparison report showing side-by-side comparison of baseline O&M forecast and a revision. The report shall show the following data for baseline vs. revision for each selected year:\r\n- Total forecast Project costs \r\n- Total forecast Section costs \r\n- Total forecast Cost Element costs \r\n- Item Asset quantities \r\n- Item Intervention frequencies \r\n- Item cost rates \r\n- Item costs A CCET user can generate a similar report for carbon forecast data.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 301
+  },
+  "1820": {
+    "description": "NH User & Supply Chain User - Cost and Carbon Estimates - As a Project User, I want to be able to view a dashboard / report with the estimated / actual cost and carbon expenditure (driven by resource profiles) over the assessment period.",
+    "acceptanceCriteria": "• A user can generate a report or dashboard for an Operation and Maintenance estimate that shows the estimated and actual cost and carbon expenditure over the assessment period\r\n• The estimated and actual cost and carbon expenditure can be shown on the same dashboard\r\n• The estimated and actual cost and carbon expenditure can be shown by month with annual totals\r\n• Cost and carbon expenditure profile reports can be generated by Project Users for scheme forecasts\r\n• The estimated cost and carbon profile in the dashboard are linked to resource profiles used to produce forecast cost and carbon expenditure",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 393
+  },
+  "1830": {
+    "description": "The system shall assess and report carbon for each PAS 2080 stage and module as set out in subject matter expert Circular Ecology's recommended module breakdown selected from RICS 2nd Edition of Whole Life Carbon Assessment. As an estimator, I want Project Users to input a forecast that follows the structure of NH estimate (for each of the estimate types set out in Scope Table A) at an appropriate level of the WBS",
+    "acceptanceCriteria": "Forecasts align with the PAS 2080 modules configured in the CCET for each Estimate Type in FR10 for Major Projects, O&M, Renewals and Long Term Appraisal so that NH Estimates and Project Users' forecasts have like-for-like comparison of carbon estimates that comply with the carbon modules defined in NH file \"W.16 - Modules for Whole Life Carbon and alignment to latest RICS guidance\" prepared by Circular Ecology.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 257
+  },
+  "1840": {
+    "description": "Applicable to Maintenance and Response estimates - As a Project User, I want to produce an interim forecast that takes the baseline M&R estimate and updates it incrementally (e.g. monthly or annually) with the actual quantities of interventions carried out, actual costs and then reforecast the intervention levels in remaining years (e.g. year 1 is updated with actuals and years 2-5 are reforecast). As a project user, I want to be able to see easily the impact of my reforecast (compare the baseline and reforecast) so that I am able to reforecast and plan intervention levels to fit with the baseline budget estimate. This approach should be consistent with the interim forecasting functionality for MP and AR.",
+    "acceptanceCriteria": "An Operation and Maintenance forecast contains \"planned\" and \"actual\" columns at Item level and above for the following fields for each year of a forecast's assessment period: \r\n- Item quantity\r\n- Frequency and intervention quantity for planned - Item cost - Item carbon (with module split): \r\n- Cost Element cost \r\n- Cost Element carbon \r\n- Section cost \r\n- Section carbon (with module split)\r\n\r\nA Project User producing a forecast for an Operation and Maintenance project can input actual Item quantities and Item costs in \r\ndedicated \"actual\" columns for each past month/year in the forecast's assessment period.\r\n\r\nIn an O&M forecast, the data in the \"planned\" and \"actual\" columns can be reported to show planned vs. actual totals by month/year and position on screen and in reports.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 259
+  },
+  "1850": {
+    "description": "As an estimating manager, I want Project Users to submit interim forecasts for each of the estimates types set out in Scope Table A in a consistent way, similar to the Forecast approach on MP estimates. I want Project Users to input a forecast that follows the structure of NH estimate (for each of the estimate types set out in Scope Table A) at an appropriate level of the WBS, so that valid comparison reports can be produced at an appropriate level of the WBS.",
+    "acceptanceCriteria": "Estimators can create Interim forecast Templates(Forecasts) for cost and carbon at section, segment, cost element, item and resource level in CCET for each estimate type in Scope Table A consistent to the forecast approach in MP IFT to allow Project Users to produce an interim forecast revision/revisions. The IFT versions can be used to provide change analysis between baseline estimate and interim forecast versions or between interim forecast versions.\r\nThe IFT forecast build in CCET is comprehensive and includes for each and all estimate type in Scope Table A and is consistent with a build which is a replica of base estimate.\r\n\r\nThe work breakdown structure of forecasts aligns with the configured WBS for each Estimate Type so that NH Estimates and Project Users' forecasts have like-for-like comparison of cost and carbon estimates by WBS.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 260
+  },
+  "1861": {
+    "description": "As an estimating manager, I want to be able to enter estimate specific reviewers and approvers for an estimate, but also control the final approver of an estimate (e.g. through an administrator setting) so that this is limited to staff of appropriate authority to authorize the estimate for issue.",
+    "acceptanceCriteria": "• As an Estimating Manager / Estimating Administrator with relevant permission, I can assign reviewers so that estimates initiated from approved requests are reviewed by relevant users.\r\n• As an Estimating Administrator, I can set up and manage the list of final approvers for an estimate so that only the relevant users have the authority to provide final approval.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 408
+  },
+  "1870": {
+    "description": "\"As an estimating manager, I want to be able to tag a single, fully approved estimate to identify it as the \"Reference Estimate\" for that MP, M&R or AR scheme. This will be the estimate that is carried forward for data and reports at programme and portfolio level and is tagged as the \"\"Reference Estimate\"\" against which comparisons can be made. The \"\"Reference Estimate\"\" data for cost and carbon are to be from the estimate. Similarly, for Project Users interim forecasting functionality, a \"\"Preferred Revision\"\" is to be identified for each scheme where there is a interim forecast. \"",
+    "acceptanceCriteria": "• A user can generate a comparison report of any estimate for a scheme vs another estimate for the same scheme, on screen in the software\r\n• The estimate being compared against will be identified as the ‘reference estimate’ for the specific comparison for the scheme\r\n• The estimate(s) compared against the ‘reference estimate’ will be identified as the ‘comparator estimate(s)’ for the specific comparison\r\n• A user can generate a report for a scheme with multiple ‘comparator estimate(s)’ but only one ‘reference estimate’\r\n• An estimate for each scheme in a programme can be tagged as the ‘reference estimate’ to create a reference estimate for the programme\r\n• An estimate for each of the schemes in the programme can be tagged as the ‘comparator estimate’ to create a comparator estimate for the programme\r\n• Reference and comparator estimates for programmes can be aggregated to provide portfolio reference and comparator estimates\r\n• A Project User can tag a submitted forecast to NH as the ‘Preferred Forecast’ for a scheme, which can be used to generate reports for the scheme\r\n• and aggregated preferred forecasts at programme and portfolio level",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 394
+  },
+  "1890": {
+    "description": "As an NH reviewer of interim forecasts / estimates submitted by a Project User, I want to be able to see which carbon emission factors in the submitted interim forecast / estimate in the system are:\r\n- using assured NH library data- using an uploaded EPD or similar supporting evidence / certificate file\r\n- plugged, without supporting evidence \r\n\r\nThis is so the reviewer of the carbon estimate can easily identify the quality of data and areas to review.",
+    "acceptanceCriteria": "The NH reviewer of a submitted forecast can generate a report of the carbon estimate that identifies the basis of the carbon emission data for each resource as follows:\r\n- carbon emissions factor from assigned carbon resource library \r\n- cost-to-carbon factor from assigned carbon resource library\r\n- Resource delinked from resource \r\n- Plugged carbon factors - source evidence / EPD reference\r\nThe NH reviewer of a submitted IFT / forecast (cost and carbon) can see in CCET IFT and generate a report of the carbon estimate forecast in IFT revision that identifies the basis of the carbon emission data for each resource from the Project User Specific library.\r\nProject User Specific Library (PUSL) used by Project user to produce IFT revision / forecast is built in CCET using the following sources.\r\ncarbon emissions factor from NH baseline CCET carbon resource library\r\ncost-to-carbon factor from NH baseline CCET carbon resource library\r\nassured carbon emission factor for resources including the EPD, from Dynamic Library of Low Cabon products.\r\nassured carbon emission factor for resources including the EPD, from Project User Specific Library (PUSL)\r\nunassured carbon emission factor for resources or cost to carbon factors, from Project User Specific Library (PUSL)*\r\n\r\nThe NH reviewer can generate a report showing whether each Resource has ‘assured’ or ‘unassured’ carbon emission factors.\r\n\r\n* see terminology amendments in Annex A",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 276
+  },
+  "1900": {
+    "description": "As Head of Estimating, I want the terminology in the system to be compliant with recognised cost estimating standards and NH terminology. Before the system is launched, I want a complete review of all fields, screens, reports, templates and models to ensure terminology in the system is correct and consistent with standards.",
+    "acceptanceCriteria": "The fixed terminology in the CCET is consistent with recognised standards for lifecycle costing and carbon estimating including: \r\n- RICS professional guidance, UK Lifecycle costing \r\n- ICMS: Global Consistency in Presenting Construction Life Cycle Costs and Carbon Emissions \r\n- PAS 2080 Carbon management in buildings and infrastructure \r\n- RICS, Whole life carbon assessment for the built environment",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 690
+  },
+  "1901": {
+    "description": "As Head of Estimating, I want to be able to include NH organisation logos on the system screens, dashboards and reports.",
+    "acceptanceCriteria": "The NH logo is shown on every principal screen, dashboard and report of the CCET.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 692
+  },
+  "1910": {
+    "description": "The system is to allow estimate reviewers and approvers to be configured for all estimates (note carbon reviewers and approvers may be different staff than cost estimates).",
+    "acceptanceCriteria": "• As an Estimating Manager / Estimating Administrator with relevant permission, I can assign multiple reviewers so cost and carbon specifics of the estimate can be reviewed separately by the right reviewers.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 409
+  },
+  "1920": {
+    "description": "As and Estimating Manager, I want to see easily which schemes and interim forecasts are assigned to each Project User. I also want to be able to see a live view of when Forecasts have been updated.",
+    "acceptanceCriteria": "An NH Estimator with permissions to access all projects (e.g. an Estimating Manager) can view a comprehensive ‘IFT revision / Forecast Browser' that shows the following data: \r\n- Forecast Project names and other details\r\n- Number of IFT revisions / Forecasts \r\n- User to which Forecast is assigned \r\n- Linked NH Estimate \r\n- NH Estimator Reviewer \r\n- Current IFT/ Forecast Status \r\n- Current IFT/ Forecast Due Date \r\n- Current IFT/ Forecast Submission Date",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 317
+  },
+  "1930": {
+    "description": "Estimate submissions need to be time stamped.",
+    "acceptanceCriteria": "• As a CCET user, I can view timestamps on estimates so that I know when the estimate was submitted for review.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 418
+  },
+  "1950": {
+    "description": "As an Estimator, I want to be able to compare an IFT with a \"Preferred Revision\" and the last approved estimate / \"Reference Estimate\". I want the comparison to be similar to the CERT file \"Presentation Data\" worksheet, with a free text field to record changes from the last submission.",
+    "acceptanceCriteria": "• A user can generate a comparison report of any IFT “Preferred Revision” submitted by a Project User for a scheme vs the last approved NH estimate / “Reference Estimate” for that scheme\r\n• A user can generate a comparison report of any IFT Preferred Revision forecast submitted by a Project User for a scheme vs the NH estimate tagged as a ‘reference estimate’ for that specific comparison\r\n• Costs/Carbon can will be compared at Section, cost element, resource level, on screen in the software\r\n• Free-text fields can be populated at Project level to provide explanation of the delta between the forecast and estimate\r\n• The comparison report can be exported to PDF and Excel format, Including the comments on explanation of the delta between the forecast and estimate",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 395
+  },
+  "1960": {
+    "description": "See FR 1920 - Identify which projects have submitted an Forecast",
+    "acceptanceCriteria": "Not applicable - see FR 1920.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 304
+  },
+  "1970": {
+    "description": "See 1860 and additional FR entered under that FR. Need to be able to see by who and when each individual estimate has been reviewed / approved. This will allow an Estimating manager to review progress and status of the estimate.",
+    "acceptanceCriteria": "• As a CCET user, I can view the status of estimate requests and estimate reviews so that I can track the progress of estimates.\r\n• As a CCET user, I can view the name of each reviewer and approver who has approved an estimate with the date of each approval.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 410
+  },
+  "1980": {
+    "description": "As a system user, I want to be able to quickly see just the approved estimates within the \"Estimate Browser\" so I can quickly select and open the approved estimate for a scheme.",
+    "acceptanceCriteria": "• As a CCET user, I can filter estimates by status in the Estimate Browser so that I can find approved estimates quickly.\r\n• As a CCET user, I can select which fields/columns are displayed in the Estimate Browser so that I can use the screen space to view relevant data.\r\n• As a CCET user, I can open any estimate available/accessible to me in the Estimate Browser so that I can see the estimate details.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 419
+  },
+  "1981": {
+    "description": "As a user, I want to have a comprehensive \"landing page\" when opening the system, which contains links to all parts of the system functionality in one place, e.g. components and process flows for producing estimates, scenario analysis, accessing PowerBI reports, etc.",
+    "acceptanceCriteria": "There is a dedicated “tile” menu item for “Scenario Analysis” on the CCET landing page.",
+    "srsChapter": 7,
+    "linkedStory": "",
+    "row": 326
+  },
+  "1990": {
+    "description": "As a reviewer of an Interim Forecast submission, I should have the ability in the software to approve or reject an Forecast revision, and record the reasons for rejection / comments so that these can be communicated to the submitter.",
+    "acceptanceCriteria": "The NH Reviewer of a submitted forecast can approve or reject the IFT revision submission. This status is visible to the Project User assigned to the IFT revision / forecast in the 'Forecast Browser'.\r\n\r\nThe NH Reviewer of a submitted IFT revision / forecast can record review comments that summarise the reasons for approval or rejection of the IFT revision / forecast submission. These comments are visible to the Project User assigned to the IFT revision / forecast.\r\n\r\nThe submission of IFT revision / forecast submission of a forecast and Reviewer's approval / rejection are time and date stamped.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 277
+  },
+  "2000": {
+    "description": "As an Estimating Manager, I want to be able to see easily a progress tag and reports for the progress of all estimates that are in production. This should be consistent with workflow milestones across all estimate types.",
+    "acceptanceCriteria": "• As a CCET user, I can view reports / dashboards by estimate status so that I can track the progress of estimates across estimate workflow milestones.\r\n• As a CCET user, I can see the status of each estimate in the estimate browser",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 411
+  },
+  "2010": {
+    "description": "Ability to apply the existing library resources and cost to carbon factors in a quick and efficient way ",
+    "acceptanceCriteria": "The cost-to-carbon factors are stored for specified Resource Groups.  ",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 575
+  },
+  "2020": {
+    "description": "This feature is already available, the contractor will then load an EPD, and once the authority validates the new resource carbon value, the updated resource will become available in the Dynamic Carbon Library",
+    "acceptanceCriteria": "The CCET contains a Dynamic Carbon Library of carbon emission factors for NH-assured low carbon products supported by evidence such like EPDs or similar documentation.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 577
+  },
+  "2030": {
+    "description": "Ability to load into a specific estimate WBS level a full bill of quantities containing Cost and Carbon resource build-ups (i.e. an enhanced Load Spreadsheet feature)",
+    "acceptanceCriteria": "As per existing BES functionality, a full Resource build up for each Item in a BoQ can be uploaded to an estimate in the CCET. The following resource data is uploaded in this case: \r\n- Resource Code \r\n- Resource Description \r\n- Resource Quantity \r\n- Resource Unit \r\n- Resource Rate (if populated)",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 722
+  },
+  "2040": {
+    "description": "Ability to ensure that the external data being used is the current data",
+    "acceptanceCriteria": "The CCET libraries of cost and carbon resource rates / carbon emission factors include audit trail records of the following for each resource: \r\n- Source data reference (e.g. hyperlink to external data source) \r\n- Date of last update \r\n- Evidence source\r\nThese records can be used to check whether library data matches the current external data.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 647
+  },
+  "2050": {
+    "description": "Ability to set the Base Carbon library date for 2020 for cost to carbon factors. When a user enters cost to carbon factors, the library must calculate off the 2020 date (otherwise inflation will skew the carbon numbers)",
+    "acceptanceCriteria": "The CCET contains a Baseline Carbon Library of carbon emission factors for Resources at a specified base date.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 581
+  },
+  "2060": {
+    "description": "Ability to display an estimate-specific Resource Library, with cost and carbon factors",
+    "acceptanceCriteria": "The CCET contains an estimate-specific dataset of the Resources in a specific estimate and their cost and carbon rates.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 585
+  },
+  "2070": {
+    "description": "Ability to bulk upload of assured carbon factors, cost to carbon factors and EPDs to project-specific library and Dynamic Carbon Library",
+    "acceptanceCriteria": "An Administrator can upload Dynamic Carbon Library carbon factors and supporting data in bulk using an Excel template to upload the data efficiently.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 587
+  },
+  "2080": {
+    "description": "An efficient process to add resources to the Project specific library - if a resource is not available within the library and the contractor requires a new resource, the request will be sent through to NH as a new resource request to be update in the WBS e.g. Bulk Upload functionality",
+    "acceptanceCriteria": "A CCET user can request National Highways add project-specific Resources in bulk to a library for use in estimates by populating a template and issuing this request to a National Highways Administrator.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 591
+  },
+  "2090": {
+    "description": "Bulk approve EPD / emission factors for Resources within the dynamic library",
+    "acceptanceCriteria": "A National Highways Administrator receives a request from CCET users to add Resources, carbon emission factors and supporting data to the Dynamic Carbon Library in the CCET library and can select Resources from the list that are approved and are added to the library.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 593
+  },
+  "2100": {
+    "description": "Develop a controlled process to migrate / re-use Carbon emission factors for resources / items from one library to another",
+    "acceptanceCriteria": "Carbon Emission Factors can be transferred from one Carbon Resource Library to another by an Administrator.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 594
+  },
+  "2110": {
+    "description": "Library to record decarbonisation factors per year, till 2050 (TBC, depending on definition of process)",
+    "acceptanceCriteria": "The CCET stores decarbonisation factors for each year from 2020 to 2050 in a dedicated library.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 595
+  },
+  "2120": {
+    "description": "Maintain internal (assumed) Resource Library to derive carbon data (this must be separate from the Item Cost driven by the regionalised, contractual Item rate)",
+    "acceptanceCriteria": "The CCET stores multiple Resource libraries.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 596
+  },
+  "2130": {
+    "description": "Search across all the EPDs in the Dynamic Library for best cost and carbon to make the optimal decision",
+    "acceptanceCriteria": "A CCET user with access to the Dynamic Library can search for Resources, carbon emission factors and supporting data using key words, Resource categories, Resource Groups and other data fields in the Dynamic Carbon Library.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 599
+  },
+  "2140": {
+    "description": "Set up validation checks for EPDs",
+    "acceptanceCriteria": "When an EPD is uploaded as the supporting evidence of a carbon emission factor for a resource, the following data fields are stored to record the validation of the EPD data for that resource: \r\n- EPD Validation Date \r\n- Reviewer \r\n- Data Source \r\n- Notes / Limitations \r\n- Next review date",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 648
+  },
+  "2150": {
+    "description": "Establish a precedence process automatically using a stored Cost to Carbon factor when no carbon emission factor is found",
+    "acceptanceCriteria": "When the estimator selects a Resource carbon library to apply to an estimate, that library will assign carbon emission factors to each resource in the estimate that has a matching resource description in the library.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 601
+  },
+  "2160": {
+    "description": "Software to be configured to allow production of star items by area/regions per asset class with an identifier by supplier name and be available to be used on future estimates by applying automatically library or bottom up estimating. These star items should be made available from one region/area to other nationally. ",
+    "acceptanceCriteria": "An Estimator can create an Item in an estimate using Resources from the relevant Resource library for that estimate, Item, Region and supplier.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 604
+  },
+  "2170": {
+    "description": "Dedicated Cost and Carbon Resource Library",
+    "acceptanceCriteria": "The CCET contains dedicated Resource cost and carbon Libraries for each lifecycle costing stage",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 608
+  },
+  "2180": {
+    "description": "Dedicated Item Library with Regionalised rates per Area, Contractor and with Uplifts plus Fees",
+    "acceptanceCriteria": "The Resource rates held in libraries, and Item rates resulting from the sum of Resources' costs, can vary by the Region",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 609
+  },
+  "2190": {
+    "description": "Flag existing Items as Star Items",
+    "acceptanceCriteria": "Items in an Estimate can be tagged as \"Star Rates\", i.e. not part of an original set of Items for a supplier /  contract.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 614
+  },
+  "2200": {
+    "description": "Item Library for MR (with Regionalised rates per Area and Contractor)",
+    "acceptanceCriteria": "The CCET has dedicated Item and Resource Libraries of cost rates for the Operation and Maintenance lifecycle costing stages.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 616
+  },
+  "2210": {
+    "description": "Need an efficient process to add resources to the baseline library",
+    "acceptanceCriteria": "An Administrator can upload Resources, their carbon factors and supporting data to the Baseline Carbon Library in bulk using an Excel template to upload the data efficiently.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 621
+  },
+  "2220": {
+    "description": "Regionalised Library - Rates are awarded at a region (Item level) ",
+    "acceptanceCriteria": "The Resource rates held in libraries, and Item rates resulting from the sum of Resources' costs, can vary by the Region",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 623
+  },
+  "2230": {
+    "description": "Resource Library setup for Asset Renewal Estimates",
+    "acceptanceCriteria": "The CCET can store dedicated Resource Libraries for the Asset Renewal lifecycle stage.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 625
+  },
+  "2240": {
+    "description": "Ability for the project manager to review and approve and estimate, without a requirement for a separate license",
+    "acceptanceCriteria": "Where a designated Reviewer of an NH Estimate does not hold a CCET licence, the Estimator can select an option to send a time-limited hyperlink to that designated reviewer when the Estimate is ready for review.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 665
+  },
+  "2250": {
+    "description": "Ability to approve or reject a Contractor's estimate and provide comments and feedback on the rejection",
+    "acceptanceCriteria": "The NH Reviewer of an IFT revision / submitted forecast can approve or reject the submission. This is visible to the Project User assigned to the IFT revision /forecast.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 278
+  },
+  "2260": {
+    "description": "Ability to update the name of the delegated reviewer and provide digital approval",
+    "acceptanceCriteria": "An Estimating Manager can edit the name of an Estimate Reviewer at any time during production of the estimate until the estimate is approved and status changed to ‘Authorised’.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 669
+  },
+  "2270": {
+    "description": "Assign approvers and reviewers to an estimate (cost and carbon).",
+    "acceptanceCriteria": "• As an Estimating Manager / Estimating Administrator with relevant permission, I can assign multiple reviewers so cost and carbon specifics of the estimate can be reviewed separately by the right reviewers.\r\n• As an Estimating Administrator, I can setup and maintain the list of users authorised to approve estimates so that estimators can assign estimates to authorised users only for approval.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 412
+  },
+  "2280": {
+    "description": "Develop Estimate sign off form.",
+    "acceptanceCriteria": "• Software generates release forms (CE300) automatically on estimate approval.\r\n• CE300 form will be specific to the lifecycle stage - New Construction, M&R, AR.\r\n• CE300 forms can be exported to PDF.\r\n• See FRs 210, 170 and any other related to this FR.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 420
+  },
+  "2290": {
+    "description": "Need separate Cost and Carbon sign offs (CE300 forms)",
+    "acceptanceCriteria": "• Software generates a separate Carbon estimate approval form (Carbon CE300) automatically on estimate approval for estimates types included in FR10.\r\n• Carbon CE300 form will be specific to estimates types included in FR10 and to the lifecycle stage - New Construction, M&R, AR.\r\n• Carbon CE300 form will contain only Carbon data from the estimate, not Cost.\r\n• Carbon CE300 form can include images, graphs and tables.\r\n• Carbon CE300 form can be exported to PDF.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 421
+  },
+  "2300": {
+    "description": "On the approval form, a user would be required to assign approvers, e.g. Approver 1,2,3 and the associated user. Except for PM's",
+    "acceptanceCriteria": "• As an Estimating Administrator, I can set up and manage the list of final approvers for an estimate so that only the relevant users have the authority to provide final approval.\r\n• As an CCET user / Estimator, I can assign an estimate to an authorised approver so that the estimate can be approved after it passes all the required reviews.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 422
+  },
+  "2310": {
+    "description": "Record the role and name of the estimate reviewer and approver.",
+    "acceptanceCriteria": "• As a CCET user, I can see the status of estimate reviews in the Estimate Browser so that I can track my estimates.\r\n• As a CCET user, I can see the reviewers / approvers assigned to an estimate so that I have the required information.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 423
+  },
+  "2320": {
+    "description": "A contractor will required to mark the \"Contractor\" estimate as \"ready for review\"",
+    "acceptanceCriteria": "When a Project User submits an IFT revision / forecast for NH review, the status of the IFT revision / forecast is updated to \"Under Review\" or similar term. This status is visible in the 'Forecast Browser'.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 281
+  },
+  "2330": {
+    "description": "Ability to approve and timestamp the approval of the estimate. Project managers will not have access to system and will still need to approve the estimate.",
+    "acceptanceCriteria": "Estimate Reviewers will click a command button to complete a Review of the Estimate.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 671
+  },
+  "2340": {
+    "description": "Contractor should be able to add comments to the \"Rejected\" estimate, so when they re-submit the estimate in the software they can specify how they have rectified the estimate. Contractor should be able to add comments to the \"Rejected\" estimate, so when they re-submit the estimate in the software they can specify how they have rectified the estimate.",
+    "acceptanceCriteria": "When a Project User submits a revised rejected IFT revision / forecast for NH review, the Project User can enter comments to explain the revised IFT revision / forecast submission, including details of actions taken to rectify previously rejected submissions. These comments are visible to the NH Reviewer and Project User.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 282
+  },
+  "2350": {
+    "description": "Estimating managers should be able to see a summary description alongside previous v/s proposed estimate comparisons to explain the cost movement for each cost heading and this data needs to be stored.",
+    "acceptanceCriteria": "• As a CCET user, I can generate a summary estimate comparison report of a selected estimate versus the last approved estimate for that project\r\n• As a CCET user, I can enter Comments to estimates Cost element level available to me so that I can provide more information such as summary descriptions.\r\n• As a CCET user, I can view estimate comments at Cost element level in a Comparator interface so that I can view and compare explanations for cost / carbon movements.",
+    "srsChapter": 9,
+    "linkedStory": "",
+    "row": 413
+  },
+  "2360": {
+    "description": "Reviewers should be able to assign and record the analytical assurance rating for the estimate. This will include the ability to review the plugged-in items.",
+    "acceptanceCriteria": "The Estimator can upload an Analytical Assurance Statement to the Estimate Documents Folder. (Note the Analytical Assurance Statement is produced outside the software.)",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 675
+  },
+  "2370": {
+    "description": "Ability to compare the estimated cost with the outturn cost data for similar schemes at a section and cost element level. This is to ensure greater cost accuracy.",
+    "acceptanceCriteria": "Actual outturn costs for a project are entered to the CCET in a designated estimate, classified as an 'Actual Outturn Cost' or similar (configurable estimate classification).",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 640
+  },
+  "2380": {
+    "description": "Distinguish between Resources with carbon factors coming from the Base Carbon Library and those with carbon factors plugged in by the Contractor but not yet assured",
+    "acceptanceCriteria": "The NH reviewer of a submitted forecast can generate a report of the carbon estimate that identifies the basis of the carbon emission data for each resource as follows:\r\n- carbon emissions factor from assigned carbon resource library \r\n- cost-to-carbon factor from assigned carbon resource library\r\n- Resource delinked from resource \r\n- Plugged carbon factors \r\n- source evidence / EPD reference\r\n\r\nThe NH reviewer of a submitted IFT / forecast (cost and carbon) can see in CCET IFT and generate a report of the carbon estimate forecast in IFT revision that identifies the basis of the carbon emission data for each resource from the Project User Specific library.\r\nProject User Specific Library (PUSL) used by Project user to produce IFT revision / forecast is built in CCET using the following sources.\r\ncarbon emissions factor from NH baseline CCET carbon resource library\r\ncost-to-carbon factor from NH baseline CCET carbon resource library\r\nassured carbon emission factor for resources including the EPD, from Dynamic Library of Low Cabon products.\r\nassured carbon emission factor for resources including the EPD, from Project User Specific Library (PUSL)\r\nunassured carbon emission factor for resources or cost to carbon factors, from Project User Specific Library (PUSL)\r\n\r\nThe NH reviewer can generate a report showing whether each Resource has ‘assured’ or ‘unassured’ carbon emission factors.\r\n[Please see terminology amendments in Annex A]",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 305
+  },
+  "2390": {
+    "description": "Estimate Reviewers should see the provenance of the carbon factors against each resource in the BOQ. This is so that the reviewer can identify carbon factors from library, cost to carbon factors, and manually entered factors.",
+    "acceptanceCriteria": "When in a CCET carbon estimate, the NH Estimator, Estimating Managers and Administrators can see the carbon library used to produce the estimated carbon for each Item in a BoQ. Where cost-to-carbon factors and / or manually entered emission factors have been used in the build-up of estimated carbon for an Item, the report will identify the Items where \"cost-to-carbon factors\" and Items where rates have been \"delinked\" from a carbon library.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 650
+  },
+  "2400": {
+    "description": "Library of common metrics specific to scheme type and characteristics that enable the user to review the estimate v/s the metrics",
+    "acceptanceCriteria": "The CCET contains an administrator-controlled library of configurable metrics holding benchmark values for each metric that are entered by the administrator.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 642
+  },
+  "2410": {
+    "description": "Record the required data/evidence that a contractor submits to add resources and emission factors to the library",
+    "acceptanceCriteria": "The CCET Resource libraries contain dedicated fields to store supporting evidence and audit trail data for each Resource  within the library, it's cost rate and carbon emissions factor.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 626
+  },
+  "2420": {
+    "description": "View additional evidence to see an audit trail on key carbon emissions",
+    "acceptanceCriteria": "The CCET Resource libraries contain dedicated fields to store supporting evidence and audit trail data for each Resource  within the library, it's cost rate and carbon emissions factor.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 627
+  },
+  "2430": {
+    "description": "View compliance against a set of data quality requirements and evidence, submitted with contractor's estimate",
+    "acceptanceCriteria": "The NH reviewer of a submitted IFT revision / forecast can see on screen and generate a report of the carbon estimate that identifies the basis of the carbon emission data for each resource as follows:\r\n- carbon emissions factor from assigned carbon resource library \r\n- cost-to-carbon factor from assigned carbon resource library\r\n- Resource delinked from resource \r\n- Plugged carbon factors \r\n- source evidence / EPD reference\r\n• carbon emissions factor from NH baseline CCET carbon resource library\r\n• cost-to-carbon factor from NH baseline CCET carbon resource library\r\n• assured carbon emission factor for resources including the EPD, from Dynamic Library of Low Cabon products.\r\n• assured carbon emission factor for resources including the EPD, from Project User Specific Library (PUSL)\r\n• unassured carbon emission factor for resources or cost to carbon factors, from Project User Specific Library (PUSL)\r\n\r\nThe NH reviewer can generate a report showing whether each Resource has ‘assured’ or ‘unassured’ carbon emission factors.\r\n[Please see terminology amendments in Annex A]",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 306
+  },
+  "2440": {
+    "description": "Ability to control if Section-level Cost data from a baseline Estimate assigned to a Contractor is visible to the Contractor",
+    "acceptanceCriteria": "An administrator can control the level of cost data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. The administrator sets this control across the CCET in a table within the administration settings.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 235
+  },
+  "2450": {
+    "description": "Access Controls to lock the WBS of the carbon estimate down to cost element level",
+    "acceptanceCriteria": "The WBS, Items and Item quantities of a NH carbon estimate are identical to that of the corresponding NH cost estimate.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 636
+  },
+  "2460": {
+    "description": "Contractors should only be able to view Section level costs in the baseline. This is so that the Authority sectional costs act as a working sectional budget for the contractor to work towards.",
+    "acceptanceCriteria": "An administrator can control the level of cost data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. The administrator sets this control across the CCET in a table within the administration settings.\r\n\r\nThe administrator can select one of the following whether forecast baselines' rate and cost columns are visible at the following levels: \r\n- None (no baseline cost data is visible to Project Users) \r\n- Project (only baseline Project cost totals are visible to Project Users) \r\n- Section (only baseline Section and Project cost totals are visible to Project Users) \r\n- Item (baseline Item rates, Item costs, Section and Project cost totals are visible to Project Users) \r\n- Resource (all rates and costs in the baseline are visible to Project Users)",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 237
+  },
+  "2470": {
+    "description": "Mandate the selection of resources that the contractor can use to the resources currently available in the Libraries (WBS) - they will need to link any changes to the EPD to get approval.",
+    "acceptanceCriteria": "A CCET administrator can disable the ability for a Project User to add resources to an estimate by manual entry and load spreadsheet, i.e. restrict Project Users to adding resources only from the assigned CCET NH Resource Library. This setting can be applied to all IFT templates in CCET and a specific Project.\r\n\r\n“A CCET administrator can disable the ability for a Project User to add Resources to a forecast by manual entry and load spreadsheet, i.e. restrict Project Users to adding Resources only from the NH CCET Resource Library, where a Project User’s only access to a Resource Library is to the NH CCET Resource Library .”\r\nThe CCET Project-Specific resource libraries contain an EPD or link to reference EPD data. When a Project User requests changes to the project-specific library (business process outside the CCET) they can provide EPD data to justify the change.\r\n\r\nCCET IFT/forecast allows Project Users to add EPD data(link or PDF) to the resources in the Project User Specific library. This entry is marked as unassured. Once NH assures this resource and EPD data the resource is marked as assured. Communication and assurance process for EPD data in CCET project user specific library is business process that happens outside CCET.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 272
+  },
+  "2480": {
+    "description": "Provide controls around the cost data that the contractor can see when selecting a client estimate. The contractor will be assigned the estimate and only see the estimates that are assigned to them.",
+    "acceptanceCriteria": "An administrator can control the level of cost data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. The administrator sets this control across the CCET in a table within the administration settings.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 238
+  },
+  "2490": {
+    "description": "Ability to lock down an Forecast Revision from further changes, unless approved by admin",
+    "acceptanceCriteria": "Once an IFT revision / forecast is submitted for review, the forecast is locked and cannot be edited.\r\n\r\nOnly an Administrator can change the status of an approved, locked IFT revision / forecast so that it can be edited.\r\n\r\nWhen an IFT revision / forecast has been rejected by a Reviewer, the forecast is no longer locked and can then be edited by the Project User.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 318
+  },
+  "2500": {
+    "description": "Access controls so that Contractors can only see relevant dashboards",
+    "acceptanceCriteria": "An Administrator can configure administration settings that control Project User access to CCET dashboards and reports.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 319
+  },
+  "2510": {
+    "description": "Contractors should be able to select a scheme and the appropriate lifecycle stage and select the client carbon estimate to view",
+    "acceptanceCriteria": "An administrator can control the level of carbon data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. A Project User can see this level of carbon data for the projects and life cycle stage to which they have access permissions. (It is anticipated that carbon rates and totals for all Resources and Items will be visible in the baseline.)",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 320
+  },
+  "2520": {
+    "description": "For the PCF Stage 0-2 Forecast, no rates should be visible to the Forecast project team user",
+    "acceptanceCriteria": "An administrator can control the level of cost data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. The administrator sets this control across the CCET in a table within the administration settings.\r\n\r\nThe administrator can select one of the following whether forecast baselines' rate and cost columns are visible at the following levels: \r\n- None (no baseline cost data is visible to Project Users) \r\n- Project (only baseline Project cost totals are visible to Project Users) \r\n- Section (only baseline Section and Project cost totals are visible to Project Users) \r\n- Item (baseline Item rates, Item costs, Section and Project cost totals are visible to Project Users)  \r\n- Resource (all rates and costs in the baseline are visible to Project Users)",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 241
+  },
+  "2530": {
+    "description": "The Forecast reviewer should only have \"read-only\" access. At the same point in time, the contractor estimator should be able to edit the estimate while it is under review - this is so that changes and improvement can be done to the estimate by the contractor\r\n\r\nThe IFT reviewer should only have \"read-only\" access. At the same point in time, the contractor estimator should be able to edit the estimate while it is under review - this is so that changes and improvement can be done to the estimate by the contractor",
+    "acceptanceCriteria": "The NH reviewer of an IFT revision / forecast submission has read-only access to the IFT revision / forecast and cannot edit the IFT revision / forecast with the exception of Review status and comments fields.\r\n\r\nOnce an IFT revision / forecast is submitted for review, the IFT revision / forecast is locked and cannot be edited.\r\n\r\nA Project User, who wishes to make changes to an IFT revision / submitted forecast, Project User can duplicate the IFT revision / submission forecast, increasing the revision number (see FR 1560) and edit the new IFT revision.\r\n\r\nWhen an IFT revision / forecast has been rejected by a Reviewer, the IFT revision / submission forecast is no longer locked and can then be edited by the Project User.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 283
+  },
+  "2540": {
+    "description": "Varying levels of control in the system to show the section level costs, or not show costs at all - across all estimates",
+    "acceptanceCriteria": "An administrator can control the level of cost data from NH estimates that is visible as a baseline for supplier forecasts in the CCET. The administrator sets this control across the CCET in a table within the administration settings.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 242
+  },
+  "2550": {
+    "description": "Estimator-level Access Controls for B2-B5 carbon assumptions",
+    "acceptanceCriteria": "The CCET contains an administrator setting that controls whether estimators may edit library default carbon values or calculations for nested modules for PAS 2080 Stage B modules",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 638
+  },
+  "2560": {
+    "description": "System should have permissions to control which Estimators can manually enter carbon factors",
+    "acceptanceCriteria": "The CCET contains an administrator setting that controls whether estimators may delink resources and edit carbon values from the carbon library used for the NH carbon estimate.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 639
+  },
+  "2570": {
+    "description": "The inflation index should be estimate-specific and the inflation indices used in the estimate must be stored with an Authorised and Completed estimate so that the user can identify which inflation profile was used",
+    "acceptanceCriteria": "When an estimate is 'Authorised', the inflation factors (from estimate base date to estimated time of expenditure) for each cost element will be 'locked' and will not be editable.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 652
+  },
+  "2580": {
+    "description": "The system should have relevant controls to assign authority to users to review and approve Contractor's estimate",
+    "acceptanceCriteria": "An CCET Administrator sets NH User permissions for reviewers to enable review and approval of IFT revision / submitted forecasts.",
+    "srsChapter": 6,
+    "linkedStory": "",
+    "row": 284
+  },
+  "2590": {
+    "description": "Configurable application branding - \"National Highways estimating tool\" (this will need to be configurable by user and allow a logo to be added)",
+    "acceptanceCriteria": "The National Highways chosen name for the CCET will be provided on every principal screen, dashboard and report of the CCET.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 694
+  },
+  "2600": {
+    "description": "Ensure consistent terminology within both Carbon Tool and Benchmark application",
+    "acceptanceCriteria": "Benchmark carbon estimating functionality will use the same terminology as Benchmark cost estimating functionality for when describing the same data field, data structure element, function or operation.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 696
+  },
+  "2610": {
+    "description": "Standardised language across the system that aligns with the British standard for LCC - 15686/5",
+    "acceptanceCriteria": "The Terminology in the CCET will be consistent with Chapter 8 of BS ISO 15686-5, Standardized Method of Life Cycle Costing for Construction Procurement: 'Terms, Definitions and Abbreviations'",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 697
+  },
+  "2620": {
+    "description": "Standardised naming convention for Schemes and Estimates",
+    "acceptanceCriteria": "Administrators can configure and edit a library of ‘Estimate Output Types’ that contains the Estimate Type's Name and the lifecycle stages which the Estimate Shell covers for a selected Estimate Output Type. (See FR20.)",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 698
+  },
+  "2630": {
+    "description": "The terminology for Lifecycle Stages must be consistent - Construction, Operation & Maintenance, Renewal and Decommissioning",
+    "acceptanceCriteria": "The naming of Lifecyle costing stages is standardised in the CCET and aligns with the BS ISO 15686-5, Standardized Method of Life Cycle Costing for Construction Procurement: 'Terms, Definitions and Abbreviations'",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 701
+  },
+  "2650": {
+    "description": "Enhanced user navigation and clear, consistent screen titles",
+    "acceptanceCriteria": "Each CCET screen in the CCET has a clear title.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 702
+  },
+  "2660": {
+    "description": "Estimating Manager view - Ability to easily access graphs/visuals of an estimate to understand and review the proposed estimate. Minimum are below:\r\n- CESS\r\n- CERT\r\n- RET\r\n- other estimate outputs / reports",
+    "acceptanceCriteria": "• ‘Dashboards’ or graphical reports displayed on screen for the cost & carbon estimate to show the following for each estimate type:\r\n  • A cost / carbon estimate summary at Section, Cost element and resource level , showing base estimate at Section level, project and portfolio risk/opportunity/uncertainty allowances and inflation covering individual or all lifecycle stages. For carbon information is displayed compliant to PAS 2080 Modules\r\n  • A summary of the estimated costs /carbon over time, broken down by Cost element and resource level , base estimate, project risk, portfolio risk and inflation allowances for each financial year\r\n  • A summary of estimated costs for net present value calculations at an administrator-controlled price base, which:\r\n      • can be configured to exclude spend to date and taxation\r\n      • presents costs with and without portfolio risk allowances\r\n   • A summary of the cost estimate showing range minimum, most-likely, maximum and each 10th percentile interval for probabilistic estimates\r\n• Dashboards shows the project name, estimate title, estimate type, and estimate ID reference\r\n• Dashboards displays the price base of the cost data prior to application of inflation allowances\r\n• Dashboards can be exported to MS Excel and PDF\r\n• The data displays identical numbers to the estimate database",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 399
+  },
+  "2670": {
+    "description": "Estimator view - Ability to easily access graphs/visuals of an estimate to prepare the final estimate outputs:\r\n- CESS\r\n- CERT\r\n- RET\r\n- other estimate outputs / reports",
+    "acceptanceCriteria": "• As per FR 2660 acceptance criteria.",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 400
+  },
+  "2680": {
+    "description": "As an estimator and estimating manager, I want to easily view all the estimates produced for a scheme in chronological order to see the evolution of the estimated costs, and carbon. I also want to be able to select and deselect individual estimates from this chart / table, for all estimate types as set out in Scope Table A.",
+    "acceptanceCriteria": "• A user can generate a report showing the evolution of the estimated cost and carbon for a scheme, by selecting the selective or all approved estimates to include in the report. The report will display:\r\n   • The estimates in chronological order\r\n   • The estimate ID and date\r\n   • The estimate classification",
+    "srsChapter": 8,
+    "linkedStory": "",
+    "row": 401
+  },
+  "2700": {
+    "description": "Filter Cost and Carbon Estimates by Portfolio, Programme, Scheme, Estimate Name and Estimate ID - See FR above",
+    "acceptanceCriteria": "The CCET contains an Estimate Browser which shows all Estimates in the CCET, subject to the permissions of the NH Estimator to view estimates.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 704
+  },
+  "2710": {
+    "description": "Navigation around the system for a user must be clear and efficient. It should be very clear where a user is within the overall system on each screen and be able to quickly go back to \"home\" screens.",
+    "acceptanceCriteria": "Each CCET screen in the CCET has a clear title.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 708
+  },
+  "2730": {
+    "description": "The software should have efficient number of \"clicks\" to be able to edit / enter data into fields.",
+    "acceptanceCriteria": "Users can edit data fields efficiently with an appropriate number of 'clicks' to edit data fields.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 713
+  },
+  "2740": {
+    "description": "The hierarchy and items and resources within an estimate should be clearly indented / colour-coded to identify the level of the hierarchy that each line belongs to.",
+    "acceptanceCriteria": "The WBS levels in an estimate are clearly identified to Users. There is distinct formatting (e.g. shading and / or font) and / or indenting for each of the following levels: \r\n- Section \r\n- Cost Element \r\n- Item \r\n- Resource",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 716
+  },
+  "2760": {
+    "description": "Screens should be well laid out with appropriate space allocated to rows and columns so that users have minimal scrolling re-allocating width / depth to columns / rows. Toggles should provide the ability to hide / display columns and fields from screens / reports, where these are not relevant to the specific client.",
+    "acceptanceCriteria": "Toggles (to hide / show columns) and / or collapsing / expanding rows and columns are provided for estimate CCET BoQ, 'CESS', and Estimate Summary screens covering base estimate risk and inflation. This is a substantial amount of the estimate build-up can be shown on one screen without scrolling.",
+    "srsChapter": 12,
+    "linkedStory": "",
+    "row": 717
+  },
+  "1530.1": {
+    "description": "As an estimator, I need to produce TOTEX cost estimates that show estimated costs with and without discounting, and with / without relative price growth and the option to apply market adjustment factors or not.  The discount factors and relative price growth factors applied in the estimate should be clearly presented to users and in reports.",
+    "acceptanceCriteria": "The CCET stores a library of default discount rates for application to estimates and calculation of net present value.",
+    "srsChapter": 11,
+    "linkedStory": "",
+    "row": 569
+  }
+}

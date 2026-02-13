@@ -1,0 +1,2076 @@
+[
+  {
+    "key": "VER10-155",
+    "type": "Story",
+    "summary": "Testing - Workflow",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-156",
+    "type": "Story",
+    "summary": "Backend Development - Workflow",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-157",
+    "type": "Story",
+    "summary": "Frontend Development - Workflow",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-204",
+    "type": "Story",
+    "summary": "Backend - Master Workflow API",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-215",
+    "type": "Story",
+    "summary": "Frontend - Workflow - API Integration ",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 22
+  },
+  {
+    "key": "VER10-227",
+    "type": "Story",
+    "summary": "Workflow Action - Section & Tasks",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-111",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-6976",
+    "type": "Story",
+    "summary": "Frontend Changes to allow negative values based on risk type and validate the model",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-6941",
+    "frs": [
+      "FR1080"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-6977",
+    "type": "Story",
+    "summary": "risk-register-test-cases",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-6963",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-7043",
+    "type": "Story",
+    "summary": "Generate CCESS Reports - Asset Renewals UI",
+    "description": "### User Story\n\nAs an Estimator, I need the system to generate standardized, fixed-format reports for Cost and Carbon estimates, ensuring they accurately reflect the estimate data, so that I can provide consistent and compliant reports for review, approval, and record-keeping.\n\n### Context\n\nThe solution will be able to produce fixed, non-user-configurable reports for both Cost and Carbon estimates. These reports are essential for formal documentation, review processes, and archival purposes within National Highways.\n\nCESS reports serve as tools for financial management and project control. They provide estimators and project managers with a structured view of project costs, enabling them to track expenses, analyse cost breakdowns, and forecast future expenditures. By presenting cost data in various formats and levels of detail, CESS reports facilitate informed decision-making regarding budgeting, resource allocation, and cost optimization throughout the project lifecycle. \n\nCCESS reports expand upon the functionality of CESS reports by integrating carbon-related information, making them essential for assessing and managing the environmental impact of projects. In addition to cost analysis, CCESS reports enable users to quantify, track, and analyse carbon emissions, supporting sustainable project delivery and environmental compliance. These reports are crucial for evaluating the carbon footprint of different project activities, and reporting on carbon reduction progress, ultimately driving more environmentally responsible decision-making. \n\nHistorically, Cost and Carbon estimates have been reported on separately, however will now be delivered in a consolidated report that covers both cost and carbon estimates. Given both the CESS report (Cost Estimate Summary Sheet Report) and CCESS (Cost and Carbon Estimate Summary Sheet Report) have been classed as fixed reports, it is required that their structure (and the data they contain) are predefined and not subject to modification by the estimator. This will ensure consistency and compliance with National Highways' standards.\n\n\n### Acceptance Criteria\n\n1. Reports are identical/ follow the structure of the mock ups provided (see attached mock ups)\n\n2. Reports will be exportable as MS Excel (.xlsx format)\n\n3. Reports will contain a title or description \n\n4. Users can identify the project name(s), estimates name(s) and estimate ID(s) within the reports . (Refer to report mock up)\n\n5. Basic project details are visible within the report to identify which scheme it is from\n\n6. Reporting data will be formatted in a way that is easy to follow \n\n7. The reports accurately reflect the data within the corresponding Cost and Carbon estimates. (Chapter 8)   \n\n8. Access to Reports/Exports is available from either a ‘global reporting menu’ or from the ‘screen specific reporting menu’, e.g. if in the ‘review’ screen, users have quick access available to those reports directly relevant to the activity they are performing on that screen, e.g. review estimate.\n\n\nNote: For Release 1b given the 3-point estimate capability for V10 is not currently available, the min, most likely and Max values will not be included in the report, however  the deterministic value will be mapped to the “most likely” column.\n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [
+      "FR230"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-7054",
+    "type": "Story",
+    "summary": "Generate Expenditure Profile Report - Asset Renewals UI",
+    "description": "### User Story \n\nAs an Estimator, I want to be able to generate and view a report that shows the estimated cost and carbon expenditure for a given estimate over the assessment period so that I can understand the timing of project expenditures, analyse estimated cost and carbon, and support financial planning and carbon management.\n\n### Context\n\nThe solution will be able to produce fixed, non-user-configurable reports for both Cost and Carbon estimates. These reports are essential for formal documentation, review processes, and archival purposes within National Highways.\n\nThe system must allow users to export this report in Excel format. This is crucial for:\n\n• Sharing reports with various stakeholders involved in Asset Renewal stage of a project, including contractors, environmental agencies, and internal review teams. (Chapter 8, pp. 18, 43)\n\n• Performing further analysis or manipulation of the data outside the system, such as integrating it with lifecycle assessments or other environmental management tools. (Chapter 8, pp. 18, 43)\n\n### Acceptance Criteria\n\n1. The system shall generate a report that displays the estimated cost expenditure and the estimated carbon expenditure over the assessment period which is identical to the report mock up provided (see attachments below)\n\n2. The user shall be able to access the report from the main estimate build-up screen.\n\n3. The reports can be exported to Excel format\n\n4. The data displays identical numbers to the estimate database\n\nNote: For Release 1b given the 3-point estimate capability for V10 is not currently available, the min, most likely and Max values will not be included in the report, however  the deterministic value will be mapped to the “most likely” column. \n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [
+      "FR230"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-7275",
+    "type": "Story",
+    "summary": "Add 'Back' Button next to Save button on risk register",
+    "description": "From the risk registe rpage when the user selevets the ‘Back to project’ button user lands on the project broser page\n",
+    "status": "Closed",
+    "parent": "VER10-6941",
+    "frs": [
+      "FR1080"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-7496",
+    "type": "Story",
+    "summary": "Add Db Schema Changes at entity level or sps for risk register/Cost estimate",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-6941",
+    "frs": [
+      "FR1080"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-7880",
+    "type": "Story",
+    "summary": "O&M Presentation Data -Cost",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-7881",
+    "type": "Story",
+    "summary": "O&M Estimate Evolution - Cost",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-7882",
+    "type": "Story",
+    "summary": "O&M Estimate Evolution - Carbon",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-7883",
+    "type": "Story",
+    "summary": "O&M Economic Output",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-7884",
+    "type": "Story",
+    "summary": "O&M Cost Sign Off",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-7885",
+    "type": "Story",
+    "summary": "O&M Carbon Sign Off Sheet",
+    "description": "Report Context\n\nThis report provides a consolidated, year-over-year view of carbon emissions (in kgCO2e) generated by Operations and Maintenance activities, from 2020 to 2025. Its primary purpose is to facilitate the formal review and sign off process for these critical environmental performance figures, ensuring accountability and compliance for O&M related carbon footprints. It allows stakeholders to verify finalized carbon data and track the formal approval status for each year.\n\nUser Story\n\nAs an Estimator, I want to access and review the annual carbon emissions (kgCO2e) generated by Operations & Maintenance activities for each year from 2020 to 2025, along with the corresponding formal sign-off status and date, so that I can verify the officially approved O&M carbon data.\n",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-7886",
+    "type": "Story",
+    "summary": "AR Presentation Data -Cost",
+    "description": "User Story\n\nAs an Estimator, I want to view a detailed, comprehensive breakdown of project costs, including historical data, pre-construction expenses, direct and indirect works, and various risk provisions, So that I can accurately assess the total estimated cost for different scheme options, identify major cost drivers, evaluate financial risks, and make informed decisions for project planning, budgeting, and stakeholder presentations.\n\nDescription \n\nThe AR Presentation Data - Cost, serves as a critical tool for financial planning and analysis of infrastructure projects. It provides a granular view of all anticipated expenses associated with a project scheme or option, from inception through to completion and aftercare. The report's structure allows users to gain a holistic understanding of project finances, facilitating budget control, risk management, and strategic decision-making throughout the project lifecycle. It is particularly useful for comparing the financial implications of different design or implementation options.\n\nAcceptance Criteria\n",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-7887",
+    "type": "Story",
+    "summary": "AR Estimate Evolution - Cost",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-7888",
+    "type": "Story",
+    "summary": "AR Estimate Evolution Carbon",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-7889",
+    "type": "Story",
+    "summary": "AR Economic Output",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-7890",
+    "type": "Story",
+    "summary": "AR Cost Sign Off",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-7891",
+    "type": "Story",
+    "summary": "AR Carbon Sign Off Sheet",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8571",
+    "type": "Story",
+    "summary": "Admin - Manage Inflation Indices UI",
+    "description": "As a System Admin, I need to upload and maintain a central library of inflation indices so that the correct data is available for all reporting calculations.\n\nAcceptance Criteria:\n\n1. Given I am an admin, when I navigate to the Inflation Index Library screen (Administration > Inflation tab), then I can see a list of existing index tables in the left-hand pane.\n\n2. Given I am on the Inflation Index Library screen, when I click the \"Add\" button,  then the system presents fields in the right-hand pane for me to create a new, empty index table.\n\n3. Given I select an index from the list, when I click the \"Delete\" button (red X icon), then the system must prompt me for confirmation before permanently deleting the index table and all its associated values.\n\n4. Given I select an index from the list, then its details (Name, Description) and its index values (Date, Value, Status grid) are displayed in the right-hand pane.\n\n5. Given I am creating or editing an index table, then I must provide a unique Name (Mandatory) and must also provide a Description (Optional).\n\n6. Given I have selected an index table, when I am viewing its values grid, then I can add, edit, or delete a value row.\n\n7. Given I add or edit a value row, then I must provide a Date (which must be a DD/MM/YY value, e.g. 01/04/2025) and a numerical Value. (Please note this is aligned with current V8 design not the Figma design provided by Vigo for simplicity)\n\n8. Given I add or edit a value row, then I must select a Status from a drop-down list.\n1. Given I click the Status drop-down, then the available options must be \"Firm,\" \"Pending,\" “Revised” and \"Projected\" (pulled from the system codes library).\n\n2. Dates are sorted in ascending order by default and the admin is able to sort by descending order\n\n9. Given I am viewing the index values grid, then I can click \"Import\" to load a set of values from a standard Excel template. Max of 2400 record rows (indices) to be supported for import. (i.e. support max no of years required for LTA)\n\n10. My changes are committed only after I select Update in the UI\n\n11. Newly added or modified profiles in the left hand pane are displayed in the order they have been added with  the most recent at the top of the list. \n\n12. Given I am importing from excel then the system must validate that the  date, value and status are present for every data row for successful import.\n\n\n\n",
+    "status": "Ready for QA",
+    "parent": "VER10-8570",
+    "frs": [
+      "FR150",
+      "FR1490",
+      "FR870",
+      "FR880",
+      "FR890",
+      "FR90",
+      "FR930"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-8573",
+    "type": "Story",
+    "summary": " Estimator - Set Estimate Price Base Date (Cost) and Estimate Base Date (Carbon) UI",
+    "description": "As an Estimator, I want to set a common price base date and a common carbon base date for my entire estimate in the estimate details, so that all item costs and carbon values can be normalized to a single, consistent point in time.\n\n• Description: This is a critical step for ensuring all costs in an estimate are comparable. After the creation of a new estimate, the estimator must define a single \"common price base date\" and a \"common carbon base date\" in the estimate details . This date acts as the target to which all individual item costs will be adjusted (rebased), regardless of their original price base. This provides a consistent financial baseline for the entire project.\n\n• Acceptance Criteria:\n• When viewing the estimate details, there is a mandatory field for the estimator to enter a \"Common Price Base Date\" and a \"common carbon base date\".\n\n• The \"common carbon base date\" is defaulted to 2020 but can be overwritten by the estimator\n\n• The estimator can select a date using a calendar picker.\n\n• The estimate cannot be fully created until this date has been provided.\n\n• This date is stored at the estimate level and is used as the target date for all rebasing\n\n",
+    "status": "Ready for QA",
+    "parent": "VER10-8570",
+    "frs": [
+      "FR150",
+      "FR1490",
+      "FR870",
+      "FR880",
+      "FR890",
+      "FR90",
+      "FR930"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-8576",
+    "type": "Story",
+    "summary": "Estimator - Estimate summary configuration - Define Project Milestones/ Schedules  etc UI ",
+    "description": "User Story \n\nAs an Estimator, I need to define the Start (ML) and End (ML) dates for each project stage and ensure the associated Cost Elements automatically inherit and validate these dates, \n\nI want to define specific Inflation Indices (for Cost and Carbon) and set other parameters for each Cost Element, overriding the defaults, so that my estimate's financial modeling and reporting are highly accurate and specific to the project. so that the estimate accurately aligns all costs with the project timeline.\n\n\nAcceptance Criteria \n\n### Access & Navigation\n\n• The \"Estimate Summary Configuration\" option is visible and accessible in the Tools  via the NH Functions menu option  of the main project view.\n\n### Estimate Stages & Milestones\n\n• The configuration grid must display a list of project stages (e.g. PCF Stage 0, PCF Stage 1) that are relevant to the project's lifecycle, as defined in the standard codes library.\n\n• The header for the project stages must be titled “Milestones”.\n\n• Under each project stage, the associated Cost Elements, adhering to the defined NH structure, must be visible.\n\n• For each stage, the user can input dates into the \"Start (ML)\" (Most Likely) and \"End (ML)\" columns.\n\n• Clicking a date input field must display a date picker calendar.\n\n• Stage Date Validation: The system must validate that the End (ML) date is not earlier than the Start (ML) date for the same stage.\n\n• The overall project start and end dates will be automatically derived from the earliest Start (ML) date and latest End (ML) date entered across all stages.\n\n• Start and End dates for different stages can overlap.\n\n### Cost Element Start and End Dates & Configuration\n\n• CE Date Default: The Start/End (ML) dates for a Cost Element must automatically default from the relevant parent project stage.\n\n• CE Date Override: The Cost Element Start/End dates must remain editable at the Cost Element level, allowing the Estimator to override the cascaded stage dates.\n\n### Cost Element Base Date & Configuration\n\n• CE Base Date: The CE Base Date (Cost Element Base Date) must automatically pull its default value from the settings defined by the Admin in the Cost Element Library.\n\n• CE Base Date Override: For each Cost Element, the Estimator can override the default CE Base Date using a date picker calendar.\n\n### Inflation Index Configuration (Cost & Carbon)\n\n• Inflation Index (Cost):\n• The default Inflation Index (Cost) must be automatically pulled from the default settings defined by the Admin in the Cost Element Library.\n\n• The Estimator can update this default by selecting from a list of available indices in the existing Inflation Library via a dropdown option.\n\n• Inflation Index (Carbon) CO2e\n• The default Inflation Index (Carbon) must be pulled from the default settings defined by the Admin in the Cost Element Library.\n\n• The Estimator can update this default by selecting from a list of available indices in the existing Inflation Library via a dropdown option.\n\n### B. Variance (Var) Parameters\n\n• Min/Max Var % (Cost):\n• The Min Var % and Max Var % fields must be editable, allowing the Estimator to enter a maximum variance value.\n\n• The input format must allow for three decimal places (e.g. 9.999).\n\n• Both Min Var % and Max Var % must be defaulted to 0.000 for this Epic.\n\n• Min/Max Var % (Carbon):\n• The Min Var %  CO2e and Max Var %CO2e fields must be present and follow the same logic as the Cost variance fields (editable, 9.999 format, default to 0.000).\n\n### C. Spend Profile Visibility & Override\n\n• Profile Selection: The \"Spend Profile Type\" dropdown allows the Estimator to select a standard spend profile type (or a bespoke profile) for the selected scheme type to apply to a Cost Element.\n\n• Profile Details: The spend profile section can be collapsed and expanded to view the percentage split for the selected profile type and scheme type.\n\n• Editing Restriction: Editing of the percentage split values, the default scheme type, or defining a bespoke spend profile must be completed solely via the \"Manage Expenditure Profiles\" menu option (as defined in the previous Epic refinement).\n\n• Historic Status: A non-editable field must provide the Estimator visibility of whether the Cost Element is flagged as a Historic Cost Element.\n\n### D. System Scope & Prerequisites\n\n• Any overrides made by the Estimator (dates, indices, profiles) apply only to the current estimate and do not alter the Admin's master defaults.\n\n• The system must store the updated Cost Element configuration against the Estimator's current estimate, and this configuration must drive the estimate's reporting structure.\n\n• Prerequisite: The Estimate Summary Configuration must be completed (validated) prior to the successful calculation of the Inflation Summary and Overall Estimate Summary.\n\n\n\n\n\n\n\n",
+    "status": "Open",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8819",
+    "type": "Story",
+    "summary": "Forecast Browser – View Forecast List - UI & Integration",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to browse and view a list of forecasts within the Forecast Browserso that I can see all forecast records with key details and navigate to forecast-specific data for review and further actions.\n\n### Business Context\n\nThe Forecast Browser serves as the main workspace for users to access and manage forecasts created from approved FCEs (Forecast Cost Estimates).It allows users to view existing forecasts, check their version history, and track their submission or review status.\n\nThe Forecast Browser table must display the following columns in the default view:\n\n[Table content]\n\n### System Behaviour (Based on SRS)\n\n[Table content]\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-8820",
+    "type": "Story",
+    "summary": "Forecast Browser - Search - UI & Integration",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to search and filter forecasts by key attributes such as Portfolio, Programme, Project, EIN, Forecast Reference, and Title,so that I can quickly find and access relevant forecasts without manually scrolling through the list.\n\n### Acceptance Criteria\n\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-8856",
+    "type": "Story",
+    "summary": "Create New Revision (BoQ)",
+    "description": "### User Story\n\nAs a Project User (or Supplier), I want to create a new editable forecast revision (BoQ) from an existing baseline so that I can update rates, quantities, and carbon factors while preserving baseline integrity.\n\n### System Behaviour (from SRS)\n\n1. System allows the Project User to create a new revision only if the current revision is not under review or locked.\n\n2. On selecting “Create New Revision”, the system automatically assigns the next sequential version number (e.g., v1.2 → v1.3).\n\n3. The new revision inherits all data, metadata, and linked records (e.g., baseline, libraries, supplier containers, ownership, due dates).\n\n4. The system sets the status = Draft and marks it as editable.\n\n5. Revision metadata fields (Revision ID, Created By, Owner, Date Created, and Due Date) are stored and visible in the browser.\n\n6. Audit log records the creation event with user ID, timestamp, and source revision.\n\n7. Only one editable revision can exist at a time per forecast; users cannot create a new one while a draft is still open.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2320, FR2470\n\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "In QA",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1560",
+      "FR1590"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-8874",
+    "type": "Story",
+    "summary": "Generate CCESS Reports - Asset Renewals - API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-8875",
+    "type": "Story",
+    "summary": "Generate Expenditure Profile Report - Asset Renewals API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8877",
+    "type": "Story",
+    "summary": "O&M Presentation Data -Cost - API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8878",
+    "type": "Story",
+    "summary": "O&M Estimate Evolution - Cost API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8879",
+    "type": "Story",
+    "summary": "O&M Estimate Evolution - Carbon API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8880",
+    "type": "Story",
+    "summary": "O&M Economic Output API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8881",
+    "type": "Story",
+    "summary": "O&M Cost Sign Off API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8882",
+    "type": "Story",
+    "summary": "O&M Carbon Sign Off Sheet API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7878",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8885",
+    "type": "Story",
+    "summary": "Align Front end to Updated NH Reporting Structure CCESS",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-6966",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8886",
+    "type": "Story",
+    "summary": "Align Front end to Updated Reporting Structure Expenditure Profile",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-6966",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8888",
+    "type": "Story",
+    "summary": "API - AR Presentation Data -Cost",
+    "description": "User Story\n\nAs an Estimator, I want to view a detailed, comprehensive breakdown of project costs, including historical data, pre-construction expenses, direct and indirect works, and various risk provisions, So that I can accurately assess the total estimated cost for different scheme options, identify major cost drivers, evaluate financial risks, and make informed decisions for project planning, budgeting, and stakeholder presentations.\n\nDescription \n\nThe AR Presentation Data - Cost, serves as a critical tool for financial planning and analysis of infrastructure projects. It provides a granular view of all anticipated expenses associated with a project scheme or option, from inception through to completion and aftercare. The report's structure allows users to gain a holistic understanding of project finances, facilitating budget control, risk management, and strategic decision-making throughout the project lifecycle. It is particularly useful for comparing the financial implications of different design or implementation options.\n\nAcceptance Criteria\n",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8889",
+    "type": "Story",
+    "summary": "API - AR Estimate Evolution - Cost",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8890",
+    "type": "Story",
+    "summary": "API - AR Estimate Evolution Carbon",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8891",
+    "type": "Story",
+    "summary": "API - AR Economic Output",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8892",
+    "type": "Story",
+    "summary": "API - AR Cost Sign Off",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8893",
+    "type": "Story",
+    "summary": "API - AR Carbon Sign Off Sheet",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [
+      "FR2290"
+    ],
+    "points": 0.5
+  },
+  {
+    "key": "VER10-8894",
+    "type": "Story",
+    "summary": "BE - Admin - Manage Inflation Indices",
+    "description": "",
+    "status": "Ready for QA",
+    "parent": "VER10-8570",
+    "frs": [
+      "FR150",
+      "FR1490",
+      "FR870",
+      "FR880",
+      "FR890",
+      "FR90",
+      "FR930"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-8899",
+    "type": "Story",
+    "summary": "BE -  Estimate summary configuration - Define Project Milestones/ Schedules",
+    "description": "User Story\n\nAs an Estimator, I need to define the Start (ML) and End (ML) dates for each project stage and ensure the associated Cost Elements automatically inherit and validate these dates, so that the estimate accurately aligns all costs with the project timeline.\n\n \n\nAcceptance Criteria\n\n### Access & Navigation\n\n• The \"Estimate Summary Configuration\" option is visible and accessible in the Tools  via the NH Functions menu option  of the main project view.\n\n### Estimate Stages & Milestones\n\n• The configuration grid must display a list of project stages (e.g. PCF Stage 0, PCF Stage 1) that are relevant to the project's lifecycle, as defined in the standard codes library.\n\n• The header for the project stages must be titled “Milestones”.\n\n• Under each project stage, the associated Cost Elements, adhering to the defined NH structure, must be visible.\n\n• For each stage, the user can input dates into the \"Start (ML)\" (Most Likely) and \"End (ML)\" columns.\n\n• Clicking a date input field must display a date picker calendar.\n\n• Stage Date Validation: The system must validate that the End (ML) date is not earlier than the Start (ML) date for the same stage.\n\n• The overall project start and end dates will be automatically derived from the earliest Start (ML) date and latest End (ML) date entered across all stages.\n\n• Start and End dates for different stages can overlap.\n\n### Cost Element Start and End Dates & Configuration\n\n• CE Date Default: The Start/End (ML) dates for a Cost Element must automatically default from the relevant parent project stage.\n\n• CE Date Override: The Cost Element Start/End dates must remain editable at the Cost Element level, allowing the Estimator to override the cascaded stage dates.\n\n### Cost Element Base Date & Configuration\n\n• CE Base Date: The CE Base Date (Cost Element Base Date) must automatically pull its default value from the settings defined by the Admin in the Cost Element Library.\n\n• CE Base Date Override: For each Cost Element, the Estimator can override the default CE Base Date using a date picker calendar.\n\n\n\n\n\n",
+    "status": "Open",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8905",
+    "type": "Story",
+    "summary": "BE - Estimate summary Configuration - Select Inflation Index and Other Parameters",
+    "description": "User Story \n\nAs an Estimator, I want to define specific Inflation Indices (for Cost and Carbon) and set other parameters for each Cost Element, overriding the defaults, so that my estimate's financial modeling and reporting are highly accurate and specific to the project.\n\nAcceptance Criteria:\n\n### Inflation Index Configuration (Cost & Carbon)\n\n• Inflation Index (Cost):\n• The default Inflation Index (Cost) must be automatically pulled from the default settings defined by the Admin in the Cost Element Library.\n\n• The Estimator can update this default by selecting from a list of available indices in the existing Inflation Library via a dropdown option.\n\n• Inflation Index (Carbon) CO2e\n• The default Inflation Index (Carbon) must be pulled from the default settings defined by the Admin in the Cost Element Library.\n\n• The Estimator can update this default by selecting from a list of available indices in the existing Inflation Library via a dropdown option.\n\n### B. Variance (Var) Parameters\n\n• Min/Max Var % (Cost):\n• The Min Var % and Max Var % fields must be editable, allowing the Estimator to enter a maximum variance value.\n\n• The input format must allow for three decimal places (e.g. 9.999).\n\n• Both Min Var % and Max Var % must be defaulted to 0.000 for this Epic.\n\n• Min/Max Var % (Carbon):\n• The Min Var %  CO2e and Max Var %CO2e fields must be present and follow the same logic as the Cost variance fields (editable, 9.999 format, default to 0.000).\n\n### C. Spend Profile Visibility & Override\n\n• Profile Selection: The \"Spend Profile Type\" dropdown allows the Estimator to select a standard spend profile type (or a bespoke profile) for the selected scheme type to apply to a Cost Element.\n\n• Profile Details: The spend profile section can be collapsed and expanded to view the percentage split for the selected profile type and scheme type.\n\n• Editing Restriction: Editing of the percentage split values, the default scheme type, or defining a bespoke spend profile must be completed solely via the \"Manage Expenditure Profiles\" menu option (as defined in the previous Epic refinement).\n\n• Historic Status: A non-editable field must provide the Estimator visibility of whether the Cost Element is flagged as a Historic Cost Element.\n\n### D. System Scope & Prerequisites\n\n• Any overrides made by the Estimator (dates, indices, profiles) apply only to the current estimate and do not alter the Admin's master defaults.\n\n• The system must store the updated Cost Element configuration against the Estimator's current estimate, and this configuration must drive the estimate's reporting structure.\n\n• Prerequisite: The Estimate Summary Configuration must be completed (validated) prior to the successful calculation of the Inflation Summary and Overall Estimate Summary.\n\n\n",
+    "status": "In Dev",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8906",
+    "type": "Story",
+    "summary": "Manage Expenditure Profile -UI",
+    "description": "User Story \n\nAs an Estimator, I want to apply a spend profile to a cost element by either selecting the default as defined by system admin for my estimate type and scheme type or creating a custom profile, so I can define how its costs are spread over time.\n\n\nAcceptance Criteria:\n\n### Access & View\n\n• The \"Manage Expenditure Profiles\" button is available via the \"NH Functions\" sub-menu within the Tools menu.\n\n• Data View: The screen displays a grid of configured spend profiles. Rows are defined by the Profile Type (from the Codes Library), and columns are defined by 20 Time Divisions (1 through 20).\n\n• Scheme Selection: The user can change the default Scheme Type via a dropdown selector, and the displayed profile percentages must update accordingly.\n\n• Read-Only Data: The percentage values in the time division columns (1 through 20) on the screen must be read-only; updates are only possible via the import mechanism.\n\n• Reset: The user must have the ability to Reset the profiles to the system default as defined by the System Administrator.\n\n### Import Functionality (Custom Profiles)\n\n• Trigger: The user can trigger the upload of a bespoke spend profile via the \"Upload Bespoke Profile\" option.\n\n• Import Options: The system must offer two distinct import options:\n• Upload Bespoke Profile: Upload a file to replace all existing row data across all Lifecycles and Scheme Types.\n\n• File Type: The upload modal must clearly state accepted file formats (.xls & .xlsx).\n\n### Data Validation (Critical)\n\n• Sum Validation: Upon import, the system must validate that the sum of the percentages across the 20 time division columns for each profile row is exactly 100%.\n\n• Type Validation: The system must validate that the imported Spend Profile Types exist and are correct (i.e., match those in the Codes Library).\n\n• Failure Handling: If validation fails (e.g., sum is not 100%), the import must be blocked, and an error message must be displayed.\n\n• Reporting: The failure message must include the option to \"Generate Report\" (CSV) of the invalid spreadsheet, with the invalid rows/data points highlighted, to aid correction.\n\n### Export Functionality\n\n• Export Options: \n• Export this Profile: Download a CSV with all row data for the current Lifecycle Stage and Selected Scheme Type.\n\nData Persistence: \n\n• Any changes I make to the spend profile in my estimate apply only to my estimate and do not update the default spend profiles defined by system Admin.\n\n",
+    "status": "Open",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8907",
+    "type": "Story",
+    "summary": "BE- Manage Expenditure Profile",
+    "description": "User Story\n\nAs an Estimator, I want to apply a spend profile to a cost element by either selecting the default as defined by system admin for my estimate type and scheme type or creating a custom profile, so I can define how its costs are spread over time.\n\n \n\nAcceptance Criteria:\n\n### Access & View\n\n• The \"Manage Expenditure Profiles\" button is available via the \"NH Functions\" sub-menu within the Tools menu.\n\n• Data View: The screen displays a grid of configured spend profiles. Rows are defined by the Profile Type (from the Codes Library), and columns are defined by 20 Time Divisions (1 through 20).\n\n• Scheme Selection: The user can change the default Scheme Type via a dropdown selector, and the displayed profile percentages must update accordingly.\n\n• Read-Only Data: The percentage values in the time division columns (1 through 20) on the screen must be read-only; updates are only possible via the import mechanism.\n\n• Reset: The user must have the ability to Reset the profiles to the system default as defined by the System Administrator.\n\n### Import Functionality (Custom Profiles)\n\n• Trigger: The user can trigger the upload of a bespoke spend profile via the \"Upload Bespoke Profile\" option.\n\n• Import Options: The system must offer two distinct import options:\n• Upload Bespoke Profile: Upload a file to replace all existing row data across all Lifecycles and Scheme Types.\n\n• File Type: The upload modal must clearly state accepted file formats (.xls & .xlsx).\n\n### Data Validation (Critical)\n\n• Sum Validation: Upon import, the system must validate that the sum of the percentages across the 20 time division columns for each profile row is exactly 100%.\n\n• Type Validation: The system must validate that the imported Spend Profile Types exist and are correct (i.e., match those in the Codes Library).\n\n• Failure Handling: If validation fails (e.g., sum is not 100%), the import must be blocked, and an error message must be displayed.\n\n• Reporting: The failure message must include the option to \"Generate Report\" (CSV) of the invalid spreadsheet, with the invalid rows/data points highlighted, to aid correction.\n\n### Export Functionality\n\n• Export Options:\n• Export this Profile: Download a CSV with all row data for the current Lifecycle Stage and Selected Scheme Type.\n\nData Persistence:\n\n• Any changes I make to the spend profile in my estimate apply only to my estimate and do not update the default spend profiles defined by system Admin.\n\n",
+    "status": "In QA",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8908",
+    "type": "Story",
+    "summary": "Trigger CCESS Reporting and complete validation - UI",
+    "description": "Description: As an Estimator, I need the system to run a series of automated checks before generating the report, so that I can identify and fix data issues and prevent errors in the final output. These checks ensure that the data is sufficient and correctly configured.\n\nAcceptance Criteria:\n\n• The system shall provide a Checklist sub-tab for the CCESS Generator tab.\n\n• A button labeled [Run Exceptions Check] will trigger the validation process.\n\n• The system will perform the following checks, displaying a corresponding label and error message if the check fails:\n• Check 1: Hierarchy Check: A cost element cannot be nested under another cost element.\n• Check Label: Checking compatibility of Composite Total hierarchy.\n\n• Error Message: \"Cost Element [XYZ] is nested under another Cost Element [ABC]. CCESS cannot be generated due to incompatible hierarchy structure of items.\"\n\n• Check 2: Item Code Alignment: All costs within a section must be accounted for on the CCESS\n• Check Label: Checking alignment between Item Codes and Project Cost Element codes.\n\n• Error Message: \"Cost of Section [ABC] in the project will not match with the cost of this section on CESS. Please check and confirm alignment of Cost Element Codes with corresponding Item Codes of Composite Totals in the project.\"\n\n• Check 3: Inflation Data: Valid inflation indices must be assigned to all cost elements with a cost value.\n• Check Label: Confirming availability of inflation index values.\n\n• Error Message: \"Insufficient inflation data for Cost Element [ABC]. Please ensure inflation data corresponding to Cost Base Date of Cost Element [ABC] and Project Details → Cost Base Date are configured correctly in the system.\"\n\n• Check 4: The Value  percentages for  NRVAT must be present\n• Check Label: Validating Non-Recoverable VAT percentages.\n\n• Error Message: \"No NRVAT%  found in Project Details. Please ensure that NRVAT %has been populated\"\n\n• Check 5: Historic Cost Check: Historic Cost Elements must be excluded from simulation\n• Check Label: Validating settings of Historic Cost Elements.\n\n• Error Message: \"Exclude from Simulation checkbox in Project → Items is unchecked against the Composite Total corresponding to Historic Cost Element [ABC]. Please check the Exclude from Simulation checkbox against Composite Total [DEF] in Section [XYZ].\"\n\n• Check 6: Section to Cost Element Hierarchy\n• Check Label: Validating Section - Cost Element hierarchy in the project.\n\n• Error Message: \"Composite Totals corresponding to Cost Element [ABC] is present in more than one Section. CCESS cannot be generated due to incompatible Item hierarchy structure.\"\n\n• Check 7: Hierarchy Uniqueness: A cost element cannot be in more than one section, and section descriptions must be unique.\n• Check Label: Validating duplicate Section descriptions.\n\n• Error Message: \"Section Description [ABC] is has been used in more than one Section. CCESS cannot be generated due to incompatible Item hierarchy structure.\"\n\n• Checkboxes will be automatically ticked for passed checks, and an information icon will display the corresponding error message for failed checks.\n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8909",
+    "type": "Story",
+    "summary": "BE - Trigger CCESS Reporting and complete validation",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8910",
+    "type": "Story",
+    "summary": "Rebase Estimate  Costs and Carbon - UI",
+    "description": "User Story:\n\nAs an Estimator, I need the system to automatically perform normalization for cost and carbon... when I Inflation, So that the final estimate is presented in a consistent price base year.\n\nAcceptance Criteria:\n\n• Trigger: The Rebasing calculation is triggered automatically after the \"Generate Inflation Summary\" button is successfully pressed and all validation checks have passed.\n\n• For Cost: For each cost element, the system must calculate:\n\n• Rebased Cost = Original Cost * (Index at Estimate Common Base Date / Index at Cost Element Base Date)\n• This calculation is worked out based on Cost Element Total Cost (Base(Including UIA) + Project Risk + Uncertainty + Programme Risk + Portfolio Risk)\n\n• Worked Example:\n• Original Cost Element Cost = £100,000\n\n• Cost Element Base Date = Q1 2023 (Index Value: 100)\n\n• Estimate Common Base Date = Q1 2025 (Index Value: 110)\n\n• Rebased Cost=  = £100,000 * (110 / 100) = £110,000\n\n• For Carbon (Modeled): For each item, the system must calculate:\n• Rebased Carbon = Item Quantity * Carbon Emission Factor\n\n• For Carbon (Cost to Carbon - CTC): For each item, the system must calculate:\n• Rebased Carbon = (Original Cost * (Index at Est. Common Carbon Base Date / Index at CE Base Date)) * CTC Factor\n\n• Output: The resulting Rebased Cost and Rebased Carbon values are stored and used as the input for the final outturn calculations.\n\n• Non-Application: The rebasing calculation is not applied to any costs designated as Historic Costs.\n",
+    "status": "Open",
+    "parent": "VER10-9752",
+    "frs": [],
+    "points": 4
+  },
+  {
+    "key": "VER10-8911",
+    "type": "Story",
+    "summary": "BE - Rebase Estimate Costs and Carbon ",
+    "description": "User Story:\n\nAs an Estimator, I need the system to automatically perform normalization for cost and carbon.., So that the final estimate is presented in a consistent price base year.\n\nAcceptance Criteria:\n\n• Trigger: The Rebasing calculation is triggered automatically after the \"Generate Inflation Summary\" button is successfully pressed and all validation checks have passed.\n\n• For Cost: For each cost element, the system must calculate:\n\n• Rebased Cost = Original Cost * (Index at Estimate Common Base Date / Index at Cost Element Base Date)\n• This calculation is worked out based on Cost Element Total Cost (Base(Including UIA) + Project Risk + Uncertainty + Programme Risk + Portfolio Risk)\n\n• Worked Example:\n• Original Cost Element Cost = £100,000\n\n• Cost Element Base Date = Q1 2023 (Index Value: 100)\n\n• Estimate Common Base Date = Q1 2025 (Index Value: 110)\n\n• Rebased Cost=  = £100,000 * (110 / 100) = £110,000\n\n• For Carbon (Modeled): For each item, the system must calculate:\n• Rebased Carbon = Item Quantity * Carbon Emission Factor\n\n• For Carbon (Cost to Carbon - CTC): For each item, the system must calculate:\n• Rebased Carbon = (Original Cost * (Index at Est. Common Carbon Base Date / Index at CE Base Date)) * CTC Factor\n\n•  \n\n• Output: The resulting Rebased Cost and Rebased Carbon values are stored and used as the input for the final outturn calculations.\n\n• Non-Application: The rebasing calculation is not applied to any costs designated as Historic Costs.\n",
+    "status": "Open",
+    "parent": "VER10-9752",
+    "frs": [],
+    "points": 7
+  },
+  {
+    "key": "VER10-8912",
+    "type": "Story",
+    "summary": "Automatically Calculate Final Outturn Costs - UI",
+    "description": "User Story \n\nAs an Estimator, I want the system to automatically calculate the final outturn cost, so that I have a complete and accurate cost estimate...\n\nAcceptance Criteria:\n\n• This calculation is triggered automatically after Rebasing\n\n• For each cost element, the system must retrieve its Rebased Cost,  its assigned Spend Profile  and its final Project Start/End Dates.\n\n• The system must distribute the Rebased Cost across the time periods  according to the Spend Profile percentages.\n\n• For each time period, the system must calculate the inflation:\n• Inflation for Period = (Rebased Cost * Spend % for Period) * ((Index at Spend Period / Index at Est. Base Date) - 1)\n\n• The system must sum the inflation from all periods to get Total Future Inflation.\n\n• The system must calculate the final cost displayed in the report:\n• Outturn Cost = Rebased Cost + Total Future Inflation\n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 4
+  },
+  {
+    "key": "VER10-8913",
+    "type": "Story",
+    "summary": "BE - Automatically Calculate Final Outturn Costs",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 7
+  },
+  {
+    "key": "VER10-8915",
+    "type": "Story",
+    "summary": "Automatically Calculate Final Outturn Carbon UI",
+    "description": "User Story \n\nAs an Estimator, I need the system to automatically calculate the final outturn carbon values... so that I have a complete and accurate carbon estimate...\n\nAcceptance Criteria:\n\n• This calculation is triggered automatically after Rebasing in parallel with the cost calculation.\n\n• For each cost element, the system must retrieve its Rebased Carbon value , its Spend Profile, and its Project Start/End Dates.\n\n• The system must distribute the Rebased Carbon value across the time periods according to the Spend Profile.\n\n• For each time period, the system must apply the factors from the cost element's assigned Inflation Index (this may be an index with values < 1 for deflation/decarbonization).\n\n• The system must sum the final values from all periods to calculate the Final Outturn Carbon Value to be displayed in the report.\n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8916",
+    "type": "Epic",
+    "summary": "WBS Filtering - Tags and Custom Fields",
+    "description": "This epic introduces filtering capability to the WBS grid, enabling users to isolate line items based on custom field values or Dimension tags.\n\nThe core functionality allows a user to select a single custom field or dimension tag and then filter the grid by one of its specific values. \n\nA key aspect of this feature is how totals are handled: Section totals will dynamically recalculate to reflect only the filtered (visible) items, while the overall estimate summary totals at the top of the page will remain unchanged. This provides a focused view without losing the context of the total estimate value.\n\n[Table content]\n\n[Table content]\n",
+    "status": "Blocked",
+    "parent": "VER10-7844",
+    "frs": [
+      "FR780"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-8918",
+    "type": "Story",
+    "summary": "View Forecast Revision (BoQ)",
+    "description": "\n### User Story\n\nAs a Project User,I want to view the BoQ within a selected forecast revision,so that I can see the permitted sections, items, and resources as per my access level and baseline visibility configuration.\n\nMoSCoW: MustSRS Trace: FR1560, FR2440, FR2460\n\n### System Behaviour\n\n1. When the Project User opens a forecast revision (e.g. v1.1, v1.2), the system retrieves the associated BoQ from the locked baseline (v1.0) and displays data according to the user’s Baseline Visibility configuration.\n\n2. The system enforces visibility levels as defined by Admin (from RBA/visibility configuration):\n• None: No baseline data visible.\n\n• Project: Only total project-level baseline and forecast values visible.\n\n• Section: Section totals and project totals visible.\n\n• Item: Item-level rates and costs visible, along with section and project totals.\n\n• Resource: Full breakdown visible including item and resource-level details.\n\n3. The BoQ grid structure (Sections → Items → Resources) is non-editable in view mode.\n\n4. The system automatically applies regional and project access filters, showing only the user’s assigned project(s) and region(s).\n\n5. The system displays baseline and current revision values side-by-side, depending on the user’s access.\n\n6. All cost and carbon values are presented based on user role permissions — e.g., Suppliers only see their own container data.\n\n7. The BoQ hierarchy remains consistent across all forecast revisions (derived from the CCET WBS).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "In Dev",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1550",
+      "FR1590"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-8920",
+    "type": "Story",
+    "summary": "Edit Forecast Revision (BoQ)",
+    "description": "User Story As a Project User (or Supplier), I want to edit an existing forecast revision (BoQ) within my assigned container so that I can update rates, quantities, and carbon factors without altering the approved baseline structure.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2320, FR2470\n\n### Acceptance Criteria\n\n[Table content]\n\nNotes:\n\n• Editable fields and behaviours directly align with SRS sections FR1560, FR1590, FR2320, and FR2470.\n\n• Structural and formulaic protections ensure compliance with NH’s requirement that baseline WBS and template integrity remain intact.\n\n• Project Users and Suppliers share the same entity model and permissions are driven by access scope (baseline visibility)\n",
+    "status": "In Dev",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1550",
+      "FR1590"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-8921",
+    "type": "Epic",
+    "summary": "Supply Chain: Forecast Initiation & Distribution",
+    "description": "",
+    "status": "In Dev",
+    "parent": "VER10-8677",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8929",
+    "type": "Story",
+    "summary": "Production of Forecast – Add / Remove Items ",
+    "description": "### User Story\n\nAs a Project User, I want to add, remove, or replace items and resources in the forecast BoQ using the approved CCET WBS, so that I can structure my forecast accurately within allowed scope.\n\nMoSCoW: MustSRS Trace: FR1550, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8930",
+    "type": "Story",
+    "summary": "Production of Forecast - Apply Supplier specific Library (Cost & Carbon ) - TBD",
+    "description": "### User Story\n\nAs a Project User, I want to apply cost and carbon data from approved libraries (NH Baseline), so that my forecast uses validated and consistent factors.\n\nMoSCoW: MustSRS Trace: FR1570, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8931",
+    "type": "Story",
+    "summary": "Production of Forecast - Apply Project Specific Library (Cost & Carbon )",
+    "description": "### User Story\n\nAs a Project User, I want to apply cost and carbon data from approved libraries (NH Baseline or Project-Specific Library), so that my forecast uses validated and consistent factors.\n\nMoSCoW: MustSRS Trace: FR1570, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8932",
+    "type": "Story",
+    "summary": "Production of Forecast - Apply dynamic Library ( Carbon )",
+    "description": "### User Story\n\nAs a Project User, I want to apply cost and carbon data from approved dynamic Library, so that my forecast uses validated and consistent factors.\n\nMoSCoW: MustSRS Trace: FR1570, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8948",
+    "type": "Story",
+    "summary": "Production of Forecast – Add Risks, Opportunities, Inflation",
+    "description": "User Story\n\nAs a Project User, I want to add or update risks, opportunities, inflation, and expenditure profiles,so that my forecast accounts for project uncertainties and financial conditions.\n\nMoSCoW: ShouldSRS Trace: FR1560, FR1590\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8949",
+    "type": "Story",
+    "summary": "Production of Forecast – Validation & Consistency Checks",
+    "description": "User Story\n\nAs a System, I must validate all forecast data (BoQ, rates, libraries, and carbon factors),so that only complete and consistent data can be submitted or consolidated.\n\nMoSCoW: MustSRS Trace: FR1890, FR2430, FR2470\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8951",
+    "type": "Story",
+    "summary": "Add Segment to Forecast BoQ - API",
+    "description": "User story\n\nAs a Project User/Supplier, I want to add new Segments under a Section so that I can further define sub-scope items within the forecast.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "In Dev",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8952",
+    "type": "Story",
+    "summary": "Display Cost and Carbon Data in Forecast BoQ",
+    "description": "User Story\n\nAs a Project User/Supplier, I want to view both cost and carbon data within the Forecast BoQ,so that I can understand the overall financial and environmental impact of each Section, Segment, and Item.\n\nMoSCoW: MustSRS Trace: FR1550, FR1570, FR2380, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8953",
+    "type": "Epic",
+    "summary": "Estimates & Cost Element Comparator",
+    "description": "As an Estimator, I want to see the calculated variance values against a fixed primary estimate, so that I can precisely quantify how each subsequent estimate deviates from the original baseline.\n\nAcceptance Criteria:\t1. Activation: The user can check the \"Display variance value with primary Project\" checkbox.\t2. Column Addition: When checked, a new group of columns titled \"Variance with Primary Project\" must be added to the right side of the grid.\t3. Variance Columns: This new group must contain columns for the calculated variance of Qty, Avg. Rate, and Amount.\t4. Calculation Logic: The value in each variance column is always calculated as [Comparator Project Value] - [Primary Project Value].\t5. Multi-Project Application: When more than two projects are compared, the variance for every comparator project is calculated against the single, fixed Primary project.\t6. Comprehensive Application: The variance calculation applies to all visible rows in the current view (individual items, aggregated rows, section summaries).\t7. Deactivation: Unchecking the checkbox immediately removes the \"Variance with Primary Project\" column group.\n",
+    "status": "Open",
+    "parent": "VER10-9026",
+    "frs": [
+      "FR430",
+      "FR1870",
+      "FR2350",
+      "FR360"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-8954",
+    "type": "Epic",
+    "summary": "Carbon Export",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8955",
+    "type": "Epic",
+    "summary": "Audit Log and traceability",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8958",
+    "type": "Epic",
+    "summary": "Scenario Analysis",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8959",
+    "type": "Epic",
+    "summary": "EPD",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8963",
+    "type": "Story",
+    "summary": "BE - Automatically Calculate Final Outturn Carbon",
+    "description": "User Story \n\nAs an Estimator, I need the system to automatically calculate the final outturn carbon values... so that I have a complete and accurate carbon estimate...\n\nAcceptance Criteria:\n\n• This calculation is triggered automatically after Rebasing in parallel with the cost calculation.\n\n• For each cost element, the system must retrieve its Rebased Carbon value , its Spend Profile, and its Project Start/End Dates.\n\n• The system must distribute the Rebased Carbon value across the time periods according to the Spend Profile.\n\n• For each time period, the system must apply the factors from the cost element's assigned Inflation Index (this may be an index with values < 1 for deflation/decarbonization).\n\n• The system must sum the final values from all periods to calculate the Final Outturn Carbon Value to be displayed in the report.\n",
+    "status": "Open",
+    "parent": "VER10-7815",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-8964",
+    "type": "Story",
+    "summary": "Role-Based Access Control (RBAC) Enforcement",
+    "description": "### User Story\n\nAs a System, I want to enforce access rights for NH Estimators, Project Users, and Reviewers based on assigned roles and regions So that each user only performs actions permitted by their role and scope.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Default roles include NH Estimator, Project User, Reviewer, and Admin. \n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530",
+      "FR2580"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-8965",
+    "type": "Story",
+    "summary": "Role-Based Access for Forecast Browser",
+    "description": "### User Story\n\nAs an Admin, I want to configure which users can Add, Edit, Delete, Read, or have No access to Forecast Browser revisions So that users’ actions align with project and role-level permissions.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Forecast Browser permissions combine with Project access permissions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-8966",
+    "type": "Story",
+    "summary": "Baseline Visibility Configuration",
+    "description": "User Story\n\nAs an Admin, I want to configure baseline visibility levels (None, Estimate, Section, Item, Resource)So that users only see baseline data at their permitted level in the Forecast Browser and Forecast screens.\n\nMoSCoW: MustSRS Trace: FR2440, FR2460Notes: Baseline visibility is a system-wide configuration applied across all forecasts, affecting cost and carbon visibility for users.\n\n### Acceptance Criteria\n\n[Table content]\n\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2440",
+      "FR2460"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-8967",
+    "type": "Story",
+    "summary": "Template Locking and Editing Restrictions",
+    "description": "User Story\n\nAs a System, I must lock supplier forecasting templates with only permitted editable fieldsSo that structure, formulas, and non-assigned items remain immutable and consistent with the approved baseline.\n\nMoSCoW: MustSRS Trace: FR1590, FR2320Notes: Editable fields are limited to supplier-entered data such as rates, quantities, and carbon factors. Structure, coding, and formula columns remain system-locked.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR1590",
+      "FR2320"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-8968",
+    "type": "Story",
+    "summary": "Forecast Approval/Reject Permissions",
+    "description": "User Story\n\nAs an Admin, I want to configure the Reviewer role to review and approve/reject submissionsSo that governance and audit integrity are maintained for every forecast submission.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990Notes: Reviewer cannot modify forecasts; must approve or reject with mandatory comments. Approval locks revision as baseline (vX.0).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2250",
+      "FR1990"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-8971",
+    "type": "Story",
+    "summary": "Forecast Trigger – Entry & Validation",
+    "description": "### User Story:\n\nAs an NH Estimator, I want to trigger the creation of a new forecast only from an approved (Authorised) FCE, so that the baseline revision (v1.0) is generated accurately and consistently.\n\nMoSCoW: MustSRS Trace: FR1560Notes: Trigger available only from approved FCE via WBS.\n\n### Acceptance Criteria\n\n[Table content]\n\n\\\n\n1. \n\n2.\n\n\n\n1. \n\n\n1. \n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-8972",
+    "type": "Story",
+    "summary": "Forecast Creation – Baseline Revision (v1.0 Only)",
+    "description": "### User Story:\n\nAs an NH Estimator, I want the system to automatically generate a locked baseline revision (v1.0) upon forecast creation, so that it serves as a standardised starting point for forecasting.\n\nMoSCoW: MustSRS Trace: FR1560Notes: v1.0 baseline is read-only. Editable revision (v1.1) created later by Project User under Manage Revision.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-8973",
+    "type": "Story",
+    "summary": "Track Supplier Submission Status",
+    "description": "### User story\n\nAs a Project User (Supplier), I want to track the progress and deadlines of forecast submissions, so that I can ensure the supplier completes and submits their forecast on time.\n\nMoSCoW: MustSRS Trace: FR1920\n\nNotes: Applicable to O&M lifecycle (single supplier). Submission statuses include: In Progress, Submitted, Under Review, Approved, Overdue.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1920"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-8975",
+    "type": "Story",
+    "summary": "Manage Forecast Rework (Resubmission Process)",
+    "description": "User story\n\nAs a Project User, I want to review a supplier’s forecast submission results, reject it if errors exist, and allow resubmission after corrections so that a clean validated version is consolidated.\n\nMoSCoW: MustSRS Trace: FR2470\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8681",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-8976",
+    "type": "Story",
+    "summary": "Consolidate Forecast Revision",
+    "description": "User Story\n\nAs a Project User, I want to consolidate the validated forecast (including cost and carbon data) into a complete revision so that it can be promoted for NH review.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8681",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-8977",
+    "type": "Story",
+    "summary": "Tag Preferred Revision and Submit for Review",
+    "description": "User Story\n\nAs a Project User, I want to tag a validated forecast revision as “Preferred” and submit it for NH review so that it can be locked and sent for governance approval.\n\nMoSCoW: MustSRS Trace: FR2490, FR1560\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8682",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8978",
+    "type": "Story",
+    "summary": "NH Reviewer Approval or Rejection",
+    "description": "User Story\n\nAs an NH Reviewer, I want to review submitted forecasts and approve or reject them with governance control so that only validated revisions become new baselines.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8682",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-8979",
+    "type": "Story",
+    "summary": "Forecast Browser – View Forecast List & Forecast Grouped- API",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to browse and view a list of forecasts within the Forecast Browserso that I can see all forecast records with key details and navigate to forecast-specific data for review and further actions.\n\n### Business Context\n\nThe Forecast Browser serves as the main workspace for users to access and manage forecasts created from approved FCEs (Forecast Cost Estimates).It allows users to view existing forecasts, check their version history, and track their submission or review status.\n\nThe Forecast Browser table must display the following columns in the default view:\n\n[Table content]\n\n### System Behaviour (Based on SRS)\n\n[Table content]\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-8980",
+    "type": "Story",
+    "summary": "Forecast Browser - Search - API",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to search for Forecast Title, Forecast ID, EIN, or Estimate Title.so that I can quickly find and access relevant forecasts without manually scrolling through the list.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9027",
+    "type": "Epic",
+    "summary": "Tasks",
+    "description": "### Goal & Context\n\nThis Epic is critical for migrating and modernizing the core task management functionality from V8 into the V10 platform. The primary goal is to provide Project Users and Project Managers with a streamlined, centralized system for tracking, prioritizing, and managing operational work items, thereby increasing user efficiency and driving adoption of the V10 environment. Additionally, we are delivering robust customisation capabilities for Status and Priority values to ensure the V10 task workflow aligns perfectly with our customers' unique business processes.\n\n### Key Features In Scope\n\n### 1. Project Task Management (CRUD & Efficiency)\n\n• Creation & Modification: Full capability to Create, Edit, and Delete tasks within the project view. Mandatory fields include Task Title, Assignee, Status, Priority, and Deadline.\n\n• Assignment: Ability to assign tasks to any available user or authorized role, including a quick-action 'Assign to me' link.\n\n• Modification: Users can modify all fields on existing tasks, including Task Title, Comment, Status, Priority, Deadline, and the assigned user/role.\n\n• Duplication: Implementation of the Duplicate action to quickly copy a task within the same project.\n\n### 2. Centralized Workbank & Navigation\n\n• Workbank View : A dedicated, centralized view displaying all tasks assigned to the current user across all accessible projects.\n\n• Filtering: Users can filter the Workbank to view 'My Tasks', 'My Team’s Tasks', or 'Tasks for all Projects I have access to'.\n\n• Click Through Navigation: Users can click any task row to be instantly navigated to the relevant project context (e.g. the Project Overview page).\n\n### 3. Workflow Customisation\n\n• List Management : Authorized administrators can define, edit, and delete custom text values for the Status and Priority dropdown fields.\n\n• Data Integrity: A guardrail is implemented to prevent the deletion of any Status or Priority value that is currently in use by an active task.\n",
+    "status": "Open",
+    "parent": "VER10-9026",
+    "frs": [],
+    "points": 11
+  },
+  {
+    "key": "VER10-9028",
+    "type": "Epic",
+    "summary": "Workflow",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9026",
+    "frs": [],
+    "points": 35
+  },
+  {
+    "key": "VER10-9035",
+    "type": "Story",
+    "summary": "[SA] User Roles & Permissions",
+    "description": "Determine what we need:\n\n• attribute based\n\n• role based\n\n• policy based\n\nSuggested approach:\n\n1. Refactor access into a new pattern - isolate permissions into a generic service.\n\n2. Once isolated, investigate / update service to use thirdparty solution\n",
+    "status": "In Dev",
+    "parent": "VER10-8452",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9041",
+    "type": "Story",
+    "summary": "O&M Single Supplier Scenario Implementation",
+    "description": "User Story:As a system, I must enforce a single supplier configuration for the O&M lifecycle stage so that all forecasts, data entry, and consolidation apply only to that supplier.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590Notes: Removes supplier selection and merging; multi-supplier logic is disabled for R1D.1.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560",
+      "FR1590"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9049",
+    "type": "Epic",
+    "summary": "Supply Chain - 2nd Milestone",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-8677",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9060",
+    "type": "Story",
+    "summary": "Forecast Creation – Baseline Revision (v1.0 Only) - API",
+    "description": "### User Story:\n\nAs an NH Estimator, I want the system to automatically generate a locked baseline revision (v1.0) upon forecast creation, so that it serves as a standardised starting point for forecasting.\n\nMoSCoW: MustSRS Trace: FR1560Notes: v1.0 baseline is read-only. Editable revision (v1.1) created later by Project User under Manage Revision.\n\n### Acceptance Criteria\n\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-9061",
+    "type": "Story",
+    "summary": "Track Supplier Submission Status - API",
+    "description": "### User story\n\nAs a Project User (Supplier), I want to track the progress and deadlines of forecast submissions, so that I can ensure the supplier completes and submits their forecast on time.\n\nMoSCoW: MustSRS Trace: FR1920\n\nNotes: Applicable to O&M lifecycle (single supplier). Submission statuses include: In Progress, Submitted, Under Review, Approved, Overdue.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1920"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9063",
+    "type": "Story",
+    "summary": "O&M Single Supplier Scenario Implementation - API",
+    "description": "User Story:As a system, I must enforce a single supplier configuration for the O&M lifecycle stage so that all forecasts, data entry, and consolidation apply only to that supplier.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590Notes: Removes supplier selection and merging; multi-supplier logic is disabled for R1D.1.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560",
+      "FR1590"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9064",
+    "type": "Story",
+    "summary": "Role-Based Access Control (RBAC) Enforcement - API",
+    "description": "### User Story\n\nAs a System, I want to enforce access rights for NH Estimators, Project Users, and Reviewers based on assigned roles and regions So that each user only performs actions permitted by their role and scope.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Default roles include NH Estimator, Project User, Reviewer, and Admin. \n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Blocked",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530",
+      "FR2580"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9065",
+    "type": "Story",
+    "summary": "Role-Based Access for Forecast Browser - API",
+    "description": "### User Story\n\nAs an Admin, I want to configure which users can Add, Edit, Delete, Read, or have No access to Forecast Browser revisions So that users’ actions align with project and role-level permissions.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Forecast Browser permissions combine with Project access permissions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9066",
+    "type": "Story",
+    "summary": "Baseline Visibility Configuration - API",
+    "description": "User Story\n\nAs an Admin, I want to configure baseline visibility levels (None, Project, Section, Item, Resource)So that users only see baseline data at their permitted level in the Forecast Browser and Forecast screens.\n\nMoSCoW: MustSRS Trace: FR2440, FR2460Notes: Baseline visibility is a system-wide configuration applied across all forecasts, affecting cost and carbon visibility for users.\n\n### Acceptance Criteria\n\n[Table content]\n\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2440",
+      "FR2460"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9067",
+    "type": "Story",
+    "summary": "Template Locking and Editing Restrictions -  API",
+    "description": "User Story\n\nAs a System, I must lock supplier forecasting templates with only permitted editable fieldsSo that structure, formulas, and non-assigned items remain immutable and consistent with the approved baseline.\n\nMoSCoW: MustSRS Trace: FR1590, FR2320Notes: Editable fields are limited to supplier-entered data such as rates, quantities, and carbon factors. Structure, coding, and formula columns remain system-locked.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR1590",
+      "FR2320"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-9068",
+    "type": "Story",
+    "summary": "Forecast Approve/Reject Permissions - API",
+    "description": "User Story\n\nAs an Admin, I want to configure the Reviewer role to review and approve/reject submissionsSo that governance and audit integrity are maintained for every forecast submission.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990Notes: Reviewer cannot modify forecasts; must approve or reject with mandatory comments. Approval locks revision as baseline (vX.0).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2250",
+      "FR1990"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9128",
+    "type": "Epic",
+    "summary": "Supply Chain - 3rd Milestone",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-8677",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9140",
+    "type": "Story",
+    "summary": "Present the time in UTC format across the app",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9150",
+    "type": "Story",
+    "summary": "Configure Economic Output Variables - UI",
+    "description": "User Story \n\nAs a System Admin, I need a dedicated configuration screen to set and manage the  Present Value Calculation (PVC) Variables (Discount Rates, Base Year, etc.) and select the active GDP Deflator Index, so that all economic appraisal and reporting uses consistent, centrally controlled economic assumptions.\n\n\nAcceptance Criteria:\n\n1. Access: The System Admin can access this configuration screen (under the National Highways sub tab in the Administration menu) on a screen clearly titled or sectioned as Economic Output Variables.\n\n2. PVC Variable Configuration: The system must provide configurable, labeled input fields for the following PVC parameters:\n• Discount Rate (%) - First 30 years of appraisal: The system must accept and validate a numeric percentage value.\n\n• Discount Rate (%) - After 30 years of appraisal: The system must accept and validate a numeric percentage value\n\n• Base Year: The system must accept a whole numeric year value,  ideally via a dropdown or restricted input box.\n\n• Market Price Adjustment Factor: The system must accept and validate a numeric factor\n\n3. GDP Deflator Index Selection: The screen must include a dropdown menu labelled \"Select Inflation Index\" allowing the Admin to choose one active inflation index from the Inflation indices library.\n\n4. Data Validation: All numeric input fields for rates and factors must enforce the following:\n• Numeric Only: Only numeric values (including decimals) are accepted.\n\n• Required: Fields must not be empty.\n\n5. System-Wide Application: All configured and selected values must be applied across the entire system for economic calculations and National Highways fixed report generation.\n\n",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9151",
+    "type": "Story",
+    "summary": "Configure Economic Output Variables - BE",
+    "description": "User Story \n\nAs a System Admin, I need a dedicated configuration screen to set and manage the  Present Value Calculation (PVC) Variables (Discount Rates, Base Year, etc.) and select the active GDP Deflator Index, so that all economic appraisal and reporting uses consistent, centrally controlled economic assumptions.\n\n\nAcceptance Criteria:\n\n1. Access: The System Admin can access this configuration screen (under the National Highways sub tab in the Administration menu) on a screen clearly titled or sectioned as Economic Output Variables.\n\n2. PVC Variable Configuration: The system must provide configurable, labeled input fields for the following PVC parameters:\n• Discount Rate (%) - First 30 years of appraisal: The system must accept and validate a numeric percentage value.\n\n• Discount Rate (%) - After 30 years of appraisal: The system must accept and validate a numeric percentage value\n\n• Base Year: The system must accept a whole numeric year value,  ideally via a dropdown or restricted input box.\n\n• Market Price Adjustment Factor: The system must accept and validate a numeric factor\n\n3. GDP Deflator Index Selection: The screen must include a dropdown menu labelled \"Select Inflation Index\" allowing the Admin to choose one active inflation index from the Inflation indices library.\n\n4. Data Validation: All numeric input fields for rates and factors must enforce the following:\n• Numeric Only: Only numeric values (including decimals) are accepted.\n\n• Required: Fields must not be empty.\n\n5. System-Wide Application: All configured and selected values must be applied across the entire system for economic calculations and National Highways fixed report generation.\n",
+    "status": "Open",
+    "parent": "VER10-7879",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9175",
+    "type": "Story",
+    "summary": "Validation for Initiate IFT and Manage IFT - API",
+    "description": "### User Story:\n\nAs an NH Estimator, I want to validate the creation of a new forecast only from an approved (Authorised) FCE and Manage IFT after creation, so that the baseline revision (v1.0) is generated accurately and consistently.\n\nMoSCoW: MustSRS Trace: FR1560Notes: Trigger available only from approved FCE via WBS.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9184",
+    "type": "Epic",
+    "summary": "TPE - Three Point Estimating",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9188",
+    "type": "Story",
+    "summary": "Applying - Role-Based Access for Forecast Browser",
+    "description": "### User Story\n\nAs an Admin, I want to configure which users can Add, Edit, Delete, Read, or have No access to Forecast Browser revisions So that users’ actions align with project and role-level permissions.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Forecast Browser permissions combine with Project access permissions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for review",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9189",
+    "type": "Story",
+    "summary": "Applying - Role-Based Access for Forecast Browser - API",
+    "description": "### User Story\n\nAs an Admin, I want to configure which users can Add, Edit, Delete, Read, or have No access to Forecast Browser revisions So that users’ actions align with project and role-level permissions.\n\nMoSCoW: MustSRS Trace: FR2530, FR2580Notes: Forecast Browser permissions combine with Project access permissions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2530"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9190",
+    "type": "Story",
+    "summary": "Applying - Forecast Approve/Reject Permissions - API",
+    "description": "User Story\n\nAs an Admin, I want to configure the Reviewer role to review and approve/reject submissionsSo that governance and audit integrity are maintained for every forecast submission.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990Notes: Reviewer cannot modify forecasts; must approve or reject with mandatory comments. Approval locks revision as baseline (vX.0).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2250",
+      "FR1990"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9191",
+    "type": "Story",
+    "summary": "Applying - Forecast Approve/Reject Permissions",
+    "description": "User Story\n\nAs an Admin, I want to configure the Reviewer role to review and approve/reject submissionsSo that governance and audit integrity are maintained for every forecast submission.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990Notes: Reviewer cannot modify forecasts; must approve or reject with mandatory comments. Approval locks revision as baseline (vX.0).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8858",
+    "frs": [
+      "FR2250",
+      "FR1990"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9192",
+    "type": "Story",
+    "summary": "Applying - Forecast Visibility Configuration",
+    "description": "User Story\n\nAs an Admin, I want to configure baseline visibility levels (None, Project, Section, Item, Resource)So that users only see baseline data at their permitted level in the Forecast Browser and Forecast screens.\n\nMoSCoW: MustSRS Trace: FR2440, FR2460Notes: Baseline visibility is a system-wide configuration applied across all forecasts, affecting cost and carbon visibility for users.\n\n### Acceptance Criteria\n\n[Table content]\n\n",
+    "status": "Open",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR2440",
+      "FR2460"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9193",
+    "type": "Story",
+    "summary": "Applying - Forecast Visibility Configuration - API",
+    "description": "User Story\n\nAs an Admin, I want to configure baseline visibility levels (None, Project, Section, Item, Resource)So that users only see baseline data at their permitted level in the Forecast Browser and Forecast screens.\n\nMoSCoW: MustSRS Trace: FR2440, FR2460Notes: Baseline visibility is a system-wide configuration applied across all forecasts, affecting cost and carbon visibility for users.\n\n### Acceptance Criteria\n\n[Table content]\n\n",
+    "status": "Ready for release",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR2440",
+      "FR2460"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-9201",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner",
+    "description": "User Story:As an Estimator or Project User, I want to use an Outliner panel to drill down forecasts by Portfolio → Programme → Project → Estimate so that I can focus on a specific hierarchy or area.\n\nAcceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9202",
+    "type": "Story",
+    "summary": "Forecast Browser - Forecast Grouped",
+    "description": "User Story:As a Project User, I want to view forecasts grouped by baseline and their revisions so that I can easily identify the relationship between them and their status.\n\nAcceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9203",
+    "type": "Story",
+    "summary": "Forecast Browser - Filter  - API",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to search and filter forecasts by key attributes such as Portfolio, Programme, Project, EIN, Forecast Reference, and Title,so that I can quickly find and access relevant forecasts without manually scrolling through the list.\n\n### Acceptance Criteria\n\n\n[Table content]\n",
+    "status": "Closed",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9204",
+    "type": "Story",
+    "summary": "Forecast Browser - Filter",
+    "description": "### User Story\n\nAs an Estimator/Manager/Project User,I want to search and filter forecasts by key attributes such as Portfolio, Programme, Project, EIN, Forecast Reference, and Title,so that I can quickly find and access relevant forecasts without manually scrolling through the list.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9211",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner - API",
+    "description": "User Story:As an Estimator or Project User, I want to use an Outliner panel to drill down forecasts by Portfolio → Programme → Project → Estimate so that I can focus on a specific hierarchy or area.\n\nAcceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 5
+  },
+  {
+    "key": "VER10-9214",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner Search",
+    "description": "",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9215",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner Search - API",
+    "description": "",
+    "status": "Closed",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9216",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner Fliter - API",
+    "description": "",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9217",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner Filter",
+    "description": "",
+    "status": "Ready for release",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9218",
+    "type": "Story",
+    "summary": "Create New Revision (BoQ) - API",
+    "description": "### User Story\n\nAs a Project User (or Supplier), I want to create a new editable forecast revision (BoQ) from an existing baseline so that I can update rates, quantities, and carbon factors while preserving baseline integrity.\n\n### System Behaviour (from SRS)\n\n1. System allows the Project User to create a new revision only if the current revision is not under review or locked.\n\n2. On selecting “Create New Revision”, the system automatically assigns the next sequential version number (e.g., v1.2 → v1.3).\n\n3. The new revision inherits all data, metadata, and linked records (e.g., baseline, libraries, supplier containers, ownership, due dates).\n\n4. The system sets the status = Draft and marks it as editable.\n\n5. Revision metadata fields (Revision ID, Created By, Owner, Date Created, and Due Date) are stored and visible in the browser.\n\n6. Audit log records the creation event with user ID, timestamp, and source revision.\n\n7. Only one editable revision can exist at a time per forecast; users cannot create a new one while a draft is still open.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2320, FR2470\n\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1560",
+      "FR1590"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9219",
+    "type": "Story",
+    "summary": "View Forecast Revision (BoQ) - API",
+    "description": "\n### User Story\n\nAs a Project User,I want to view the BoQ within a selected forecast revision,so that I can see the permitted sections, items, and resources as per my access level and baseline visibility configuration.\n\nMoSCoW: MustSRS Trace: FR1560, FR2440, FR2460\n\n### System Behaviour\n\n1. When the Project User opens a forecast revision (e.g. v1.1, v1.2), the system retrieves the associated BoQ from the locked baseline (v1.0) and displays data according to the user’s Baseline Visibility configuration.\n\n2. The system enforces visibility levels as defined by Admin (from RBA/visibility configuration):\n• None: No baseline data visible.\n\n• Project: Only total project-level baseline and forecast values visible.\n\n• Section: Section totals and project totals visible.\n\n• Item: Item-level rates and costs visible, along with section and project totals.\n\n• Resource: Full breakdown visible including item and resource-level details.\n\n3. The BoQ grid structure (Sections → Items → Resources) is non-editable in view mode.\n\n4. The system automatically applies regional and project access filters, showing only the user’s assigned project(s) and region(s).\n\n5. The system displays baseline and current revision values side-by-side, depending on the user’s access.\n\n6. All cost and carbon values are presented based on user role permissions — e.g., Suppliers only see their own container data.\n\n7. The BoQ hierarchy remains consistent across all forecast revisions (derived from the CCET WBS).\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1550",
+      "FR1590"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9220",
+    "type": "Story",
+    "summary": "Edit Forecast Revision (BoQ) - API",
+    "description": "User Story As a Project User (or Supplier), I want to edit an existing forecast revision (BoQ) within my assigned container so that I can update rates, quantities, and carbon factors without altering the approved baseline structure.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2320, FR2470\n\n### Acceptance Criteria\n\n[Table content]\n\nNotes:\n\n• Editable fields and behaviours directly align with SRS sections FR1560, FR1590, FR2320, and FR2470.\n\n• Structural and formulaic protections ensure compliance with NH’s requirement that baseline WBS and template integrity remain intact.\n\n• Project Users and Suppliers share the same entity model and permissions are driven by access scope (baseline visibility)\n",
+    "status": "In QA",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1550",
+      "FR1590"
+    ],
+    "points": 3
+  },
+  {
+    "key": "VER10-9221",
+    "type": "Story",
+    "summary": "Production of Forecast – Validation & Consistency Checks - API",
+    "description": "User Story\n\nAs a System, I must validate all forecast data (BoQ, rates, libraries, and carbon factors),so that only complete and consistent data can be submitted or consolidated.\n\nMoSCoW: MustSRS Trace: FR1890, FR2430, FR2470\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9222",
+    "type": "Story",
+    "summary": "Unlink resources and empty the rate and cost for baseline - API",
+    "description": "",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9237",
+    "type": "Story",
+    "summary": "Version History Tracking for Template Library - API",
+    "description": "These requirements were separated from  in order to separate concerns and use case of Audit Trails vs Version Histories.\n\n\n\nAcceptance Criteria \n\n[Table content]\n",
+    "status": "Open",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9244",
+    "type": "Story",
+    "summary": "Manage Forecast Rework (Resubmission Process) - API",
+    "description": "User story\n\nAs a Project User, I want to review a supplier’s forecast submission results, reject it if errors exist, and allow resubmission after corrections so that a clean validated version is consolidated.\n\nMoSCoW: MustSRS Trace: FR2470\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8681",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9245",
+    "type": "Story",
+    "summary": "Consolidate Forecast Revision - API",
+    "description": "User Story\n\nAs a Project User, I want to consolidate the validated forecast (including cost and carbon data) into a complete revision so that it can be promoted for NH review.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8681",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9246",
+    "type": "Story",
+    "summary": "Tag Preferred Revision and Submit for Review - API",
+    "description": "User Story\n\nAs a Project User, I want to tag a validated forecast revision as “Preferred” and submit it for NH review so that it can be locked and sent for governance approval.\n\nMoSCoW: MustSRS Trace: FR2490, FR1560\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "In Dev",
+    "parent": "VER10-8682",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9247",
+    "type": "Story",
+    "summary": "NH Reviewer Approval or Rejection - API",
+    "description": "User Story\n\nAs an NH Reviewer, I want to review submitted forecasts and approve or reject them with governance control so that only validated revisions become new baselines.\n\nMoSCoW: MustSRS Trace: FR2250, FR1990\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8682",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9250",
+    "type": "Story",
+    "summary": "Add Segment to Forecast BoQ",
+    "description": "User story\n\nAs a Project User/Supplier, I want to add new Segments under a Section so that I can further define sub-scope items within the forecast.\n\nMoSCoW: MustSRS Trace: FR1560, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9272",
+    "type": "Story",
+    "summary": "Add New Supplier/Subcontractor - UI & Integration",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to add new suppliers/subcontractors to the library  \nSo that estimators can use them in their estimates.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows administrators to create new supplier/subcontractor records with all required fields including company details, contact information, and project user assignments.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9273",
+    "type": "Story",
+    "summary": "Edit Supplier/Subcontractor Details - UI & Integration",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to edit existing supplier/subcontractor information  \nSo that I can keep records current and accurate.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows administrators to modify existing supplier/subcontractor records while maintaining data integrity and audit trails.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9274",
+    "type": "Story",
+    "summary": "Duplicate Supplier/Subcontractor - UI & Integration",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to duplicate existing supplier/subcontractor records  \n\nSo that I can quickly create similar entries (e.g., for sister companies).\n\nMoSCoW: Should Have  \n\nSRS Trace: N/A  \n\nNotes: This functionality allows administrators to copy existing records as a template for creating new similar entries.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9275",
+    "type": "Story",
+    "summary": "Simple Search Supplier/Subcontractor - UI & Integration",
+    "description": "User Story\n\nAs an Estimator, I want to search for suppliers/subcontractors by company name or contact  \nSo that I can quickly find the right contractor for my estimates.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality provides simple search capabilities with partial matching support for efficient contractor lookup.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9277",
+    "type": "Story",
+    "summary": "Filter by columns",
+    "description": "User Story\n\nAs an Estimator, I want to filter suppliers/subcontractors by category  \nSo that I can narrow my search to either Subcontractors, Suppliers, or both.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows users to filter the list based on whether entries are categorized as Subcontractors, Suppliers, or both.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9278",
+    "type": "Story",
+    "summary": "Delete Supplier/Subcontractor - UI & Integration",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to delete obsolete suppliers/subcontractors  \nSo that I can maintain data quality and remove outdated records.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows administrators to remove supplier/subcontractor records with appropriate safeguards and confirmation.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9279",
+    "type": "Story",
+    "summary": "Active/Inactive Status Management",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to mark suppliers/subcontractors as active or inactive  \nSo that I can maintain historical data while controlling which contractors are available for current use.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows soft deletion/archiving of suppliers/subcontractors by marking them inactive rather than permanently deleting them.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9282",
+    "type": "Story",
+    "summary": "Assign Project Users to Supplier/Subcontractor - UI & Integration",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to assign project users to specific supplier/subcontractor organizations  \nSo that only authorized users can access their information in IFT (Invitation for Tender) and other modules.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality integrates with the User Permission module to control access to supplier/subcontractor information based on project user assignments.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9283",
+    "type": "Story",
+    "summary": "Role-based Access Control for Supplier/Subcontractor Library - UI & Integration",
+    "description": "User Story\n\nAs a System Administrator, I want to define role-based access permissions for the Supplier/Subcontractor Library  \nSo that I can control which users can Add, Edit, Delete, Read, or Duplicate supplier/subcontractor records.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality provides granular permission control for different user roles to manage access to supplier/subcontractor library functions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9284",
+    "type": "Story",
+    "summary": "Add New Supplier/Subcontractor - API",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to add new suppliers/subcontractors to the library   So that estimators can use them in their estimates.\n\nMoSCoW: Must Have   SRS Trace: N/A   Notes: This functionality allows administrators to create new supplier/subcontractor records with all required fields including company details, contact information, and project user assignments.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 11
+  },
+  {
+    "key": "VER10-9286",
+    "type": "Story",
+    "summary": "Edit Supplier/Subcontractor - API",
+    "description": "Technical Story - API Development\n\nRelated User Story: VER10-9273 - Edit Supplier/Subcontractor Details\n\n### API Endpoints Required\n\n1. PUT /api/suppliers-subcontractors/{id}\n• Update existing supplier/subcontractor record\n\n• Request body includes all modifiable fields\n\n• Returns updated record\n\n2. GET /api/suppliers-subcontractors/{id}\n• Retrieve single supplier/subcontractor for editing\n\n• Returns complete record with assignments\n\n### Technical Requirements\n\n• Implement optimistic locking to handle concurrent edits\n\n• Validate all fields as per creation rules\n\n• Check code uniqueness excluding current record\n\n• Track field-level changes for audit trail\n\n• Maintain data integrity during updates\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9287",
+    "type": "Story",
+    "summary": "Assign Project Users - API",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to assign project users to specific supplier/subcontractor organizations   So that only authorized users can access their information in IFT (Invitation for Tender) and other modules.\n\nMoSCoW: Must Have   SRS Trace: N/A   Notes: This functionality integrates with the User Permission module to control access to supplier/subcontractor information based on project user assignments.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9292",
+    "type": "Story",
+    "summary": "Duplicate Supplier/Subcontractor - API",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to duplicate existing supplier/subcontractor records  \nSo that I can quickly create similar entries (e.g., for sister companies).\n\nMoSCoW: Should Have  \nSRS Trace: N/A  \nNotes: This functionality allows administrators to copy existing records as a template for creating new similar entries.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9293",
+    "type": "Story",
+    "summary": "Simple Search Supplier/Subcontractor - API",
+    "description": "User Story\n\nAs an Estimator, I want to search for suppliers/subcontractors by company name or contact  \nSo that I can quickly find the right contractor for my estimates.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality provides simple search capabilities with partial matching support for efficient contractor lookup.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9295",
+    "type": "Story",
+    "summary": "Filter by columns",
+    "description": "User Story\n\nAs an Estimator, I want to filter suppliers/subcontractors by category  \nSo that I can narrow my search to either Subcontractors, Suppliers, or both.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows users to filter the list based on whether entries are categorized as Subcontractors, Suppliers, or both.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9296",
+    "type": "Story",
+    "summary": "Delete Supplier/Subcontractor - API",
+    "description": "User Story\n\nAs an Estimating Administrator, I want to delete obsolete suppliers/subcontractors  \nSo that I can maintain data quality and remove outdated records.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality allows administrators to remove supplier/subcontractor records with appropriate safeguards and confirmation.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9324",
+    "type": "Story",
+    "summary": "Role-based Access Control for Supplier/Subcontractor Library - API",
+    "description": "User Story\n\nAs a System Administrator, I want to define role-based access permissions for the Supplier/Subcontractor Library  \nSo that I can control which users can Add, Edit, Delete, Read, or Duplicate supplier/subcontractor records.\n\nMoSCoW: Must Have  \nSRS Trace: N/A  \nNotes: This functionality provides granular permission control for different user roles to manage access to supplier/subcontractor library functions.\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9271",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9373",
+    "type": "Epic",
+    "summary": "Carbon Item Library",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9374",
+    "type": "Epic",
+    "summary": "Carbon Baseline Assumption",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9391",
+    "type": "Story",
+    "summary": "Forecast Creation – Get Estimate details - API",
+    "description": "API should return Estimate details for which has forecast has been initiated. API CALL to get pop up details - GET api/v2/forecast/estimate-details   \n",
+    "status": "Ready for release",
+    "parent": "VER10-8921",
+    "frs": [
+      "FR1560"
+    ],
+    "points": 1
+  },
+  {
+    "key": "VER10-9417",
+    "type": "Story",
+    "summary": "Forecast Browser - Outliner API - Performance index and Unit test coverage",
+    "description": "A/C\n\n• identify indexes required based on sql queries and create migration scripts for new indexes into migrations folder \n• run migrations in team environment and test\n\n• 80% unit test coverage on:\n• controller - you can reference audit v2 controller tests - we want to do a small integration test and validate the output from the api is according to the contract - ensure that error handling works as expected\n\n• service - using mocks - validate that the service logic and downstream calls\n\n• repo - using mock context - validate downstream calls\n\n• review SQL comments from previous PRs for performance. \n\n• sonarqube checks passing\n",
+    "status": "Closed",
+    "parent": "VER10-8678",
+    "frs": [
+      "FR1540",
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9428",
+    "type": "Epic",
+    "summary": "Carbon Resource Library Data Model (A–D Lifecycle Storage)",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [
+      "FR560",
+      "FR960"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-9461",
+    "type": "Story",
+    "summary": "Store PAS 2080 Module Structure",
+    "description": "### User Story\n\nAs an Estimator,  \nI want the Resource Library to store carbon factors at PAS 2080 module and sub-module level  \nSo that the system can generate compliant whole-life carbon outputs.\n\n### Acceptance Criteria\n\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9428",
+    "frs": [],
+    "points": 2
+  },
+  {
+    "key": "VER10-9464",
+    "type": "Epic",
+    "summary": "Carbon CRUD operation - Resource Library",
+    "description": "### Business Goal\n\nEnsure that all upfront carbon associated with new construction / assembly / installation is fully represented and editable at Resource level according to PAS 2080 and NH Carbon Library 1.9.1.\n\n\n### Scope — Covered Fields\n\n[Table content]\n\n\n### Related User Stories\n\n• US 2.1 — Store and Maintain A-Stage Carbon Values\n\n• US 2.2 — Calculate A-Stage Totals Automatically\n\n• US 2.3 — Support Assembly (_asm) Fields as Internal System Fields\n",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9465",
+    "type": "Story",
+    "summary": "Create Resource with Carbon Values - UI",
+    "description": "### User Story\n\nAs an Admin/Estimator, I want to create a Resource with A/B/C/D carbon lifecycle values that are scoped by Supplier and Region so that correct carbon totals are automatically calculated and used throughout the estimate.\n\n### MoSCoW: Must HaveSRS References: FR1000, FR1340, FR2130, FR1310, FR2180, FR2200, FR1060, FR940\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9466",
+    "type": "Story",
+    "summary": "Create Resource with Carbon Values - API",
+    "description": "### User Story\n\nAs an Admin/Estimator, I want to create a Resource with A/B/C/D carbon lifecycle values that are scoped by Supplier and Region so that correct carbon totals are automatically calculated and used throughout the estimate.\n\n### MoSCoW: Must HaveSRS References: FR1000, FR1340, FR2130, FR1310, FR2180, FR2200, FR1060, FR940\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for QA",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9467",
+    "type": "Story",
+    "summary": "Edit Resource with Carbon Values - API",
+    "description": "### User Story \n\nAs an Admin/Estimator, I want to edit the A/B/C/D carbon values of an existing Resource so that carbon updates are applied correctly to Items and WBS calculations using that Resource.\n\nMoSCoW: Must HaveSRS References: FR1000, FR1340, FR2130, FR2180, FR2200, FR1060, FR940\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9478",
+    "type": "Story",
+    "summary": "Edit Resource with Carbon Values",
+    "description": "### User Story \n\nAs an Admin/Estimator, I want to edit the A/B/C/D carbon values of an existing Resource so that carbon updates are applied correctly to Items and WBS calculations using that Resource.\n\nMoSCoW: Must HaveSRS References: FR1000, FR1340, FR2130, FR2180, FR2200, FR1060, FR940\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9479",
+    "type": "Story",
+    "summary": "View - Carbon Modules Display in Resource Library Grid - API",
+    "description": "### User Story \n\nAs an Estimator, I want to view carbon values (A/B/C/D lifecycle stages and sub-modules) in the Resource Library grid so I can understand carbon impacts without opening the resource detail.\n\nMoSCoW: Must HaveSRS References: FR1000, FR1340, FR940, FR1060, FR1070, FR1020, FR950, FR1380\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Ready for release",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9480",
+    "type": "Story",
+    "summary": "View - Carbon Modules Display in Resource Library Grid ",
+    "description": "### User Story \n\nAs an Estimator, I want to view carbon values (A/B/C/D lifecycle stages and sub-modules) in the Resource Library grid so I can understand carbon impacts without opening the resource detail.\n\nMoSCoW: Must HaveSRS References: FR1000, FR1340, FR940, FR1060, FR1070, FR1020, FR950, FR1380\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "In Dev",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9488",
+    "type": "Story",
+    "summary": "[FE] Framework for permissions by route",
+    "description": "updating route handling globally to reference a configuration that maps the routes to required permissions to view the page\n\neg. \n\n• for the /dashboard route, user will need both [ estimate.read, projects.read ]permissions to access the route, otherwise a full screen error is shown\n\n• we can also use this same configuration within a service to determine whether to show/disable a button that opens to the route\n\nA/C\n\n• map to existing permissions structure, but allow for future extension/changing to a new permission model\n\n• once the framework is introduced, as a developer, in order to configure the permission for a new/existing route, I only need to update the mapping configuration to enforce the access to that route\n\n• when a route has no configured permissions, then allow access to anyone\n\n• if a user opens a route, but has no permissions, then the framework/middleware should show an error\n\n• this should be applied in one place but affect all routes, so we can quickly integrate and start configuring permissions per route\n\n• we should also implement this on a route as part of this to show it working and how to configure it. maybe /audit-logs ? \n",
+    "status": "In QA",
+    "parent": "VER10-8452",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9489",
+    "type": "Story",
+    "summary": "[FE] Framework for access by component",
+    "description": "Within frontend, introduce a framework so that we can: \n\n• enable permission checks on components - eg by defining a list of permissions required for the component\n\n• if permission check fails - we either hide / disable the component\n\n\nNotes:\n\nEditable components/features\n\n• submit buttons\n\n• editable fields\n\n• drag-and-drop\n\n\nOptions\n\n1. use a hook that we add into every page\n\n2. use a functional component that can wrap the component we want to protect\n\n3. use tags to look up a mapping configuration\n",
+    "status": "Ready for release",
+    "parent": "VER10-8452",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9494",
+    "type": "Epic",
+    "summary": "Programme and Portfolio Risk",
+    "description": "Goal: To fully integrate Programme and Portfolio Risk into the Cost and Carbon Estimating System (CCES) by enabling the application of predefined, mandatory risk percentages to eligible Cost Elements within an estimate (bottom-up calculation), and providing accurate aggregate reporting and compliance outputs (CCESS).\n\nUser Value: Ensures all estimates comply with National Highways’ financial reporting standards by including mandated strategic risk allowances, reducing manual effort, and providing clear, auditable cost and carbon totals before inflation.\n\n### Key Capabilities\n\n1. Risk Library Administration :\n• Implement an administrative function to allow Estimating Managers to upload and store distinct Programme and Portfolio Risk percentage matrices (Cost and Carbon) for all major estimate types (MP CapEx, AR CapEx, O&M, LTA) and their corresponding lifecycle stages.\n\n• This function must allow mapping of the risk percentages to specific Cost Elements to control where the allowance is applied.\n\n2. Estimate Calculation & Application :\n• The system must automatically calculate the Programme and Portfolio Risk allowances for an estimate by applying the correct percentage (based on the estimate's lifecycle stage and chosen risk profile) to the Estimate Total (Base Cost + Project Risk + Uncertainty) of the eligible Cost Elements.\n\n• Carbon risk must be derived from the calculated Cost Risk using the Cost-to-Carbon factor for the same Cost Element (FR1090).\n\n3. Reporting & Display :\n\n• The final Estimate Summary and CCESS output must display the calculated Programme and Portfolio Risk allowances as separate line items before the application of inflation.\n\n• The system must calculate and display a high-level \"Rollup Risk Percentage\" in summary dashboards. This percentage is a bottom-up metric for display only (calculated as: Total PP Risk Cost Allowance / Total Scheme Cost Excluding PP Risk) and must not be used for top-down calculation.\n",
+    "status": "Open",
+    "parent": "VER10-9026",
+    "frs": [
+      "FR570",
+      "FR1090"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-9514",
+    "type": "Story",
+    "summary": "Duplicate Resource (with Carbon Values)",
+    "description": "### User story\n\nAs an Admin/Estimator, I want to duplicate an existing resource including its carbon values and region/supplier variants so that I can quickly create a similar resource without manually re-entering all lifecycle data.\n\nMoSCoW: Should HaveSRS FR References: FR1000, FR1340, FR940, FR2060 (Rate maintenance & library CRUD), FR2130 \n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9515",
+    "type": "Story",
+    "summary": "Duplicate Resource (with Carbon Values) - API",
+    "description": "### User story\n\nAs an Admin/Estimator, I want to duplicate an existing resource including its carbon values and region/supplier variants so that I can quickly create a similar resource without manually re-entering all lifecycle data.\n\nMoSCoW: Should HaveSRS FR References: FR1000, FR1340, FR940, FR2060 (Rate maintenance & library CRUD), FR2130 \n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-9464",
+    "frs": [],
+    "points": 3
+  },
+  {
+    "key": "VER10-9519",
+    "type": "Story",
+    "summary": "Historic Cost Date Capture - BE",
+    "description": "User Story\n\nAs an estimator, I want to define a Historic Cost Cut-Off Date and manually enter Historic Costs against the relevant PCF stages so that the estimate accurately reflects money already spent on the job, which must be excluded from inflation calculations.\n\nAcceptance Criteria (AC):\n\n\n### Configuration Input\n\n• The Estimator can specify the Historic Cost Cut-Off Date in a dedicated field within the Estimate Summary Configuration screen.\n\n• The Estimator must be able to manually input Historic Costs (as a lump sum) directly against Cost Elements within the Work Breakdown Structure (WBS) or the configuration table for specific PCF stages.\n\n• Historic Costs must be clearly identified and visually differentiated from forecast costs on the configuration screen.\n\n### Display and Visibility\n\n• The Historic Cost Cut-Off Date and the aggregated Historic Costs must be prominently displayed on the Estimate Summary Overview screen, which is accessible via the path: Tools - NH Functions - Estimate Summary Overview.\n\n• The system must show the associated historic costs for each relevant Cost Element within the summary views.\n\n### Inflation Logic (Critical)\n\n• Exclusion from Inflation: Any costs designated as Historic Costs (i.e. costs spent up to or prior to the defined Historic Cost Cut-Off Date) must not be subject to inflation calculations when generating the Inflation Summary.\n\n• Inclusion in Inflation: All costs associated with stages or cost elements scheduled after the Historic Cut-Off Date are considered forecast costs and must be subject to the defined inflation indices (Cost and CO2e)\n",
+    "status": "Ready for release",
+    "parent": "VER10-8903",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9523",
+    "type": "Epic",
+    "summary": "Estimate/WBS Carbon Calculation",
+    "description": "Add resources with Carbon values to WBS\nAdd item with Carbon values to WBS \nCarbon calculation logic in WBS \nMajor projects ( specific scenarios )\nO&M Carbon ( specific scenarios )\nAsset Renewal Carbon ( specific scenarios )\nLTA Carbon ( specific scenarios )\n\n",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9527",
+    "type": "Epic",
+    "summary": "Cost to Carbon Library",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9427",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9530",
+    "type": "Story",
+    "summary": "[FE] Audit Trail - support new audit fields",
+    "description": " Please see the api changes:\n\n• new filtering option - reason\n\n• new response fields - reason, referenceId, referenceLabel\n\n\nIn the UI\n\n• add the reference label and reason to the table view\n\n• enable filtering on the reason colum\n",
+    "status": "Ready for review",
+    "parent": "VER10-8955",
+    "frs": [],
+    "points": 1
+  },
+  {
+    "key": "VER10-9532",
+    "type": "Story",
+    "summary": "Production of Forecast – Add / Remove Items - API",
+    "description": "### User Story\n\nAs a Project User, I want to add, remove, or replace items and resources in the forecast BoQ using the approved CCET WBS, so that I can structure my forecast accurately within allowed scope.\n\nMoSCoW: MustSRS Trace: FR1550, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9533",
+    "type": "Story",
+    "summary": "Production of Forecast - Apply Supplier specific Library (Cost & Carbon ) - TBD - API",
+    "description": "### User Story\n\nAs a Project User, I want to apply cost and carbon data from approved libraries (NH Baseline), so that my forecast uses validated and consistent factors.\n\nMoSCoW: MustSRS Trace: FR1570, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9534",
+    "type": "Story",
+    "summary": "Production of Forecast - Apply dynamic Library ( Carbon ) - API",
+    "description": "### User Story\n\nAs a Project User, I want to apply cost and carbon data from approved dynamic Library, so that my forecast uses validated and consistent factors.\n\nMoSCoW: MustSRS Trace: FR1570, FR1590, FR2430\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9535",
+    "type": "Story",
+    "summary": "Production of Forecast – Add Risks, Opportunities, Inflation - API",
+    "description": "User Story\n\nAs a Project User, I want to add or update risks, opportunities, inflation, and expenditure profiles,so that my forecast accounts for project uncertainties and financial conditions.\n\nMoSCoW: ShouldSRS Trace: FR1560, FR1590\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9536",
+    "type": "Story",
+    "summary": "Production of Forecast – Validation & Consistency Checks - API",
+    "description": "User Story\n\nAs a System, I must validate all forecast data (BoQ, rates, libraries, and carbon factors),so that only complete and consistent data can be submitted or consolidated.\n\nMoSCoW: MustSRS Trace: FR1890, FR2430, FR2470\n\n### Acceptance Criteria\n\n[Table content]\n",
+    "status": "Open",
+    "parent": "VER10-8680",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9560",
+    "type": "Epic",
+    "summary": "Supply Chain: Libraries ",
+    "description": "",
+    "status": "Open",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9561",
+    "type": "Story",
+    "summary": "Supply Chain: Project Specific Library",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9560",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9562",
+    "type": "Story",
+    "summary": "Supply Chain: Dynamic Library",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-9560",
+    "frs": [
+      "FR511"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-9571",
+    "type": "Epic",
+    "summary": "Estimate Review and Approval",
+    "description": "This Epic defines the framework for vetting cost and carbon estimates before they are formally authorized. The objective is to move away from informal, manual review processes toward a structured, system-driven workflow that ensures every estimate is scrutinized by the correct experts and senior leadership. It covers everything from the initial assignment of reviewers to the final \"Approval\" action that locks the estimate data.\n\n### Key Functional Pillars\n\n### 1. Collaborative Parallel Reviewing\n\nThe workflow supports a multi-reviewer model where Peer, Project Team, and Estimating Manager reviewers can work simultaneously. This removes the \"wait-time\" associated with traditional linear workflows. Key to this specialism is the ability to assign separate reviewers for Cost and Carbon components, ensuring specialists focus on their respective areas of expertise.\n\n### 2. Dynamic Assignment & Overrides\n\nFlexibility is built into the initiation phase, allowing Estimating Managers to assign a review team from an authorized library. Recognizing that project timelines change, the system allows Estimators to \"override\" or update these assignments post-initiation to account for staff leave or resource shifts, provided the new reviewer is selected from the authorized library.\n\n### 3. Structured Feedback (The Review Modal)\n\nReviewers interact with a dedicated Review Modal where they must select a formal status (Approved, Approved with Comments, or Rejected) and provide free-text feedback. This ensures that the Estimator receives clear, actionable guidance. Every interaction is captured with a permanent time/date stamp, creating a transparent audit trail.\n\n### 4. The Approval Gateway & Data Locking\n\nOnce the vetting stage is complete, the Estimator moves the status to \"Ready for Approval.\" This notifies a senior Authorized Approver. The final approval action is a critical system gate:\n\n• Data Integrity: Upon final approval, the estimate is locked, preventing any further edits to the figures.\n\n• Traceability: The system records the final authorization signature and timestamp, which is automatically mapped to the CE300 form.\n\n• Downstream Trigger: Only a status of \"Approved\" enables the subsequent \"Issue Estimate\" functionality.\n\n### 5. Auditability and Monitoring (Review Log)\n\nAll comments, statuses, and timestamps are aggregated into a centralized Review Log. This log provides a single source of truth for the estimate’s history. Additionally, high-level progress is tracked in the Estimate Browser, allowing managers to see at a glance where an estimate is in the review lifecycle (e.g. Ready for Review vs. Reviews in Progress).\n",
+    "status": "Open",
+    "parent": "VER10-9026",
+    "frs": [
+      "FR2300",
+      "FR2310",
+      "FR1861",
+      "FR1910",
+      "FR1970",
+      "FR2270",
+      "FR2350",
+      "FR1980",
+      "FR1930"
+    ],
+    "points": 0
+  },
+  {
+    "key": "VER10-9573",
+    "type": "Story",
+    "summary": "[BE] API Access Control Middleware",
+    "description": "We need a centralised, declarative way to manage API authorisation. Instead of checking permissions inside every controller/handler, we want a configuration-based \"framework\" that intercepts requests and validates permissions based on the HTTP Method and Endpoint.\n\nUser Story\n\n• As a Backend Developer,\n\n• I want to define permissions in a single configuration file mapping Routes + Methods to required Roles/Scopes,\n\n• So that I don't have to manually write if (!user.hasPermission(...)) in every single API handler.\n\nTechnical Requirements\n\n1. Configuration Structure: Create a config object/map that defines rules.\n• Key: Route path (support wildcards/parameters if possible, e.g., /api/users/:id).\n\n• Key: HTTP Method (GET, POST, PUT, DELETE).\n\n• Value: Required Permission/Role (e.g., ['admin', 'editor']).\n\n2. Middleware Logic:\n• Intercept the request pipeline after UseAuthentication but before UseEndpoints.\n\n• Resolve the current user's claims (context.User).\n\n• Match the request path against the configuration rules.\n\n• Validation:\n• If no rule matches: Default Deny (or Default Allow, based on decision).\n\n• If rule matches but user lacks claim: Return 403 Forbidden.\n\n• If rule matches and user has claim: Call next().\n",
+    "status": "Open",
+    "parent": "VER10-8452",
+    "frs": [],
+    "points": 5
+  },
+  {
+    "key": "VER10-9574",
+    "type": "Story",
+    "summary": "[BE] Implement Immediate Refresh Token Revocation on Permission Change",
+    "description": "Currently, if an Admin changes a user's permissions, the user retains their old access level until their JWT expires naturally. When basic refresh tokens exist, we need to secure them. If an Admin changes a user's permissions, we must invalidate all existing refresh tokens for that user immediately to prevent unauthorised access.\n\nUser Story:\n\n• As an Admin,\n\n• When I update a user's role or permissions,\n\n• I want their existing refresh tokens to be immediately invalidated,\n\n• So that they cannot perform actions they are no longer authorised to do.\n\nTechnical tasks:\n\n1. Add columns into the user table: TokenVersion (integer) and PermissionsUpdatedAt(timestamp)\n\n2. When the admin changes the permission for one user:\n1. Increment User.TokenVersion by 1\n\n2. Update User.PermissionsUpdatedAt to the current timestamp\n\n3. When generating a Refresh Token, include the current TokenVersion inside the token payload (or store it in the RefreshTokens table).\n\n4. Refresh Logic (POST /auth/refresh-token):\n• Fetch the User from DB.\n\n• Compare User.TokenVersion vs RefreshToken.Version.\n\n• If User.TokenVersion > RefreshToken.Version:\n• Return 403 Forbidden (The token is from an old \"era\").\n\n• Mark the refresh token as revoked in the DB.\n\nAcceptance Criteria\n\n• [ ] Database column TokenVersion exists.\n\n• [ ] Manually changing TokenVersion in the DB causes the /refresh-token endpoint to reject existing tokens for that user.\n\n• [ ] Updating User Permissions automatically increments TokenVersion.\n",
+    "status": "Open",
+    "parent": "VER10-8452",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9653",
+    "type": "Story",
+    "summary": "[BE] Audit logs - enable api to allow user filter base on the reason column",
+    "description": "Update the Audit logs api which should enable user filter base on the reason column\n\naccepting request example: https://v10-integration.dev.api.test.benchmarkestimating.com/api/v2/audit-v2/records?pageNumber=2&pageSize=50&reason=DuplicatedFrom \n\nApi can filter base on the passed reason parameters:  reason=DuplicatedFrom \n",
+    "status": "Ready for review",
+    "parent": "VER10-8955",
+    "frs": [],
+    "points": 0
+  },
+  {
+    "key": "VER10-9656",
+    "type": "Story",
+    "summary": "Remove projectIsTemplate column dependency from code base - Backend",
+    "description": "As we have introduced ENUM to identify type of Estimate. There is still dependency at some places in code for projectIsTemplate column. Refactoring is required\n",
+    "status": "Open",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1920"
+    ],
+    "points": 2
+  },
+  {
+    "key": "VER10-9777",
+    "type": "Story",
+    "summary": "Support forecast meta data in estimate view API",
+    "description": "",
+    "status": "Open",
+    "parent": "VER10-8679",
+    "frs": [
+      "FR1920"
+    ],
+    "points": 2
+  }
+]

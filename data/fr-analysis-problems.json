@@ -1,0 +1,3071 @@
+[
+  {
+    "issue": "VER10-7528",
+    "type": "Story",
+    "summary": "UI - Default Asset Tag Allocation (from Item Libra",
+    "fr": "FR1170",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator",
+      "estimate",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-7528",
+    "type": "Story",
+    "summary": "UI - Default Asset Tag Allocation (from Item Libra",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-7529",
+    "type": "Story",
+    "summary": "BE - Mass Population of Tags - WBS",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-7529",
+    "type": "Story",
+    "summary": "BE - Mass Population of Tags - WBS",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-7530",
+    "type": "Story",
+    "summary": "Admin FE - Configure Dimension Hierarchy Levels",
+    "fr": "FR1170",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimate",
+      "hierarchy",
+      "structure"
+    ]
+  },
+  {
+    "issue": "VER10-7530",
+    "type": "Story",
+    "summary": "Admin FE - Configure Dimension Hierarchy Levels",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate",
+      "estimates",
+      "report"
+    ]
+  },
+  {
+    "issue": "VER10-7531",
+    "type": "Story",
+    "summary": "Admin- Manage Dimension Hierarchy Data -Manual Ent",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-7531",
+    "type": "Story",
+    "summary": "Admin- Manage Dimension Hierarchy Data -Manual Ent",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "created"
+    ]
+  },
+  {
+    "issue": "VER10-8059",
+    "type": "Story",
+    "summary": "Import - Resource Library Changes - UI Uplift",
+    "fr": "FR110",
+    "status": "LOW",
+    "percent": 8,
+    "frDesc": "As an estimating manager, I want to have a logical coding for each item of works",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8333",
+    "type": "Story",
+    "summary": "Custom Fields used for Sorting and Filtering - BE",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate",
+      "project",
+      "apply",
+      "calculations"
+    ]
+  },
+  {
+    "issue": "VER10-8333",
+    "type": "Story",
+    "summary": "Custom Fields used for Sorting and Filtering - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8334",
+    "type": "Story",
+    "summary": "Dashboard- Displaying and Locating Custom Fields i",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configured",
+      "estimator",
+      "project",
+      "consistent",
+      "clearly"
+    ]
+  },
+  {
+    "issue": "VER10-8334",
+    "type": "Story",
+    "summary": "Dashboard- Displaying and Locating Custom Fields i",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8335",
+    "type": "Story",
+    "summary": "WBS - Validating Custom Field Data in the UI - Pro",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8374",
+    "type": "Story",
+    "summary": "UI - Assign Asset, Supplier and Location Tags - WB",
+    "fr": "FR1170",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator",
+      "estimate",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8374",
+    "type": "Story",
+    "summary": "UI - Assign Asset, Supplier and Location Tags - WB",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate",
+      "carbon",
+      "types",
+      "report"
+    ]
+  },
+  {
+    "issue": "VER10-8375",
+    "type": "Story",
+    "summary": "UI - View & Manage Tags within the WBS",
+    "fr": "FR1170",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator",
+      "estimate",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8375",
+    "type": "Story",
+    "summary": "UI - View & Manage Tags within the WBS",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8378",
+    "type": "Story",
+    "summary": "Admin - Filter and Search for Dimension Hierarchy ",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy",
+      "region"
+    ]
+  },
+  {
+    "issue": "VER10-8378",
+    "type": "Story",
+    "summary": "Admin - Filter and Search for Dimension Hierarchy ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8400",
+    "type": "Story",
+    "summary": "Delete a Project Level Custom Field - BE",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "configured",
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8400",
+    "type": "Story",
+    "summary": "Delete a Project Level Custom Field - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8401",
+    "type": "Story",
+    "summary": "Delete a Project Level Custom Field - FE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8401",
+    "type": "Story",
+    "summary": "Delete a Project Level Custom Field - FE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8408",
+    "type": "Story",
+    "summary": "Delete an Estimate level Custom Field - BE",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "estimate",
+      "configured",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8408",
+    "type": "Story",
+    "summary": "Delete an Estimate level Custom Field - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8409",
+    "type": "Story",
+    "summary": "Delete an Estimate level Custom Field - FE",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8409",
+    "type": "Story",
+    "summary": "Delete an Estimate level Custom Field - FE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8429",
+    "type": "Story",
+    "summary": "Template Library - get all API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8429",
+    "type": "Story",
+    "summary": "Template Library - get all API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8462",
+    "type": "Story",
+    "summary": "Epic 9- Fallback Mech- Import Libraries- Team 1 En",
+    "fr": "FR511",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8463",
+    "type": "Story",
+    "summary": "Epic 9- Fallback Mech- Create tables in the DB for",
+    "fr": "FR511",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon"
+    ]
+  },
+  {
+    "issue": "VER10-8475",
+    "type": "Story",
+    "summary": "Epic 9- Fallback Mech- Identify the Resources miss",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "identified",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8484",
+    "type": "Story",
+    "summary": "Epic 9- Fallback Mech- Auto allocate carbon values",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "identified",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8487",
+    "type": "Story",
+    "summary": "Template Library Browser",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8487",
+    "type": "Story",
+    "summary": "Template Library Browser",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8488",
+    "type": "Story",
+    "summary": "Create Templates",
+    "fr": "FR820",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8488",
+    "type": "Story",
+    "summary": "Create Templates",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8489",
+    "type": "Story",
+    "summary": "Edit Templates",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8489",
+    "type": "Story",
+    "summary": "Edit Templates",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8501",
+    "type": "Story",
+    "summary": "Epic 9- Fallback Mech- Identify the C2C fallback f",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "factors",
+      "identified",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8504",
+    "type": "Story",
+    "summary": "Publish-only Enforcement",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8504",
+    "type": "Story",
+    "summary": "Publish-only Enforcement",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8505",
+    "type": "Story",
+    "summary": "Edit Published Template",
+    "fr": "FR820",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8505",
+    "type": "Story",
+    "summary": "Edit Published Template",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8506",
+    "type": "Story",
+    "summary": "Archiving the Template",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8506",
+    "type": "Story",
+    "summary": "Archiving the Template",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8508",
+    "type": "Story",
+    "summary": "Cost Alignment",
+    "fr": "FR2230",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "Resource Library setup for Asset Renewal Estimates",
+    "matched": [
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8508",
+    "type": "Story",
+    "summary": "Cost Alignment",
+    "fr": "FR1340",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Configure PAS2080 requirements to align with the RICS 2nd edition ",
+    "matched": [
+      "align",
+      "carbon",
+      "alignment"
+    ]
+  },
+  {
+    "issue": "VER10-8515",
+    "type": "Story",
+    "summary": "Template Library Browser - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8515",
+    "type": "Story",
+    "summary": "Template Library Browser - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8516",
+    "type": "Story",
+    "summary": "Create Templates - API",
+    "fr": "FR820",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8516",
+    "type": "Story",
+    "summary": "Create Templates - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8517",
+    "type": "Story",
+    "summary": "Edit Templates - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8517",
+    "type": "Story",
+    "summary": "Edit Templates - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8519",
+    "type": "Story",
+    "summary": "Publish-only Enforcement - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8519",
+    "type": "Story",
+    "summary": "Publish-only Enforcement - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8520",
+    "type": "Story",
+    "summary": "Edit Published Template - API",
+    "fr": "FR820",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8520",
+    "type": "Story",
+    "summary": "Edit Published Template - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8521",
+    "type": "Story",
+    "summary": "Archiving - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8521",
+    "type": "Story",
+    "summary": "Archiving - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8522",
+    "type": "Story",
+    "summary": "Decouple Derived Estimates - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8522",
+    "type": "Story",
+    "summary": "Decouple Derived Estimates - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8523",
+    "type": "Story",
+    "summary": "Cost Alignment - API",
+    "fr": "FR2230",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "Resource Library setup for Asset Renewal Estimates",
+    "matched": [
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8523",
+    "type": "Story",
+    "summary": "Cost Alignment - API",
+    "fr": "FR1340",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Configure PAS2080 requirements to align with the RICS 2nd edition ",
+    "matched": [
+      "align",
+      "carbon",
+      "alignment"
+    ]
+  },
+  {
+    "issue": "VER10-8570",
+    "type": "Epic",
+    "summary": "Inflation - Library Set Up and WBS Changes",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": [
+      "estimate",
+      "scheme"
+    ]
+  },
+  {
+    "issue": "VER10-8570",
+    "type": "Epic",
+    "summary": "Inflation - Library Set Up and WBS Changes",
+    "fr": "FR90",
+    "status": "PARTIAL",
+    "percent": 23,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": [
+      "estimate",
+      "select",
+      "scheme"
+    ]
+  },
+  {
+    "issue": "VER10-8570",
+    "type": "Epic",
+    "summary": "Inflation - Library Set Up and WBS Changes",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": [
+      "based"
+    ]
+  },
+  {
+    "issue": "VER10-8594",
+    "type": "Story",
+    "summary": "WBS - Estimator Configurable List - DB changes",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate",
+      "configurable",
+      "codes",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8594",
+    "type": "Story",
+    "summary": "WBS - Estimator Configurable List - DB changes",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate",
+      "created"
+    ]
+  },
+  {
+    "issue": "VER10-8595",
+    "type": "Story",
+    "summary": "WBS - Estimator Configurable List - Create - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configurable",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8595",
+    "type": "Story",
+    "summary": "WBS - Estimator Configurable List - Create - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8596",
+    "type": "Story",
+    "summary": "Estimator Configurable List - Update - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configurable",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8596",
+    "type": "Story",
+    "summary": "Estimator Configurable List - Update - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8597",
+    "type": "Story",
+    "summary": "Estimator Configurable List - Delete - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configurable",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8597",
+    "type": "Story",
+    "summary": "Estimator Configurable List - Delete - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8598",
+    "type": "Story",
+    "summary": "Estimator Configurable List - GET - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configurable",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8598",
+    "type": "Story",
+    "summary": "Estimator Configurable List - GET - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8619",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Create - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8619",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Create - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8620",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Update - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8620",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Update - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8621",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Get - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8621",
+    "type": "Story",
+    "summary": "WBS - Estimate Custom Fields - Get - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8622",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Create - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8622",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Create - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8623",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Update - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8623",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Update - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8624",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Get - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8624",
+    "type": "Story",
+    "summary": "WBS - Project Custom Fields - Get - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8640",
+    "type": "Story",
+    "summary": "Dashboard - Displaying and Locating Custom Fields ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8641",
+    "type": "Story",
+    "summary": "Validating Custom Field Data in the UI - Estimate ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8663",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8663",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8664",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8664",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8672",
+    "type": "Story",
+    "summary": "Update - Estimator Configurable Custom Fields - UI",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8673",
+    "type": "Story",
+    "summary": "Delete - Estimator Configurable Custom Fields - UI",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8675",
+    "type": "Story",
+    "summary": "GET - List of Estimator Configurable Fields - BE",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate",
+      "configurable",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8675",
+    "type": "Story",
+    "summary": "GET - List of Estimator Configurable Fields - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8697",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8697",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8702",
+    "type": "Story",
+    "summary": "UI - (Admin) Manual assignment of Tags in the Item",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimate",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8702",
+    "type": "Story",
+    "summary": "UI - (Admin) Manual assignment of Tags in the Item",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8703",
+    "type": "Story",
+    "summary": "UI - (Admin) Bulk Tagging of Items in an Item Libr",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8703",
+    "type": "Story",
+    "summary": "UI - (Admin) Bulk Tagging of Items in an Item Libr",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "report"
+    ]
+  },
+  {
+    "issue": "VER10-8705",
+    "type": "Story",
+    "summary": "UI - (Admin) Warning on Dimension Hierarchy Modifi",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy",
+      "structure"
+    ]
+  },
+  {
+    "issue": "VER10-8705",
+    "type": "Story",
+    "summary": "UI - (Admin) Warning on Dimension Hierarchy Modifi",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "report"
+    ]
+  },
+  {
+    "issue": "VER10-8706",
+    "type": "Story",
+    "summary": "UI - (Expected System Behaviours) -  Prevent Delet",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimate",
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8706",
+    "type": "Story",
+    "summary": "UI - (Expected System Behaviours) -  Prevent Delet",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-8707",
+    "type": "Story",
+    "summary": "Admin FE- Import Dimensions from Excel",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "structure"
+    ]
+  },
+  {
+    "issue": "VER10-8707",
+    "type": "Story",
+    "summary": "Admin FE- Import Dimensions from Excel",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8720",
+    "type": "Story",
+    "summary": "Manage Time Division Periods for Spend Profiles -U",
+    "fr": "FR890",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "across",
+      "period",
+      "default"
+    ]
+  },
+  {
+    "issue": "VER10-8725",
+    "type": "Story",
+    "summary": "Manage Cost Elements Library - UI",
+    "fr": "FR830",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "elements",
+      "library",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8727",
+    "type": "Story",
+    "summary": "Manage Master Spend Profiles -UI",
+    "fr": "FR890",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "generate",
+      "across",
+      "library",
+      "default"
+    ]
+  },
+  {
+    "issue": "VER10-8735",
+    "type": "Story",
+    "summary": "BE - (Expected System Behaviour) Disabling an In-U",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8735",
+    "type": "Story",
+    "summary": "BE - (Expected System Behaviour) Disabling an In-U",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8736",
+    "type": "Story",
+    "summary": "UI - (Expected System Behaviours) Maintain Tagging",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8736",
+    "type": "Story",
+    "summary": "UI - (Expected System Behaviours) Maintain Tagging",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8740",
+    "type": "Story",
+    "summary": "API - Dimension Tags UPSERT in ITEM LIBRARY",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8740",
+    "type": "Story",
+    "summary": "API - Dimension Tags UPSERT in ITEM LIBRARY",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8743",
+    "type": "Story",
+    "summary": "Auto allocation of asset tag for items imported by",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8743",
+    "type": "Story",
+    "summary": "Auto allocation of asset tag for items imported by",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8758",
+    "type": "Epic",
+    "summary": "Epic E-3.3: Template Library - Create Estimate fro",
+    "fr": "FR2230",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "Resource Library setup for Asset Renewal Estimates",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8758",
+    "type": "Epic",
+    "summary": "Epic E-3.3: Template Library - Create Estimate fro",
+    "fr": "FR1340",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Configure PAS2080 requirements to align with the RICS 2nd edition ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8759",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8759",
+    "type": "Story",
+    "summary": "Select Estimate Template while creating estimate (",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8761",
+    "type": "Story",
+    "summary": "API - Update Item Library Import/Export API to han",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 9,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy"
+    ]
+  },
+  {
+    "issue": "VER10-8761",
+    "type": "Story",
+    "summary": "API - Update Item Library Import/Export API to han",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8765",
+    "type": "Story",
+    "summary": "RFE 2.0- Editing the RFE Screen 2 Dropdown option ",
+    "fr": "FR180",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "Linked to FR 160, the software should create standard folder structure in the da",
+    "matched": [
+      "estimate",
+      "request",
+      "project"
+    ]
+  },
+  {
+    "issue": "VER10-8766",
+    "type": "Story",
+    "summary": "Epic 9-Filters the resources based on Resource fil",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "estimate",
+      "identified",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8772",
+    "type": "Story",
+    "summary": "Bulk create/update/delete for estimator List - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8772",
+    "type": "Story",
+    "summary": "Bulk create/update/delete for estimator List - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8773",
+    "type": "Story",
+    "summary": "Bulk create/update/delete for estimator List - FE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "currently",
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8773",
+    "type": "Story",
+    "summary": "Bulk create/update/delete for estimator List - FE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8803",
+    "type": "Story",
+    "summary": "BE - (Admin) Warning on Dimension Hierarchy Modifi",
+    "fr": "FR1170",
+    "status": "LOW",
+    "percent": 18,
+    "frDesc": "\"As an Estimator I need to be able to reference the Routine Maintenance cost est",
+    "matched": [
+      "hierarchy",
+      "structure"
+    ]
+  },
+  {
+    "issue": "VER10-8803",
+    "type": "Story",
+    "summary": "BE - (Admin) Warning on Dimension Hierarchy Modifi",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8825",
+    "type": "Story",
+    "summary": "Dashboard - Displaying and Locating Custom Fields ",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "configured",
+      "estimator",
+      "consistent"
+    ]
+  },
+  {
+    "issue": "VER10-8825",
+    "type": "Story",
+    "summary": "Dashboard - Displaying and Locating Custom Fields ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator"
+    ]
+  },
+  {
+    "issue": "VER10-8873",
+    "type": "Story",
+    "summary": "UI Screens -  Create New Programme and Portfolio",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "using",
+      "estimator",
+      "project",
+      "format",
+      "clearly"
+    ]
+  },
+  {
+    "issue": "VER10-8873",
+    "type": "Story",
+    "summary": "UI Screens -  Create New Programme and Portfolio",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "created"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "price",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "price",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 8,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-8896",
+    "type": "Story",
+    "summary": "BE - Set Estimate Price Base Date (Cost) and Estim",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": [
+      "price"
+    ]
+  },
+  {
+    "issue": "VER10-8923",
+    "type": "Story",
+    "summary": "Template Library - Preview - API",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8923",
+    "type": "Story",
+    "summary": "Template Library - Preview - API",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8924",
+    "type": "Story",
+    "summary": "Template Library - Preview",
+    "fr": "FR820",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I need to produce an estimate for M&R in accordance with the NH",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8924",
+    "type": "Story",
+    "summary": "Template Library - Preview",
+    "fr": "FR830",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Dedicated Cost Elements for O&M - the library would require to store the WBS for",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-8992",
+    "type": "Story",
+    "summary": "Data Import in order to test it out the fallback m",
+    "fr": "FR511",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": []
+  },
+  {
+    "issue": "VER10-8993",
+    "type": "Story",
+    "summary": "UI:Accepting the Fallback Cost-to-Carbon Factor",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 33,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "assured",
+      "estimate",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8994",
+    "type": "Story",
+    "summary": "Rejecting the Fallback Cost-to-Carbon Factor",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "estimate",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-8995",
+    "type": "Story",
+    "summary": "CLONE - Epic 9-Filters the resources based on Reso",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "estimate",
+      "identified",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-9095",
+    "type": "Story",
+    "summary": "Validating Custom Field Data in the BE - Project D",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-9096",
+    "type": "Story",
+    "summary": "Validating Custom Field Data in the BE - Estimate ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-9139",
+    "type": "Story",
+    "summary": "Dashboard - Displaying and Locating Custom Fields ",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-9141",
+    "type": "Story",
+    "summary": "Update Estimate Level Custom Fields - Get - BE",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-9141",
+    "type": "Story",
+    "summary": "Update Estimate Level Custom Fields - Get - BE",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate"
+    ]
+  },
+  {
+    "issue": "VER10-9145",
+    "type": "Story",
+    "summary": "WBS - Entering and Updating Custom Field data in t",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimator",
+      "estimate",
+      "types"
+    ]
+  },
+  {
+    "issue": "VER10-9155",
+    "type": "Story",
+    "summary": "CLONE - Accepting the Fallback Cost-to-Carbon Fact",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "estimate",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-9157",
+    "type": "Story",
+    "summary": "Auto-scan resources for missing carbon values afte",
+    "fr": "FR511",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Software should flag a carbon factor which has not been assured by an assurer(di",
+    "matched": [
+      "carbon",
+      "factor",
+      "estimate",
+      "resource"
+    ]
+  },
+  {
+    "issue": "VER10-9164",
+    "type": "Story",
+    "summary": "Manage Master Spend Profiles -BE",
+    "fr": "FR890",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "generate",
+      "across",
+      "library",
+      "default"
+    ]
+  },
+  {
+    "issue": "VER10-9207",
+    "type": "Story",
+    "summary": "Ignore validation  for \"Mandatory on Create/update",
+    "fr": "FR780",
+    "status": "PARTIAL",
+    "percent": 27,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": [
+      "estimate",
+      "configured",
+      "initiated",
+      "estimates"
+    ]
+  },
+  {
+    "issue": "VER10-9207",
+    "type": "Story",
+    "summary": "Ignore validation  for \"Mandatory on Create/update",
+    "fr": "FR782",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": [
+      "estimate",
+      "estimates",
+      "created"
+    ]
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR870",
+    "status": "PARTIAL",
+    "percent": 20,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "library",
+      "refer"
+    ]
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": [
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation",
+      "library"
+    ]
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9255",
+    "type": "Story",
+    "summary": "SA - Inflation - Library Set Up and WBS Changes",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "indices"
+    ]
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation",
+      "indices"
+    ]
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9261",
+    "type": "Story",
+    "summary": "BE - Inflation - List all inflation indices",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9262",
+    "type": "Story",
+    "summary": "BE - Inflation - Details of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9263",
+    "type": "Story",
+    "summary": "BE - Inflation - Create of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation",
+      "update"
+    ]
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9264",
+    "type": "Story",
+    "summary": "BE - Inflation - Update of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9265",
+    "type": "Story",
+    "summary": "BE - Inflation - Delete of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation",
+      "using"
+    ]
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "using"
+    ]
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9266",
+    "type": "Story",
+    "summary": "BE - Inflation - Import using spreadsheet",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "indices"
+    ]
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation",
+      "indices"
+    ]
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9318",
+    "type": "Story",
+    "summary": "FE - Inflation - List all inflation indices",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9319",
+    "type": "Story",
+    "summary": "FE - Inflation - Details of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation",
+      "update"
+    ]
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9320",
+    "type": "Story",
+    "summary": "FE - Inflation - Create/Update of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "index"
+    ]
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9321",
+    "type": "Story",
+    "summary": "FE - Inflation - Delete of Inflation index",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR150",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "Software should allow multiple price base selection across Cost elements under s",
+    "matched": [
+      "inflation",
+      "using"
+    ]
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR1490",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "Generate Estimate Reports for each of the following - Do-Minimum, Do-Something, ",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR870",
+    "status": "LOW",
+    "percent": 13,
+    "frDesc": "As an Estimator, I need the software to apply forecast inflation from the unit r",
+    "matched": [
+      "inflation",
+      "using"
+    ]
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR880",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an Estimator, for detailed Routine Maintenance cost estimates (1), I need the",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR890",
+    "status": "LOW",
+    "percent": 7,
+    "frDesc": "Inflation - Apply monthly inflation indices to Item rates in base estimate to ge",
+    "matched": [
+      "inflation"
+    ]
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR90",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As a user I want to be able to identify an estimate as belonging to the \"do-some",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9322",
+    "type": "Story",
+    "summary": "FE - Inflation - Import using spreadsheet",
+    "fr": "FR930",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "See FR 910 - View the estimated costs in real terms at a set price based, inclus",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9490",
+    "type": "Epic",
+    "summary": "Team 2 R1D Add on's",
+    "fr": "FR780",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "I need the software to collate the forecast Routine Maintenance costs to the Nat",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9490",
+    "type": "Epic",
+    "summary": "Team 2 R1D Add on's",
+    "fr": "FR782",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimator, I want to be able to segment the Opex estimate (and MP and Rene",
+    "matched": []
+  },
+  {
+    "issue": "VER10-9491",
+    "type": "Epic",
+    "summary": "Team 3 R1D Add On's",
+    "fr": "FR110",
+    "status": "LOW",
+    "percent": 0,
+    "frDesc": "As an estimating manager, I want to have a logical coding for each item of works",
+    "matched": []
+  }
+]

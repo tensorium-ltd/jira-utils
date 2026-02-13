@@ -7,7 +7,7 @@ const JIRA_BASE_URL = process.env.JIRA_BASE_URL || 'https://benchmarkestimating.
 const JIRA_EMAIL = process.env.JIRA_EMAIL;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 const PROJECT_KEY = 'VER10';
-const SPRINTS = ['NH Sprint 28', 'NH Sprint 29', 'NH Sprint 30', 'NH Sprint 31'];
+const SPRINTS = ['NH Sprint 29', 'NH Sprint 30', 'NH Sprint 31', 'NH Sprint 32', 'NH Sprint 33'];
 
 // Statuses to track (case-sensitive!)
 const COMPLETED_STATUSES = ['Ready for release', 'CLOSED', 'Closed', 'Done'];

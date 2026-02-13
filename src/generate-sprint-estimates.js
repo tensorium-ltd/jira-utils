@@ -12,6 +12,7 @@ const PROJECT_KEY = 'VER10';
 const SPRINTS = [
   'NH Sprint 31',
   'NH Sprint 32',
+  'NH Sprint 32',
   'NH Sprint 33',
   'NH Sprint 34',
   'NH Sprint 35',

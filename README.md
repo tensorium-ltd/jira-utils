@@ -352,6 +352,83 @@ npm run jira-dev
 
 ---
 
+#### 7. `generate-workflow-queue-metrics.js`
+
+Models the Jira workflow as a queueing system and computes daily arrival, service,
+WIP, cycle time, and utilization metrics per status.
+
+**Features**:
+- Discovers workflow statuses via Jira project statuses
+- Computes daily λ/μ (arrivals/exits) per status
+- Backcasts WIP from current snapshot
+- Calculates mean/median/p85 cycle time per status
+- Flags risk when λ > μ, WIP increases, or ρ > 0.85
+
+**Usage**:
+```bash
+npm run workflow-queue-metrics -- <start-date> <end-date> [options]
+```
+
+**Options**:
+```bash
+--project <KEY>          Jira project key (default: VER10)
+--fix-version <NAME>     Optional fixVersion filter
+--workflow <NAME>        Workflow name (informational)
+--status-order "<A,B>"   Override status order (comma-separated)
+```
+
+**Example**:
+```bash
+npm run workflow-queue-metrics -- 2025-11-01 2025-11-07 --fix-version "Release 2A"
+```
+
+**Output**: `reports/workflow-queue-metrics-<start>-to-<end>.json`
+
+**Output Format**:
+```json
+{
+  "metadata": {
+    "dateRange": { "start": "2025-11-01", "end": "2025-11-07" },
+    "projectKey": "VER10",
+    "statusOrder": ["Open", "In Dev", "Ready for Review"]
+  },
+  "statusMetrics": {
+    "2025-11-01": {
+      "In Dev": {
+        "lambda": 4,
+        "mu": 3,
+        "wip": 12,
+        "utilization": 1.33,
+        "cycleTime": { "count": 2, "meanDays": 1.4 }
+      }
+    }
+  },
+  "flagsSummary": {
+    "flaggedStatuses": ["In Dev"]
+  }
+}
+```
+
+---
+
+#### 8. `generate-workflow-queue-summary.js`
+
+Creates a readable Markdown summary from a queue metrics JSON report.
+
+**Usage**:
+```bash
+npm run workflow-queue-summary -- <path-to-json>
+```
+
+**Example**:
+```bash
+npm run workflow-queue-summary -- reports/workflow-queue-metrics-2026-01-20-to-2026-01-24.json
+```
+
+**Output**: `reports/workflow-queue-metrics-<start>-to-<end>-summary.md`
+
+---
+
 ### Daily Reporting Scripts
 
 #### 7. `generate-work-done-today-report.js`

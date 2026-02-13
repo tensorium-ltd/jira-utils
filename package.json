@@ -30,7 +30,13 @@
     "team-performance": "node src/generate-team-performance.js",
     "no-team-assignment": "node src/generate-no-team-assignment.js",
     "qa-review-pipeline": "node src/generate-qa-review-pipeline.js",
-    "sprint-check": "node src/generate-sprint-non-compliant-list.js"
+    "sprint-check": "node src/generate-sprint-non-compliant-list.js",
+    "release-work-done": "node src/generate-all-release-work-done.js",
+    "workflow-queue-metrics": "node src/generate-workflow-queue-metrics.js",
+    "workflow-queue-summary": "node src/generate-workflow-queue-summary.js",
+    "sprint-in-progress-breakdown": "node src/generate-sprint-in-progress-breakdown.js",
+    "delivery-analysis-summary": "node src/generate-delivery-analysis-summary.js",
+    "daily-flow-metrics": "node src/generate-daily-flow-metrics.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5",

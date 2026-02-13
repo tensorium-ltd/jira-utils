@@ -1,0 +1,433 @@
+h1. Sydney Delivery Reset Workshop - 5-Day Agenda
+
+{info}
+*Dates:* Week of 6th January 2025
+*Location:* Sydney Office
+*Duration:* 5 days, 8 hours/day
+*Split:* 50% alignment sessions (AM) / 50% delivery work (PM)
+{info}
+
+----
+
+h2. Attendees
+
+||Role||Location||Attendance||
+|Jerome (CTO)|Sydney|Full week|
+|Venkatesh (Lead BA)|Sydney|Full week|
+|Minas (Product Lead)|Sydney|Full week|
+|Richard Casey (Delivery Lead)|UK → Sydney|Full week|
+|Caroline Wallen (QA/Test Lead)|UK → Sydney|Full week|
+|5x Team Leads (BA + Tech Lead)|Sydney|Full week|
+|India Tech Leads|India (Remote)|Key sessions via Teams|
+
+----
+
+h2. Daily Structure
+
+{code}
+08:00-08:30  India Handover Call (overlaps with India EOD)
+08:30-12:30  Alignment/Process Sessions (4 hours)
+12:30-13:30  Lunch
+13:30-17:30  Active Delivery Work (4 hours)
+17:30-18:00  Daily Wrap-up & Next Day Prep
+{code}
+
+----
+
+h1. Day 1 (Monday): Alignment and Accountability
+
+{panel:title=Theme|borderColor=#ccc|bgColor=#f5f5f5}
+*"Clear Roles, Shared Understanding"*
+{panel}
+
+h2. Morning Sessions (08:00-12:30)
+
+h3. 08:00-08:30 | India Handover Call
+* Status update from India teams
+* Blockers and priorities
+* Set context for the week
+
+h3. 08:30-09:30 | Opening: State of Delivery _(All)_
+* Richard presents current state analysis
+* CEO's concerns and reset expectations
+* Week objectives and success criteria
+* Ground rules for the week
+
+h3. 09:30-10:30 | Roles and Accountability Framework _(All)_
+* Walk through RACI matrix for delivery
+* Clarify ownership per the CEO's email:
+** *Richard:* Execution, Planning, NH Access
+** *Jerome:* Technical Feasibility, Estimation
+** *Minas:* PRDs, Sequencing, Dependencies
+** *Caroline:* QA/UAT Governance
+* Team Leads: What does ownership mean at squad level?
+* Discussion: Where have handoffs failed? Why?
+
+h3. 10:30-10:45 | Break
+
+h3. 10:45-12:00 | Product Vision Alignment _(Minas leads)_
+* Release 2A: What are we building and why?
+* MVP definitions for each workstream:
+** Carbon (MVP only, enhancements excluded)
+** TPE & Risk (simplification options)
+** Supply Chain (single-supplier only)
+** LTE & Scenario Analysis
+* What's IN vs OUT for this release
+* Dependency map overview
+
+h3. 12:00-12:30 | Q&A / Parking Lot Items
+
+h2. Afternoon: Delivery Work (13:30-17:30)
+
+{note}
+*Focus:* PRD Review Sessions
+* Each team reviews their epic PRDs with Minas
+* Identify gaps and unknowns
+* Schedule NH working sessions as needed
+{note}
+
+h3. 17:30-18:00 | Daily Wrap-up
+* Key decisions made
+* Outstanding questions
+* Tomorrow's prep
+
+----
+
+h1. Day 2 (Tuesday): Process and Governance
+
+{panel:title=Theme|borderColor=#ccc|bgColor=#f5f5f5}
+*"How We Work Together"*
+{panel}
+
+h2. Morning Sessions (08:00-12:30)
+
+h3. 08:00-08:30 | India Handover Call
+
+h3. 08:30-10:00 | End-to-End Delivery Process _(Richard leads)_
+{tip}India Tech Leads join via Teams{tip}
+
+Walk through the full delivery lifecycle:
+
+{code}
+PRD Definition → Story Creation → Estimation → Sprint Planning → 
+Development → Code Review → System Test → UAT → Release
+{code}
+
+For each stage, define:
+* Who owns it?
+* What are the entry/exit criteria?
+* What artifacts are produced?
+* How long should it take?
+
+h3. 10:00-10:15 | Break
+
+h3. 10:15-11:30 | Sprint/Scrum Delivery Model _(Richard + Jerome)_
+{tip}India Tech Leads remain on Teams{tip}
+
+* Proposed sprint cadence (2-week recommended)
+* Sprint ceremonies:
+** Sprint Planning (when, who, duration)
+** Daily Standups (timezone handling)
+** Backlog Refinement
+** Sprint Review/Demo
+** Retrospectives
+* Definition of Ready / Definition of Done
+* How to handle cross-team dependencies
+* Velocity tracking and capacity planning
+
+h3. 11:30-12:30 | Timezone Management _(All)_
+
+Design the operating rhythm:
+
+||Time (Sydney)||Time (UK)||Time (India)||Activity||
+|08:00|21:00 prev|02:30|Australia day starts|
+|14:00|03:00|08:30|India day starts - overlap window opens|
+|17:00|06:00|11:30|Handover window (3 hours overlap)|
+|18:00|07:00|12:30|UK day starts|
+
+*Agree on:*
+* Daily standup times
+* When India joins planning sessions
+* UK/Australia handover protocol
+* Escalation paths across timezones
+
+h2. Afternoon: Delivery Work (13:30-17:30)
+
+{note}
+*Focus:* Story Estimation Workshop
+* Tech Leads estimate Release 2A stories together
+* Calibration exercise for story points
+* Identify high-risk/high-complexity items
+{note}
+
+----
+
+h1. Day 3 (Wednesday): Requirements and Traceability
+
+{panel:title=Theme|borderColor=#ccc|bgColor=#f5f5f5}
+*"Quality In, Quality Out"*
+{panel}
+
+h2. Morning Sessions (08:00-12:30)
+
+h3. 08:00-08:30 | India Handover Call
+
+h3. 08:30-09:30 | FR Traceability Analysis _(Caroline + Richard)_
+
+Present findings from FR analysis work:
+{warning}
+* Only *7%* of FR-to-issue pairings are accurate
+* *78%* show little/no correlation
+* Bulk-tagging problems (FR782 on 54 stories)
+* Incorrect FRs on epics (FR90, FR601, FR930, FR1490 on Inflation)
+{warning}
+
+*Discuss:*
+* Why did this happen?
+* What is the impact on UAT?
+* How do we prevent it?
+
+h3. 09:30-10:30 | FR Capture and Management Process _(Caroline + Minas)_
+
+Define new process:
+# When to assign FRs (at story creation, not epic)
+# How to validate FR assignment (description match check)
+# FR field visibility in JIRA
+# Periodic FR audit process
+
+Create FR assignment checklist for BAs
+
+h3. 10:30-10:45 | Break
+
+h3. 10:45-12:00 | Acceptance Criteria and Test Case Definition _(Caroline leads)_
+{tip}India Tech Leads join for context{tip}
+
+Define when and how to capture:
+* *Acceptance Criteria (AC):* Written by BA at story creation
+* *System Test Cases:* Written by QA during sprint (before dev complete)
+* *UAT Scripts:* Written by Caroline's team from AC + FR
+
+*Template for Acceptance Criteria:*
+{code}
+Given [precondition]
+When [action]
+Then [expected result]
+{code}
+
+Walk through example from Release 2A
+
+h3. 12:00-12:30 | Test Governance Framework _(Caroline)_
+* Internal QA gate before UAT
+* UAT coverage requirements
+* Defect classification and SLAs
+* Release promotion criteria
+
+h2. Afternoon: Delivery Work (13:30-17:30)
+
+{note}
+*Focus:* FR Remediation and Story Quality
+* Teams review their epics/stories for FR accuracy
+* Add/correct Acceptance Criteria on priority stories
+* Caroline works with QA leads on test case templates
+{note}
+
+----
+
+h1. Day 4 (Thursday): Planning and Dependencies
+
+{panel:title=Theme|borderColor=#ccc|bgColor=#f5f5f5}
+*"What, When, Who"*
+{panel}
+
+h2. Morning Sessions (08:00-12:30)
+
+h3. 08:00-08:30 | India Handover Call
+
+h3. 08:30-10:30 | Release 2A Scope Review _(All)_
+{tip}India Tech Leads join via Teams{tip}
+
+Epic-by-epic review:
+* Current story point estimate
+* Confidence level (High/Medium/Low)
+* Dependencies (internal and external)
+* Risks and assumptions
+* MVP scope confirmation
+
+h3. 10:30-10:45 | Break
+
+h3. 10:45-12:00 | Sprint Planning: Release 2A _(Richard + Jerome)_
+
+* Total capacity calculation per team
+* Sprint-by-sprint allocation
+* Critical path identification
+* Buffer/contingency planning
+* Milestone dates
+
+{warning}
+*Target:* March first week deadline
+* Work backwards from deadline
+* Identify must-have vs nice-to-have
+* Agree on scope reduction if needed (2000 → 1500 → 1000)
+{warning}
+
+h3. 12:00-12:30 | Risk Register Review
+* Technical risks
+* Resource risks
+* Dependency risks
+* NH access risks
+* Mitigation actions and owners
+
+h2. Afternoon: Delivery Work (13:30-17:30)
+
+{note}
+*Focus:* Sprint 1 Preparation
+* Finalize Sprint 1 backlog
+* Story-level planning with teams
+* Ensure all Sprint 1 stories have AC
+* PRD clarifications with Minas
+{note}
+
+----
+
+h1. Day 5 (Friday): Governance and Launch
+
+{panel:title=Theme|borderColor=#ccc|bgColor=#f5f5f5}
+*"Making It Stick"*
+{panel}
+
+h2. Morning Sessions (08:00-12:30)
+
+h3. 08:00-08:30 | India Handover Call
+
+h3. 08:30-09:30 | Reporting and Visibility _(Richard)_
+
+*Agree on reporting cadence:*
+* *Daily:* Standup notes, blocker log
+* *Weekly:* Sprint burndown, velocity, risks
+* *Fortnightly:* Stakeholder update, NH demo
+* *Release:* Progress vs plan, scope changes
+
+*Dashboard requirements:*
+* Epic progress (stories done/total)
+* Sprint burndown
+* Defect aging
+* FR coverage
+
+h3. 09:30-10:30 | Stakeholder Management _(Richard + Minas)_
+* NH engagement model
+* MIE access and working sessions
+* Internal escalation paths
+* Communication templates
+
+*Weekly cadence with NH:*
+* Demo/showcase
+* PRD working sessions
+* UAT feedback
+
+h3. 10:30-10:45 | Break
+
+h3. 10:45-11:30 | Efficiency Quick Wins _(All)_
+
+Brainstorm and commit to:
+* JIRA workflow improvements
+* Automation opportunities
+* Meeting consolidation
+* Communication channel cleanup
+* Documentation standards
+
+h3. 11:30-12:30 | Week Summary and Commitments _(All)_
+* Review all decisions made
+* Confirm action items and owners
+* Agree on first week back operating rhythm
+* Set up recurring ceremonies
+* Success metrics for next 4 weeks
+
+h2. Afternoon: Delivery Work (13:30-17:30)
+
+{note}
+*Focus:* Sprint 1 Kickoff Preparation
+* Final Sprint 1 backlog grooming
+* First sprint planning session (dry run)
+* Team-specific action items
+* Documentation of processes agreed
+{note}
+
+h3. 17:30-18:30 | Workshop Close
+* Celebrate the reset
+* Individual commitments
+* Team photo
+* Logistics for first week back
+
+----
+
+h1. Key Outputs / Artifacts
+
+||Artifact||Owner||Status||
+|RACI Matrix|Richard|Signed off|
+|Delivery Process Document|Richard|v1.0 complete|
+|Sprint Calendar (to March)|Richard|Published|
+|FR Assignment Checklist|Caroline|Approved|
+|AC/Test Case Templates|Caroline|Approved|
+|Release 2A Scope (MVP)|Minas|Baselined|
+|Dependency Map|Minas|Published|
+|Risk Register|Richard|Updated|
+|Operating Rhythm Document|Richard|Published|
+|Reporting Dashboard Spec|Richard|Agreed|
+|Sprint 1 Backlog|Teams|Ready|
+
+----
+
+h1. Pre-Workshop Preparation
+
+h3. Richard/Caroline:
+* FR analysis reports ready to present
+* Current delivery metrics compiled
+* Draft RACI matrix prepared
+
+h3. Minas:
+* All R2A PRDs in draft form
+* MVP scope proposals ready
+* Dependency map draft
+
+h3. Jerome:
+* Technical simplification options documented
+* Estimation guidance prepared
+* V8 reuse assessment
+
+h3. Venkatesh:
+* Story list for R2A compiled
+* Current estimation data
+* BA checklist for AC
+
+h3. All:
+* Review CEO's email
+* Come with improvement ideas
+
+----
+
+h1. Post-Workshop: First Two Weeks
+
+||Week||Focus||
+|Week 1 (13th Jan)|Sprint 1 execution, process bedding in|
+|Week 2 (20th Jan)|First sprint review, retrospective, Sprint 2 planning|
+
+{info}
+Daily leadership standup continues (Richard, Jerome, Minas, Venkatesh).
+{info}
+
+----
+
+h1. Session Materials Checklist
+
+* [ ] RACI matrix template
+* [ ] Delivery process flowchart
+* [ ] FR analysis presentation (from reports generated)
+* [ ] AC template examples
+* [ ] Sprint planning spreadsheet
+* [ ] Risk register template
+* [ ] Stakeholder communication templates
+
+
+
+
+

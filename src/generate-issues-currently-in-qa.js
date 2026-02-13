@@ -7,7 +7,7 @@ const JIRA_BASE_URL = process.env.JIRA_BASE_URL || 'https://benchmarkestimating.
 const JIRA_EMAIL = process.env.JIRA_EMAIL;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 const PROJECT_KEY = 'VER10';
-const CURRENT_SPRINT = 'NH Sprint 31'; // Update this for each sprint
+const CURRENT_SPRINT = 'NH Sprint 32'; // Update this for each sprint
 const QA_STATUS = 'In QA';
 
 // Validate environment variables

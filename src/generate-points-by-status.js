@@ -1,3 +1,4 @@
+require('dotenv').config();
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +8,7 @@ const JIRA_BASE_URL = process.env.JIRA_BASE_URL || 'https://benchmarkestimating.
 const JIRA_EMAIL = process.env.JIRA_EMAIL;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 const PROJECT_KEY = 'VER10';
-const CURRENT_SPRINT = 'NH Sprint 31'; // Update this for each sprint
+const CURRENT_SPRINT = 'NH Sprint 33'; // Update this for each sprint
 
 // Status categories to track
 const STATUS_CATEGORIES = {

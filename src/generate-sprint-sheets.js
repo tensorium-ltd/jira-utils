@@ -1,3 +1,4 @@
+require('dotenv').config();
 const ExcelJS = require('exceljs');
 const path = require('path');
 const axios = require('axios');

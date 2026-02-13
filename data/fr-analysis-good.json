@@ -1,0 +1,92 @@
+[
+  {
+    "issue": "VER10-8335",
+    "fr": "FR780",
+    "percent": 47
+  },
+  {
+    "issue": "VER10-8336",
+    "fr": "FR780",
+    "percent": 60
+  },
+  {
+    "issue": "VER10-8336",
+    "fr": "FR782",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8570",
+    "fr": "FR150",
+    "percent": 100
+  },
+  {
+    "issue": "VER10-8570",
+    "fr": "FR870",
+    "percent": 80
+  },
+  {
+    "issue": "VER10-8570",
+    "fr": "FR880",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8570",
+    "fr": "FR890",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8570",
+    "fr": "FR601",
+    "percent": 60
+  },
+  {
+    "issue": "VER10-8640",
+    "fr": "FR780",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8641",
+    "fr": "FR780",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8671",
+    "fr": "FR780",
+    "percent": 67
+  },
+  {
+    "issue": "VER10-8671",
+    "fr": "FR782",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-8672",
+    "fr": "FR780",
+    "percent": 53
+  },
+  {
+    "issue": "VER10-8673",
+    "fr": "FR780",
+    "percent": 53
+  },
+  {
+    "issue": "VER10-9095",
+    "fr": "FR780",
+    "percent": 47
+  },
+  {
+    "issue": "VER10-9096",
+    "fr": "FR780",
+    "percent": 40
+  },
+  {
+    "issue": "VER10-9139",
+    "fr": "FR780",
+    "percent": 60
+  },
+  {
+    "issue": "VER10-9145",
+    "fr": "FR780",
+    "percent": 40
+  }
+]
