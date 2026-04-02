@@ -36,14 +36,35 @@
     "workflow-queue-summary": "node src/generate-workflow-queue-summary.js",
     "sprint-in-progress-breakdown": "node src/generate-sprint-in-progress-breakdown.js",
     "delivery-analysis-summary": "node src/generate-delivery-analysis-summary.js",
-    "daily-flow-metrics": "node src/generate-daily-flow-metrics.js"
+    "sprint-health": "node src/generate-sprint-health.js",
+    "sprint-health:37": "node src/generate-sprint-health.js \"NH Sprint 37\"",
+    "daily-flow-metrics": "node src/generate-daily-flow-metrics.js",
+    "daily-flow-metrics:37": "node src/generate-daily-flow-metrics.js \"NH Sprint 37\"",
+    "defects-report": "node src/generate-defects-report.js",
+    "linear-regression": "node src/generate-linear-regression-analysis.js",
+    "epic-completion": "node src/generate-epic-completion-report.js",
+    "blocked-analysis": "node src/generate-blocked-analysis.js",
+    "blocked-since-sprint-start": "node src/generate-blocked-since-sprint-start.js",
+    "bugs-raised-during-sprint": "node src/generate-bugs-raised-during-sprint.js",
+    "open-stories-bugs": "node src/generate-open-stories-bugs.js",
+    "story-cycle-time": "node src/generate-story-cycle-time.js",
+    "long-cycle-analysis": "node src/generate-long-cycle-time-analysis.js",
+    "combined-team-impact": "node src/generate-combined-team-impact.js",
+    "tracker-update": "node src/generate-tracker-update.js",
+    "role-completion-tracker": "node src/generate-role-completion-tracker.js",
+    "role-completion-tracker:18feb": "node src/generate-role-completion-tracker.js 2026-02-18 16:00",
+    "role-completion-tracker:20feb": "node src/generate-role-completion-tracker.js 2026-02-20 16:00",
+    "daily-progress-tracker": "node src/generate-daily-progress-tracker.js",
+    "sprint-summary-review": "node src/generate-sprint-summary-review.js",
+    "stats-daily-by-sprint": "node src/generate-stats-daily-by-sprint.js",
+    "completion-by-weekday": "node src/generate-completion-by-weekday.js"
   },
   "dependencies": {
-    "xlsx": "^0.18.5",
+    "axios": "^1.6.0",
+    "csv-parse": "^5.5.0",
+    "dotenv": "^17.3.1",
     "exceljs": "^4.3.0",
     "pdfkit": "^0.15.0",
-    "axios": "^1.6.0",
-    "csv-parse": "^5.5.0"
+    "xlsx": "^0.18.5"
   }
 }
-

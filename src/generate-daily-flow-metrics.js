@@ -12,11 +12,13 @@ const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
 const PROJECT_KEY = 'VER10';
 const BOARD_ID = 149;
-const SPRINT_NAME = 'NH Sprint 36';
-const SPRINT_START_DATE = '2026-02-02';
+const DEFAULT_SPRINT_NAME = 'NH Sprint 39';
+const SPRINT_START_DATE = '2026-02-02'; // fallback if sprint not found
 const DAILY_TARGET_SP = 20;
 
 let SPRINT_JQL = null;
+let effectiveSprintStartDate = SPRINT_START_DATE;
+let SPRINT_NAME = DEFAULT_SPRINT_NAME;
 
 function getSprintClause() {
   return SPRINT_JQL || `sprint = "${SPRINT_NAME}"`;
@@ -496,7 +498,7 @@ async function fetchTeamBugWorkCount(client, teamFieldId) {
     `project = ${PROJECT_KEY}`,
     getSprintClause(),
     'issuetype in (Bug, "Sub-bug")',
-    `status CHANGED TO (${statusList}) AFTER "${SPRINT_START_DATE}"`
+    `status CHANGED TO (${statusList}) AFTER "${effectiveSprintStartDate}"`
   ].join(' AND ');
   const issues = await fetchIssuesByJql(client, jql, [teamFieldId]);
   const summary = {};
@@ -518,28 +520,7 @@ async function fetchTeamReturnToDevCount(client, teamFieldId) {
     `project = ${PROJECT_KEY}`,
     getSprintClause(),
     'issuetype = Story',
-    'status CHANGED FROM ("In QA", "In Review") TO ("In Dev") AFTER "' + SPRINT_START_DATE + '"'
-  ].join(' AND ');
-  const issues = await fetchIssuesByJql(client, jql, [teamFieldId]);
-  const summary = {};
-  TARGET_TEAMS.forEach(team => {
-    summary[team] = { returnToDevCount: 0 };
-  });
-  issues.forEach(issue => {
-    const teamName = getTeamName(issue, teamFieldId);
-    if (!summary[teamName]) {
-      summary[teamName] = { returnToDevCount: 0 };
-    }
-    summary[teamName].returnToDevCount += 1;
-  });
-  return summary;
-}
-async function fetchTeamReturnToDevCount(client, teamFieldId) {
-  const jql = [
-    `project = ${PROJECT_KEY}`,
-    getSprintClause(),
-    'issuetype = Story',
-    'status CHANGED FROM ("In QA", "In Review") TO ("In Dev") AFTER "' + SPRINT_START_DATE + '"'
+    'status CHANGED FROM ("In QA", "In Review") TO ("In Dev") AFTER "' + effectiveSprintStartDate + '"'
   ].join(' AND ');
   const issues = await fetchIssuesByJql(client, jql, [teamFieldId]);
   const summary = {};
@@ -562,7 +543,7 @@ async function fetchStoriesPassedQa(client) {
     `project = ${PROJECT_KEY}`,
     getSprintClause(),
     'issuetype = Story',
-    `status CHANGED TO (${statusList}) AFTER "${SPRINT_START_DATE}"`
+    `status CHANGED TO (${statusList}) AFTER "${effectiveSprintStartDate}"`
   ].join(' AND ');
   const issues = await fetchIssuesByJql(client, jql, ['key']);
   return issues.length;
@@ -578,6 +559,38 @@ async function fetchRaisedCounts(client, issueType, startDateTime, endDateTime) 
   ].join(' AND ');
   const issues = await fetchIssuesByJql(client, jql, ['key']);
   return issues.length;
+}
+
+/**
+ * Fetch all bugs and sub-bugs created today (no sprint or fix version filter).
+ * Returns list with key, issuetype, priority for each.
+ * Uses date-only format (midnight to midnight) to capture full calendar day.
+ */
+async function fetchBugsCreatedTodayAll(client, startDateTime, endDateTime) {
+  const dateStr = startDateTime.split(' ')[0];
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const nextDay = new Date(Date.UTC(y, m - 1, d + 1));
+  const nextDayStr = nextDay.toISOString().slice(0, 10);
+  const jql = [
+    `project = ${PROJECT_KEY}`,
+    'issuetype in (Bug, "Sub-bug")',
+    `created >= "${dateStr}"`,
+    `created < "${nextDayStr}"`
+  ].join(' AND ');
+  const CLOSED_STATUSES = ['Ready for Release', 'Ready for release', 'Complete', 'Completed', 'Done', 'Closed', 'Resolved'];
+  const issues = await fetchIssuesByJql(client, jql, ['key', 'issuetype', 'priority', 'summary', 'status']);
+  return issues.map(issue => {
+    const status = issue.fields?.status?.name || '-';
+    const isClosed = CLOSED_STATUSES.some(s => status.toLowerCase().includes(s.toLowerCase()));
+    return {
+      key: issue.key,
+      issuetype: issue.fields?.issuetype?.name || '-',
+      priority: issue.fields?.priority?.name || 'None',
+      summary: issue.fields?.summary || '',
+      status,
+      isClosed
+    };
+  });
 }
 
 function ensureReportsDir() {
@@ -828,7 +841,41 @@ function renderPdf(report, filepath) {
       doc.fillColor('#000000').fontSize(16).font('Helvetica-Bold').text(card.value, x + 6, cardY + 18, { width: cardWidth - 12 });
     });
 
-    doc.moveDown(4);
+    const bugsToday = report.sprintQuality.bugsCreatedTodayAll || [];
+    doc.moveDown(1);
+    doc.fontSize(12).text('Bugs/Sub-bugs Created Today (all, no sprint/fix version filter)');
+    const closedCount = report.sprintQuality.bugsCreatedTodayClosedCount ?? bugsToday.filter(b => b.isClosed).length;
+    doc.fontSize(10).text(`Total: ${bugsToday.length} | Closed: ${closedCount}`);
+    if (bugsToday.length > 0) {
+      const bugColWidths = [70, 70, 80, 50, 220];
+      let bugY = doc.y + 10;
+      drawPdfTableGrid(doc, 50, bugY - 2, bugColWidths, 14);
+      drawPdfTableRow(doc, bugY, [
+        { text: 'Key', color: '#000000' },
+        { text: 'Type', color: '#000000' },
+        { text: 'Priority', color: '#000000' },
+        { text: 'Status', color: '#000000' },
+        { text: 'Summary', color: '#000000' }
+      ], bugColWidths, { startX: 50, fontSize: 8 });
+      bugY += 14;
+      bugsToday.forEach(b => {
+        drawPdfTableGrid(doc, 50, bugY - 2, bugColWidths, 14);
+        drawPdfTableRow(doc, bugY, [
+          { text: b.key || '-' },
+          { text: b.issuetype || '-' },
+          { text: b.priority || 'None' },
+          { text: b.status || '-' },
+          { text: (b.summary || '').slice(0, 40) + ((b.summary || '').length > 40 ? '...' : '') }
+        ], bugColWidths, { startX: 50, fontSize: 8 });
+        bugY += 14;
+        if (bugY > 720) {
+          doc.addPage();
+          bugY = 50;
+        }
+      });
+      doc.y = bugY + 4;
+    }
+    doc.moveDown(2);
   }
 
   doc.end();
@@ -914,6 +961,21 @@ function renderMarkdown(report) {
     lines.push(`Bug-like Raised (Bugs + Stories Raised): ${sprintQuality.bugLikeRaisedTotal}`);
     lines.push(`Bug-like per Story (based on stories passed QA): ${formatNumber(sprintQuality.bugsPerStory)}`);
     lines.push('');
+    const bugsToday = sprintQuality.bugsCreatedTodayAll || [];
+    const closedCount = sprintQuality.bugsCreatedTodayClosedCount ?? bugsToday.filter(b => b.isClosed).length;
+    lines.push('## Bugs/Sub-bugs Created Today (all, no sprint/fix version filter)');
+    lines.push('');
+    lines.push(`Total: ${bugsToday.length} | Closed: ${closedCount}`);
+    if (bugsToday.length > 0) {
+      lines.push('');
+      lines.push('| Key | Type | Priority | Status | Summary |');
+      lines.push('|-----|------|----------|--------|---------|');
+      bugsToday.forEach(b => {
+        const summary = (b.summary || '').replace(/\|/g, ' ').slice(0, 50);
+        lines.push(`| ${b.key || '-'} | ${b.issuetype || '-'} | ${b.priority || 'None'} | ${b.status || '-'} | ${summary} |`);
+      });
+    }
+    lines.push('');
   }
 
   return lines.join('\n');
@@ -922,8 +984,11 @@ function renderMarkdown(report) {
 async function main() {
   validateConfig();
   const client = createJiraClient();
+  SPRINT_NAME = process.argv[2] || DEFAULT_SPRINT_NAME;
   const sprint = await getSprintByName(client, BOARD_ID, SPRINT_NAME);
   SPRINT_JQL = sprint ? `sprint = ${sprint.id}` : `sprint = "${SPRINT_NAME}"`;
+  const sprintStartDate = sprint?.startDate ? sprint.startDate.split('T')[0] : SPRINT_START_DATE;
+  effectiveSprintStartDate = sprintStartDate;
   const storyPointsFieldId = await discoverStoryPointsFieldId(client);
   const teamFieldId = await discoverTeamFieldId(client);
 
@@ -938,7 +1003,7 @@ async function main() {
   console.log('='.repeat(60));
   console.log(`Project: ${PROJECT_KEY}`);
   console.log(`Sprint: ${SPRINT_NAME}`);
-  console.log(`Sprint Window: ${SPRINT_START_DATE} → ${endDateTime.split(' ')[0]}`);
+  console.log(`Sprint Window: ${sprintStartDate} → ${endDateTime.split(' ')[0]}`);
   console.log(`Date (UK): ${dateStr}`);
   console.log(`Range (UK): ${startDateTime} → ${endDateTime}`);
 
@@ -961,9 +1026,12 @@ async function main() {
 
   console.log('🔎 Collecting sprint QA pass-through + bug ratio...');
   const storiesPassedQa = await fetchStoriesPassedQa(client);
-  const storyRaisedCount = await fetchRaisedCounts(client, 'Story', `${SPRINT_START_DATE} 00:00`, endDateTime);
-  const bugRaisedCount = await fetchRaisedCounts(client, 'Bug', `${SPRINT_START_DATE} 00:00`, endDateTime);
-  const subBugRaisedCount = await fetchRaisedCounts(client, 'Sub-bug', `${SPRINT_START_DATE} 00:00`, endDateTime);
+  const storyRaisedCount = await fetchRaisedCounts(client, 'Story', `${sprintStartDate} 00:00`, endDateTime);
+  const bugRaisedCount = await fetchRaisedCounts(client, 'Bug', `${sprintStartDate} 00:00`, endDateTime);
+  const subBugRaisedCount = await fetchRaisedCounts(client, 'Sub-bug', `${sprintStartDate} 00:00`, endDateTime);
+  console.log('🔎 Collecting bugs/sub-bugs created today (all, no sprint/fix version filter)...');
+  const bugsStartToday = formatJqlDateTime(dateStr, '00:00', offset);
+  const bugsCreatedTodayAll = await fetchBugsCreatedTodayAll(client, bugsStartToday, endDateTime);
   const totalBugsRaised = bugRaisedCount + subBugRaisedCount;
   const totalBugLikeRaised = totalBugsRaised + storyRaisedCount;
   const bugsPerStory = storiesPassedQa > 0 ? totalBugLikeRaised / storiesPassedQa : null;
@@ -1042,7 +1110,7 @@ async function main() {
     project: PROJECT_KEY,
     sprint: SPRINT_NAME,
     sprintWindow: {
-      start: SPRINT_START_DATE,
+      start: sprintStartDate,
       end: endDateTime.split(' ')[0]
     },
     dateUtc: dateStr,
@@ -1072,6 +1140,8 @@ async function main() {
         'Sub-bug': subBugRaisedCount,
         total: totalBugsRaised
       },
+      bugsCreatedTodayAll,
+      bugsCreatedTodayClosedCount: bugsCreatedTodayAll.filter(b => b.isClosed).length,
       bugLikeRaisedTotal: totalBugLikeRaised,
       storiesRaised: storyRaisedCount,
       bugsPerStory

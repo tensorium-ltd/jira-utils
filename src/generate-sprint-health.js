@@ -12,7 +12,7 @@ const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
 const BOARD_ID = 149;
 const PROJECT_KEY = 'VER10';
-const DEFAULT_SPRINT_NAME = 'NH Sprint 36';
+const DEFAULT_SPRINT_NAME = 'NH Sprint 38';
 
 function validateConfig() {
   if (!JIRA_EMAIL) {
